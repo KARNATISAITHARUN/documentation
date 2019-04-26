@@ -15,38 +15,30 @@ See [ShiftLeft CLI Requirements](../../introduction/requirements.md) for details
 
 ## Installation
 
-If you haven't already downloaded the CLI as part of the Quick Start process when you first logged into ShiftLeft, you can do so by running the appropriate CLI install command.
+If you haven't already downloaded the CLI as part of the [Quick Start process](../../using-inspect-protect/inspect-protect-quick-start.md) when you first logged into ShiftLeft, you can do so by running the appropriate CLI install command.
 
-To run the CLI install command:
-
-* From the Quick Start page, copy the command and run it from your command line. The command displayed is appropriate to your chosen operating system.
-
-![Command for Installing the CLI](../img/run-install-command.jpg)
-
-You can also copy the command from here:
-
-### Linux and MacOS X
+#### Linux and MacOS X
 
 ```
 curl https://cdn.shiftleft.io/download/sl >/usr/local/bin/sl && chmod a+rx /usr/local/bin/sl
 ```
 `sl` automatically updates so that you don't have to reinstall the CLI whenever there are new features or fixes (`curl` or `wget` are required for automatic updates). You can disable automatic updating by setting the environment variable `SHIFTLEFT_NO_AUTO_UPDATE=true` when running `sl`.
 
-### Windows .NET Framework
+#### Windows .NET Framework
 
 In PowerShell, you can issue the following command to download an installer that enables `sl` and the ShiftLeft Protect for .NET Microagent
 
 ```
-Invoke-WebRequest -Uri https://<i></i>cdn.shiftleft.io/download/installer-dotnet-framework-latest-windows-x64.zip -UseBasicParsing -OutFile sl-latest-windows-x64.zip
+Invoke-WebRequest -Uri https://cdn.shiftleft.io/download/installer-dotnet-framework-latest-windows-x64.zip -UseBasicParsing -OutFile sl-latest-windows-x64.zip
 ```
-Alternatively you can use a browser to download the file.
+Alternatively,you can use a browser to download the file.
 
-### Windows .NET Core
+#### Windows .NET Core
 
 In PowerShell, you can issue the following command to download an installer that enables `sl` and the ShiftLeft Protect for .NET Microagent
 
 ```
-Invoke-WebRequest -Uri https://<i></i>cdn.shiftleft.io/download/installer-dotnet-core-latest-windows-x64.zip -UseBasicParsing -OutFile sl-latest-windows-x64.zip
+Invoke-WebRequest -Uri https://cdn.shiftleft.io/download/installer-dotnet-core-latest-windows-x64.zip -UseBasicParsing -OutFile sl-latest-windows-x64.zip
 ```
 Alternatively you can use a browser to download the file.
 

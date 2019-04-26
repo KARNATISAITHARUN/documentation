@@ -1,6 +1,6 @@
 # Quick Start for ShiftLeft Inspect and ShiftLeft Protect
 
-You use ShiftLeft Inspect to analyze your application for vulnerabilites, and ShiftLeft Protect to monitor and protect your application at runtime. To use ShiftLeft, you need:
+You use ShiftLeft Inspect to analyze your application for vulnerabilities, and ShiftLeft Protect to monitor and protect your application at runtime. To use ShiftLeft, you need:
 
 * A ShiftLeft Account ([contact us](https://www.shiftleft.io/contact/)).
 * All [ShiftLeft requirements](../introduction/requirements.md).
@@ -24,9 +24,9 @@ ShiftLeft supports the Linux, MacOS X, Windows operating systems.
 
 ## Installing the ShiftLeft CLI
 
-The ShiftLeft (CLI) is used with ShiftLeft Inspect to submit applications for analysis and with ShiftLeft Protect to run the ShiftLeft Microagent. The tool is named `sl`.
+The ShiftLeft (CLI) is used with ShiftLeft Inspect to submit applications for analysis and with ShiftLeft Protect to run the ShiftLeft Microagent. The tool is named `sl`. See more information, on [Using the ShiftLeft CLI](using-cli/using-cli.md).
 
-There are two methods for installing the ShiftLeft CLI: [downloading the installer](#downloading-the-shiftleft-cli-installer) or [running the appropriate CLI install command](#running-the-cli-install-command).
+There are two methods for installing the ShiftLeft CLI: [downloading the installer](#downloading-the-shiftleft-cli-installer) as explained here, or [running the appropriate CLI install command](../using-inspect-protect/using-cli/using-cli.md).
 
 ### Downloading the ShiftLeft CLI Installer
 
@@ -40,8 +40,6 @@ To download the ShiftLeft CLI Installer:
 
 3. Verify the CLI installation by typing `sl help`.
 
-See more information on [Using the ShiftLeft CLI](using-cli/using-cli.md).
-
 #### Linux and MacOS X
 
 Make sure that `/usr/local/bin` is in your `$PATH`.
@@ -53,41 +51,6 @@ Extract the `sl` or `sl.exe` binary and then add the directory location of the `
 Note that for Windows .NET there are two variants: .NET Framework or .NET Core version. Make sure to pick the right one for your project.
 
 After you have downloaded the appropriate installer, unzip the file and invoke the installer. If you are running the installer from the terminal, add `--no-prompt` to disable waiting for user input.
-
-### Running the CLI Install Command
-
-To run the CLI Install command:
-
-* From the Quick Start page, copy the command and run it from your command line. The command displayed is appropriate to your chosen operating system.
-
-![](img/run-install-command.jpg)
-
-You can also copy the command from here:
-
-#### Linux and MacOS X
-
-```
-curl https://cdn.shiftleft.io/download/sl >/usr/local/bin/sl && chmod a+rx /usr/local/bin/sl
-```
-`sl` automatically updates so that you don't have to reinstall the CLI whenever there are new features or fixes (`curl` or `wget` are required for automatic updates). You can disable automatic updating by setting the environment variable `SHIFTLEFT_NO_AUTO_UPDATE=true` when running `sl`.
-
-#### Windows .NET Framework
-
-In PowerShell, you can issue the following command to download an installer that enables `sl` and the ShiftLeft Protect for .NET Microagent
-
-```
-Invoke-WebRequest -Uri https://cdn.shiftleft.io/download/installer-dotnet-framework-latest-windows-x64.zip -UseBasicParsing -OutFile sl-latest-windows-x64.zip
-```
-Alternatively you can use a browser to download the file.
-
-#### Windows .NET Core
-
-In PowerShell, you can issue the following command to download an installer that enables `sl` and the ShiftLeft Protect for .NET Microagent
-
-```
-Invoke-WebRequest -Uri https://cdn.shiftleft.io/download/installer-dotnet-core-latest-windows-x64.zip -UseBasicParsing -OutFile sl-latest-windows-x64.zip
-```
-Alternatively you can use a browser to download the file.
 
 ## Authenticating with ShiftLeft
 
@@ -105,7 +68,7 @@ ShiftLeft support is available for Java and .NET.
 
 ShiftLeft Protect is run with an application that has been analyzed by ShiftLeft Inspect. The ShiftLeft Protect Microagent runs alongside the application in production (or other environments such as staging, test, UAT). Before running ShiftLeft Protect, you must first use ShiftLeft Inspect to analyze the code of the target application. During code analysis, Shiftleft Inspect generates a Code Property Graph (CPG). The CPG is uploaded to the Shiftleft SaaS where a Security Profile is created for your application. This Security Profile allows ShiftLeft to generate instrumentation custom tailored to the specific version of your application.
 
-Anlaysis of the code can be performed either as a separate step, allowing installation in a build / Continuous Integration (CI) environment, or as part of the same command used for running ShiftLeft Protect.
+Analysis of the code can be performed either as a separate step, allowing installation in a build / Continuous Integration (CI) environment, or as part of the same command used for running ShiftLeft Protect.
 
 To analyze the code before running your application, refer to [Analyzing Applications in CI](analyzing-applications-in-ci.md). Note that in this case, you need to carry the produced `shiftleft.json` file to your runtime environment and make it available to the ShiftLeft Protect Microagent. This allows the Microagent to be associated with your application.
 
