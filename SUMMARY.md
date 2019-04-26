@@ -25,8 +25,10 @@
 * Using ShiftLeft Inspect and ShiftLeft Protect
   * [Quick Start](using-inspect-protect/inspect-protect-quick-start.md)
   * [Windows Installer](using-inspect-protect/windows-installer.md)
-  * [Using the ShiftLeft CLI](using-inspect-protect/using-cli/using-cli.md)
+  * Using the ShiftLeft CLI
+    * [Installing the CLI](using-inspect-protect/using-cli/install-cli.md)
     * [Authenticating with ShiftLeft](using-inspect-protect/using-cli/authenticating.md)
+    * [CLI Reference](using-inspect-protect/using-cli/cli-reference.md)
   * [Analyzing Your Code](using-inspect-protect/analyzing-applications-in-ci.md)
   *  Protecting Your Runtime Application
      * [ShiftLeft Protect for Java](using-inspect-protect/protect-java/jvm-based-environments.md)

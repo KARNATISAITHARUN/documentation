@@ -2,7 +2,7 @@
 
 To use ShiftLeft Inspect and ShiftLeft Protect, you must first authenticate with ShiftLeft. Generally, you authenticated as part of the Quick Start process the first time you logged into ShiftLeft. 
 
-![](img/authenticate.jpg)
+![](../img/authenticate.jpg)
 
 You can also authenticate by using either: 
 
