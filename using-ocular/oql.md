@@ -53,7 +53,7 @@ testscript.sc:
 ```scala
 @main def exec(jarFile: String, outFile: String) = {
   loadCpg(jarFile)
-  cpg.namespace.nalme.l |> outFile
+  cpg.namespace.name.l |> outFile
 }
 ```
 
