@@ -55,10 +55,17 @@ None | `SHIFTLEFT_CONFIG=<path> ` | Path to the `shiftleft.json` file. Defaults 
 
 ### `sl install` Options
 
-`sl run` option | Description
+`sl install` option | Description
 --- | ---
 `--dotnet-core` | Use .NET Core.
 `--dotnet-framework` | Use .NET Framework.
+
+### `sl config-file` Options
+
+`sl config-file` option | Description
+--- | ---
+`--app <name>`, `-a <name>` | `SHIFTLEFT_APP=<name>` | Associate analysis with this application name. This name is used in the ShiftLeft UI.
+`--version-id` | | Sets the version field of the SPR ID that's written to the config file.
 
 ## Artifacts Stored by `sl`
 
