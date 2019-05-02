@@ -20,7 +20,7 @@ extended to suit your specific needs.
 # Prerequisites
 
 Install Ocular into local directory `$shiftleft` as described in the
-[installation documentation](installation.html).
+[installation documentation](../installation.md).
 
 # Running example
 

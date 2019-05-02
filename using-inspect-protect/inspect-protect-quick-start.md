@@ -34,7 +34,7 @@ To download the ShiftLeft CLI Installer:
 
 1. From the Quick Start page, click the Download the ShiftLeft CLI button.
 
-![](img/download-cli.jpg)
+![Click to Download the CLI](img/download-cli.jpg)
 
 2. Add the CLI to your system path. The process is different for each operating system, as explained below.
 

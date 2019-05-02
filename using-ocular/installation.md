@@ -1,6 +1,6 @@
 # Installing ShiftLeft Ocular
 
-Before installing ShiftLeft Ocular, make sure you have [met all requirements](../introduction/requirements).
+Before installing ShiftLeft Ocular, make sure you have [met all requirements](../introduction/requirements.md).
 
 Begin by decompressing the provided ZIP file `ocular-distribution.zip`. This creates the directory `ocular-distribution`.
 
