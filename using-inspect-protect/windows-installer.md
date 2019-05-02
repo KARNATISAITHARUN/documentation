@@ -26,14 +26,37 @@ It will print its output on a terminal window; once done, pressing `Enter` again
 
 ![](img/windows-installing.png)
 
+### Options
+
+The installer binary has a few command line options that modify its default behaviour:
+
+- `--dotnet-core` / `--dotnet-framework` will select the proper setup for either .NET Core or .NET Framework applications for the agent.  Each downloaded installer will default to one of the two as indicated in the filename.
+- `--no-prompt` will disable any prompts for non-interactive usage.
+- `--install-directory` sets the installation directory, which defaults to `ShiftLeft` in the normal Windows programs folder.
+- `--start-menu-entries` sets the directory for any start menu items to be created.  If empty, this will not install them.  Defaults to `ShiftLeft` in the top level of the start menu.
+- `--sl-home` sets the home directory for any ShiftLeft tools.  This directory will be created and will store any downloaded binaries and configuration files.  Defaults to `.shiftleft` in the users own home directory.
+
+All the directories will be stored in the registry and then similarly when running the uninstaller.
+
 ## Uninstalling
 
-Uninstalling the ShiftLeft tools can be done similarly by double-clicking the start menu entry for the uninstaller. Here again the elevated privileges prompt needs to be confirmed.
+You uninstall ShiftLeft tools by double-clicking the Start menu command for the uninstaller. You are prompted to confirm elevated privileges.
 
 ![](img/windows-user-account-control-uninstall.png)
 
-Once confirmed (with `Enter`, respectively `Y` at the second prompt to also uninstall the .NET microagent) it will then proceed to undo the installation. Simply pressing `Ctrl-C` or closing the window will instead abort the uninstaller.
+Once confirmed (with `Enter`, and then `Y` at the second prompt to also uninstall ShiftLeft Protect for .NET), the uninstaller removes the installation. To abort the uninstall process, press `Ctrl-C` or close the window.
 
 ![](img/windows-uninstalling.png)
 
-Again the window will stay open at the end until `Enter` is pressed, or the window is closed.
+The window remains open until you press `Enter` or close the window.
+
+### Options
+
+Use the following command line options to modify uninstaller default behaviour:
+
+- **`--no-prompt`**. Disables any prompts for non-interactive usage.
+- **`--install-directory`**. Specifies the installation directory.
+- **`--start-menu-entries`**. Specifies the start menu directory.
+- **`--sl-home`**. Specifies the home directory for ShiftLeft tools.
+
+The default values are read from the registry after installation.  See above for a more detailed description of the flags on the installer binary.
