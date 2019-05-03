@@ -70,7 +70,7 @@ ShiftLeft Protect is run with an application that has been analyzed by ShiftLeft
 
 Analysis of the code can be performed either as a separate step, allowing installation in a build / Continuous Integration (CI) environment, or as part of the same command used for running ShiftLeft Protect.
 
-To analyze the code before running your application, refer to [Analyzing Applications in CI](analyzing-applications-in-ci.md). Note that in this case, you need to carry the produced `shiftleft.json` file to your runtime environment and make it available to the ShiftLeft Protect Microagent. This allows the Microagent to be associated with your application.
+To analyze the code before running your application, refer to [Analyzing Applications in CI](inspect/analyzing-applications-in-ci.md). Note that in this case, you need to carry the produced `shiftleft.json` file to your runtime environment and make it available to the ShiftLeft Protect Microagent. This allows the Microagent to be associated with your application.
 
 To analyze the code during runtime and in at the command line, first verify that you have met the [ShiftLeft Inspect requirements for .NET](../introduction/requirements.md).  Then follow the instructions for analysis using the [ShiftLeft CLI](using-cli/using-cli.md). The system submits your application to the cloud for analysis and waits for the analysis to finish before running the application.
 

@@ -9,7 +9,6 @@
   * [Quick Start](using-ocular/ocular-quick-start.md)
   * [Installation](using-ocular/installation.md)
   * [Ocular Query Language](using-ocular/oql.md)
-  * [Security Policy Language](using-ocular/spl.md)
   * [Ocular API](https://ocular.shiftleft.io/api/)
   * Tutorials
     * [Ocular with the CPG](using-ocular/tutorials/cpg.md)
@@ -29,7 +28,9 @@
     * [Installing the CLI](using-inspect-protect/using-cli/install-cli.md)
     * [Authenticating with ShiftLeft](using-inspect-protect/using-cli/authenticating.md)
     * [CLI Reference](using-inspect-protect/using-cli/cli-reference.md)
-  * [Analyzing Your Code](using-inspect-protect/analyzing-applications-in-ci.md)
+  * Analyzing Your Code
+    * [Analyzing Applications in CI](using-inspect-protect/inspect/analyzing-applications-in-ci.md)
+    * [Using Custom Security Policies with ShiftLeft Inspect](using-inspect-protect/inspect/custom-policies.md)
   *  Protecting Your Runtime Application
      * [ShiftLeft Protect for Java](using-inspect-protect/protect-java/jvm-based-environments.md)
        * [Configuring the Microagent](using-inspect-protect/protect-java/configuring-the-microagent.md)
@@ -49,4 +50,6 @@
   * Using ShiftLeft in Your Workflow
     * [Integrating Jira](using-inspect-protect/using-workflow/jira-integration.md)
     * [Vulnerability Dashboard](using-inspect-protect/using-workflow/vulnerability-dashboard.md)
+* ShiftLeft Policies
+    * [Security Policy Language](policies/spl.md)
 * [Release Notes](release-notes/release-notes.md)

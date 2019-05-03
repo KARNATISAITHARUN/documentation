@@ -1,6 +1,6 @@
 # Security Policy Language
 
-Support for core language features, libraries, and frameworks is provided via policy files. Policy files specify how the application communicates with the outside world, which transformations exist on data, and which information flows should be considered security violations. ShiftLeft provides a database of policy rules by default, and additionally allows users to create their own custom policy. Custom policies can exclude parts of the default policy that do not apply to the application, or they may introduce additional knowledge about the application.
+Support for core language features, libraries, and frameworks is provided via policy files. Policy files specify how the application communicates with the outside world, which transformations exist on data, and which information flows should be considered security violations. ShiftLeft provides a database of policy rules by default, and additionally allows you to [create your own custom policy](../using-inspect-protect/inspect/custom-policies.md). Custom policies can exclude parts of the default policy that do not apply to the application, or they may introduce additional knowledge about the application.
 
 The default policy can be found in the directory
 
