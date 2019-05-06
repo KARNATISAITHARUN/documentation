@@ -71,15 +71,44 @@ None | `SHIFTLEFT_CONFIG=<path> ` | Path to the `shiftleft.json` file. Defaults 
 ## `sl policy` Commands
 `sl policy` command | Description
 --- | ---
-`policy assignment list` | Lists all security policy assignments for your organization or project that you have previously identified for use with ShiftLeft Inspect.
-`policy assignment remove [--project <project-name>]` | Removes the default security policy of your organization or (if the `project` parameter is provided) your organization's project. 
-`policy assignment set <policy-label>[:<policy-tag>] [--project <project-name>]` | Specifies the default security policies used by ShiftLeft Inspect. `set` allows you to assign a default security policy used by ShiftLeft Inspect moving forward. If the optional `project` parameter is provided, the default security policy is only applied when ShiftLeft Inspect analyses the application specified by the `project-name` argument. If the `project` parameter is missing, the security policy is applied globally to all applications in your organization.
-`policy create [default\|\no-dictionary] [<path-to-policy-file>]` | Creates a custom security policy from a pre-defined template. Currently two templates are available: default and no-dictionary. The `default` template creates a policy that imports all standard definitions as used by ShiftLeft, including the generic dictionary of sensitive-data variables. The `no-dictionary` template excludes these standard definitions. A new custom security policy is stored in the file defined by the `path-to-policy-file` argument, or printed to standard output if the argument is omitted.
-`policy info [[<policy-domain>/]<policy-label>[:<policy-tag>]]` | Returns meta-information about all security policies with the name specified by `<policy-label>` argument. If the policy name is omitted, meta-information of all policies available to your organization is returned. The `policy-domain` and `policy-tag` elements are optional. `policy-domain` refers to the policy domain available to your organization. By default it is your organization’s ID, but it could also be publicly available security policies such as `io.shiftleft`. If the `policy-tag` element is omitted, by default the response includes all authorized security policies.
-`policy pull --hash <policy-hash> [<path-to-policy-file>]` | Fetches the security policy, with the hash specified by  the `policy-hash` argument, from the ShiftLeft infrastructure, if authorized. If the `path-to-policy-file` argument is missing, the security policy is printed to the console. Returns the policy as a text file or a bad request with detailed error information.
-`policy pull <policy-label>[:<policy-tag>] [<path-to-policy-file>]` | Fetches the security policy, with the name specified by the `policy-label` argument, from the ShiftLeft infrastructure, if authorized. Use of the policy tag is optional (for example `0.0.1` in `mypolicy:0.0.1`); by default the value is the latest policy. If the `path-to-policy-file` argument is missing, the security policy is printed to the console. Returns the policy as a text file or a bad request with detailed error information.
-`policy push <policy-label>[:<policy-tag>] <path-to-policy-file>` | Uploads a custom security policy, with the name specified by the `policy-label` argument, to the ShiftLeft policy repository. Use of the policy tag is optional (for example `0.0.1` in `mypolicy:0.0.1`); by default the value is the latest policy. Returns either OK or a bad request with detailed error information.
-`policy verify <path-to-policy-file>` | Verifies a custom security policy by sending it to the ShiftLeft infrastructure, which checks for syntactic and semantic errors. Returns either OK or a bad request with detailed error information.
+`assignment` | Manage default policies assigned to the organization and/or project.
+`create` | Creates a custom security policy from a pre-defined template.
+`pull` | Downloads a policy registered in ShiftLeft's repository.
+`push` | Uploads a security policy to ShiftLeft's repository.
+`validate` | Checks if a security policy is valid syntactically and semantically.
+
+## `sl policy assignment` Commands
+`sl policy assignment` command | Arguments | Parameters | Description
+--- | --- | --- | ---
+`list` | | | Lists all security policy assignments for your organization or project that you have previously identified for use with ShiftLeft Inspect.
+`remove` | | `[--project <project-name>]` | Removes the default security policy of your organization or (if the `project` parameter is provided) your organization's project. 
+`set` | `<policy-label>[:<policy-tag>]` | `[--project <project-name>]` | Specifies the default security policies used by ShiftLeft Inspect. `set` allows you to assign a default security policy used by ShiftLeft Inspect moving forward. If the optional `project` parameter is provided, the default security policy is only applied when ShiftLeft Inspect analyses the application specified by the `project-name` argument. If the `project` parameter is missing, the security policy is applied globally to all applications in your organization.
+
+## `sl policy create` Options
+`sl policy create` command Arguments | Description
+--- | ---
+`[default|no-dictionary] [<path-to-policy-file>]` | Creates a custom security policy from a pre-defined template. Currently two templates are available: default and no-dictionary. The `default` template creates a policy that imports all standard definitions as used by ShiftLeft, including the generic dictionary of sensitive-data variables. The `no-dictionary` template excludes these standard definitions. A new custom security policy is stored in the file defined by the `path-to-policy-file` argument, or printed to standard output if the argument is omitted.
+
+## `sl policy info` Options
+`sl policy info` command Arguments | Description
+--- | ---
+`[<policy-label>[:<policy-tag>]]` | Returns meta-information about all security policies with the name specified by `<policy-label>` argument. If the policy name is omitted, meta-information of all policies available to your organization is returned. The `policy-tag` element is optional. If the `policy-tag` element is omitted, by default the response includes all authorized security policies.
+
+## `sl policy pull` Options
+`sl policy pull` command Options | Arguments | Description
+--- | --- | ---
+`--hash <policy-hash>` | `[<path-to-policy-file>]` | Fetches the security policy, with the hash specified by  the `policy-hash` argument, from the ShiftLeft infrastructure, if authorized. If the `path-to-policy-file` argument is missing, the security policy is printed to the console. Returns the policy as a text file or a bad request with detailed error information.
+| | `<policy-label>[:<policy-tag>] [<path-to-policy-file>]` | Fetches the security policy, with the name specified by the `policy-label` argument, from the ShiftLeft infrastructure, if authorized. Use of the policy tag is optional (for example `0.0.1` in `mypolicy:0.0.1`); by default the value is the latest policy. If the `path-to-policy-file` argument is missing, the security policy is printed to the console. Returns the policy as a text file or a bad request with detailed error information.
+
+## `sl policy push` Options
+`sl policy push` command Arguments | Description
+--- | ---
+`<policy-label>[:<policy-tag>] <path-to-policy-file>` | Uploads a custom security policy, with the name specified by the `policy-label` argument, to the ShiftLeft policy repository. Use of the policy tag is optional (for example `0.0.1` in `mypolicy:0.0.1`); by default the value is the latest policy. Returns either OK or a bad request with detailed error information.
+
+## `sl policy validate` Options
+`sl policy validate` command Arguments | Description
+--- | ---
+`<path-to-policy-file>` | Verifies a custom security policy by sending it to the ShiftLeft infrastructure, which checks for syntactic and semantic errors. Returns either OK or a bad request with detailed error information.
 
 ## Artifacts Stored by `sl`
 

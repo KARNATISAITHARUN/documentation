@@ -8,7 +8,7 @@ Generally, most custom security policies can be created and managed using the [S
 
 ## Use Case: Application-Specific Sensitive-Data Dictionary
 
-Every time ShiftLeft Inspect runs, the infrastructure infers the correct security policy to use. Unless your organization has a special policy assignment, either `io.shiftleftleft/helloshiftleft` or `io.shiftleft/helloshiftleft-dotnet` are used for Java and C#, respectively. In either case, the inferred security policy uses a generic set of sensitive variable names, which directly affect the security results you see.
+Every time ShiftLeft Inspect runs, the infrastructure infers the correct security policy to use, based on the source language. By default such a policy uses a generic set of sensitive variable names, which directly affect the security results you see.
 
 The process of creating and using a custom security policy for an application-specific sensitive-data dictionary is:
 
@@ -141,7 +141,7 @@ ShiftLeft automatically infers the default security policy to be used with `my-a
 To instead use the example custom security policy with ShiftLeft Inspect, run
 
 ```
-sl analyze --policy-id ebad68cf-b1bf-4b00-b524-8d41c6b4ff7e/myNewDictionary --app my-application ~/path/to/file.jar
+sl analyze --policy ebad68cf-b1bf-4b00-b524-8d41c6b4ff7e/myNewDictionary --app my-application ~/path/to/file.jar
 ```
 
 As expected, in this case ShiftLeft Inspect finds less vulnerabilities for exactly the same jar, since the dictionary of sensitive-data categories has been significantly reduced in the custom security policy. 
@@ -163,7 +163,7 @@ sl policy assignment set --project my-application ebad68cf-b1bf-4b00-b524-8d41c6
 As a result, both ShiftLeft Inspect analysis commands
 
 ```
-sl analyze --app my-cool-app
+sl analyze --app my-application
 ```
 
 and
