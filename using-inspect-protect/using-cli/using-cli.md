@@ -80,12 +80,13 @@ None | `https_proxy=<proxy>` | Proxy configuration.
 `--app <name>`, `-a <name>` | `SHIFTLEFT_APP=<name>` | Associate analysis with this application name. This name is used in the ShiftLeft UI.
 `--wait`, `-w` | `SHIFTLEFT_WAIT=true` | Wait for analysis to finish before returning control.
 `--java` | `SHIFTLEFT_LANG_JAVA=true` | Analyze Java code (implicit).
-`--csharp` | `SHIFTLEFT_LANG_CSHARP=true` | Analyze C# code. 
+`--csharp` | `SHIFTLEFT_LANG_CSHARP=true` | Analyze C# code.
 `--estimate` | | Produce an estimate of the number of statements of the analyzed code. Requires `--cpg` to be set. (Only valid for Java.)
 `--force` | | Force analysis (instead of using a cached result).
 `--dotnet-core` | | Use .NET Core. (Only valid for C#.)
 `--dotnet-framework` | | Use .NET Framework. (Only valid for C#.)
 `--shiftleft-json-file` | `SHIFTLEFT_JSON_FILE=<path>` | Path of Microagent configuration file `shiftleft.json`. Defaults to `shiftleft.json` (in the current working directory).
+`--version-id <id>` | | Sets the version field of the SPR ID that's written to the config file.
 
 ### `sl run` Options
 
@@ -106,10 +107,10 @@ None | `SHIFTLEFT_CONFIG=<path> ` | Path to the `shiftleft.json` file. Defaults 
 
 ### `sl config-file` Options
 
-`sl config-file` option | Description
+`sl config-file` option | Environment Variable | Description
 --- | ---
 `--app <name>`, `-a <name>` | `SHIFTLEFT_APP=<name>` | Associate analysis with this application name. This name is used in the ShiftLeft UI.
-`--version-id` | | Sets the version field of the SPR ID that's written to the config file.
+`--version-id <id>` | | Sets the version field of the SPR ID that's written to the config file.
 
 ## `sl policy` Commands
 `sl policy` command | Description
@@ -124,13 +125,13 @@ None | `SHIFTLEFT_CONFIG=<path> ` | Path to the `shiftleft.json` file. Defaults 
 `sl policy assignment` command | Arguments | Options | Description
 --- | --- | --- | ---
 `list` | | | Lists all security policy assignments for your organization or project that you have previously identified for use with ShiftLeft Inspect.
-`remove` | | `[--project <project-name>]` | Removes the default security policy of your organization or (if the `project` parameter is provided) your organization's project. 
+`remove` | | `[--project <project-name>]` | Removes the default security policy of your organization or (if the `project` parameter is provided) your organization's project.
 `set` | `<policy-label>[:<policy-tag>]` | `[--project <project-name>]` | Specifies the default security policies used by ShiftLeft Inspect. `set` allows you to assign a default security policy used by ShiftLeft Inspect moving forward. If the optional `project` parameter is provided, the default security policy is only applied when ShiftLeft Inspect analyses the application specified by the `project-name` argument. If the `project` parameter is missing, the security policy is applied globally to all applications in your organization.
 
 ## `sl policy create` Options
 `sl policy create` command Arguments | Description
 --- | ---
-`[default|no-dictionary] [<path-to-policy-file>]` | Creates a custom security policy from a pre-defined template. Currently two templates are available: default and no-dictionary. The `default` template creates a policy that imports all standard definitions as used by ShiftLeft, including the generic dictionary of sensitive-data variables. The `no-dictionary` template excludes these standard definitions. A new custom security policy is stored in the file defined by the `path-to-policy-file` argument, or printed to standard output if the argument is omitted.
+`[default\|no-dictionary] [<path-to-policy-file>]` | Creates a custom security policy from a pre-defined template. Currently two templates are available: default and no-dictionary. The `default` template creates a policy that imports all standard definitions as used by ShiftLeft, including the generic dictionary of sensitive-data variables. The `no-dictionary` template excludes these standard definitions. A new custom security policy is stored in the file defined by the `path-to-policy-file` argument, or printed to standard output if the argument is omitted.
 
 ## `sl policy info` Options
 `sl policy info` command Arguments | Description
