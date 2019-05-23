@@ -229,8 +229,22 @@ Environment Variable | `SHIFTLEFT_SEC_XXE`
 
 Values:
   - `OFF`: No XXE protection (default)
-  - `DTD`: Disable DTDs completely, almost all XML entity attacks are prevented including denial of services (DOS) attacks such as Billion Laughs.
+  - `DTD`: Disable DTDs completely. Almost all XML entity attacks are prevented including denial of services (DOS) attacks such as Billion Laughs.
   - `EXTERNAL`: Disable only external DTDs and entities. This protects against XXE attacks but not against denial of services (DOS) attacks such as Billion Laughs.
+
+### Collect Attack Information
+
+Enables collecting payloads of attack events. This might include sensitive information, which is stored encrypted. Disabled by default.
+
+Parameter | Name
+--- | ---
+JSON | `sec.collect.attack.info`
+JVM | `-Dshiftleft.sec.collect.attack.info`
+Environment Variable | `SHIFTLEFT_SEC_COLLECT_ATTACK_INFO`
+
+ Values:
+  - `true`: Attack payloads are collected and sent to ShiftLeft's infra for viewing in the Event Viewer UI.
+  - `false`: (default)
 
 ## HTTPS Proxy Configuration
 
