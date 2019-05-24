@@ -18,7 +18,7 @@ The requirements for integrating Jenkins application builds are as follows:
 - [Jenkins installation](https://jenkins.io/changelog/) version 2.78 or later
 - Supported application and build tool (see [code analysis requirements](../../../introduction/requirements.md))
 - Familiarity with [ShiftLeft Inspect and ShiftLeft Protect](../../../using-inspect-protect/inspect-protect-quick-start.md) 
-- ShiftLeft account credentials: **Organization ID** and **Upload Token**
+- ShiftLeft account credentials: **Organization ID** and **Access Token**
 Initially these credentials will be provided to you by ShiftLeft. Once you have established your account you can copy them from the **My Profile** page at the ShiftLeft Dashboard.
 
 ![Get ShiftLeft Account Credentials](../img/copy-org.png)
@@ -30,7 +30,7 @@ Initially these credentials will be provided to you by ShiftLeft. Once you have 
 3. Select **Manage Jenkins > Configure System > Global properties**. 
 4. Select (check) **Environment variables** and create the following:
   * Name: `SHIFTLEFT_ORG_ID`| Value: Paste your **Organization ID**
-  * Name: `SHIFTLEFT_UPLOAD_TOKEN`| Value: Paste your **Upload Token**
+  * Name: `SHIFTLEFT_ACCESS_TOKEN`| Value: Paste your **Access Token**
 
 ![Adding Jenkins environment variables for ShiftLeft authentication](../img/jenkins-envvars.png)
 

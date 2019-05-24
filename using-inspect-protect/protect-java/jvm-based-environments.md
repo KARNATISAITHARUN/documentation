@@ -73,7 +73,7 @@ java -javaagent:~/.shiftleft/sl-microagent-latest.jar -jar exampleapp.jar
 
 The ShiftLeft Microagent is a lightweight agent that runs in-memory within the JVM of each app you want to monitor and protect using ShiftLeft. Once started, the microagent periodically pushes runtime data and metrics to the proxy server.
 
-If the `--analyze` flag was not provided, the microagent requires the `shiftleft.json` file that is generated during analysis. The `shiftleft.json` file contains the License and SPR ID which are required parameters that must be passed using the `shiftleft.json` file.
+If the `--analyze` flag was not provided, the microagent requires the `shiftleft.json` file that is generated during analysis. The `shiftleft.json` file contains the Access Token and SPR ID which are required parameters that must be passed using the `shiftleft.json` file.
 
 By default the microagent expects the `shiftleft.json` file to be in the working directory where you run the application. If you are running the application in an environment different from where you performed analysis, copy `shiftleft.json` to the working directory where the application is run. 
 

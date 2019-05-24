@@ -16,11 +16,11 @@ The CLI command `sl auth` is used to to authenticate with ShiftLeft and associat
 When you run `sl auth` without any arguments you are prompted for the credientials:
 
 * ShiftLeft **Organization ID**
-* ShiftLeft **Upload Token**
+* ShiftLeft **Access Token**
 
 Alternatively using `sl auth --org "$ORG" --token "$TOKEN"` with the same values is possible too and for ease of use this is also what is provided in the ShiftLeft Dashboard on the Account page.
 
-Once authenticated, the CLI creates the local file `$HOME/.shiftleft/config.json` that contains your Organization ID and Upload Token. The CLI requires this file to use ShiftLeft Inspect and run the `sl analyze` command. If the `$HOME` environment variable is not set locally, use the following path: `/etc/shiftleft/config.json`.
+Once authenticated, the CLI creates the local file `$HOME/.shiftleft/config.json` that contains your Organization ID and Access Token. The CLI requires this file to use ShiftLeft Inspect and run the `sl analyze` command. If the `$HOME` environment variable is not set locally, use the following path: `/etc/shiftleft/config.json`.
 
 ## Using Environment Variables to Authenticate
 
@@ -29,6 +29,13 @@ If you are using a CI/CD tool to submit applications to ShiftLeft Inspect for an
 Environment variable for **Organization ID**:
 - Name: `SHIFTLEFT_ORG_ID`
 - Value: `{org-id-string}`
+
+Environment variable for **Access Token**:
+- Name: `SHIFTLEFT_ACCESS_TOKEN`
+- Value: `{access-token-string}`
+
+*Note: Upload Token was replaced by Access Token in `sl --version` v0.7.1030 .*
+*For `sl --version` prior to v.0.7.1030 please upgrade, or use:*
 
 Environment variable for **Upload Token**:
 - Name: `SHIFTLEFT_UPLOAD_TOKEN`

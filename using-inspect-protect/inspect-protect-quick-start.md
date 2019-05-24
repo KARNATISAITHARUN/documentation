@@ -56,7 +56,7 @@ After you have downloaded the appropriate installer, unzip the file and invoke t
 
 To authenticate with ShiftLeft:
 
-* From the Quick Start page, copy the command and run it from your command line. The command automatically includes your unique organization ID and upload token.
+* From the Quick Start page, copy the command and run it from your command line. The command automatically includes your unique organization ID and access token.
 
 ![Location of Code to Use to Authenticate](img/authenticate.jpg)
 

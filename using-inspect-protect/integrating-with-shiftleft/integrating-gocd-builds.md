@@ -9,7 +9,7 @@ To integrate GoCD builds with ShiftLeft, please adhere to the following prerequi
 - [GoCD installation](https://docs.gocd.org/current/installation/) (server and agent)
 - Supported application and build tool (see [code analysis requirements](../../introduction/requirements.md))
 - Familiarity with [ShiftLeft Inspect and Protect](../../using-inspect-protect/inspect-protect-quick-start.md)
-- ShiftLeft account credentials: **Organization ID** and **Upload Token**
+- ShiftLeft account credentials: **Organization ID** and **Access Token**
 Initially these credentials will be provided to you by ShiftLeft. Once you have established your account you can copy them from the **My Profile** page at the ShiftLeft Dashboard.
 
 ![Get ShiftLeft Account Credentials](img/copy-org.png)
@@ -22,7 +22,7 @@ To integrate ShiftLeft with GoCD builds, install the ShiftLeft CLI on the host w
 2. Log in to GoCD server as an administrator. 
 3. Create the following **Environment variables**:
  * Name: `SHIFTLEFT_ORG_ID`| Value: **Organization ID**
- * Name: `SHIFTLEFT_UPLOAD_TOKEN`| Value: **Upload Token**
+ * Name: `SHIFTLEFT_ACCESS_TOKEN`| Value: **Access Token**
 
 See [SL Auth](../using-cli/authenticating.md) for more information.
 

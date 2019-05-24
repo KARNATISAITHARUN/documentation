@@ -22,8 +22,7 @@ For example, to configure the proxy and log level using the `shiftleft.json` fil
 
 ```json
 {
-  "license": "ZXlKaGJHY2lPaUpTVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmxlSEFpT2pFMU5EQTFNRE...
-VWXluZGdISkdwQ2ZXUDlReU9xN05jbGFCSUE=",
+  "accessToken": "eyJhbGciOiJSUzUxMiIsInR5cCI6IkpXVCJ9.eyJl...",
   "sprId": "sl/0adb2179-40f6-443e-b346-e7b54e5efbfb/cli-hello-shiftleft-0.0.1.jar/.%2Fhello-shiftleft-0.0.1.jar/v/baseline",
   "slProxy": {
     "host": "10.8.8.10",
@@ -65,13 +64,13 @@ export SHIFTLEFT_LOG_LEVEL=DEBUG
 
 ## Required Parameters
 
-If analysis has been performed as a separate step, then the `license` and `sprId` parameters are required by the Microagent and must be passed using the `shiftleft.json` file that is generated during `analyze` by including it in the working directory with the app JAR file that you are deploying with the Microagent.
+If analysis has been performed as a separate step, then the `accessToken` and `sprId` parameters are required by the Microagent and must be passed using the `shiftleft.json` file that is generated during `analyze` by including it in the working directory with the app JAR file that you are deploying with the Microagent.
 
-As an alternative to providing a `shiftleft.json` file, the `license` and `sprId` can be provided via the environment variables `SHIFTLEFT_LICENSE` and `SHIFTLEFT_SPR_ID`, respectively.
+As an alternative to providing a `shiftleft.json` file, the `accessToken` and `sprId` can be provided via the environment variables `SHIFTLEFT_ACCESS_TOKEN` and `SHIFTLEFT_SPR_ID`, respectively.
 
-### License
+### Access Token
 
-The license property represents the client license that authorizes the Microagent to use ShiftLeft services.
+The accessToken property represents the client access token that authorizes the Microagent to use ShiftLeft services.
 
 ### SPR ID
 
@@ -79,12 +78,12 @@ The SPR ID property identifies the Security Profile for Runtime (SPR) to fetch f
 
 ```json
 {
-  "license": "${license-string}",
+  "accessToken": "${access-token-string}",
   "sprId": "${sprd-id}"
 }
 ```
 
-> **Important**. The required parameters `license` and `sprId` must be passed using `shiftleft.json`. They cannot be passed using Java properties or environment variables. In addition, the `shiftleft.json` file must be located in the project directory where the application binary is located when you deploy the app with the Microagent. Alternatively, you can use the `SHIFTLEFT_CONFIG` environment variable to pass in the path to the `shiftleft.json` file.
+> **Important**. The required parameters `accessToken` and `sprId` must be passed using `shiftleft.json`. They cannot be passed using Java properties or environment variables. In addition, the `shiftleft.json` file must be located in the project directory where the application binary is located when you deploy the app with the Microagent. Alternatively, you can use the `SHIFTLEFT_CONFIG` environment variable to pass in the path to the `shiftleft.json` file.
 >
 > Example:
 >

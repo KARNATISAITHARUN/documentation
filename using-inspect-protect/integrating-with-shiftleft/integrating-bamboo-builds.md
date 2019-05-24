@@ -9,7 +9,7 @@ To integrate Bamboo builds with ShiftLeft, please adhere to the following prereq
 - [Bamboo installation](https://confluence.atlassian.com/bamboo/bamboo-installation-guide-289276785.html)
 - Supported application and build tool (see [code analysis requirements](../../introduction/requirements.md))
 - Familiarity with [ShiftLeft Inspect and Protect](../../using-inspect-protect/inspect-protect-quick-start.md)
-- ShiftLeft account credentials: **Organization ID** and **Upload Token**
+- ShiftLeft account credentials: **Organization ID** and **Access Token**
 Initially these credentials will be provided to you by ShiftLeft. Once you have established your account you can copy them from the **My Profile** page at the ShiftLeft Dashboard.
 
 ![Get ShiftLeft Account Credentials](img/copy-org.png)
@@ -22,7 +22,7 @@ To integrate ShiftLeft with Bamboo builds, install the ShiftLeft CLI on the Bamb
 2. Log in to the Bamboo server as an administrator. 
 3. Create the following **Environment variables**:
  * Name: `SHIFTLEFT_ORG_ID`| Value: Paste your **Organization ID**
- * Name: `SHIFTLEFT_UPLOAD_TOKEN`| Value: Paste your **Upload Token**
+ * Name: `SHIFTLEFT_ACCESS_TOKEN`| Value: Paste your **Access Token**
 
 See [SL Auth](../using-cli/authenticating.md) for more information.
 

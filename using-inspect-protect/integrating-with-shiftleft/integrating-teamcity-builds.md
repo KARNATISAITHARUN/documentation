@@ -9,7 +9,7 @@ To integrate TeamCity builds with ShiftLeft, please adhere to the following prer
 - [TeamCity installation](https://www.jetbrains.com/teamcity/download/)
 - Supported application and build tool (see [code analysis requirements](../../introduction/requirements.md))
 - Familiarity with [ShiftLeft Inspect and Protect](../../using-inspect-protect/inspect-protect-quick-start.md)
-- ShiftLeft account credentials: **Organization ID** and **Upload Token**
+- ShiftLeft account credentials: **Organization ID** and **Access Token**
 Initially these credentials will be provided to you by ShiftLeft. Once you have established your account you can copy them from the **My Profile** page at the ShiftLeft Dashboard.
 
 ![Get ShiftLeft Account Credentials](img/copy-org.png)
@@ -21,7 +21,7 @@ To integrate ShiftLeft with TeamCity builds:
 1. [Install the ShiftLeft CLI](../using-cli/using-cli.md) on the TeamCity host.
 2. Create the following **Environment variables** in TeamCity:
  * Name: `SHIFTLEFT_ORG_ID`| Value: Paste your **Organization ID**
- * Name: `SHIFTLEFT_UPLOAD_TOKEN`| Value: Paste your **Upload Token**
+ * Name: `SHIFTLEFT_ACCESS_TOKEN`| Value: Paste your **Access Token**
 
 See [SL Auth](../using-cli/authenticating.md) for more information. See also the [TeamCity documentation](https://confluence.jetbrains.com/display/TCD65/Configuring+Build+Parameters#ConfiguringBuildParameters-SystemPropertiesandEnvironmentVariables).
 
