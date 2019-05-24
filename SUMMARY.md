@@ -31,6 +31,7 @@
   * Analyzing Your Code
     * [Analyzing Applications in CI](using-inspect-protect/inspect/analyzing-applications-in-ci.md)
     * [Using Custom Security Policies with ShiftLeft Inspect](using-inspect-protect/inspect/custom-policies.md)
+    * [Identifying Code Vulnerabilities using the API](using-inspect-protect/inspect/vulnerabilities_api.md)
   *  Protecting Your Runtime Application
      * [ShiftLeft Protect for Java](using-inspect-protect/protect-java/jvm-based-environments.md)
        * [Configuring the Microagent](using-inspect-protect/protect-java/configuring-the-microagent.md)
