@@ -5,12 +5,6 @@ ShiftLeft Release Notes are updated every month for all products: ShiftLeft Ocul
 * [April 2019](#april-2019-release-notes)
 * [March 2019](#march-2019-release-notes)
 
-## May 2019 Release Notes
-
-### ShiftLeft Inspect and ShiftLeft Protect
-
-* **Universal Access Token** for both inspect and protect configurations. Both "uploadToken" and "license" properties are deprecated. This is a non-breaking change. Both properties are replaced by a single ("accessToken" in json and "SHIFTLEFT_ACCESS_TOKEN" in env vars) property that can be used for either purpose, and help simplify integration in to CI/CD and runtime environments.
-
 ## April 2019 Release Notes
 
 * **Update to ShiftLeft's Terms of Service**. The ShiftLeft [Terms of Service](https://www.shiftleft.io/terms/) have been updated for post-termination obligations (4d). 
