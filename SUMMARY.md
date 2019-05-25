@@ -31,7 +31,7 @@
   * Analyzing Your Code
     * [Analyzing Applications in CI](using-inspect-protect/inspect/analyzing-applications-in-ci.md)
     * [Using Custom Security Policies with ShiftLeft Inspect](using-inspect-protect/inspect/custom-policies.md)
-    * [Identifying Code Vulnerabilities using the API](using-inspect-protect/inspect/vulnerabilities_api.md)
+   
   *  Protecting Your Runtime Application
      * [ShiftLeft Protect for Java](using-inspect-protect/protect-java/jvm-based-environments.md)
        * [Configuring the Microagent](using-inspect-protect/protect-java/configuring-the-microagent.md)
@@ -51,6 +51,8 @@
   * Using ShiftLeft in Your Workflow
     * [Integrating Jira](using-inspect-protect/using-workflow/jira-integration.md)
     * [Vulnerability Dashboard](using-inspect-protect/using-workflow/vulnerability-dashboard.md)
+  * Application Programming Interfaces (APIs)
+    * [Identifying Code Vulnerabilities using the API](using-inspect-protect/api/vulnerabilities_api.md)
 * ShiftLeft Policies
     * [Security Policy Language](policies/spl.md)
 * [Release Notes](release-notes/release-notes.md)

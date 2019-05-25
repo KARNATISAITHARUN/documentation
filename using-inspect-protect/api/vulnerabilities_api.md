@@ -1,6 +1,6 @@
-# ShiftLeft Inspect Vulnerability API (Beta Version)
+# Vulnerability API (Beta Version) for ShiftLeft Inspect and ShiftLeft Protect
 
-The ShiftLeft Inspect Vulnerability API is used to analye your organization’s applications in order to identify and provide data on code vulnerabilities. A vulnerability is a potentially exploitable path in the code base. 
+You use the Vulnerability API to query for data on code vulnerabilities. A vulnerability is a potentially exploitable path in the code base. 
 
 The API returns a list of vulnerabilities, by [organization](#listing-an-organizations-vulnerabilities) or [application version](#listing-an-applications-vulnerabilities), with all the necessary information for you to take action on a code exploitable area. 
 
