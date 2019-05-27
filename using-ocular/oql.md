@@ -1,13 +1,13 @@
-# Ocular Query Language (OQL)
+# Ocular Interactive Shell (REPL)
 
 ShiftLeft Ocular lets you perform code analysis on CPGs and Security Profiles, both interactively using a REPL or with non-interactive scripts. 
 
 A REPL is an interactive shell with support for OQL. Among other features, a REPL offers utilities for exporting security analysis results as plain text or in JSON format, readline support and tab-completion (included in the ShiftLeft Ocular trial version).
 
 The OQL underlying shell is an interactive Scala shell which includes useful things like:
-* \<TAB> for autocomplete.
-* \<UP> and <DOWN> for moving through the command history.
-* \<CTRL-r> to search the command history.
+* \\<TAB> for autocomplete.
+* \\<UP> and <DOWN> for moving through the command history.
+* \\<CTRL-r> to search the command history.
 * `helpMsg` and `status`.
 
 # Running ShiftLeft Ocular
