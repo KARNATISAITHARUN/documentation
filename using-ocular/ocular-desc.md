@@ -8,7 +8,7 @@ ShiftLeft Ocular provides the following core features:
 
 * **Generation of [Code Property Graphs (CPG)](../introduction/products.md).** Based on your application code, which
   is provided as JAR for JAVA, or as source code for C/C++, ShiftLeft Ocular generates a
-  versatile, intermediate CPG. CPGs can be used as the basis of custom static analysis and are
+  versatile, intermediate respresentation called Code Property Graph (CPG). CPGs can be used as the basis of custom static analysis and are
   serializable to various output/exchange formats such as CSV, GraphML, Gryo,
   and Protobuf (included in the ShiftLeft Ocular trial version).
 
