@@ -1,38 +1,30 @@
-# Using Ocular with Code Property Graph (CPG)
+# Using ShiftLeft Ocular with the Code Property Graph (CPG)
 
-This tutorial teaches the basics of navigating in the code property
-graph. The tutorial demonstrates how the tooling can be used to:
+This tutorial teaches the basics of navigating the CPG. The tutorial demonstrates how ShiftLeft Ocular tooling can be adapted and extended to suit your specific needs to:
 
-* interactively query the code property graph to uncover attack surface
+* interactively query the CPG to uncover attack surface
 * formulate ad-hoc queries to identify vulnerabilities
 
-The philosophy behind our tooling is that, while creating a
-"one-fits-all" vulnerability scanner borders on the impossible, you
-can certainly provide the tooling that vulnerability researchers
-require to explore code bases in order to determine vulnerability
+ShiftLeft Ocular provides the tooling that vulnerability researchers
+require to explore code bases to determine vulnerability
 patterns, formulate these patterns in concise and expressive
-languages, and persist them, such that code can be automatically
-scanned for these patterns in the future. Instead of only showcasing
-the tooling's default capabilities, in this tutorial we also
-demonstrate the many ways in which the tooling can be adapted and
-extended to suit your specific needs.
+languages, and persist them. As a result, code can be automatically
+scanned for these patterns in the future. 
 
-# Prerequisites
+## Prerequisite
 
-Install Ocular into local directory `$shiftleft` as described in the
-[installation documentation](../installation.md).
+Install ShiftLeft Ocular into your local directory `$shiftleft`. Refer to 
+[Installing ShiftLeft Ocular](../installation.md) for more information.
 
-# Running example
+## Running the Hello-ShiftLeft Demo Java Application
 
-This tutorial is based on the sample application "Hello-ShiftLeft"
-which you can find in the directory `subjects` provided with the
-ShiftLeft Command Line Tools distribution.
-
-Hello-Shiftleft is a Spring-based Web application which contains
+This tutorial is based on the demo Java application [Hello-ShiftLeft](https://github.com/ShiftLeftSecurity/HelloShiftLeft). 
+Hello-ShiftLeft is a Spring-based Web application that contains
 different sample vulnerabilities, including typical injection
-vulnerabilities and leakages of sensitive information. Throughout this
-guide, we focus on an object deserialization vulnerability in the
-`AdminController` shown in the listing below.
+vulnerabilities and leakages of sensitive information. 
+
+Focusing on an object deserialization vulnerability in the
+`AdminController` 
 
 ```java
 ...
@@ -74,51 +66,46 @@ In this code fragment, a cookie is received via HTTP and eventually
 deserialized to create a Java object, an optimistic practice that can
 often be exploited by attackers for arbitrary code execution. 
 
-## Generating Code Property Graphs
+## Generating CPGS
 
-Once the tools are installed, we begin by generating a code property
-graph (CPG) for the `hello-shiftleft.jar`:
+Generate a CPG for the `hello-shiftleft.jar`
 
 ```bash
 cd $shiftleft
 ./java2cpg.sh subjects/hello-shiftleft-0.0.1-SNAPSHOT.jar -o cpg.bin.zip
 ```
 
-This command creates a file named `cpg.bin.zip` containing the code
-property graph in a binary format.
+This command creates a file named `cpg.bin.zip` containing the CPG in a binary format.
 
-# Uncovering attack surface with the code property graph
+# Uncovering Attack Surface with the CPG
 
-The code property graph contains information about the processed code
-on different levels of abstraction, from dependencies, to type
+The CPG contains information about the processed code
+on different levels of abstraction: from dependencies, to type
 hierarchies, control flow, data flow, and instruction-level
-information. Like the SP, the CPG can be queried interactively via
-Ocular or via non-interactive scripts. We now illustrate interactive
-querying, however, all queries can also be used as-in in interactive
-scripts.
+information. Like the Security Profile, the CPG can be queried interactively using ShiftLeft Ocular or through non-interactive scripts. 
 
-The CPG is loaded via the `loadCpg` command:
+The CPG is loaded via the interactive `loadCpg` command
 
 ```scala
 loadCpg("cpg.bin.zip")
 ```
 
-This creates an object named `cpg`, which provides access to the code
-property graph. We begin by exploring the program dependencies:
+This command creates an object named `cpg`, which provides access to the CPG. To explore the program dependencies
 
 ```scala
 cpg.dependency.name.l
 ```
 
-This provides a list of all dependency names. We support functional
-combinators. For example, to output (name, version) pairs, we can use
-the following expression: 
+The result is a list of all dependency names. Functional
+combinators are supported. For example, to output (name, version) pairs, use
+the expression
 
 ```scala
 cpg.dependency.map(x => (x.name, x.version)).l
 ```
 
 which yields
+
 ```scala
 List[(String, String)] = List(
   ("zt-exec", "1.9"),
@@ -143,17 +130,17 @@ List[(String, String)] = List(
 )
 ```
 
-It is also possible to process CPG sub graphs via external programs by
-exporting them to JSON. For example,
+It is also possible to process CPG subgraphs using external programs, by
+exporting them to JSON. For example 
 
 ```scala
 cpg.dependency.toJson |> "/tmp/dependencies.json"
 ```
 
-dumps dependency information into the file "/tmp/dependencies.json" is
+dumps dependency information into the file /tmp/dependencies.json in
 JSON format. Fields of the CPG can be queried using regular
 expressions. For example, to determine whether an application uses the
-spring framework, a quick query could be
+spring framework, a quick query is
 
 ```scala
 cpg.dependency.name(".*spring.*").l.nonEmpty
@@ -161,13 +148,13 @@ cpg.dependency.name(".*spring.*").l.nonEmpty
 ```
 
 Since the application uses Spring, it makes sense to look for the
-typical Java annotations that indicate attacker-controlled variables.
+typical Java annotations that indicate attacker-controlled variables
 
 ```scala
 cpg.annotation.name(".*(CookieValue|PathVariable).*").l
 ```
 
-From annotations, we can jump to parameters using these annotations:
+From annotations, jump to parameters using these annotations
 
 ```scala
 cpg.annotation.name(".*(CookieValue|PathVariable).*").parameter.name.l
@@ -179,37 +166,37 @@ which yields
 List[String] = List("customerId", "customerId", "customerId", "accountId", "accountId", "accountId", "accountId", "auth", "auth")
 ```
 
-We can now track these attacker-controlled variables to see all data flows originating at them. To do this, we first define the set of sinks to be all parameters annotated by CookieValue or PathVariable:
+Now track these attacker-controlled variables to see all data flows originating at them. To do this, first define the set of sinks to be all parameters annotated by CookieValue or PathVariable
 
 ```scala
 val sources = cpg.annotation.name(".*(CookieValue|PathVariable).*").parameter
 ```
 
-We then define the set of sinks to be all parameters:
+Then define the set of sinks to be all parameters
 
 ```scala
 val sinks = cpg.method.parameter
 ```
 
-Finally, we enumerate all flows from sources to sinks:
+Finally, enumerate all flows from sources to sinks
 
 ```scala
 sinks.reachableBy(sources).flows.p
 ```
 
-The flows can be examined manually or automatically. For example, we can determine parameters we control as a result of data flows as follows:
+The flows can be examined manually or automatically. For example, determine controlled parameters as a result of data flows as 
 
 ```scala
 sinks.reachableBy(sources).flows.sink.parameter.l
 ```
 
-The query determines sinks reachable by sources and examines the corresponding data flows. The last flow element is extracted of each flow via the `pathElemens.last` directive, and the corresponding parameter is retrieved. The result of the query can be stored in a variable for further processing, which comes in handy when determining a large number of data flows:
+This query determines sinks reachable by sources and examines the corresponding data flows. The last flow element is extracted of each flow via the `pathElemens.last` directive, and the corresponding parameter is retrieved. The result of the query can be stored in a variable for further processing, which comes in handy when determining a large number of data flows
 
 ```scala
 val controlled = sinks.reachableBy(sources).flows.sink.parameter.l
 ```
 
-We can now retrieve the parameter index ("ast child number" and method full name):
+Now retrieve the parameter index ("ast child number" and method full name)
 
 ```scala
 ocular> controlled.map(x => s"Controlling parameter ${x.order} of ${x.start.method.fullName.l.head}").filterNot(_.contains("<operator>")).sorted
@@ -240,7 +227,7 @@ yielding
 ...
 ```
 
-In particular, we see that the instance parameter (with an index of 0)
+In particular, notice that the instance parameter (with an index of 0)
 of the method `ObjectInputStream.readObject` is controlled, that is,
 the deserialization vulnerability exists. This shows a more
 exploratory way of identifying the vulnerability.

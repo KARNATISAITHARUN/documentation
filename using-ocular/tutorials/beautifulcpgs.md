@@ -1,18 +1,16 @@
-# Constructing beautiful CPGs from Java Archives
+# Constructing Beautiful Code Property Graphs (CPGs) from Java Archives
 
-In this tutorial, we show how to create code property graphs (CPGs) from 
-Java archives (JAR or WAR files). To be more precise, we want to use the Ocular
-toolset to create efficient CPGs to improve your results and speed up 
-the analysis, no matter if you use the trial or the full version of Ocular. 
+This tutorial demonstrates how to create CPGs from 
+Java archives (JAR or WAR files). Using the ShiftLeft Ocular
+toolset, you create efficient CPGs to improve your results and speed up 
+the analysis of your application. 
 
-Ocular is shipped with our java frontend tool named `java2cpg`. While java2cpg, 
-with default settings is doing a great job at creating CPGs from java projects, 
-it is still easily customizable to adjust it to your needs. 
+ShiftLeft Ocular is shipped with a Java front-end tool named `java2cpg`. `java2cpg` creates CPGs from Java projects, 
+and can be customize to your specific needs. 
 
-We want to show you the impact of parameterizing java2cpg, by getting 
-our hands dirty on a sample war, the jenkins project war. The shell-commands 
-below are downloading the war project from the jenkins site, which has a size 
-of around 73M at the time of writing this tutorial. 
+To illustrate the impact of parameterizing `java2cpg`, a Jenkins WAR package is used. The shell-commands 
+for downloading the WAR package from the Jenkins site, with a size 
+of around 73M, is
 
 ```
 	cd ~/bin/ocular/subjects
@@ -20,13 +18,12 @@ of around 73M at the time of writing this tutorial.
 	cd ..	
 ```
 
-Now we are ready do a first analysis on the war file but instead 
-of simply running `java2cpg` on `subjects/jenkins.war`, we use
-`java2cpg`'s *dry-run* feature. This feature allows us to determine
-which Java packages `java2cpg` will *include* (Including) and *skip* (Skipping) 
+In order to analyze the WAR file, use the `java2cpg` **dry-run** feature instead 
+of simply running `java2cpg` on `subjects/jenkins.war`. This feature determines
+which Java packages `java2cpg` are **included** (Including) and **skiped** (Skipping) 
 for CPG construction, without actually performing time and memory intense calculation.
 
-`-dr` is the flag we use to make java2cpg perform a dry-run. 
+`-dr` is the flag used to make `java2cpg` perform a dry-run. 
 
 ```
 	$ time ./java2cpg.sh subjects/jenkins.war -dr | egrep '(Including|Skipping)' > packages.txt
@@ -38,35 +35,32 @@ for CPG construction, without actually performing time and memory intense calcul
 	1063
 ```
 
-We see that `java2cpg` has recursively unpacked the WAR to detect a
-total of 1303, 240 if which were automatically selected for inclusion
-in the CPG, while 1063 packages have been discarded via the default
-blacklist. The next step is to review the skipped packages to see if any relevant packages have been skipped.
+Notice that `java2cpg` has recursively unpacked the WAR to detect a
+total of 1303 packages, 240 of which were automatically selected for inclusion
+in the CPG, and 1063 packages were discarded via the default
+blacklist. The next step is to review the skipped packages to see if any relevant packages have been excluded.
 
 ```
 grep 'Skipping' packages.txt| less
 ```
 
-See for yourself that no relevant packages have been excluded, as the default blacklist contains only names of common libraries and frameworks such as `spring` or `log4j`. Next, we examine the list of included packages.
+The results indicate that no relevant packages have been excluded, as the default blacklist contains only names of common libraries and frameworks such as `spring` or `log4j`. Next, examine the list of included packages
 
 ```
 grep 'Included' packages.txt| less
 ```
 
-Among the packages `jenkins`, `lib.jenkins`, `org.jenkins`, and `org.jenkinsci`, libraries such as `gnu.crypt` and `winstone` were apparently not on the blacklist and would therefore be included in the CPG. This is not desirable, as we are interested in finding vulnerabilities in Jenkins, and not in one of its dependencies. In this particular case, a good choice is therefore to simply use a whitelist that includes jenkins and hudson packages (hudson is Jenkin's predecessor).
+Among the packages `jenkins`, `lib.jenkins`, `org.jenkins`, and `org.jenkinsci`, libraries such as `gnu.crypt` and `winstone` are apparently not on the blacklist and would therefore be included in the CPG. This is not desirable, since the goal is to find vulnerabilities in Jenkins, and not in one of its dependencies. In this particular case, a good choice is therefore to simply use a whitelist that includes Jenkins and Hudson packages (Hudson is Jenkin's predecessor).
 
 ```
 time ./java2cpg.sh subjects/jenkins.war -nb -w jenkins,org.jenkins,org.jenkinsci,lib.jenkins,hudson
 ```
 
-The resulting CPG is 44 MB in size, as opposed to the CPG generated using the default blacklist, which is 70MB in size. Subsequent analysis of this CPG will now focus on the Jenkins code and skip libraries such as `hudson`, and `gnu.crypt`, which were included originally only due to lack of blacklisting.
+The resulting CPG is 44 MB in size, in contrast to the 70MB CPG generated using the default blacklist. Subsequent analysis of this CPG focuses on the Jenkins code and skips libraries such as `hudson`, and `gnu.crypt`, which were included originally only due to lack of blacklisting.
 
+However, by not telling `java2cpg` which classes are of interest, the resulting 
+CPGs may contain too little code, or too much. `java2cpg` does offer
+capabilities for you to quickly select Java packages of
+interest. 
 
-However, without telling it which classes one is interested in, the resulting 
-CPGs may contain to little code, or too much. There is no way for the tool 
-to know which classes you are interested in, however, the tool does offer
-capabilities for the user to quickly select Java packages of
-interest. We demonstrate these capabilities in this tutorial.
-
-
-It is important to note that blacklisting a package is *not* removing the calls to this package. Blacklisting just avoids an analysis of the package and thus add the content of the package to the CPG. Meaning, if we blacklist hudson we still see the calls to this dependency but not what is inside of these calls. 
+It is important to note that blacklisting a package is **not** removing the calls to this package. Blacklisting just avoids an analysis of the package and while still adding the content of the package to the CPG. In other words, if Hudson is blacklisted, calls to this dependency are still shown in the CPG, but not what is inside of these calls. 

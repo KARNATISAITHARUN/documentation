@@ -1,34 +1,33 @@
-# Exploring the call graph
+# Exploring a Call Graph
 
-In addition to identifying data flows, call chains can be identified
-using scripts and the REPL. We illustrate this ability with
-`commons-io` as our test subject. You can download commons-io here:
-([mvnrepository](http://central.maven.org/maven2/commons-io/commons-io/2.5/commons-io-2.5.jar))
+In addition to data flows, call chains can be identified
+using scripts and the REPL. This ability is illustrated using 
+`commons-io`. 
 
-We then generate a CPG as follows:
+[Download commons-io](http://central.maven.org/maven2/commons-io/commons-io/2.5/commons-io-2.5.jar) and then generate a Code Property Graph (CPG) by
 
 ```
 ./java2cpg.sh -f protobufzip -o commons-io-2.5.bin.zip commons-io-2.5.jar -nb
 
 ```
 
-We start the REPL and load the graph:
+Next, start the REPL and load the CPG
 
 ```
 $ ./ocular.sh 
 ocular> loadCpg("commons-io-2.5.bin.zip") 
 ```
 
-We search for interesting methods in commons-io 2.5 and soon find `java.lang.Runtime.exec` 
+By searching for interesting methods in `commons-io` 2.5, you find `java.lang.Runtime.exec` 
 
 ```
 ocular> cpg.method.fullName(".*exec.*").fullName.p 
 java.lang.Runtime.exec:java.lang.Process(java.lang.String[])
 ```
 
-Now we are interested in answering the questions; where is the data
-comming from and can we control it? To answer this questions we can go
-the call stack up by using the keyword `caller` as follows:
+To answer the questions "Where is the data
+coming from? and "Can the data be controlled?, find 
+the call stack by using the keyword `caller` 
 
 ```
 ocular> cpg.method.fullName(".*exec.*").caller.fullName.p 
@@ -63,17 +62,15 @@ ocular> cpg.method.fullName(".*exec.*").caller.caller.caller.caller.caller.calle
 [no results]
 ```
 
-As we see, even within the small jar, we need seven steps to find the
-"beginning" of the call stack, where no caller are present anymore.
-We have an idea about where the data is comming from, it has to be
-somewhere along the call stack, but we still don't know if we can
-control it.
+Even within a small JAR, seven steps are required to find the
+"beginning" of the call stack, where no caller is present.
+Though it is clear that the data is coming from somewhere along the call stack, it is unknown if the data can be controlled.
 
-We could look into every method in the call stack and check if it
-consumes the right parameter but this can be very time consuming.
-Therefor we introduced the `repeat`, `until` and `emit` steps. The
+Looking into every method in the call stack, and checking if it
+consumes the right parameter, is very time consuming.
+Therefore the steps `repeat`, `until` and `emit` are introduced. The
 following query starts from a method named `exec` and repeats the
-method.caller step untill it finds a method that is public and
+method.caller step until it finds a method that is public and
 consumes a parameter of type `java.lang.String`.
 
 ```
@@ -96,12 +93,11 @@ org.apache.commons.io.FileSystemUtils.freeSpaceKb:long(java.lang.String,long)
 org.apache.commons.io.FileSystemUtils.freeSpace:long(java.lang.String)
 ```
 
-This query gives us an answer to the question, where is the data
-comming from? And since the methods are public, the data is
-potentially controllable by us. Still we need to answer if the data
+This query answers the question "Where is the data
+coming from?". And because the methods are public, the data is
+potentially controllable. Still, it is unclear if the data
 actually flows from the parameter of the methods to the `exec` method.
-For this we can mark the results of the above query as source, we just
-need to exchange `.fullName.p` with `.parameter`, while the sink is
+In order to mark the results of the above query as source, exchange `.fullName.p` with `.parameter`, while the sink is
 our `exec` method.
 
 ```
@@ -112,7 +108,8 @@ ocular> val sink = cpg.method.name("exec").parameter
 ocular>sink.reachableBy(source).flows.p 
 ```
 
-Along other flows we find and we know that `org.apache.commons.io.FileSystemUtils.freeSpace:long(java.lang.String)` is publically available and a data flow between this parameter and `exec` exists.
+`org.apache.commons.io.FileSystemUtils.freeSpace:long(java.lang.String)` is found to be publically available, and a data flow between this parameter and `exec` exists.
+
 ```
 ------ Flow with 15 elements ------
 path 	 142 	 freeSpace 	 org/apache/commons/io/FileSystemUtils.java

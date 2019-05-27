@@ -1,15 +1,10 @@
-# Interfacing with Ocular
+# Interfacing with ShiftLeft Ocular
 
-Showing our results to the outside world is a key to collaboration and
-thus success! We want to make it as easy as possible for you! The
-following commands show you how to talk and represent your results, to
-the outside world.
+This tutorial shows you how to interface with ShiftLeft Ocular as part of your workflow and interactions with colleagues. 
 
-## Passing scripts to ocular
+## Passing Scripts to ShiftLeft Ocular
 
-Ocular can be used non-interactively, that is, you can pass scripts to
-Ocular, it will run those scripts and exit. To try this out, place the
-following into `test.sc`:
+ShiftLeft Ocular can be used in non-interactive mode, to execute commands and operations without typing them after the prompt. The commands are stored in a file which can be specified as an argument. ShiftLeft Ocular runs those commands and then exits. For example, include in `test.sc`
 
 ```
 @main def exec(cpgFile: String, outFile: String) = {
@@ -19,28 +14,36 @@ following into `test.sc`:
 
 ```
 
-You can place arbitrary Scala code into `test.sc` and use the `|>`
-operator to pipe output into files. The script can be run as follows.
+You can include arbitrary Scala code in `test.sc` and use the `|>`
+operator to pipe output into files. The script is run as 
 
 ```
 ./ocular.sh --script test.sc --params cpgFile=/fullpath/to/cpg.bin.zip,outFile=out.log
 ```
 
-## Writing JSON and pretty-printed JSON
+## Writing JSON and Pretty-Printed JSON
+
+To write JSON
 
 ```
 cpg.method.toJson |> "/tmp/foo" 
 ```
 
+To write Pretty-Printed JSON
+
 ```
 cpg.method.toPrettyJson |> "/tmp/foo"
 ```
 
-## Appending to files
+## Appending to Files
+
+To append to a JSON file
 
 ```
 cpg.method.toJson ||> "/tmp/foo" 
 ```
+
+To append to a Pretty-Printed JSON file
 
 ```
 cpg.method.toPrettyJson ||> "/tmp/foo"

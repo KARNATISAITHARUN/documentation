@@ -1,51 +1,32 @@
 # Java Vulnerable Lab
 
-This is an alternative "Getting-started" guide based on the popular
-Java project "Java Vulnerable Lab", a benchmarking application for
-vulnerability discovery tools.
+This tutorial is based on the popular Java project Java Vulnerable Lab, a benchmarking application for
+vulnerability discovery tools. The tutorial illustrates the core features of ShiftLeft, and shows how ShiftLeft Ocular tooling can be adapted and extended to:
 
+- Automatically scan programs for vulnerabilities.
+- Interactively query the Code Property Graph (CPG) to uncover attack surface.
+- Formulate ad-hoc queries to identify vulnerabilities.
+- Customize the scanner's detection rules.
+- Automatically scan and generate a report using non-interactive scripts.
 
-This tutorial walks you through the core features of the ShiftLeft
-Command Line Tools. The tutorial demonstrates how the tooling can be
-used to:
+ShiftLeft Ocular provides the tooling that vulnerability researchers require to explore code bases to determine vulnerability patterns, formulate these patterns in concise and expressive languages, and persist them. As a result, code can be automatically scanned for these patterns in the future.
 
-- automatically scan programs for vulnerabilities
-- interactively query the code property graph to uncover attack surface
-- formulate ad-hoc queries to identify vulnerabilities
-- customize the scanner's detection rules
-- automatically scan and generate a report via non-interactive scripts
+## Prerequisite
 
+Install ShiftLeft Ocular into your local directory `$shiftleft`. Refer to 
+[Installing ShiftLeft Ocular](../installation.md) for more information.
 
-The philosophy behind our tooling is that, while creating a
-"one-fits-all" vulnerability scanner borders on the impossible, you
-can certainly provide the tooling that vulnerability researchers
-require to explore code bases in order to determine vulnerability
-patterns, formulate these patterns in concise and expressive
-languages, and persist them, such that code can be automatically
-scanned for these patterns in the future. Instead of only showcasing
-the tooling's default capabilities, in this tutorial we also
-demonstrate the many ways in which the tooling can be adapted and
-extended to suit your specific needs.
+## Running the Java Vulnerable Lab Sample Application
 
-## Prerequisites
+This tutorial is based on the sample application [Java Vulnerable Lab](https://github.com/CSPF-Founder/JavaVulnerableLab). The project's WAR file is also included in the ShiftLeft Ocular distribution for your convenience.
 
-Install the ShiftLeft Command Line Tools into local directory
-$shiftleft as described in the installation documentation.
-
-## Running example
-
-This tutorial is based on the sample application "JavaVulnerableLab"
-which you can find at github
-( https://github.com/CSPF-Founder/JavaVulnerableLab ). We have included
-the project's WAR file for convenience.
-
-JavaVulnerableLab is a is a classic java web application using JSP and
+Java Vulnerable Lab a Java web application using JSP and
 servlets. It comes with different sample vulnerabilities, including
-typical injection vulnerabilities like sql injection. Throughout this
-guide, we focus on a sql injection vulnerability in the
-"EmailCheck.java" that can be found in the listing below. While this
-controller consumes also POST requests we will focus on the GET
-request that ends up in a sql query, see the snippet below.
+typical injection vulnerabilities like sql injection. 
+
+Focusing on an SQL injection vulnerability in the `EmailCheck.java`, this
+controller also consumes POST requests. The GET
+request that ends up in a SQL query is of particular interest.
 
 ```
 protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -69,49 +50,41 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 }
 ```
 
-We are interested in the variable `request` which is of type
-`HttpServletRequest` and is part of the `doGet` signature. As we can
-see, the object is passed to `processRequest` where the parameter
-`email` is read as a string from it. The variable is concatenated to
-the sql query without prior checks. This leads to an SQL injection. We
-now illustrate how this vulnerability is identified using
-Ocular.
+The variable `request` is of type
+`HttpServletRequest` and is part of the `doGet` signature. The object is passed to `processRequest`, where the parameter
+`email` is read as a string. The variable is concatenated to
+the SQL query without prior checks. This leads to an SQL injection. This vulnerability is identified using
+ShiftLeft Ocular.
 
-### Generating Code Property Graphs and Security Profiles
+## Generating CPGs and Security Profiles
 
-Please begin by downloading thee WAR file from GitHub. The code
-property graph can then be created as follows:
+Download thee WAR file from [Java Vulnerable Lab](https://github.com/CSPF-Founder/JavaVulnerableLab). The CPG is generated by
 
 ```
 cd $shiftleft
 ./java2cpg.sh subjects/JavaVulnerableLab.war -o cpg.bin.zip
 ```
 
-This command creates a file named `cpg.bin.zip` containing the code
-property graph in a binary format.
+This command creates a file named `cpg.bin.zip` containing the CPG in a binary format.
 
 The CPG can be automatically analyzed using the cpg2sp tool to
 determine potentially vulnerable flows and summarize them in a
-security profile:
+Security Profile
 
 ```
 ./cpg2sp.sh --cpg ./cpg.bin.zip -o javavulnerablelab.sp
 ```
 
 This command creates a file named `javavulnerablelab.sp` containing
-the security profile from the CPG in cpg.bin.zip. The security profile
-is generated by evaluating the security policy in ~/.shiftleft/policy/
+the Security Profile from the CPG in cpg.bin.zip. The Security Profile
+is generated by evaluating the Security Policy in ~/.shiftleft/policy/
 against the CPG.
-
-(For additional output formats, refer to the java2cpg and cpg2sp
-documentation, respectively).
 
 ## Generating an Initial Scan Report
 
-The ShiftLeft Command Line Tools let you query code property graphs
-and security profiles, interactively and
-non-interactively. As an example for non-interactive querying,
-consider the script in `scripts/report.sc`:
+ShiftLeft Ocular lets you query CPGs
+and Security profiles, both interactively and
+non-interactively. An example of non-interactive querying is the script in `scripts/report.sc`:
 
 ```
 @main def exec(spFilename: String, outFilename: String) = {
@@ -120,27 +93,27 @@ consider the script in `scripts/report.sc`:
 }
 ```
 
-This script loads the security profile at `spFilename`, and evaluates
+This script loads the Security Profile at `spFilename`, and evaluates
 the expression `sp.findings.sortedByScore.l` to obtain a list of
 findings sorted by score. The list is piped to the file `outFilename`
 via the `|>` operator.
 
-You can run this script as follows:
+You can run this script as
 ```
 ./ocular.sh --script scripts/report.sc --params spFilename=javavulnerablelab.sp,outFilename=report.txt
 ```
 
 As a result, the text file `report.txt` is generated, which contains
-all findings in a human-readable format. Let's take a look at one the
+all findings in a human-readable format. Take a look at one of 
 the findings to get an idea of the type of information the report
-contains:
+contains
 
 ```
 Title: http-to-sql
 Score: 9.0
 Categories: [a1-injection]
 Flow ids: [1715]
-Description: Attacker controlled data is used in a SQL query without undergoing escaping or validation. This could allow an attacker to read sensitive dat a from the database or modify its content.See http://cwe.mitre.org/data/definitions/89.html
+Description: Attacker controlled data is used in a SQL query without undergoing escaping or validation. This could allow an attacker to read sensitive data from the database or modify its content.See http://cwe.mitre.org/data/definitions/89.html
 -------------------------------------
 Flow 0:
 IO Tags: Set(http) -> Set(sql)
@@ -167,20 +140,19 @@ Primary flow:
  | return(-1)| java.lang.StringBuilder              | append        | java.lang.StringBuilder.append:java.lang.StringBuilder(java.lang.String)                                                                       |
  | this(0)   | java.lang.StringBuilder              | toString      | java.lang.StringBuilder.toString:java.lang.String()                                                                                            |
  | return(-1)| java.lang.String                     | toString      | java.lang.StringBuilder.toString:java.lang.String()                                                                                            |
- | param0(1) | java.lang.String                     | executeQuery  | java.sql.Statement.executeQuery:java.sql.ResultSet(java.lang.String)                                                                           |
+ | param0(1) | java.lang.String                     | executeQuery  | java.sql.Statement.executeQuery:java.sql.ResultSet(java.lang.String)                                                       |
 ```
- 
- 
-Along with other findings, we see an SQL injection vulnerability
+
+Along with other findings, notice an SQL injection vulnerability
 triggerable via HTTP with a score of 9.0. Findings are scored in order
 to allow for filtering. Findings also include a human-readable
 description that further characterizes the potential vulnerability, as
 well as the information flows associated with the vulnerability.
 
 In this example, a single information flow is associated with the
-vulnerability. The Ocular analyzer identifies that the parameter
+vulnerability. ShiftLeft Ocular identifies that the parameter
 `request` of the method `doGet` is attacker-controlled with high
-probability as it is an HTTP request parameter. Tracking the flow of
+probability, since it is an HTTP request parameter. Tracking the flow of
 `request`, the variable is passed into the method `processRequest`
 where it is Base64-decoded and used in the initialization of a
 `ByteArrayInputStream`. This input stream is itself used to initialize
@@ -191,10 +163,10 @@ HTTP input routes when possible (`/admin/login` in this case), and
 externally triggerable methods to invoke the vulnerable flow
 (`doPostLogin` in this example).
 
-## Interactively exploring and filtering security profiles
+## Interactively Exploring and Filtering Security Profiles
 
-Security profiles can be explored interactively on Ocular, using a
-domain specific language. Ocular can be started as follows:
+Security Profiles can be explored interactively with ShiftLeft Ocular, using a
+domain specific language. Start ShiftLeft Ocular by
 
 ```
  ./ocular.sh
@@ -214,15 +186,16 @@ domain specific language. Ocular can be started as follows:
  ocular>
 ```
  
-As demonstrated in the non-interactive script report.sc, we can load
-the security profile "javavulnerablelab.sp" by issuing the command:
+As demonstrated in the non-interactive script report.sc, load
+the Security Profile "javavulnerablelab.sp" by issuing the command
+
 ```
 loadSp("javavulnerablelab.sp")
 ```
 
-This creates an object named `sp` that provides access to the security
-profile. Ocular offers tab-completion to facilitate learning of the
-domain specific query language. For example, you can enter
+This creates an object named `sp` that provides access to the Security
+Profile. ShiftLeft Ocular offers tab-completion to facilitate learning of the
+domain specific query language. For example, enter
 
 ```
  sp.findings.<TAB>
@@ -234,36 +207,37 @@ domain specific query language. For example, you can enter
 to obtain a list of possible operations that can be executed on
 findings. In particular, findings support the `scoreAtLeast` method,
 which allows findings to be filtered such that only findings scored
-above or equal to a threshold are returned. For example,
+above or equal to a threshold are returned. For example
 
 ```
 sp.findings.scoreAtLeast(8).l.size
 ```
 
-returns only findings with a score of at least 8. Please note that the
+returns only findings with a score of at least 8. Note that the
 query language is lazily evaluated, that is,
 `sp.findings.scoreAtLeast(8)` only yields in an expression, and it is
 only evaluated as it is converted to a list via the `l` directive (a
 shorthand for "toList").
 
 All string properties support regular expressions. For example, you
-can obtain all findings related to serialization as follows:
+can obtain all findings related to serialization by
+
 ```
 sp.findings.title(".*serialize.*").l
 ```
 
 All lists support the functional combinators of the Scala language.
-Moreover, we provide the functional combinators `filter`, `map`, and
-`flatMap` directly for expression of the DSL. For example, instead of
-using the builting method `scoreAtLeast`, the same effect can be
-achieved via a filter operation: 
+Moreover, the functional combinators `filter`, `map`, and
+`flatMap` are provided directly for expression of the DSL. For example, instead of
+using the built-in method `scoreAtLeast`, the same effect can be
+achieved via a filter operation 
 
 ```
 sp.findings.filter(_.score >= 8).size
 ```
 
 This allows more complex filtering rules to be expressed via lambdas.
-For example,
+For example
 
 ```
 sp.findings.filter(x =>  x.score >=8 && x.categories.contains("a1-injection")).l
@@ -272,15 +246,12 @@ sp.findings.filter(x =>  x.score >=8 && x.categories.contains("a1-injection")).l
 returns only the findings with a score greater or equal to 8, where
 the finding's categories includes "a1-injection".
 
+## Uncovering Attack Surface with the CPG
 
-## Uncovering attack surface with the code property graph
-
-The code property graph contains information about the processed code
-on different levels of abstraction, from dependencies, to type
+The CPG contains information about the processed code
+on different levels of abstraction: from dependencies, to type
 hierarchies, control flow, data flow, and instruction-level
-information. Like the SP, the CPG can be queried interactively via Ocular or via non-interactive scripts. We now illustrate interactive
-querying, however, all queries can also be used as-in in interactive
-scripts. 
+information. Like the Security Profile, the CPG can be queried interactively using ShiftLeft Ocular or through non-interactive scripts. 
 
 The CPG is loaded via the `loadCpg` command:
 
@@ -288,16 +259,15 @@ The CPG is loaded via the `loadCpg` command:
 loadCpg("cpg.bin.zip")
 ```
 
-This creates an object named cpg, which provides access to the code
-property graph. We begin by exploring the program dependencies: 
+This creates the object `cpg`, which provides access to the CPG. Exploring the program dependencies
 
 ```
 cpg.dependency.name.l
 ```
 
-This provides a list of all dependency names. We support functional
-combinators. For example, to output (name, version) pairs, we can use
-the following expression: 
+provides a list of all dependency names. ShiftLeft Ocular supports functional
+combinators. For example, to output (name, version) pairs, use
+the expression
 
 ```
 cpg.dependency.map(x => (x.name, x.version)).l
@@ -329,25 +299,25 @@ res2: List[(String, String)] = List(
 
 ```
 
-It is also possible to process CPG sub graphs via external programs by
-exporting them to JSON. For example,
+It is also possible to process CPG subgraphs using external programs by
+exporting the subgraphs to JSON. For example
 
 ```
 cpg.dependency.toJson |> "/tmp/dependencies.json"
 ```
 
-dumps dependency information into the file "/tmp/dependencies.json" is
-JSON format. Fields of the CPG can be queried using regular
+dumps dependency information into the file `/tmp/dependencies.json` in 
+JSON format. Fields of the CPG are queried using regular
 expressions. For example, to determine whether an application uses the
-servlet api, a quick query could be
+servlet api, a quick query is
 
 ```
 cpg.dependency.name(".*servlet.*").l.nonEmpty 
 res9: Boolean = true
 ```
 
-The `servlet-api` indicates that we have should look for methods with
-a `HttpServletRequest` type as parameter. This can be done with this
+The `servlet-api` indicates that methods with
+a `HttpServletRequest` type as parameter are of interest. Finding these methods can be done with the
 query
 
 ```
@@ -359,18 +329,16 @@ org.cysecurity.cspf.jvl.controller.EmailCheck.doPost:void(javax.servlet.http.Htt
 [..]
 ```
 
-And we find our methods from the introduction. From here on we already
-have our first source
+The first source
 
 ```
 val source = cpg.method.fullName(".*EmailCheck.*").parameter 
 ```
 
-With this query we, definded every parameter, of methods which
-signaturenames matching `.*EmailCheck.*`, as source. The next step is
-to define our sinks. Let's assume that we don't know anything about
-our target and we just look for methods that contain `execute` in
-their name
+This query defines every parameter of methods which
+signature names matching `.*EmailCheck.*`, as source. The next step is
+to define the sinks. Assuming no knowledge of the target, look for methods that contain `execute` in
+their name by
 
 ```
 cpg.method.name("execute.*").fullName.p 
@@ -379,14 +347,15 @@ java.sql.Statement.executeUpdate:int(java.lang.String)
 java.sql.PreparedStatement.executeUpdate:int()
 ```
 
-We found three methods and two of them are known to be a traditional
-sink SQL injection sink, so we mark the parameter as sink.
+Three methods are identified, with two of them known to be a traditional
+sink SQL injection sink. Marking the parameter as sink
 
 ```
 ocular> val sink = cpg.method.name(".*execute.*").parameter 
 ```
 
 The next step is to find a flow between the sink and source
+
 ```
 ocular> sink.reachableBy(source).flows.p 
 [...]
@@ -434,25 +403,23 @@ param0 	  	 executeQuery 	 java/sql/Statement.java
 ```
 
 
-The flows can be examined manually or automatically. For example, we
-can determine parameters we control as a result of data flows as
-follows:
+The flows can be examined manually or automatically. For example, to determine parameters controlled as a result of data flows 
 
 ```
 sinks.reachableBy(sources).flows.l.flatMap(_.pathElems.last.parameters.l)
 ```
 
-The query determines sinks reachable by sources and examines the
-corresponding data flows. The last flow element is extracted of each
-flow via the `pathElemens.last` directive, and the corresponding
+This query determines sinks reachable by sources and examines the
+corresponding data flows. The last flow element is extracted from each
+flow using the `pathElemens.last` directive, and the corresponding
 parameter is retrieved. The result of the query can be stored in a
-variable for further processing, which comes in handy when determining
-a large number of data flows:
+variable for further processing, which is useful when determining
+a large number of data flows
 
 ```
 val controlled = sinks.reachableBy(sources).flows.l.flatMap(_.pathElems.last.parameters.l)
 ```
-We can now retrieve the parameter index ("order" and method full name):
+Retrieve the parameter index ("order" and method full name) by
 
 ```
 controlled.map(x => s"Controlling parameter ${x.order} of ${x.start.method.fullName.l.head}")
@@ -463,24 +430,23 @@ res14: List[String] = List(
 )
 ```
 
-
-## Specifying data-flow patterns to scan for via Policy
+## Using a Security Policy to Scan for Data-Flow Vulnerabilities
 
 The CPG query language can be used to formulate vulnerability
-patterns, and they can be placed into a non-interactive script to
+patterns, and these queries can be used in a non-interactive script to
 automatically scan for vulnerability patterns. For data-flow related
-vulnerabilities, the ShiftLeft tooling provides a more concise
-mechanism, security policy. The security policy defines methods that
+vulnerabilities, ShiftLeft Ocular provides a more concise
+mechanism, the Security Policy. A Security Policy defines methods that
 introduce data into the application, sensitive operations, and
-finally, data-flow that should be reported. For example, in
-ShiftLeft's dynamic policy, you can find the following lines:
+data-flow that should be reported. For example, in
+ShiftLeft's dynamic policy, find the following lines
 
 ```
 // [~/.shiftleft/policy/dynamic/java/sql/Statement.policy:]
 IO sql = METHOD -f "java.sql.Statement.executeQuery:java.sql.ResultSet(java.lang.String)" { PAR -i 1 "SINK" }
 ```
 
-This states that the first parameter of the method `executeQuery` should be considered as a data sink of a sql query.
+This states that the first parameter of the method `executeQuery` should be considered as a data sink of an SQL query.
 
 ```
 EXPOSED http = SUPERTYPE -f "javax.servlet.http.HttpServlet" METHOD -n r"do(Get|Post|Delete|Put|Head|Options|Trace)" { PAR -t "javax.servlet.http.HttpServletRequest" "SOURCE" } 
@@ -492,22 +458,20 @@ This rule specifies that all parameters of the methods
 Furthermore the class that implements these methods needs to derive
 `javax.servlet.http.HttpServlet`.
 
-Finally, we can specify that flows of `http` data into `sql`, without
-any escaping, encrypting, encoding or hashing are worth reporting:
+Finally, specify that flows of `http` data into `sql`, without
+any escaping, encrypting, encoding or hashing, are worth reporting
 ```
 // ~/.shiftleft/policy/static/sqlinjection.policy:
 
 CONCLUSION http-to-sql = FLOW IO (http) -> DATA (NOT encrypted AND NOT hashed AND NOT encoded AND NOT escaped) -> IO (sql)
 WHEN CONCLUSION http-to-sql => EMIT {
   title: "SQL Injection",
-  description: "Attacker controlled data is used in a SQL query without undergoing escaping or validation. This could allow an attacker to read sensitive dat a from the database or modify its content.See http://cwe.mitre.org/data/definitions/89.html",
+  description: "Attacker controlled data is used in a SQL query without undergoing escaping or validation. This could allow an attacker to read sensitive data from the database or modify its content.See http://cwe.mitre.org/data/definitions/89.html",
   category: "a1-injection",
   score: "9.0"
 }
 ```
 
-
-The policy language additionally allows data transformations and
-checks to be specified in order to report flows of data, only if data
-does not undergo validation. For a detailed description of the query
-language, please see Policy language.
+The Security Policy also allows data transformations and
+checks to be specified in order to report flows of data, for data that 
+does not undergo validation. For more information, refer to the [Security Policy Language](../../policies/spl.md) article.
