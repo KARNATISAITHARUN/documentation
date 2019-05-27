@@ -28,10 +28,12 @@ ShiftLeft Ocular provides the following core features:
   patterns. You can provide additional annotations to extend supported
   frameworks and libraries or encode additional vulnerability patterns.
 
-* **Automatic Code Scanning.** Policies can be applied to CPGs
-  to generate Security Profiles, which are summaries of
-  vulnerabilities and data leaks present in the code. Similar to CPGs, Security
-  Profiles can also be explored and processed using the REPL.
+* **Automatic code scanning.** Policies can be applied to CPGs
+  to generate *security profiles* which are summaries of
+  vulnerabilities and data leaks present in the code. Similar to CPGs, security
+  profiles can also be explored and processed using the REPL.
+  
+* **Workspaces for managing CPGs and Security Profiles.** A workspace is a directory containing all data persisted by ShiftLeft Ocular. Workspaces allow you to easily manage CPGs and Security Profiles, load and simultanously work with more than one CPG in a given workspace, and combine queries. [Refer to the API](https://ocular.shiftleft.io/api/io/shiftleft/repl/Workspace.html) for additional information.
 
 
 See Also

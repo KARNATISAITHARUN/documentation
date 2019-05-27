@@ -137,7 +137,7 @@ ShiftLeft Ocular or via non-interactive scripts. Using interactive querying, exp
 cpg.dependency.name.l
 ```
 
-A list of all dependency names is returned. ShiftLeft Ocular supports functional combinators. For example, to output (name, version) pairs, use the following expression:
+A complete list of all dependency names is returned. ShiftLeft Ocular supports functional combinators. For example, to output (name, version) pairs, use the following expression:
 
 ```scala
 cpg.dependency.map(x => (x.name, x.version)).l
@@ -175,7 +175,7 @@ It is also possible to process CPG subgraphs using external programs by exportin
 cpg.dependency.toJson |> "/tmp/dependencies.json"
 ```
 
-dumps dependency information into the file "/tmp/dependencies.json" in JSON format. 
+dumps complete dependency information into the file "/tmp/dependencies.json" in JSON format. 
 
 Fields of the CPG can be queried using regular expressions. So, to determine whether an application uses the
 Spring framework, a quick query is

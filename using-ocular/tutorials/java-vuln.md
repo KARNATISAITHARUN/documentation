@@ -265,9 +265,9 @@ This creates the object `cpg`, which provides access to the CPG. Exploring the p
 cpg.dependency.name.l
 ```
 
-provides a list of all dependency names. ShiftLeft Ocular supports functional
-combinators. For example, to output (name, version) pairs, use
-the expression
+This provides a complete list of all dependency names. We support functional
+combinators. For example, to output (name, version) pairs, we can use
+the following expression: 
 
 ```
 cpg.dependency.map(x => (x.name, x.version)).l
@@ -306,8 +306,8 @@ exporting the subgraphs to JSON. For example
 cpg.dependency.toJson |> "/tmp/dependencies.json"
 ```
 
-dumps dependency information into the file `/tmp/dependencies.json` in 
-JSON format. Fields of the CPG are queried using regular
+dumps complete dependency information into the file "/tmp/dependencies.json" is
+JSON format. Fields of the CPG can be queried using regular
 expressions. For example, to determine whether an application uses the
 servlet api, a quick query is
 

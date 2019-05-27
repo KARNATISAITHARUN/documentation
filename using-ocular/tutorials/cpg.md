@@ -96,9 +96,9 @@ This command creates an object named `cpg`, which provides access to the CPG. To
 cpg.dependency.name.l
 ```
 
-The result is a list of all dependency names. Functional
-combinators are supported. For example, to output (name, version) pairs, use
-the expression
+This provides a complete list of all dependency names. We support functional
+combinators. For example, to output (name, version) pairs, we can use
+the following expression: 
 
 ```scala
 cpg.dependency.map(x => (x.name, x.version)).l
@@ -137,7 +137,7 @@ exporting them to JSON. For example
 cpg.dependency.toJson |> "/tmp/dependencies.json"
 ```
 
-dumps dependency information into the file /tmp/dependencies.json in
+dumps complete dependency information into the file "/tmp/dependencies.json" in
 JSON format. Fields of the CPG can be queried using regular
 expressions. For example, to determine whether an application uses the
 spring framework, a quick query is
