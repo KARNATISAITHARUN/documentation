@@ -17,7 +17,7 @@ The process for quickly starting with ShiftLeft Ocular is:
 The demo Java application [HelloShiftLeft](https://github.com/ShiftLeftSecurity/HelloShiftLeft) is used in this Quick Start. It is a Spring-based Web application that contains different sample vulnerabilities, including typical injection
 vulnerabilities and leakages of sensitive information. The focus of the Quick Start is an object deserialization vulnerability in the`AdminController`.
 
-ShiftLeft Ocular can also be used to navigate the Security Profile, which is generated on top of the CPG. 
+ShiftLeft Ocular can also be used to navigate the Security Profile, which is part of the CPG as an overlay. 
 
 ## Installing Ocular
 
@@ -56,12 +56,11 @@ where `$N` is the amount of memory in gigabytes. You can add this line to your s
 
 **Note** This option affects all subsequent JVM instances started on the machine.
 
-In order to restrict the JVM option to only the parts of ShiftLeft Ocular that you intend to use, you can also provide the memory allocation individually. For example, to set 12 GB available heap memory to `java2cpg`, `cpg2sp` or `ocular`, use this option directly:
+In order to restrict the JVM option to only the parts of ShiftLeft Ocular that you intend to use, you can also provide the memory allocation individually. For example, to set 12 GB available heap memory to `java2cpg` or `ocular`, use this option directly:
 
 ```bash
 ./ocular.sh -J-Xmx12g
 ./java2cpg.sh -J-Xmx12g <...>
-./cpg2sp.sh -J-Xmx12g <...>
 ```
 
 ## Specifying the Target Application
