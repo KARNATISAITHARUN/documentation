@@ -65,7 +65,7 @@ In order to restrict the JVM option to only the parts of ShiftLeft Ocular that y
 
 ## Specifying the Target Application
 
-After installing ShiftLeft Ocular, you must specify the target application. Using the demo Java application HelloShiftLeft
+After installing ShiftLeft Ocular, you must specify the target application. In this tutorial, we are using the Demo Application Hello ShiftLeft, which contains this code in particular:
 
 ```java
 ...
