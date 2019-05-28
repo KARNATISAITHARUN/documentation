@@ -9,6 +9,7 @@
   * [Quick Start](using-ocular/ocular-quick-start.md)
   * [Installation](using-ocular/installation.md)
   * [Ocular Interactive Shell](using-ocular/oql.md)
+  * [Using Workspaces](using-ocular/workspaces.md)
   * [Ocular API](https://ocular.shiftleft.io/api/)
   * Tutorials
     * [Using ShiftLeft Ocular with the CPG](using-ocular/tutorials/cpg.md)
