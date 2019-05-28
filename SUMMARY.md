@@ -31,7 +31,7 @@
     * [CLI Reference](using-inspect-protect/using-cli/cli-reference.md)
   * Analyzing Your Code
     * [Analyzing Applications in CI](using-inspect-protect/inspect/analyzing-applications-in-ci.md)
-    * [Using Custom Security Policies with ShiftLeft Inspect](using-inspect-protect/inspect/custom-policies.md)
+    * [Using Custom Policies with ShiftLeft Inspect](using-inspect-protect/inspect/custom-policies.md)
    
   *  Protecting Your Runtime Application
      * [ShiftLeft Protect for Java](using-inspect-protect/protect-java/jvm-based-environments.md)
@@ -55,5 +55,5 @@
   * Application Programming Interfaces (APIs)
     * [Identifying Code Vulnerabilities using the API](using-inspect-protect/api/vulnerabilities_api.md)
 * ShiftLeft Policies
-    * [Security Policy Language](policies/spl.md)
+    * [Policy Language](policies/spl.md)
 * [Release Notes](release-notes/release-notes.md)

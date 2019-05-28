@@ -20,7 +20,7 @@ as
 ## Attack Surface for Libraries
 
 For applications, I/O sources and sinks can be automatically marked using 
-the Security Policy, e.g., mark HTTP parameters, input read from files, or
+the Policy, e.g., mark HTTP parameters, input read from files, or
 data going into sockets. For libraries, additionally allow
 marking of all public method parameters as potential sources of
 attacker-controlled data. This can be achieved with the cpg2sp `-m` flag
@@ -43,4 +43,4 @@ WHEN CONCLUSION attacker-to-deserializer => EMIT {
 }
 ```
 
-This rule is included in ShiftLeft Ocular's default Security Policy.
+This rule is included in ShiftLeft Ocular's default Policy.

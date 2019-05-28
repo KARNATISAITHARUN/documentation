@@ -6,7 +6,7 @@ ShiftLeft is an application security platform with three solutions:
 
 * **[ShiftLeft Inspect](../using-inspect-protect/analyzing-applications-in-ci.md)**. A next-generation static application security testing (SAST) solution. In just minutes, ShiftLeft Inspect provides an accurate and exhaustive exploration and analysis of your unique code and identifies complex vulnerabilities and sensitive data leakage.
 
-* **[ShiftLeft Protect](../using-inspect-protect/protect-java/jvm-based-environments.md)**. ShiftLeft Protect secures applications against exploitation of vulnerabilities by leveraging "code informed" insights. ShiftLeft Protect creates surgical security policies based on identified vulnerabilities discovered during analysis of code. This approach allows ShiftLeft Protect to operate with minimal footprint and overhead. 
+* **[ShiftLeft Protect](../using-inspect-protect/protect-java/jvm-based-environments.md)**. ShiftLeft Protect secures applications against exploitation of vulnerabilities by leveraging "code informed" insights. ShiftLeft Protect creates runtime security specifications based on identified vulnerabilities discovered during analysis of code. This approach allows ShiftLeft Protect to operate with minimal footprint and overhead. 
 
 Components of the ShiftLeft solution are:
 

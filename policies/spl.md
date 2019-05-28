@@ -1,6 +1,6 @@
-# Security Policy Language
+# Policy Language
 
-ShiftLeft's Security Policy Language provides support for core language features, libraries, and frameworks through the use of policy files. Policy files specify how the application communicates with the outside world, which transformations exist on data, and which information flows should be considered security violations. ShiftLeft provides a database of default policy rules, and additionally allows you to create your own custom policy. Custom policy rules can exclude parts of the default policy that do not apply to the application, or may introduce additional knowledge about the application.
+ShiftLeft's Policy Language provides support for core language features, libraries, and frameworks through the use of policy files. Policy files specify how the application communicates with the outside world, which transformations exist on data, and which information flows should be considered security violations. ShiftLeft provides a database of default policy rules, and additionally allows you to create your own custom policy. Custom policy rules can exclude parts of the default policy that do not apply to the application, or may introduce additional knowledge about the application.
 
 
 The default policy is found in the directory
@@ -11,7 +11,7 @@ The default policy is found in the directory
 
 and is automatically loaded and applied when loading CPGs in the REPL using the `loadCpg` command. If you edit the policy, invoke`loadCpg` again to apply any policy changes.
 
-Policies are specified using a Security Policy Language, which offers four types of directives:
+Policies are specified using a Policy Language, which offers four types of directives:
 
 * **[Tagging Directives](#tagging-directives).** Exposed methods, interface interactions and transformations are determined by tagging the CPG based on syntax-patterns. The policy contains tagging directives to encode these patterns.
 
@@ -29,7 +29,7 @@ Using each of these directives is documented in detail, with examples of how the
 
 As a result of invoking library methods, data may be read from the outside world or written to it. Tagging directives can be used to inform ShiftLeft Ocular about these methods. These directives result in tagging of the CPG with a set of predefined tags that ShiftLeft Ocular can use.
 
-The Security Policy Language provides the IO, TRANSFORMER and EXPOSED directives to tag IO endpoints, transformers and exposed methods, respectively. The directives all follow the format
+The Policy Language provides the IO, TRANSFORMER and EXPOSED directives to tag IO endpoints, transformers and exposed methods, respectively. The directives all follow the format
 
 ```
 $command label = METHOD -f "$fullName" [{ (PAR -i $i|RET|INST) "(SOURCE|SINK|DESCRIPTOR|DESCRIPTOR_USE)" }]
@@ -127,7 +127,7 @@ TRANSFORM string-compare = METHOD -f "java.lang.String.startsWith:boolean(java.l
 
 ### WHEN Tagging Directives
 
-Describes the effects of transformers. For example, a base64 encoder generates encoded data. The Security Policy Language allows arbitrary tags to be added or removed as a result of a transformation. So 
+Describes the effects of transformers. For example, a base64 encoder generates encoded data. The Policy Language allows arbitrary tags to be added or removed as a result of a transformation. So 
 
 ```
 WHEN TRANSFORM base64 => DATA +encoded
@@ -246,7 +246,7 @@ The sensitive-data engine looks for exact matches of these terms as well as vari
 
 For advanced use only.
 
-Library methods may also simply propagate taint without performing any transformations on the data that change its security properties. For standard libraries, these propagation rules are already provided by the ShiftLeft default policy. However, for exotic libraries unavailable in code to ShiftLeft Ocular, these rules can also be specified manually via MAP directives. These directives specify how taint is propagated from the input parameters of a library method to its output parameters. MAP directives follow the form
+Library methods may also simply propagate taint without performing any transformations on the data that change its Security Properties. For standard libraries, these propagation rules are already provided by the ShiftLeft default policy. However, for exotic libraries unavailable in code to ShiftLeft Ocular, these rules can also be specified manually via MAP directives. These directives specify how taint is propagated from the input parameters of a library method to its output parameters. MAP directives follow the form
 
 ```
 MAP -[override|preserve] -d (RET | INST | PAR -i $i) -s (INST | PAR -i $i) METHOD -f "$fullName"
