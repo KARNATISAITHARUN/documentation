@@ -18,6 +18,7 @@
     * [Creating a CPG from a Java Archive](using-ocular/tutorials/cpgcreate.md)
     * [Constructing Beautiful CPGs from Java Archives](using-ocular/tutorials/beautifulcpgs.md)
     * [Interfacing with ShiftLeft Ocular](using-ocular/tutorials/interfacing.md)
+    * [Using ShiftLeft Ocular with JSP](using-ocular/tutorials/jsp.md)
     * [Scanning for Deserialization Sinks](using-ocular/tutorials/deserialization.md)
     * [Java Vulnerable Lab](using-ocular/tutorials/java-vuln.md)
     * [Analyzing Libraries](using-ocular/tutorials/libanalysis.md)
