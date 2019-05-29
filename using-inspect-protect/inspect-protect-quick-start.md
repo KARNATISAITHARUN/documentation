@@ -18,10 +18,6 @@ The process for quickly starting with ShiftLeft Inspect and ShiftLeft Protect is
 
 The information in this article parallels and provides additional details on the Quick Start page that you use when you first log into ShiftLeft.
 
-## Supported Operating Systems
-
-ShiftLeft supports the Linux, MacOS X, Windows operating systems.
-
 ## Installing the ShiftLeft CLI
 
 The ShiftLeft (CLI) is used with ShiftLeft Inspect to submit applications for analysis and with ShiftLeft Protect to run the ShiftLeft Microagent. The tool is named `sl`. See more information, on [Using the ShiftLeft CLI](using-cli/using-cli.md).

@@ -1,14 +1,4 @@
-# ShiftLeft Language Support and Requirements
-
-## Language Support
-
-ShiftLeft Ocular currently supports Java, C# and C/C++ (based on [Joern](https://github.com/octopus-platform/joern)).
-
-ShiftLeft Inspect and Protect analyzes and secures applications written in Java 7+ and C# 7.0. 
-
-Support for other languages is in development. For inquiries, please fill out our [contact form](https://www.shiftleft.io/contact/).
-
-## Requirements
+# ShiftLeft Requirements
 
 ShiftLeft has specific requirements for:
 * [ShiftLeft Ocular](#requirements-for-shiftleft-ocular)

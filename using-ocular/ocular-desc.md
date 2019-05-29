@@ -1,4 +1,4 @@
-## ShiftLeft Ocular
+# ShiftLeft Ocular
 
 ShiftLeft Ocular is a set of command line tools that provide a static analysis framework in the context of security. Developers and security researchers use ShiftLeft Ocular to explore code for vulnerabilities.
 

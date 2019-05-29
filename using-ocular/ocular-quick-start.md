@@ -124,7 +124,9 @@ workspace
  | hello-shiftleft-0.0.1-SNAPSHOT.jar| semanticcpg(l),tagging(l)| true  |
 ```
 
-As the workspace overview shows, the CPG is automatically loaded on creation. The CPG that was loaded last is accessible using the variable `cpg`.
+As the workspace overview shows, the CPG is automatically loaded on creation.  
+
+The CPG that was loaded last is accessible using the variable `cpg`.
 
 ## Uncovering Attack Surface
 

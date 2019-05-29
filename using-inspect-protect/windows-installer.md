@@ -4,7 +4,9 @@ Installation on Windows for ShiftLeft tools (`sl` and .NET microagent) may be do
 
 ## Installing
 
-Use [this installer](https://cdn.shiftleft.io/download/installer-dotnet-framework-latest-windows-x64.zip) for .NET Framework installations or [this installer](https://cdn.shiftleft.io/download/installer-dotnet-core-latest-windows-x64.zip) for .NET Core installations. Simply unpack the downloaded archive and an executable will appear.
+Use [this installer](https://cdn.shiftleft.io/download/installer-dotnet-framework-latest-windows-x64.zip) for .NET Framework installations or [this installer](https://cdn.shiftleft.io/download/installer-dotnet-core-latest-windows-x64.zip) for .NET Core installations. For ShiftLeft Protect, the installer bundles all dependencies into a single downloadable file, enabling  the installer to run offline (without connecting to the Internet).
+
+Simply unpack the downloaded archive and an executable will appear.
 
 ![Unzip Prompt](img/unzip-windows.png)
 

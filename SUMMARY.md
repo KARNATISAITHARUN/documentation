@@ -4,6 +4,7 @@
 * Introduction
   * [About ShiftLeft](introduction/about.md)
   * [ShiftLeft Products](introduction/products.md)
+  * [ShiftLeft Compliance and Support](introduction/support.md)
   * [ShiftLeft Requirements](introduction/requirements.md)
 * [Using ShiftLeft Ocular](using-ocular/ocular-desc.md)
   * [Quick Start](using-ocular/ocular-quick-start.md)
@@ -32,7 +33,6 @@
   * Analyzing Your Code
     * [Analyzing Applications in CI](using-inspect-protect/inspect/analyzing-applications-in-ci.md)
     * [Using Custom Policies with ShiftLeft Inspect](using-inspect-protect/inspect/custom-policies.md)
-   
   *  Protecting Your Runtime Application
      * [ShiftLeft Protect for Java](using-inspect-protect/protect-java/jvm-based-environments.md)
        * [Configuring the Microagent](using-inspect-protect/protect-java/configuring-the-microagent.md)
