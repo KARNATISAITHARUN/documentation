@@ -56,5 +56,8 @@
   * Application Programming Interfaces (APIs)
     * [Identifying Code Vulnerabilities using the API](using-inspect-protect/api/vulnerabilities_api.md)
 * ShiftLeft Policies
-    * [Policy Language](policies/spl.md)
-* [Release Notes](release-notes/release-notes.md)
+  * [Policy Language](policies/spl.md)
+* Monthly Updates
+  * [May 2019](release-notes/may-2019.md)
+  * [April 2019](release-notes/april-2019.md)
+  * [March 2019](release-notes/march-2019.md)
