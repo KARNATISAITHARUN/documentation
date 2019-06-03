@@ -157,7 +157,7 @@ Note to experts: EXPOSED directives perform the same actions as IO directives, w
 With data sources, sinks, descriptors and transformers tagged, these are now combined in flow descriptions to describe flows of interest. A flow description has the form
 
 ```
-CONCLUSION label = (DATA | IO) $expr1 [-> (DATA | IO) $expr2]
+CONCLUSION label = FLOW (DATA | IO) $expr1 [-> (DATA | IO) $expr2]
 ```
 
 where `$expr1` and `$expr2` are Boolean expressions over tags in accordance with the grammar:
