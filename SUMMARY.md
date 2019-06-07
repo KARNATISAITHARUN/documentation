@@ -11,17 +11,14 @@
   * [Installation](using-ocular/installation.md)
   * [Ocular Interactive Shell](using-ocular/oql.md)
   * [Using Workspaces](using-ocular/workspaces.md)
+  * [Non-Interactive Querying](using-ocular/non-interactive.md)
   * [Ocular API](https://ocular.shiftleft.io/api/)
   * Tutorials
     * [Using ShiftLeft Ocular with the CPG](using-ocular/tutorials/cpg.md)
     * [Using ShiftLeft Ocular with Security Profiles](using-ocular/tutorials/sp.md)
     * [Creating a CPG from a Java Archive](using-ocular/tutorials/cpgcreate.md)
-    * [Constructing Beautiful CPGs from Java Archives](using-ocular/tutorials/beautifulcpgs.md)
-    * [Interfacing with ShiftLeft Ocular](using-ocular/tutorials/interfacing.md)
-    * [Using ShiftLeft Ocular with JSP](using-ocular/tutorials/jsp.md)
     * [Scanning for Deserialization Sinks](using-ocular/tutorials/deserialization.md)
     * [Java Vulnerable Lab](using-ocular/tutorials/java-vuln.md)
-    * [Analyzing Libraries](using-ocular/tutorials/libanalysis.md)
     * [Exploring a Call Graph](using-ocular/tutorials/callgraph.md)
     * [Discovering a Real World Vulnerability](using-ocular/tutorials/CVE-2018-19859.md)
 * Using ShiftLeft Inspect and ShiftLeft Protect

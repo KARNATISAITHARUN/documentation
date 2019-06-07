@@ -1,10 +1,10 @@
-# Interfacing with ShiftLeft Ocular
+# Non-Interactive Querying with ShiftLeft Ocular
 
-This tutorial shows you how to interface with ShiftLeft Ocular as part of your workflow and interactions with colleagues. 
+ShiftLeft Ocular can be used in non-interactive mode, to execute commands and operations without typing them after the prompt. The commands are stored in a file which can be specified as an argument. ShiftLeft Ocular runs those commands and then exits.
 
 ## Passing Scripts to ShiftLeft Ocular
 
-ShiftLeft Ocular can be used in non-interactive mode, to execute commands and operations without typing them after the prompt. The commands are stored in a file which can be specified as an argument. ShiftLeft Ocular runs those commands and then exits. For example, include in `test.sc`
+To pass a script to ShiftLeft Ocular in non-interactive mode, include in `test.sc`
 
 ```
 @main def exec(cpgFile: String, outFile: String) = {
