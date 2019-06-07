@@ -17,6 +17,7 @@
     * [Using ShiftLeft Ocular with the CPG](using-ocular/tutorials/cpg.md)
     * [Using ShiftLeft Ocular with Security Profiles](using-ocular/tutorials/sp.md)
     * [Creating a CPG from a Java Archive](using-ocular/tutorials/cpgcreate.md)
+    * [Using ShiftLeft Ocular with JSP](using-ocular/tutorials/jsp.md)
     * [Scanning for Deserialization Sinks](using-ocular/tutorials/deserialization.md)
     * [Java Vulnerable Lab](using-ocular/tutorials/java-vuln.md)
     * [Exploring a Call Graph](using-ocular/tutorials/callgraph.md)
