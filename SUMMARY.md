@@ -8,6 +8,7 @@
   * [ShiftLeft Requirements](introduction/requirements.md)
 * [Using ShiftLeft Ocular](using-ocular/ocular-desc.md)
   * [Quick Start](using-ocular/ocular-quick-start.md)
+  * [Memory Size Recommendations](using-ocular/ocular-config.md)
   * [Installation](using-ocular/installation.md)
   * [Ocular Interactive Shell](using-ocular/oql.md)
   * [Using Workspaces](using-ocular/workspaces.md)
