@@ -1,28 +1,30 @@
 # Installing ShiftLeft Ocular
 
-Before installing ShiftLeft Ocular, make sure you have [met all requirements](../introduction/requirements.md).
+Before installing ShiftLeft Ocular, make sure you have [met all requirements](../introduction/requirements.md). _The process of installing ShiftLeft Ocular is:
 
-Begin by decompressing the provided ZIP file `ocular-distribution.zip`. This creates the directory `ocular-distribution`.
+1. Decompress the ocular-distribution.zip file provided by ShiftLeft, by issuing the following command, where `[version]` is the actual version number of the distribution file.
 
-```bash
-unzip ocular-distribution.zip
-cd ocular-distribution
+```
+    unzip ocular-distribution-[version].zip
 ```
 
-Run the installer and follow the prompts:
+2. Enter the password you received from ShiftLeft. The directory `ocular-distribution` is created.
 
-```bash
-bash ./install.sh
-```
+3. Navigate to the new directory `ocular-distribution`. From there, for Linux and MacOS X run the installer using the `./install.sh` command. For the Windows OS, run the installing using the command `.\install.ps1` and then follow the prompt.
 
-The install script:
+    If you don't have permission, first use the  command `chmod +x install.sh` and then run the installer again.
 
-* asks you where to install ShiftLeft Ocular (defaults to `~/bin/ocular`).
-* checks if there is an existing installation, and if so, offers to delete it.
-* unpacks the ShiftLeft dynamic policy to `~/.shiftleft/policy/dynamic`, and if it already exists, offers to delete it.
-* unpacks the ShiftLeft static policy to `~/.shiftleft/policy/static`, and if it already exists, offers to delete it.
+4. Identify where you want to install ShiftLeft Ocular (defaults to `~/bin/ocular` on Linux and MacOS X, and to `C:\Users\$USERNAME\bin\ocular` on Windows).
 
-**Note**: Do not make any changes outside the installation and policy directories.
+5. Specify how you want the installation to proceed. Enter either `y` to replace an existing installation, `n`to not replace the existing installation, `A`to install all ShiftLeft Ocular files, `N` to install no ShiftLeft Ocular files, or `r` to rename the installation directory.
+
+6. If the ShiftLeft dynamic policy already exists, you are given the option to delete it. Otherwise the installer unpacks the ShiftLeft dynamic policy in the directory `~/.shiftleft/policy/dynamic`.
+
+7. If the ShiftLeft static policy already exists, you are given the option to delete it. Otherwise the installer unpacks the ShiftLeft static policy to `~/.shiftleft/policy/static`.
+
+8. Start ShiftLeft Ocular by using `./ocular.sh` on Linux and MacOS X, and `.\ocular.ps1` on Windows PowerShell. 
+
+**Note**: Do not make any changes to any directories, excepting the installation and policy directories.
 
 # Additional Configuration for Large Projects
 
