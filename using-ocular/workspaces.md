@@ -64,10 +64,20 @@ You manage overlays by showing all overlay creators, loading a CPG only with a `
 
 ## Identifying Application Code and Dependencies
 
-Identifying application code and dependencies is done by showing all namespaces and showing only either application namespaces or dependency namespaces. The commands to identify application code and dependencies are illustrated using the HelloShiftLeft demo Java application.
+Java applications are distributed in Java Archives (JARs) and Web Application Archives (WARs). These archives contain both the application code and code for all dependencies.
+
+Generally, you use ShiftLeft Ocular to analyze your application code and determine vulnerable dependencies. As part of this process, ShiftLeft Ocular creates a CPG for only the application code, and with references to the dependency code. ShiftLeft Ocular makes this distinction through the use of a built-in Smart Jar Unpacker, which heuristically determines for each namespace whether it contains application or dependency code.
+
+The commands to identify application code and dependencies are illustrated using the HelloShiftLeft demo Java application.
 
 * `namespaces("subjects/hello-shiftleft-0.0.1-SNAPSHOT.jar")`. Show all namespaces of the application.
 
-* `appNamespaces("subjects/hello-shiftleft-0.0.1-SNAPSHOT.jar")`. Show application namespaces.
+* `appNamespaces("subjects/hello-shiftleft-0.0.1-SNAPSHOT.jar")`. Specify prior to creating the CPG, which packages the Smart Jar Unpacker treats as application packages.
 
 * `depNamespaces("subjects/hello-shiftleft-0.0.1-SNAPSHOT.jar")`. Show dependency namespaces.
+
+If you want to manually choose application namespaces for CPG creation, you can pass those namespaces to the `createCpg` command. For example, to specify explicitly that the application namespace is `io.shiftleft`, you would use the command
+
+```
+createCpg("subjects/hello-shiftleft-0.0.1-SNAPSHOT.jar", List("io.shiftleft"))
+```
