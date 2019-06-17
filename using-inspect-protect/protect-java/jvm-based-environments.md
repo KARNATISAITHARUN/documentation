@@ -38,7 +38,7 @@ sl run -- sbt run
 
 The command performs the following tasks:
 
-* If the `--analyze <file.jar>` flag was provided, it checks with the ShiftLeft server whether analysis of this version of the application was performed before. If it was not, it performs analysis in the cloud and waits for it to complete. If this flag is not passed, then the agent will look for the `shiftleft.json` file which resulted from performing analysis ahead of time. **Note: if you are a current ShiftLeft user and you plan to use the `--analyze` option here, please ensure that you have authenticated yourself to your ShiftLeft tenant using `sl auth` (see [Authenticating with ShiftLeft](../../using-inspect-protect/using-cli/authenticating.md)).
+* If the `--analyze <file.jar>` flag was provided, it checks with the ShiftLeft server whether analysis of this version of the application was performed before. If it was not, it performs analysis in the cloud and waits for it to complete. If this flag is not passed, then the agent will look for the `shiftleft.json` file which resulted from performing analysis ahead of time. **Note: if you are a current ShiftLeft user and you plan to use the `--analyze` option here, please ensure that you have authenticated yourself to your ShiftLeft tenant using `sl auth` (see [Authenticating with ShiftLeft](../using-cli/authenticating.md)).
 **
 * If not already at the latest version, it downloads the latest Microagent to a local directory.
 * It runs the `<command>` with a certain environment variable set, which instructs the JVM to load the Microagent.
