@@ -46,5 +46,3 @@ ocular> cpg.method.fullName(".*Runtime.*exec.*").repeat(m=>m.caller).until(m=> m
 res38: List[String] = List( "io.shiftleft.controller.LedgerController.getLedger:java.lang.String(java.lang.Long)"
 )
 ```
-
-```
