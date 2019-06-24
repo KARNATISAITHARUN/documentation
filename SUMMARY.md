@@ -6,6 +6,7 @@
   * [ShiftLeft Products](introduction/products.md)
   * [ShiftLeft Compliance and Support](introduction/support.md)
   * [ShiftLeft Requirements](introduction/requirements.md)
+  * [Understanding the CPG](introduction/understanding-cpg.md)
 * [Using ShiftLeft Ocular](using-ocular/ocular-desc.md)
   * [Quick Start](using-ocular/ocular-quick-start.md)
   * [Memory Size Recommendations](using-ocular/ocular-memory-size.md)
@@ -13,6 +14,7 @@
   * [Running and Debugging ShiftLeft Ocular](using-ocular/running-debugging.md)
   * [Interactive and Non-Interactive Modes](using-ocular/interactive-noninteractive-modes.md)
   * [Using Workspaces](using-ocular/workspaces.md)
+  * [Deep-Dive: The CPG](using-ocular/cpg-deep-dive.md)
   * [Ocular API](https://ocular.shiftleft.io/api/)
   * Tutorials
     * [Using ShiftLeft Ocular with the CPG](using-ocular/tutorials/cpg.md)

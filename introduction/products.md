@@ -10,11 +10,11 @@ ShiftLeft is an application security platform with three solutions:
 
 Components of the ShiftLeft solution are:
 
-* **Code Property Graph (CPG)**. All ShiftLeft solutions leverage the CPG. In a single graph, the CPG provides an extensible, multi-layered representation of each code version, including the various levels of abstraction. The unique insights from the CPG provide all ShiftLeft solutions with granular detail and a deep understanding of data flows.
+* **[Code Property Graph (CPG)](understanding-cpg.md)**. All ShiftLeft solutions leverage the CPG. In a single graph, the CPG provides an extensible, multi-layered representation of each code version, including the various levels of abstraction. The unique insights from the CPG provide all ShiftLeft solutions with granular detail and a deep understanding of data flows.
 
 * **[ShiftLeft Command Line Interface (CLI)](../using-inspect-protect/using-cli/using-cli.md)**. The interface to ShiftLeft Inspect and ShiftLeft Protect via the command line. ShiftLeft CLI is used with ShiftLeft Inspect to submit applications for analysis and with ShiftLeft Protect to monitor your applications in runtime. 
 
-* **ShiftLeft Dashboard**. Your visual interface with ShiftLeft Inspect and ShiftLeft Protect. Shows information on the vulnerabilities of analyzed applications and the monitoring of the security of these applications in production. It also allows you to manage your ShiftLeft account.
+* **[ShiftLeft Dashboard](../using-inspect-protect/using-workflow/vulnerability-dashboard.md)**. Your visual interface with ShiftLeft Inspect and ShiftLeft Protect. Shows information on the vulnerabilities of analyzed applications and the monitoring of the security of these applications in production. It also allows you to manage your ShiftLeft account.
 
 * **[ShiftLeft Microagent](../using-inspect-protect/protect-java/configuring-the-microagent.md)**. ShiftLeft Protect deploys a ShiftLeft Microagent in-memory alongside your runtime application. The Microagent protects the residual issues in production and is customized to your application's specific shape and weaknesses through the use of a Security Profile for Runtime (SPR). Each Microagent connects to a ShiftLeft Proxy server to download the SPR and to send events and metrics to the Dashboard. 
 
