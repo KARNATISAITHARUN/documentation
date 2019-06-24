@@ -4,7 +4,7 @@ You use ShiftLeft Inspect to analyze your application for vulnerabilities, and S
 
 * A ShiftLeft Account ([contact us](https://www.shiftleft.io/contact/)).
 * All [ShiftLeft requirements](../introduction/requirements.md).
-* A Java application you want to analyze and protect. You can also use the [HelloShiftLeft demo Java application](https://github.com/ShiftLeftSecurity/HelloShiftLeft) to learn how to use ShiftLeft.
+* A Java application you want to analyze and protect. You can also use the [HelloShiftLeft](../../introduction/helloshiftleft.md) sample application to learn how to use ShiftLeft.
 
 The process for quickly starting with ShiftLeft Inspect and ShiftLeft Protect is:
 
