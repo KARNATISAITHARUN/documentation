@@ -17,12 +17,12 @@
   * [Using Workspaces](using-ocular/workspaces.md)
   * [Deep-Dive: The CPG](using-ocular/cpg-deep-dive.md)
   * [Ocular API](https://ocular.shiftleft.io/api/)
-  * Use Cases
-    * [Analyzing Dependencies](using-ocular/use-cases/dependency-analysis.md)
-    * [Analyzing Types and Packages](using-ocular/use-cases/types-packages-analysis.md)
-    * [Analyzing Method Parameters](using-ocular/use-cases/parameters-analyze.md)
-    * [Analyzing Methods](using-ocular/use-cases/methods-analyze.md)
-    * [Uncovering Data Flows](using-ocular/use-cases/data-flows.md)
+  * Common Queries
+    * [Analyzing Dependencies](using-ocular/common-queries/dependency-analysis.md)
+    * [Analyzing Types and Packages](using-ocular/common-queries/types-packages-analysis.md)
+    * [Analyzing Method Parameters](using-ocular/common-queries/parameters-analyze.md)
+    * [Analyzing Methods](using-ocular/common-queries/methods-analyze.md)
+    * [Uncovering Data Flows](using-ocular/common-queries/data-flows.md)
   * Tutorials
     * [Using ShiftLeft Ocular with the CPG](using-ocular/tutorials/cpg.md)
     * [Using ShiftLeft Ocular with Security Profiles](using-ocular/tutorials/sp.md)
