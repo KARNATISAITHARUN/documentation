@@ -33,7 +33,7 @@ ShiftLeft Inspect's Java code analysis is performed on compiled application **by
 Component | Requirement
 --- | ---
 System | Linux, MacOS X, Windows
-Application Type | **Java 8** or **Java 9**. 
+Application Type | **Java 7** through **Java 11**. 
 Build environment | Linux or Mac with **Java 8** installed locally and with 16GB of memory available.
 
 Analysis should be performed for each code commit or build of the application. You can automate analysis submissions using your preferred CI/CD system ([Bamboo](../using-inspect-protect/integrating-with-shiftleft/integrating-bamboo-builds.md), CircleCI, [GoCD](../using-inspect-protect/integrating-with-shiftleft/integrating-gocd-builds.md), [Jenkins](../using-inspect-protect/integrating-with-shiftleft/integrating-jenkins-builds/integrating-jenkins-builds.md), [Travis](../using-inspect-protect/integrating-with-shiftleft/integrating-travis-builds.md), [TeamCity](../using-inspect-protect/integrating-with-shiftleft/integrating-teamcity-builds.md), etc.).

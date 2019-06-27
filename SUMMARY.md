@@ -60,12 +60,13 @@
     * [Integrating with Travis Builds](using-inspect-protect/integrating-with-shiftleft/integrating-travis-builds.md)
   * Using ShiftLeft in Your Workflow
     * [Integrating Jira](using-inspect-protect/using-workflow/jira-integration.md)
-    * [Vulnerability Dashboard](using-inspect-protect/using-workflow/vulnerability-dashboard.md)
+    * [Vulnerabilities Dashboard](using-inspect-protect/using-workflow/vulnerability-dashboard.md)
   * Application Programming Interfaces (APIs)
     * [Identifying Code Vulnerabilities using the API](using-inspect-protect/api/vulnerabilities_api.md)
 * ShiftLeft Policies
   * [Policy Language](policies/spl.md)
 * Monthly Updates
+  * [June 2019](release-notes/june-2019.md)
   * [May 2019](release-notes/may-2019.md)
   * [April 2019](release-notes/april-2019.md)
   * [March 2019](release-notes/march-2019.md)
