@@ -23,13 +23,14 @@
     * [Analyzing Method Parameters](using-ocular/common-queries/parameters-analyze.md)
     * [Analyzing Methods](using-ocular/common-queries/methods-analyze.md)
     * [Uncovering Data Flows](using-ocular/common-queries/data-flows.md)
+  * Use Cases
+    * [Identifying Call Chains](using-ocular/use-cases/call-chains.md)
   * Tutorials
     * [Using ShiftLeft Ocular with Security Profiles](using-ocular/tutorials/sp.md)
     * [Analyzing a C Language Application](using-ocular/tutorials/c-language.md)
     * [Using ShiftLeft Ocular with JSP](using-ocular/tutorials/jsp.md)
     * [Scanning for Deserialization Sinks](using-ocular/tutorials/deserialization.md)
     * [Java Vulnerable Lab](using-ocular/tutorials/java-vuln.md)
-    * [Exploring a Call Graph](using-ocular/tutorials/callgraph.md)
     * [Discovering a Real World Vulnerability](using-ocular/tutorials/CVE-2018-19859.md)
     * [Debugging ShiftLeft Ocular Scripts with JDB](using-ocular/running-debugging.md)
   * [Ocular API](https://ocular.shiftleft.io/api/)

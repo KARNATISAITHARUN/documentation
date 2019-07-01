@@ -1,4 +1,4 @@
-# Exploring a Call Graph
+# Identifying Call Chains
 
 In addition to data flows, call chains can be identified
 using scripts and the REPL. This ability is illustrated using 

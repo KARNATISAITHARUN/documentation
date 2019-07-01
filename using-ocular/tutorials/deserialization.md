@@ -1,4 +1,4 @@
-# Scanning for Deserialization Sinks
+# Scanning for Deserialization Sinks in Java
 
 OWASP provides a cheat sheet for typical deserialization sources:
 
