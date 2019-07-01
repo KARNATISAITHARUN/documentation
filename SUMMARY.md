@@ -24,6 +24,7 @@
     * [Analyzing Methods](using-ocular/common-queries/methods-analyze.md)
     * [Uncovering Data Flows](using-ocular/common-queries/data-flows.md)
   * Use Cases
+    * [HTTP Cookie Poisoning](using-ocular/use-cases/http-cookie-poisoning.md)
     * [Identifying Call Chains](using-ocular/use-cases/call-chains.md)
   * Tutorials
     * [Using ShiftLeft Ocular with Security Profiles](using-ocular/tutorials/sp.md)
