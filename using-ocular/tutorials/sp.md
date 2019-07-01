@@ -193,45 +193,9 @@ cpg.finding.filterOnEnd(x =>  x.score >=8 && x.category == "a1-injection").l
 
 returns only the findings with a score greater or equal to 8, where the finding's category is `a1-injection`.
 
-## Using a Policy to Scan for Data-Flow Vulnerabilities
+## Customizing the DSL Using the "Extend My Library" Pattern
 
-The CPG query language can be used to formulate vulnerability patterns, and these queries can be used in a non-interactive script to automatically scan for vulnerability patterns. For data-flow related vulnerabilities, ShiftLeft Ocular provides a more concise mechanism, the Policy. A Policy defines methods that introduce data into the application, sensitive operations, and data-flow that should be reported. For example, in ShiftLeft's dynamic Policy, find the following lines
-
-```
-// [~/.shiftleft/policy/dynamic/java/io/ObjectInputStream.policy:]
-
-IO deserializer = METHOD -f "java.io.ObjectInputStream.readObject:java.lang.Object()" { INST "SINK" }
-```
-
-This states that the instance parameter of the method `readObject` should be considered as a data sink of a deserializer, that is, the instance parameter is deserialized.
-
-```
-// ~/.shiftleft/policy/dynamic/org/springframework/exposed.policy:
-
-TAG "DATA_TYPE" -v "attacker-controlled" METHOD -a r"org\.springframework\.web\.bind\.annotation\.(Request|Get|Post|Put|Delete|Patch)Mapping" PAR -a r"org\.springframework\.web\.bind\.annotation\.(CookieValue|PathVariable|RequestParam|RequestBody)"
-```
-
-This rule specifies that all parameters tagged with the Spring annotations `CookieValue`, `PathVariable`, and a few others are to be tagged as "attacker-controlled". Finally, specify that flows of attacker-controlled data into deserializers are worth reporting
-
-```
-// ~/.shiftleft/policy/static/execute.policy:
-
-CONCLUSION attacker-to-deserializer = FLOW DATA (attacker-controlled) -> IO (deserializer)
-WHEN CONCLUSION attacker-to-deserializer => EMIT {
-    title: "Attacker controlled data to deserialization",
-    description: "Attacker controlled data is deserialized in this flow. ...",
-    category: "a1-injection",
-    score: "8.0"
-}
-```
-
-The Policy also allows data transformations and
-checks to be specified in order to report flows of data, for data that 
-does not undergo validation. For more information, refer to the [Policy Language](../../policies/spl.md) article.
-
-## Extending the DSL Using the "Pimp My Library" Pattern
-
-The domain specific language can be enhanced using the "Pimp my library pattern". For example, a method named `whatICareAbout` is added to findings, which can subsequently be evaluated just like built-in language elements
+The domain specific language can be enhanced using the "Extend my Library" pattern. For example, a method named `whatICareAbout` is added to findings, which can subsequently be evaluated just like built-in language elements
 
 ```scala
 import io.shiftleft.passes.findings.steps.Finding
