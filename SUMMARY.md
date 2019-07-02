@@ -8,8 +8,8 @@
   * [ShiftLeft Requirements](introduction/requirements.md)
 * Using ShiftLeft Ocular
   * Getting Started
-    * [About ShiftLeft Ocular](using-ocular/getting-started/ocular-desc.md)
-    * [Quick Start](using-ocular/ocular-quick-start.md)
+    * [About ShiftLeft Ocular](using-ocular/getting-started/about-shiftleft-ocular.md)
+    * [Quick Start](using-ocular/getting-started/ocular-quick-start.md)
     * [Installating and Updating ShiftLeft Ocular](using-ocular/installation.md)
     * [Memory Size Recommendations](using-ocular/ocular-memory-size.md)
     * [Interactive and Non-Interactive Modes](using-ocular/interactive-noninteractive-modes.md)
@@ -33,7 +33,6 @@
     * [Scanning for Deserialization Sinks](using-ocular/tutorials/deserialization.md)
     * [Java Vulnerable Lab](using-ocular/tutorials/java-vuln.md)
     * [Discovering a Real World Vulnerability](using-ocular/tutorials/CVE-2018-19859.md)
-    * [Debugging ShiftLeft Ocular Scripts with JDB](using-ocular/running-debugging.md)
   * [Ocular API](https://ocular.shiftleft.io/api/)
 * Using ShiftLeft Inspect and ShiftLeft Protect
   * [Quick Start](using-inspect-protect/inspect-protect-quick-start.md)

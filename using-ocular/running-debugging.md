@@ -1,8 +1,8 @@
-# Running and Debugging ShiftLeft Ocular
+# Starting and Debugging ShiftLeft Ocular
 
-Use the following command to run ShiftLeft Ocular: 
+From your ShiftLeft Ocular directory (default is ~/bin/ocular on Linux and MacOS X, and C:\Users\$USERNAME\bin\ocular on Windows), use the following command to start ShiftLeft Ocular: 
 
-```bash
+```
 ./ocular.sh
 ```
 
