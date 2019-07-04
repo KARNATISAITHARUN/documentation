@@ -6,6 +6,8 @@
   * [ShiftLeft Products](introduction/products.md)
   * [ShiftLeft Compliance and Support](introduction/support.md)
   * [ShiftLeft Requirements](introduction/requirements.md)
+  * [The HelloShiftLeft Sample Application](introduction/helloshiftleft.md)
+  * [Understanding the CPG](introduction/understanding-cpg.md)
 * Using ShiftLeft Ocular
   * Getting Started
     * [About ShiftLeft Ocular](using-ocular/getting-started/about-shiftleft-ocular.md)
@@ -26,6 +28,7 @@
   * Use Cases
     * [HTTP Cookie Poisoning](using-ocular/use-cases/http-cookie-poisoning.md)
     * [Identifying Call Chains](using-ocular/use-cases/call-chains.md)
+    * [Tracking Non Atomic Data Types](using-ocular/use-cases/tracking-non-atomic.md)
   * Tutorials
     * [Using ShiftLeft Ocular with Security Profiles](using-ocular/tutorials/sp.md)
     * [Analyzing a C Language Application](using-ocular/tutorials/c-language.md)
