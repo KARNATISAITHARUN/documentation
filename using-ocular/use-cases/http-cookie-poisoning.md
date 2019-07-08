@@ -1,4 +1,4 @@
-# HTTP Cookie Poisoning
+# Discovering HTTP Cookie Poisoning
 
 The main purpose of an HTTP cookie is to identify users and prepare customized Web pages for consumers based on their profile. Cookie poisoning is the act of an attacker modifying a cookie for the purpose of abusing the functionality of an application. There are three areas of potential security risks with cookies: 
 

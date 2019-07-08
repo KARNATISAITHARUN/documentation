@@ -26,7 +26,8 @@
     * [Analyzing Methods](using-ocular/common-queries/methods-analyze.md)
     * [Uncovering Data Flows](using-ocular/common-queries/data-flows.md)
   * Use Cases
-    * [HTTP Cookie Poisoning](using-ocular/use-cases/http-cookie-poisoning.md)
+    * [Detecting 0-Day Vulnerabilities](using-ocular/use-cases/detect-0-day.md)
+    * [Discovering HTTP Cookie Poisoning](using-ocular/use-cases/http-cookie-poisoning.md)
     * [Identifying Call Chains](using-ocular/use-cases/call-chains.md)
     * [Tracking Non Atomic Data Types](using-ocular/use-cases/tracking-non-atomic.md)
   * Tutorials
@@ -35,7 +36,6 @@
     * [Using ShiftLeft Ocular with JSP](using-ocular/tutorials/jsp.md)
     * [Scanning for Deserialization Sinks](using-ocular/tutorials/deserialization.md)
     * [Java Vulnerable Lab](using-ocular/tutorials/java-vuln.md)
-    * [Discovering a Real World Vulnerability](using-ocular/tutorials/CVE-2018-19859.md)
   * [Ocular API](https://ocular.shiftleft.io/api/)
 * Using ShiftLeft Inspect and ShiftLeft Protect
   * [Quick Start](using-inspect-protect/inspect-protect-quick-start.md)

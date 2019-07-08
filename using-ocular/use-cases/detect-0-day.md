@@ -1,15 +1,9 @@
-# Discovering a Real World Vulnerability
+# Detecting 0-Day Vulnerabilities
 
-This tutorial is a technical write-up of the blog entry about the discovery of
-CVE-2018-19859, a vulnerability allowing an attacker to execute arbitrary file
-writes through [OpenRefine](https://github.com/OpenRefine/OpenRefine/).
+A 0-day vulnerability is unknown to, or unaddressed by, developers and security researchers, and is considered a severe threat. Until an 0-day vulnerability is identified and mitigated, hackers can exploit it.
 
-OpenRefine is described by its
-authors as *"a free, open source power tool for working with messy data and
-improving it"*. A common use case for OpenRefine is the sanitization of messy
-public data sets prior to statistical calculations, for which it provides
-features such as importing and exporting of data that may be scattered among
-multiple files or archives.
+This use case is based on CVE-2018-19859, a vulnerability allowing an attacker to execute arbitrary file
+writes through [OpenRefine](https://github.com/OpenRefine/OpenRefine/). 
 
 ## CVE-2018-19859
 
@@ -18,7 +12,16 @@ an arbitrary file write. The vulnerability is rooted in an unsafe handling of ZI
 files, a [vulnerability pattern](http://phrack.org/issues/34/5.html#article)
 often seen by security researchers, analysts, and penetration testers.
 
-## Creating the Code Property Graph (CPG)
+OpenRefine is described by its
+authors as "a free, open source power tool for working with messy data and
+improving it". A common use case for OpenRefine is the sanitization of messy
+public data sets prior to statistical calculations, for which it provides
+features such as importing and exporting of data that may be scattered among
+multiple files or archives.
+
+
+## 1. Creating the Code Property Graph (CPG)
+
 OpenRefine is not distributed as a single JAR file, as expected by the ShiftLeft Ocular tool `java2cpg`.
 However, `java2cpg` does not require its input file to comply with a specific 
 file structure as long as its input is provided in the ZIP format. This format is basically
@@ -52,7 +55,7 @@ ocular> loadCpg("openrefine.bin.zip")
 [..]
 ```
 
-## Identifying Importers (Sources)
+## 2. Identifying Importers (Sources)
 
 Input sources represent program points where potentially malicious
 (attacker-controlled) data may enter the system. Using ShiftLeft Ocular, you can search and define an input source.
@@ -99,7 +102,7 @@ specifies the required type of the parameters (which is `HttpServletRequest`)
 ocular> val source = cpg.method.fullName(".*DefaultImportingController.*do(Get|Post).*").parameter.evalType(".*HttpServletRequest.*")
 ```
 
-## Looking for the Sink
+## 3. Looking for the Sink
 
 Sinks are security-sensitive program points to which malicious,
 attacker-controlled input (coming from the sink) may flow. 
@@ -133,7 +136,7 @@ To find a possible data flow between sources and sinks, issue a
 ocular> sink.reachableBy(source).flows.p
 ```
 
-### Resulting flow
+### Resulting Flow
 
 By issuing the `reachableBy` query, a detailed picture about
 the dataflow is provided, which starts from the
@@ -242,7 +245,7 @@ In summary, OpenRefine downloads data based on a URL, reads it as
  | archiveIS(2)| java.io.InputStream                   | explodeArchive                | com.google.refine.importing.ImportingUtilities.explodeArchive:boolean(java.io.File,java.io.InputStream,org.json.JSONObject,org.json.JSONArray,com.google.refine.importing.ImportingUtilities$Progress)                                                                          |
  ```
 
-## Vulnerable Flow
+## 4. Detecting a Vulnerable Flow
 
 After looking for sources and sinks, you can refine your search to
 detect an actual vulnerability.
@@ -316,7 +319,7 @@ res29: Int = 2
  | param0(1)   | java.io.File                | <init>               | java.io.FileOutputStream.<init>:void(java.io.File)                                                                                              
  ```
 
-## Verifying the Vulnerability
+## 5. Verifying the Vulnerability
 
 A flow from `doPost` to `explodeArchive`
 and from `explodeArchive` to a `FileOutputStream` instance is controlled. In order to verify
@@ -360,4 +363,3 @@ OpenRefine can be detected with ShiftLeft Ocular
 using `explodeArchive` and `write` (from `FileOutputStream`) as sources and
 sinks, respectively. Furthermore, the existence of 
 the vulnerability is validated. However, you would still need to [create an exploit to see if it is really exploitable](https://github.com/OpenRefine/OpenRefine/issues/1840). 
- 
