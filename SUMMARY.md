@@ -12,13 +12,13 @@
   * Getting Started
     * [About ShiftLeft Ocular](using-ocular/getting-started/about-shiftleft-ocular.md)
     * [Quick Start](using-ocular/getting-started/ocular-quick-start.md)
-    * [Installating and Updating ShiftLeft Ocular](using-ocular/installation.md)
+    * [Installing and Updating ShiftLeft Ocular](using-ocular/installation.md)
     * [Memory Size Recommendations](using-ocular/ocular-memory-size.md)
-    * [Interactive and Non-Interactive Modes](using-ocular/interactive-noninteractive-modes.md)
+    * [Interactive and Non-Interactive Modes](using-ocular/getting-started/modes.md)
     * [Starting ShiftLeft Ocular](using-ocular/running-debugging.md)
-    * [Creating a CPG](using-ocular/tutorials/cpg.md)
     * [Using Workspaces](using-ocular/workspaces.md)
     * [Deep-Dive: The CPG](using-ocular/cpg-deep-dive.md)
+    * [Debugging ShiftLeft Ocular Scripts](using-ocular/running-debugging.md)
   * Common Queries
     * [Analyzing Dependencies](using-ocular/common-queries/dependency-analysis.md)
     * [Analyzing Types and Packages](using-ocular/common-queries/types-packages-analysis.md)
@@ -63,11 +63,11 @@
     * [Integrating with GoCD Builds](using-inspect-protect/integrating-with-shiftleft/integrating-gocd-builds.md)
     * [Integrating with TeamCity Builds](using-inspect-protect/integrating-with-shiftleft/integrating-teamcity-builds.md)
     * [Integrating with Travis Builds](using-inspect-protect/integrating-with-shiftleft/integrating-travis-builds.md)
-  * Using ShiftLeft in Your Workflow
-    * [Integrating Jira](using-inspect-protect/using-workflow/jira-integration.md)
-    * [Vulnerabilities Dashboard](using-inspect-protect/using-workflow/vulnerability-dashboard.md)
   * Application Programming Interfaces (APIs)
     * [Identifying Code Vulnerabilities using the API](using-inspect-protect/api/vulnerabilities_api.md)
+  * Using ShiftLeft in Your Workflow
+    * [Integrating Jira](using-workflow/jira-integration.md)
+    * [Vulnerability Dashboard](using-workflow/vulnerability-dashboard.md)
 * ShiftLeft Policies
   * [Policy Language](policies/spl.md)
 * Monthly Updates
