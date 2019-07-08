@@ -6,7 +6,7 @@ distributed code analysis. It provides, and stores, an intermediate representati
 
 In a single graph, the CPG provides multi-layered representation of each code version, including the various levels of abstraction. The unique insights from the CPG provide all ShiftLeft solutions with granular detail and a deep understanding of data flows.
 
-For background information, review the [Understanding the CPG](../introduction/understanding-cpg.md) article. Refer to [Working with the CPG](running-debugging.md) article for specifics. 
+For background information, review the [Understanding the CPG](../introduction/understanding-cpg.md) article. Refer to [Working with the CPG](working-with-cpg.md) article for specifics. 
 
 ## CPG Base Schema
 
