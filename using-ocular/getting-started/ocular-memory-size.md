@@ -4,7 +4,7 @@ By default, disk overflow is enabled for Code Property Graphs (CPG). Disk overfl
 
 However, when analyzing large applications, disk overflow can slow down performance. Instead, you can optimize ShiftLeft Ocular performance through the appropriate combination of memory and disk sizes. 
 
-Note that estimating the necessary amount of memory is non-trivial. ShiftLeft Ocular determines the amount of memory needed and presents the following (example) information when you load or [create a CPG](../tutorials/cpgcreate.md): 
+Note that estimating the necessary amount of memory is non-trivial. ShiftLeft Ocular determines the amount of memory needed and presents the following (example) information when you [create a CPG](create-cpg.md) or [load a CPG](working-with-cpg.md): 
 
 ```
 createCpg("someBigApp.jar")
