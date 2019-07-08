@@ -14,13 +14,13 @@ Using ShiftLeft Ocular, you can identify cookie poisoning vulnerability by execu
 
 ```scala
 {
-val source = cpg.method.fullName(".*Cookie.<init>.*").parameter
+ocular> val source = cpg.method.fullName(".*Cookie.<init>.*").parameter
 val sink = cpg.method.name("addCookie").parameter
 sink.reachableBy(source).flows.passesNot("setHttpOnly").passesNot("setSecure").p
 }
 
 {
-val source = cpg.method.name("addCookie").parameter
+ocular> val source = cpg.method.name("addCookie").parameter
 val sink = cpg.method.fullName(".*javax.servlet.RequestDispatcher.forward.*").parameter
 sink.reachableBy(source).flows.passesNot("setHttpOnly").passesNot("setSecure").p
 }

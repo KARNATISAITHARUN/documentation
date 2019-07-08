@@ -72,7 +72,7 @@ Generate a CPG for the `hello-shiftleft.jar`
 
 ```bash
 cd $shiftleft
-./java2cpg.sh subjects/hello-shiftleft-0.0.1-SNAPSHOT.jar -o cpg.bin.zip
+ocular> ./java2cpg.sh subjects/hello-shiftleft-0.0.1-SNAPSHOT.jar -o cpg.bin.zip
 ```
 
 This command creates a file named `cpg.bin.zip` containing the CPG in a binary format.
@@ -87,13 +87,13 @@ information. Like the Security Profile, the CPG can be queried interactively usi
 The CPG is loaded via the interactive `loadCpg` command
 
 ```scala
-loadCpg("cpg.bin.zip")
+ocular> loadCpg("cpg.bin.zip")
 ```
 
 This command creates an object named `cpg`, which provides access to the CPG. To explore the program dependencies
 
 ```scala
-cpg.dependency.name.l
+ocular> cpg.dependency.name.l
 ```
 
 This provides a complete list of all dependency names. We support functional
@@ -101,7 +101,7 @@ combinators. For example, to output (name, version) pairs, we can use
 the following expression: 
 
 ```scala
-cpg.dependency.map(x => (x.name, x.version)).l
+ocular> cpg.dependency.map(x => (x.name, x.version)).l
 ```
 
 which yields
@@ -134,7 +134,7 @@ It is also possible to process CPG subgraphs using external programs, by
 exporting them to JSON. For example 
 
 ```scala
-cpg.dependency.toJson |> "/tmp/dependencies.json"
+ocular> cpg.dependency.toJson |> "/tmp/dependencies.json"
 ```
 
 dumps complete dependency information into the file "/tmp/dependencies.json" in
@@ -143,7 +143,7 @@ expressions. For example, to determine whether an application uses the
 spring framework, a quick query is
 
 ```scala
-cpg.dependency.name(".*spring.*").l.nonEmpty
+ocular> cpg.dependency.name(".*spring.*").l.nonEmpty
 => true
 ```
 
@@ -151,13 +151,13 @@ Since the application uses Spring, it makes sense to look for the
 typical Java annotations that indicate attacker-controlled variables
 
 ```scala
-cpg.annotation.name(".*(CookieValue|PathVariable).*").l
+ocular> cpg.annotation.name(".*(CookieValue|PathVariable).*").l
 ```
 
 From annotations, jump to parameters using these annotations
 
 ```scala
-cpg.annotation.name(".*(CookieValue|PathVariable).*").parameter.name.l
+ocular> cpg.annotation.name(".*(CookieValue|PathVariable).*").parameter.name.l
 ```
 
 which yields
@@ -169,31 +169,31 @@ List[String] = List("customerId", "customerId", "customerId", "accountId", "acco
 Now track these attacker-controlled variables to see all data flows originating at them. To do this, first define the set of sinks to be all parameters annotated by CookieValue or PathVariable
 
 ```scala
-val sources = cpg.annotation.name(".*(CookieValue|PathVariable).*").parameter
+ocular> val sources = cpg.annotation.name(".*(CookieValue|PathVariable).*").parameter
 ```
 
 Then define the set of sinks to be all parameters
 
 ```scala
-val sinks = cpg.method.parameter
+ocular> val sinks = cpg.method.parameter
 ```
 
 Finally, enumerate all flows from sources to sinks
 
 ```scala
-sinks.reachableBy(sources).flows.p
+ocular> sinks.reachableBy(sources).flows.p
 ```
 
 The flows can be examined manually or automatically. For example, determine controlled parameters as a result of data flows as 
 
 ```scala
-sinks.reachableBy(sources).flows.sink.parameter.l
+ocular> sinks.reachableBy(sources).flows.sink.parameter.l
 ```
 
 This query determines sinks reachable by sources and examines the corresponding data flows. The last flow element is extracted of each flow via the `pathElemens.last` directive, and the corresponding parameter is retrieved. The result of the query can be stored in a variable for further processing, which comes in handy when determining a large number of data flows
 
 ```scala
-val controlled = sinks.reachableBy(sources).flows.sink.parameter.l
+ocular> val controlled = sinks.reachableBy(sources).flows.sink.parameter.l
 ```
 
 Now retrieve the parameter index ("ast child number" and method full name)

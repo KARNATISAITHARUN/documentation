@@ -22,45 +22,45 @@ There are three ways to create CPGs and Security Profiles, illustrated using the
  1. Via shorthand.
  
  ```
- createCpgAndSp("subjects/JavaVulnerableLab.war")
+ ocular> createCpgAndSp("subjects/JavaVulnerableLab.war")
  ```
 
 2. First creating the CPG, then creating the Security Profile.
 
 ```
-createCpg("subjects/JavaVulnerableLab.war")
-createSp
+ocular> createCpg("subjects/JavaVulnerableLab.war")
+ocular> createSp
 ```
 
 3. By explicitly specifying the overlays.
 
 ```
-createCpg("subjects/JavaVulnerableLab.war", "semanticcpg", "tagging", "securityprofile")
+ocular> createCpg("subjects/JavaVulnerableLab.war", "semanticcpg", "tagging", "securityprofile")
 ```
 
 ## Managing a Workspace
 
 Managing a workspace involves loading and removing (unloading CPG and running queries. The commands to manage a workspace are illustrated using the HelloShiftLeft demo Java application.
 
-* `workspace`. Load all of an application's CPGs in the workspace. The last entry is the active CPG.
+* `ocular> workspace`. Load all of an application's CPGs in the workspace. The last entry is the active CPG.
 
-* `unloadCpg`. Remove (unload) the newly created CPG from the workspace.
+* `ocular> unloadCpg`. Remove (unload) the newly created CPG from the workspace.
 
-* `loadCpg("hello-shiftleft-0.0.1-SNAPSHOT.jar")`. Load a specific CPG, by name, in the workspace. Once loaded, this CPG is  active.
+* `ocular> loadCpg("hello-shiftleft-0.0.1-SNAPSHOT.jar")`. Load a specific CPG, by name, in the workspace. Once loaded, this CPG is  active.
 
-* `cpg.method.fullName.l`. Run query on the active CPG in the workspace.
+* `ocular> cpg.method.fullName.l`. Run query on the active CPG in the workspace.
 
-* `cpgs.flatMap(_.method.fullName.l)`. Run query on all CPGs in the workspace and join results.
+* `ocular> cpgs.flatMap(_.method.fullName.l)`. Run query on all CPGs in the workspace and join results.
 
 ## Managing Overlays
 
 You manage overlays by showing all overlay creators, loading a CPG only with a `semanticcpg` overlay and adding a tagging overlay. The commands to manage overlays are illustrated using the Java Vulnerable Lab application.
 
-* `overlays`. Show all available overlay creators.
+* `ocular> overlays`. Show all available overlay creators.
 
-* `loadCpg("JavaVulnerableLab.war", "semanticcpg")`. Load a CPG only with the `semanticcpg` overlay.
+* `ocular> loadCpg("JavaVulnerableLab.war", "semanticcpg")`. Load a CPG only with the `semanticcpg` overlay.
 
-* `addOverlay("tagging")`. Add the tagging overlay.
+* `ocular> addOverlay("tagging")`. Add the tagging overlay.
 
 ## Identifying Application Code and Dependencies
 
@@ -70,14 +70,14 @@ Generally, you use ShiftLeft Ocular to analyze your application code and determi
 
 The commands to identify application code and dependencies are illustrated using the HelloShiftLeft demo Java application.
 
-* `namespaces("subjects/hello-shiftleft-0.0.1-SNAPSHOT.jar")`. Show all namespaces of the application.
+* `ocular> namespaces("subjects/hello-shiftleft-0.0.1-SNAPSHOT.jar")`. Show all namespaces of the application.
 
-* `appNamespaces("subjects/hello-shiftleft-0.0.1-SNAPSHOT.jar")`. Specify prior to creating the CPG, which packages the Smart Jar Unpacker treats as application packages.
+* `ocular> appNamespaces("subjects/hello-shiftleft-0.0.1-SNAPSHOT.jar")`. Specify prior to creating the CPG, which packages the Smart Jar Unpacker treats as application packages.
 
-* `depNamespaces("subjects/hello-shiftleft-0.0.1-SNAPSHOT.jar")`. Show dependency namespaces.
+* `ocular> depNamespaces("subjects/hello-shiftleft-0.0.1-SNAPSHOT.jar")`. Show dependency namespaces.
 
 If you want to manually choose application namespaces for CPG creation, you can pass those namespaces to the `createCpg` command. For example, to specify explicitly that the application namespace is `io.shiftleft`, you would use the command
 
 ```
-createCpg("subjects/hello-shiftleft-0.0.1-SNAPSHOT.jar", List("io.shiftleft"))
+ocular> createCpg("subjects/hello-shiftleft-0.0.1-SNAPSHOT.jar", List("io.shiftleft"))
 ```

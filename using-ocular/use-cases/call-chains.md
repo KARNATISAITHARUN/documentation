@@ -7,7 +7,7 @@ using scripts and the REPL. This ability is illustrated using
 [Download commons-io](http://central.maven.org/maven2/commons-io/commons-io/2.5/commons-io-2.5.jar) and then generate a Code Property Graph (CPG) by
 
 ```
-./java2cpg.sh -f protobufzip -o commons-io-2.5.bin.zip commons-io-2.5.jar -nb
+ocular> ./java2cpg.sh -f protobufzip -o commons-io-2.5.bin.zip commons-io-2.5.jar -nb
 
 ```
 
@@ -105,7 +105,7 @@ ocular> val source = cpg.method.name("exec").repeat(m=>m.caller).until(m=> m.isP
 
 ocular> val sink = cpg.method.name("exec").parameter 
 
-ocular>sink.reachableBy(source).flows.p 
+ocular> sink.reachableBy(source).flows.p 
 ```
 
 `org.apache.commons.io.FileSystemUtils.freeSpace:long(java.lang.String)` is found to be publically available, and a data flow between this parameter and `exec` exists.

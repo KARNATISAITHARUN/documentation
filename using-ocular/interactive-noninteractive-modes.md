@@ -36,13 +36,13 @@ operator to pipe output into files. The script is run as
 To write JSON
 
 ```
-cpg.method.toJson |> "/tmp/foo" 
+ocular> cpg.method.toJson |> "/tmp/foo" 
 ```
 
 To write Pretty-Printed JSON
 
 ```
-cpg.method.toPrettyJson |> "/tmp/foo"
+ocular> cpg.method.toPrettyJson |> "/tmp/foo"
 ```
 
 ### Appending to Files
@@ -50,11 +50,11 @@ cpg.method.toPrettyJson |> "/tmp/foo"
 To append to a JSON file
 
 ```
-cpg.method.toJson ||> "/tmp/foo" 
+ocular> cpg.method.toJson ||> "/tmp/foo" 
 ```
 
 To append to a Pretty-Printed JSON file
 
 ```
-cpg.method.toPrettyJson ||> "/tmp/foo"
+ocular> cpg.method.toPrettyJson ||> "/tmp/foo"
 ```

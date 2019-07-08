@@ -59,7 +59,7 @@ property graph and security profile can then be created as follows:
 
 ```
 cd $shiftleft
-./java2cpg.sh subjects/JavaVulnerableLab.war -o cpg.bin.zip
+ocular> ./java2cpg.sh subjects/JavaVulnerableLab.war -o cpg.bin.zip
 ```
 
 This command creates a file named `cpg.bin.zip` containing the code
@@ -88,7 +88,7 @@ via the `|>` operator.
 
 You can run this script as
 ```
-./ocular.sh --script scripts/report.sc --params spFilename=javavulnerablelab.sp,outFilename=report.txt
+ocular> ./ocular.sh --script scripts/report.sc --params spFilename=javavulnerablelab.sp,outFilename=report.txt
 ```
 
 As a result, the text file `report.txt` is generated, which contains
@@ -178,7 +178,7 @@ As demonstrated in the non-interactive script report.sc, load
 the Security Profile "javavulnerablelab.sp" by issuing the command
 
 ```
-loadSp("javavulnerablelab.sp")
+ocular> loadSp("javavulnerablelab.sp")
 ```
 
 This creates an object named `sp` that provides access to the Security
@@ -198,7 +198,7 @@ which allows findings to be filtered such that only findings scored
 above or equal to a threshold are returned. For example
 
 ```
-sp.findings.scoreAtLeast(8).l.size
+ocular> sp.findings.scoreAtLeast(8).l.size
 ```
 
 returns only findings with a score of at least 8. Note that the
@@ -211,7 +211,7 @@ All string properties support regular expressions. For example, you
 can obtain all findings related to serialization by
 
 ```
-sp.findings.title(".*serialize.*").l
+ocular> sp.findings.title(".*serialize.*").l
 ```
 
 All lists support the functional combinators of the Scala language.
@@ -228,7 +228,7 @@ This allows more complex filtering rules to be expressed via lambdas.
 For example
 
 ```
-sp.findings.filter(x =>  x.score >=8 && x.categories.contains("a1-injection")).l
+ocular> sp.findings.filter(x =>  x.score >=8 && x.categories.contains("a1-injection")).l
 ```
 
 returns only the findings with a score greater or equal to 8, where
@@ -244,13 +244,13 @@ information. Like the Security Profile, the CPG can be queried interactively usi
 The CPG is loaded via the `loadCpg` command:
 
 ```
-loadCpg("cpg.bin.zip")
+ocular> loadCpg("cpg.bin.zip")
 ```
 
 This creates the object `cpg`, which provides access to the CPG. Exploring the program dependencies
 
 ```
-cpg.dependency.name.l
+ocular> cpg.dependency.name.l
 ```
 
 This provides a complete list of all dependency names. We support functional
@@ -258,7 +258,7 @@ combinators. For example, to output (name, version) pairs, we can use
 the following expression: 
 
 ```
-cpg.dependency.map(x => (x.name, x.version)).l
+ocular> cpg.dependency.map(x => (x.name, x.version)).l
 ```
 which yields
 
@@ -291,7 +291,7 @@ It is also possible to process CPG subgraphs using external programs by
 exporting the subgraphs to JSON. For example
 
 ```
-cpg.dependency.toJson |> "/tmp/dependencies.json"
+ocular> cpg.dependency.toJson |> "/tmp/dependencies.json"
 ```
 
 dumps complete dependency information into the file "/tmp/dependencies.json" is
@@ -300,7 +300,7 @@ expressions. For example, to determine whether an application uses the
 servlet api, a quick query is
 
 ```
-cpg.dependency.name(".*servlet.*").l.nonEmpty 
+ocular> cpg.dependency.name(".*servlet.*").l.nonEmpty 
 res9: Boolean = true
 ```
 
@@ -309,7 +309,7 @@ a `HttpServletRequest` type as parameter are of interest. Finding these methods 
 query
 
 ```
-cpg.method.parameter.evalType(".*HttpServletRequest.*").method.fullName.p 
+ocular> cpg.method.parameter.evalType(".*HttpServletRequest.*").method.fullName.p 
 [...]
 org.cysecurity.cspf.jvl.controller.EmailCheck.processRequest:void(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
 org.cysecurity.cspf.jvl.controller.EmailCheck.doGet:void(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
@@ -320,7 +320,7 @@ org.cysecurity.cspf.jvl.controller.EmailCheck.doPost:void(javax.servlet.http.Htt
 The first source
 
 ```
-val source = cpg.method.fullName(".*EmailCheck.*").parameter 
+ocular> val source = cpg.method.fullName(".*EmailCheck.*").parameter 
 ```
 
 This query defines every parameter of methods which
@@ -329,7 +329,7 @@ to define the sinks. Assuming no knowledge of the target, look for methods that 
 their name by
 
 ```
-cpg.method.name("execute.*").fullName.p 
+ocular> cpg.method.name("execute.*").fullName.p 
 java.sql.Statement.executeQuery:java.sql.ResultSet(java.lang.String)
 java.sql.Statement.executeUpdate:int(java.lang.String)
 java.sql.PreparedStatement.executeUpdate:int()
@@ -394,7 +394,7 @@ param0 	  	 executeQuery 	 java/sql/Statement.java
 The flows can be examined manually or automatically. For example, to determine parameters controlled as a result of data flows 
 
 ```
-sinks.reachableBy(sources).flows.l.flatMap(_.pathElems.last.parameters.l)
+ocular> sinks.reachableBy(sources).flows.l.flatMap(_.pathElems.last.parameters.l)
 ```
 
 This query determines sinks reachable by sources and examines the
@@ -405,12 +405,12 @@ variable for further processing, which is useful when determining
 a large number of data flows
 
 ```
-val controlled = sinks.reachableBy(sources).flows.l.flatMap(_.pathElems.last.parameters.l)
+ocular> val controlled = sinks.reachableBy(sources).flows.l.flatMap(_.pathElems.last.parameters.l)
 ```
 Retrieve the parameter index ("order" and method full name) by
 
 ```
-controlled.map(x => s"Controlling parameter ${x.order} of ${x.start.method.fullName.l.head}")
+ocular> controlled.map(x => s"Controlling parameter ${x.order} of ${x.start.method.fullName.l.head}")
 res14: List[String] = List(
   "Controlling parameter 1 of java.sql.Statement.executeQuery:java.sql.ResultSet(java.lang.String)",
   "Controlling parameter 1 of java.sql.Statement.executeQuery:java.sql.ResultSet(java.lang.String)",

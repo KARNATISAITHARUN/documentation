@@ -8,13 +8,13 @@ From your ShiftLeft Ocular directory (default is ~/bin/ocular on Linux and MacOS
 
 Once started, ShiftLeft Ocular provides the following commands.
 
-* ***loadCpg(filename).*** Loads the CPG stored
+* ***ocular> loadCpg(filename).*** Loads the CPG stored
      at `filename`. The format is inferred from the file
      extension. Valid extensions are ".xml" for GraphML and ".bin.zip"
      for the default binary format (recommended). The CPG is made
      available via the object `cpg`.
      
-* ***loadSp(filename, isJson=true).*** Loads the Security Profile 
+* ***ocular> loadSp(filename, isJson=true).*** Loads the Security Profile 
      stored at `filename`. The Security Profile is expected to be in the default
      binary format, or in its JSON version if `isJson` is explicitly
      set to true. The Security Profile is made available via the object `sp`.
@@ -23,8 +23,8 @@ Once started, ShiftLeft Ocular provides the following commands.
 
 Currently only work with `List`. If you need these commands extended or changed, [contact us](https://www.shiftleft.io/contact/).
 
-* pipe output to outfile: `cpg.namespace.name.l |> "out.txt"`
-* append to outfile: `cpg.namespace.name.l |>> "out.txt"`
+* pipe output to outfile: `ocular> cpg.namespace.name.l |> "out.txt"`
+* append to outfile: `ocular> cpg.namespace.name.l |>> "out.txt"`
 
 ## Ammonite Tricks
 

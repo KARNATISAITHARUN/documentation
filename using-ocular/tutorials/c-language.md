@@ -16,7 +16,7 @@ git checkout v4.7
 Build the CPG for the vulnerable driver 
 
 ```
-./fuzzyc2cpg.sh path/to/kernel/linux/drivers/scsi/aacraid
+ocular> ./fuzzyc2cpg.sh path/to/kernel/linux/drivers/scsi/aacraid
 ```
 
 ## Analyzing the Code
@@ -24,7 +24,7 @@ Build the CPG for the vulnerable driver
 Analyze the interaction from user to kernel space with `copy_from_user`. To determine if any data from user space to kernel space is copied, use
 
 ```
-cpg.call.name("copy_from_user").code.p
+ocular> cpg.call.name("copy_from_user").code.p
 ```
 
 ShiftLeft Ocular returns
@@ -49,8 +49,8 @@ indicating that there doesn't seem to be any problems with data from user space 
 To look at some flows from copy_from_user, use
 
 ```
-val sinkArguments = cpg.method.name("copy_from_user").parameter.argument
-println(sinkArguments.reachableByFlows(cpg.identifier).p)
+ocular> val sinkArguments = cpg.method.name("copy_from_user").parameter.argument
+ocular> println(sinkArguments.reachableByFlows(cpg.identifier).p)
 ```
 
 which provides a lot of information.
@@ -58,7 +58,7 @@ which provides a lot of information.
 The query 
 
 ```
-println(sinkArguments.reachableByFlows(cpg.identifier).l.size)
+ocular> println(sinkArguments.reachableByFlows(cpg.identifier).l.size)
 ```
 
 returns the number 302.
@@ -66,7 +66,7 @@ returns the number 302.
 Of interest would be an estimate if the arguments of copy_from_user are sanitized. Since there are no direct definitions at if expressions, there is no reaching definition information out of them. But information that flows into if expressions is available. To do so, using Main.scala, add the following lines
 
 ```
-val reachingDefs1 = cpg.method
+ocular> val reachingDefs1 = cpg.method
                        .name("copy_from_user")
                        .parameter
                        .argument
@@ -77,7 +77,7 @@ val reachingDefs1 = cpg.method
 So far reachableByFlows has been used to construct and print out the flows. To filter all that detail, use 'reachableBy' to indicate to ShiftLeft Ocular to identify only the sources that are hit, rather than the details of the data flow paths. The following query collects the sources that are hit into a set
 
 ```
-val reachingDefs2 = cpg.method
+ocular> val reachingDefs2 = cpg.method
                        .name(".*less.*", ".*greater.*")
                        .parameter
                        .argument
@@ -94,7 +94,7 @@ val reachingDefs2 = cpg.method
 Now check if there is an intersection between these two sets, which provides an estimate on what arguments of `copy_from_user` might be sanitized
 
 ```
-reachingDefs1.intersect(reachingDefs2).foreach(elem => println(elem.code))
+ocular> reachingDefs1.intersect(reachingDefs2).foreach(elem => println(elem.code))
 ```
 
 This query returns
@@ -138,22 +138,22 @@ if (size < le16_to_cpu(kfib->header.SenderSize))
 Use the following query to filter for `copy_from_user` looking for kfib as an argument
 
 ```
-cpg.call.name("copy_from_user").code(".*kfib.*").l
+ocular> cpg.call.name("copy_from_user").code(".*kfib.*").l
 ```
 
 or
 
 ```
-cpg.call.name("copy_from_user").filter(call => call.argument.code(".*kfib.*")).l
+ocular> cpg.call.name("copy_from_user").filter(call => call.argument.code(".*kfib.*")).l
 ```
 
 To print the return
 
 ```
-cpg.call.name("copy_from_user")
-.filter(call => call.argument.code(".*kfib.*"))
-.l
-.foreach(call => println(call.code))
+ocular> cpg.call.name("copy_from_user")
+ocular> .filter(call => call.argument.code(".*kfib.*"))
+ocular> .l
+ocular> .foreach(call => println(call.code))
 ```
 
 outputs
@@ -166,7 +166,7 @@ copy_from_user(kfib, arg, size)
 Next, find flows from these sinks to a common ancestor which defines `kfib`, and to ensure that there is no other definition of `kfib` which might have a double fetch.
 
 ```
-val cfu1 = cpg.call.name("copy_from_user")
+ocular> val cfu1 = cpg.call.name("copy_from_user")
    .code(".*kfib.*")
    .l
    .head
@@ -174,7 +174,7 @@ val cfu1 = cpg.call.name("copy_from_user")
    .reachableBy(cpg.identifier)
    .toSet
 
-  val cfu2 = cpg.call.name("copy_from_user")
+ocular> val cfu2 = cpg.call.name("copy_from_user")
     .code(".*kfib.*")
     .l
     .last
