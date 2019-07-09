@@ -67,8 +67,8 @@
   * Application Programming Interfaces (APIs)
     * [Identifying Code Vulnerabilities using the API](using-inspect-protect/api/vulnerabilities_api.md)
   * Using ShiftLeft in Your Workflow
-    * [Integrating Jira](using-workflow/jira-integration.md)
-    * [Vulnerability Dashboard](using-workflow/vulnerability-dashboard.md)
+    * [Integrating Jira](using-inspect-protect/using-workflow/jira-integration.md)
+    * [Vulnerability Dashboard](using-inspect-protect/using-workflow/vulnerability-dashboard.md)
 * ShiftLeft Policies
   * [Policy Language](policies/spl.md)
 * Monthly Updates
