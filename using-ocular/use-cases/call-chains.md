@@ -4,7 +4,7 @@ In addition to data flows, call chains can be identified
 using scripts and the REPL. This ability is illustrated using 
 `commons-io`. 
 
-[Download commons-io](http://central.maven.org/maven2/commons-io/commons-io/2.5/commons-io-2.5.jar) and then generate a Code Property Graph (CPG) by
+Download [commons-io](https://repo.maven.apache.org/maven2/commons-io/commons-io/2.5/commons-io-2.5.jar) and then generate a Code Property Graph (CPG) by
 
 ```
 ocular> ./java2cpg.sh -f protobufzip -o commons-io-2.5.bin.zip commons-io-2.5.jar -nb

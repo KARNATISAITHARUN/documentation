@@ -4,13 +4,17 @@ Once you've [started ShiftLeft Ocular](starting.md), you create a CPG for a new 
 
 A new CPG is loaded into your workspace and becomes the active CPG. By default, all commands operate on the most recently loaded, active CPG. 
 
-In order to create CPGs that contain the application code but do not include the code of libraries, ShiftLeft Ocular performs a smart inspection of the input file(s) to determine application code vs dependencies. Refer to the [API for information on the methods used to gain visibility into this process: `namespaces`, `appNamespaces` and `depNamespaces`](https://ocular.shiftleft.io/api/io/shiftleft/repl/Console.html).
+In order to create CPGs that contain the application code but do not include the code of libraries, ShiftLeft Ocular performs a smart inspection of the input file(s) to determine application code vs dependencies. Refer to the [API for information on the methods used to gain visibility into this process](https://ocular.shiftleft.io/api/io/shiftleft/repl/Console.html): `namespaces`, `appNamespaces` and `depNamespaces`.
+
+The command, with all avaiable options, to create a CPG is
+
+`createCpg(inputPaths: List[String], namespaces: List[String], overlayCreators: List[String])`
 
 For additional information about the CPG, refer to:
 
 * [Understanding the CPG](../../introduction/understanding-cpg.md)
-* [Deep-Dive: The CPG](../using-oculargetting-started//cpg-deep-dive.md)
-* [ShiftLeft Ocular API](https://ocular.shiftleft.io/api/io/shiftleft/repl/Console.html).
+* [Deep-Dive: The CPG](cpg-deep-dive.md)
+* [ShiftLeft Ocular API](https://ocular.shiftleft.io/api/io/shiftleft/repl/Console.html)
 
 ## Basic Command
 
@@ -37,7 +41,7 @@ where `<inputPaths>` is a list of the locations and filenames of the target appl
 When creating a new CPG, you can also at the same time create your own additional layers, by using the option
 
 ```scala
-ocular> createCpg(<inputPath>, <layer>, <layer>)
+ocular> createCpg(<inputPath>, <layer>)
 ```
 
 where `<layer>` is an additional CPG layer you want to create, as a list separated by commas. 

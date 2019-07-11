@@ -17,24 +17,24 @@ To integrate the `sl analyze` (or `sl analyze --cpg`) shell command as a build s
 3. Configure the freestyle project as shown in the screenshots below. 
 Note that this is an example freestyle project configuration using the [HelloShiftLeft](https://github.com/ShiftLeftSecurity/HelloShiftLeft) sample app; your Jenkins freestyle project configuration may differ.
 
-![General Settings](../img/jenkins-hsl-general.png)
+   ![General Settings](../img/jenkins-hsl-general.png)
 
-![Source Code Management](../img/jenkins-hsl-scm.png)
+   ![Source Code Management](../img/jenkins-hsl-scm.png)
 
-![Build Triggers](../img/jenkins-hsl-build-triggers.png)
+   ![Build Triggers](../img/jenkins-hsl-build-triggers.png)
 
-![Build Environment](../img/jenkins-hsl-build-env.png)
+   ![Build Environment](../img/jenkins-hsl-build-env.png)
 
 4. In the **Build** section of the project configuration, click **Add build step**. 
 5. Select the build step corresponding to the build tool you are using (Maven or Gradle). 
 For example, if you are using Maven, select **Invoke top-level Maven targets**.
 
-![Add Maven Build Step](../../integrating-with-shiftleft/img/jenkins-hsl-build.png)
+   ![Add Maven Build Step](../../integrating-with-shiftleft/img/jenkins-hsl-build.png)
 
 6. Enter the **Goals** for the Maven or Gradle build step you are configuring. 
 For example, if you are using Maven, enter `clean package`.
 
-![Add Maven Build Command](../../integrating-with-shiftleft/img/jenkins-hsl-mvn.png)
+   ![Add Maven Build Command](../../integrating-with-shiftleft/img/jenkins-hsl-mvn.png)
 
 7. Click **Add build step** to add another build step.
 8. Select the **Execute Shell** option.
@@ -42,7 +42,7 @@ For example, if you are using Maven, enter `clean package`.
 You must ensure that this step is configured to be the final build step. If necessary, drag the action window to the end of the build configuration section.
 10. Click **Save** when you are done.
 
-![Add Final Build Step for SL Integration](../../integrating-with-shiftleft/img/jenkins-hsl-final-build-step.png)
+   ![Add Final Build Step for SL Integration](../../integrating-with-shiftleft/img/jenkins-hsl-final-build-step.png)
 
 The above shell command assumes that the SL CLI is in your `$PATH`. If it is **NOT**, either put it there (recommended), or use the following command to invoke `sl analyze`:
 

@@ -14,7 +14,7 @@ For ShiftLeft Ocular, the HellowShiftLeft sample appication is included in the S
 You can download and compile HelloShiftLeft for use with ShiftLeft Inspect with these commands
 
 ```
-git clone https://github.com/conikeec/HelloShiftLeft.git 
+git clone git@github.com:ShiftLeftSecurity/HelloShiftLeft.git
 cd HelloShiftLeft && mvn clean package
 ```
 

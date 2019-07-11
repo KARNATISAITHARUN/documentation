@@ -3,7 +3,13 @@
 A 0-day vulnerability is unknown to, or unaddressed by, developers and security researchers, and is considered a severe threat. Until an 0-day vulnerability is identified and mitigated, hackers can exploit it.
 
 This use case is based on CVE-2018-19859, a vulnerability allowing an attacker to execute arbitrary file
-writes through [OpenRefine](https://github.com/OpenRefine/OpenRefine/). 
+writes through [OpenRefine](https://github.com/OpenRefine/OpenRefine/). The process is:
+
+1. [Create the Code Property Graph (CPG)](#creating-the-cpg)
+2. [Identify sources](#identifying-sources)
+3. [Look for the sink](#looking-for-the-sink)
+4. [Detect a vulnerable flow](#detecting-a-vulnerable-flow)
+5. [Verify the vulnerability](#verifying-the-vulnerability)
 
 ## CVE-2018-19859
 
@@ -20,7 +26,7 @@ features such as importing and exporting of data that may be scattered among
 multiple files or archives.
 
 
-## 1. Creating the Code Property Graph (CPG)
+## Creating the CPG
 
 OpenRefine is not distributed as a single JAR file, as expected by the ShiftLeft Ocular tool `java2cpg`.
 However, `java2cpg` does not require its input file to comply with a specific 
@@ -55,9 +61,9 @@ ocular> loadCpg("openrefine.bin.zip")
 [..]
 ```
 
-## 2. Identifying Importers (Sources)
+## Identifying Sources
 
-Input sources represent program points where potentially malicious
+Input sources (importers) represent program points where potentially malicious
 (attacker-controlled) data may enter the system. Using ShiftLeft Ocular, you can search and define an input source.
 
 OpenRefine relies on importing and exporting
@@ -102,7 +108,7 @@ specifies the required type of the parameters (which is `HttpServletRequest`)
 ocular> val source = cpg.method.fullName(".*DefaultImportingController.*do(Get|Post).*").parameter.evalType(".*HttpServletRequest.*")
 ```
 
-## 3. Looking for the Sink
+## Looking for the Sink
 
 Sinks are security-sensitive program points to which malicious,
 attacker-controlled input (coming from the sink) may flow. 
@@ -245,7 +251,7 @@ In summary, OpenRefine downloads data based on a URL, reads it as
  | archiveIS(2)| java.io.InputStream                   | explodeArchive                | com.google.refine.importing.ImportingUtilities.explodeArchive:boolean(java.io.File,java.io.InputStream,org.json.JSONObject,org.json.JSONArray,com.google.refine.importing.ImportingUtilities$Progress)                                                                          |
  ```
 
-## 4. Detecting a Vulnerable Flow
+## Detecting a Vulnerable Flow
 
 After looking for sources and sinks, you can refine your search to
 detect an actual vulnerability.
@@ -319,7 +325,7 @@ res29: Int = 2
  | param0(1)   | java.io.File                | <init>               | java.io.FileOutputStream.<init>:void(java.io.File)                                                                                              
  ```
 
-## 5. Verifying the Vulnerability
+## Verifying the Vulnerability
 
 A flow from `doPost` to `explodeArchive`
 and from `explodeArchive` to a `FileOutputStream` instance is controlled. In order to verify

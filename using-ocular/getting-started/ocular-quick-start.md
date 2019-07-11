@@ -101,7 +101,7 @@ workspace
 
 The CPG contains information about the processed code on different levels of abstraction: dependencies, type
 hierarchies, control flow, data flow, and instruction-level information. The CPG can be queried using 
-ShiftLeft Ocular in either [interactive or non-interactive modes](interactive-noninteractive-modes.md). 
+ShiftLeft Ocular in either [interactive or non-interactive modes](modes.md). 
 
 Using interactive querying, explore the program dependencies by
 

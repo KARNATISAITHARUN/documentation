@@ -2,9 +2,9 @@
 
 ShiftLeft is an application security platform with three solutions: 
 
-* **[ShiftLeft Ocular](../using-shiftleft-ocular/getting-started/about-shiftleft-ocular.md)**. Helps examine the software elements and flows in your application to identify complex business logic vulnerabilities that can't be scanned for automatically. ShiftLeft Ocular gives code auditors and reviewers the ability to construct and tune powerful, highly customized queries for interactive interrogation of your unique code bases and environments.
+* **[ShiftLeft Ocular](../using-ocular/getting-started/about-shiftleft-ocular.md)**. Helps examine the software elements and flows in your application to identify complex business logic vulnerabilities that can't be scanned for automatically. ShiftLeft Ocular gives code auditors and reviewers the ability to construct and tune powerful, highly customized queries for interactive interrogation of your unique code bases and environments.
 
-* **[ShiftLeft Inspect](../using-inspect-protect/analyzing-applications-in-ci.md)**. A next-generation static application security testing (SAST) solution. In just minutes, ShiftLeft Inspect provides an accurate and exhaustive exploration and analysis of your unique code and identifies complex vulnerabilities and sensitive data leakage.
+* **[ShiftLeft Inspect](../using-inspect-protect/inspect/analyzing-applications-in-ci.md)**. A next-generation static application security testing (SAST) solution. In just minutes, ShiftLeft Inspect provides an accurate and exhaustive exploration and analysis of your unique code and identifies complex vulnerabilities and sensitive data leakage.
 
 * **[ShiftLeft Protect](../using-inspect-protect/protect-java/jvm-based-environments.md)**. ShiftLeft Protect secures applications against exploitation of vulnerabilities by leveraging "code informed" insights. ShiftLeft Protect creates runtime security specifications based on identified vulnerabilities discovered during analysis of code. This approach allows ShiftLeft Protect to operate with minimal footprint and overhead. 
 
@@ -18,4 +18,4 @@ Components of the ShiftLeft solution are:
 
 * **[ShiftLeft Microagent](../using-inspect-protect/protect-java/configuring-the-microagent.md)**. ShiftLeft Protect deploys a ShiftLeft Microagent in-memory alongside your runtime application. The Microagent protects the residual issues in production and is customized to your application's specific shape and weaknesses through the use of a Security Profile for Runtime (SPR). Each Microagent connects to a ShiftLeft Proxy server to download the SPR and to send events and metrics to the Dashboard. 
 
-* **[Ocular Query Language (OQL)](../using-ocular/oql.md)**. Use to query CPGs and SPRs. OQL results are available and exportable via standard JSON format for easy integration into the security tools in use by your organization and for sharing data across the SDLC.
+* **[Ocular Query Language (OQL)](https://ocular.shiftleft.io/api/)**. Use to query CPGs and SPRs. OQL results are available and exportable via standard JSON format for easy integration into the security tools in use by your organization and for sharing data across the SDLC.

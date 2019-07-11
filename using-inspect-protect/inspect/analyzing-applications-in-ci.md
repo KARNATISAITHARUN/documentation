@@ -4,17 +4,17 @@ Use the `sl analyze` command to submit applications to ShiftLeft for code analys
 
 ## Analysis Workflow
 
-- Review [code analysis requirements](../introduction/requirements.md).
+- Review [code analysis requirements](../../introduction/requirements.md).
 - [Install ShiftLeft CLI](../using-cli/using-cli.md) on the host where you will submit applications for analysis.
 - Successfully build the application using a supported build tool (maven, gradle, sbt) **before** you submit the app for analysis. 
 - Submit the application for analysis using one of the supported analysis commands (see below).
-- For each code commit, rebuild the application and resubmit it for analysis by integrating the CLI with an CI/CD build system to automate analysis: [Jenkins](integrating-with-shiftleft/integrating-jenkins-builds/integrating-jenkins-builds.md), [GoCD](integrating-with-shiftleft/integrating-gocd-builds.md), [Bamboo](integrating-with-shiftleft/integrating-bamboo-builds.md), [TeamCity](integrating-with-shiftleft/integrating-teamcity-builds.md), [Travis](integrating-with-shiftleft/integrating-travis-builds.md), CircleCI.
+- For each code commit, rebuild the application and resubmit it for analysis by integrating the CLI with an CI/CD build system to automate analysis: [Jenkins](../integrating-with-shiftleft/integrating-jenkins-builds/integrating-jenkins-builds.md), [GoCD](../integrating-with-shiftleft/integrating-gocd-builds.md), [Bamboo](../integrating-with-shiftleft/integrating-bamboo-builds.md), [TeamCity](../integrating-with-shiftleft/integrating-teamcity-builds.md), [Travis](../integrating-with-shiftleft/integrating-travis-builds.md), CircleCI.
 
 ## Analysis Commands
 
 The ShiftLeft CLI supports three modes of analysis. The mode you choose depends on your business requirements.
 
-### `sl analyze --app <name> [<path>]`
+### sl analyze --app <name> [<path>] 
 
 Use `sl analyze --app <name> <path>` to upload the application to the ShiftLeft cloud for analysis. This mode of analysis is suitable for most use cases.
 
@@ -22,7 +22,7 @@ The flag `--app <name>` tells ShiftLeft to associate the analysis with the appli
 
 The `sl analyze` command scans the artifact (JAR/WAR) provided by `<path>`.
 
-### `sl analyze --app <name> --cpg [<path>]`
+### sl analyze --app <name> --cpg [<path>]
 
 Use `sl analyze --app <name> --cpg <path>` to submit security metadata for proprietary application code (in lieu of bytecode), and bytecode for open source dependencies. 
 

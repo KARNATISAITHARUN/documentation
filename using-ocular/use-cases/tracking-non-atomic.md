@@ -5,38 +5,61 @@ any two instructions, allowing other processes to run. If your application's pro
 
 A non atomic condition is a vulnerability to interference caused by untrusted processes. These are conditions caused by processes running other, different programs, which introduce other actions between steps of the program. These other programs might be invoked by an attacker. 
 
-This use case illustrates how to use ShiftLeft Ocular to analze for non atomic data types, using the FreeRTOS real-time operating system kernel as the example target application. 
+This use case illustrates how to use ShiftLeft Ocular to analze for non atomic data types, using the FreeRTOS real-time operating system kernel as the example target application. The process is:
 
-## 1. Download the FreeRTOS application.
+1. [Download the FreeRTOS application](#downloading-the-freertos-application).
+2. [Create the FreeRTOS application Code Property Graph (CPG)](#creating-the-freertos-application-cpg).
+3. [Declare an array of primitive types](#declaring-an-array-of-primitive-types).
+4. [Call a convenience function to get LineNumber](#calling-a-convenience-function-to-get-linenumber).
+5. [Declare a data structure of User Defined Types](#declaring-a-data-structure-of-user-defined-types).
+6. [Acquire all identifiers into UDT data structure](#acquiring-all-identifiers-into-udt-data-structure).
+7. [Store findings in a multimap keyed by identified methodName](#storing-findings-in-a-multimap-keyed-by-identified-methodName).
+8. [Store findings in a multimap keyed by identified type](#storing-findings-in-a-multimap-keyed-by-identified-type).
+9. [Call a convenience function to get Range given start and end](#calling-a-convenience-function-to-get-range-given-start-and-end).
+10. [Give functionName return all callOuts within scope of the function](#giving-functionname-return-all-callouts-within-scope-of-the-function).
+11. [Optimize replacement](#optimizing-replacement).
+12. [Call a convenience function for holding functions with CRITICAL SECTIONS with ranges](#calling-a-convenience-function-for-holding-functions-with-critical-sections-with-ranges).
+13. [Specify functions to optimize ranging](#specifying-functions-to-optimize-ranging).
+14. [Get entire callOut trace for each method that encompasses taskENTER_CRITICAL](#getting-entire-callout-trace-for-each-method-that-encompasses-taskenter_critical).
+15. [Get entire callOut trace for each method that DOES NOT encompass taskENTER_CRITICAL](#getting-entire-callout-trace-for-each-method-that-does-not-encompass-taskenter_critical).
+16. [Optimize replacement](#optimizing-replacement).
+17. [Filter callMap and fit into WithCriticalSection](#filtering-callMap-and-fitting-into-withcriticalsection).
+18. [Navigate using an identifier](#navigating-using-an-identifier).
+19. [Determine the location details of where the non atomic data type is used](#determining-the-location-details-of-where-the-non-atomic-data-type-is-used).
+
+
+## Downloading the FreeRTOS Application
 
 [Download the FreeRTOS application](https://www.freertos.org/a00104.html) and unzip the source code into the ShiftLeft Ocular `subjects` directory, for example `subjects/FreeRTOS`.
 
-## 2. Create and load the FreeRTOS application's CPG.
+## Creating the FreeRTOS Application CPG
 
 ```scala
 ocular> createCpg("subjects/"FreeRTOS")
 ```
-FreeRTOS's CPG is automatically loaded into memory.
+FreeRTOS's CPG is automatically loaded into memory and your workspace.
 
-## 3. Declare an array of primitive types. 
+## Declaring an Array of Primitive Types
 
 ```scala
 ocular> val primitiveTypes = List("int", "float", "double", "void", "size_t", "ANY", "void", "char", "short")
 ```
 
-## 4. Call a convenience function to get LineNumber.
+## Calling a Convenience Function to get LineNumber
 
 ```scala
 ocular> def getLineNumber(ln : Option[Integer]) = (ln match { case Some(x) => x ; case None => 0 }).asInstanceOf[Int]
 ```
 
-## 5. Declare a data structure of User Defined Types.
+## Declaring a Data Structure of User Defined Types
 
 ```scala
 ocular> case class UDT(uType : String, uName : String,  methodName : String, fileName : String, lineNumber : Integer)
 ```
 
-## 6. Acquire all identifiers into UDT data structure (negative filter on primitive types).
+## Acquiring all Identifiers into UDT Data Structure
+
+Negative filter on primitive types.
 
 ```scala
 ocular> val udtList = cpg.identifier.l.map {
@@ -46,7 +69,7 @@ ocular> val udtList = cpg.identifier.l.map {
 } distinct
 ```
 
-## 7. Store findings in a multimap keyed by identified methodName.
+## Storing Findings in a Multimap Keyed by Identified methodName
 
 ```scala
 ocular> import collection.mutable._
@@ -56,7 +79,7 @@ item => udtMap.addBinding(item.methodName, item)
 }
 ```
 
-## 8. Store findings in a multimap keyed by identified type.
+## Storing Findings in a Multimap Keyed by Identified Type
 
 ```scala
 ocular> import collection.mutable._
@@ -68,31 +91,33 @@ item => udtMapByType.addBinding(item.uType, item)
 implicit def flat[K,V](kv: (K, Option[V])) = kv._2.map(kv._1 -> _).toList
 ```
 
-## 9. Call a convenience function to get Range given start and end.
+## Calling a Convenience Function to get Range Given Start and End
 
 ```scala
 ocular> def getRange(start : Int , end : Int) = start to end toList
 ```
 
-## 10. Give functionName return all callOuts within scope of the function.
+## Giving functionName Return all callOuts within Scope of the Function
 
 ```scala
 ocular> def getCallOutDetails(fnName:String) = cpg.method.name(fnName).callOut.l.map(co => (co.name , getLineNumber(co.lineNumber))).sortBy(_._2)
 ```
 
-## 11. Optimize replacement.
+## Optimizing Replacement
 
 ```scala
 ocular> def getCallOutDetails(fnName:String) = cpg.method.name(fnName).callOut.l.par.map(co => (co.name , getLineNumber(co.lineNumber))).toList.sortBy(_._2)
 ```
 
-## 12. Call a convenience function for holding functions with CRITICAL SECTIONS with ranges
+## Calling a Convenience Function for Holding Functions with CRITICAL SECTIONS with Ranges
 
 ```scala
 ocular> case class WithCriticalSection(fnName : String, fileName : String, csRange : List[(String, Int, Int)])
 ```
 
-## 13. Specify functions to optimize ranging (in case where multiple critical sections exists in a method (function)
+## Specifying Functions to Optimize Ranging
+
+For situations in which multiple critical sections exists in a method (function).
 
 ```scala
 ocular> def getBounds(dataTuples : List[(String,Int)]) =
@@ -118,7 +143,7 @@ def getRange(enterExits : (List[(String, Int)], Option[(String, Int)])) =
     }._1
 ```
 
-## 14. Get entire callOut trace for each method that encompasses "taskENTER_CRITICAL".
+## Getting Entire callOut Trace for Each Method that Encompasses taskENTER_CRITICAL
 
 ```scala
 ocular> val callMap = cpg.method.filter(_.callOut.name("taskENTER_CRITICAL")).l map {
@@ -126,7 +151,7 @@ ocular> val callMap = cpg.method.filter(_.callOut.name("taskENTER_CRITICAL")).l 
 } reduce(_ ++ _)
 ```
 
-## 15. Get entire callOut trace for each method that DO NOT encompass "taskENTER_CRITICAL".
+## Getting Entire callOut Trace for Each Method that DOES NOT Encompass taskENTER_CRITICAL
 
 ```scala
 ocular> val callMapWithoutCS = cpg.method.filterNot(_.callOut.name("taskENTER_CRITICAL")).l map {
@@ -134,7 +159,7 @@ ocular> val callMapWithoutCS = cpg.method.filterNot(_.callOut.name("taskENTER_CR
         } reduce(_ ++ _)
 ```
 
-## 16. Optimize replacement.
+## Optimizing Replacement
 
 ```scala
 ocular> def timeTaken[R](block: => R): R = {
@@ -154,7 +179,7 @@ timeTaken {
 }
 ```
 
-## 17. Filter callMap and fit into WithCriticalSection
+## Filtering callMap and Fitting into WithCriticalSection
 
 ```scala
 ocular> val callMapFiltered = callMap map {
@@ -162,7 +187,9 @@ ocular> val callMapFiltered = callMap map {
 } map { case(k,v) => k -> WithCriticalSection(k,v._1,v._2) }
 ```
 
-## 18. Navigate using an identifier, for example called `xQueueAddToSet`. Pick any type from `udtMapByType` say for instance tfp_format
+## Navigating using an Identifier
+
+For example called `xQueueAddToSet`. Pick any type from `udtMapByType` say for instance tfp_format.
 
 ```scala
 …
@@ -179,7 +206,7 @@ val nonAtomicUsedInNoCS =callMapWithoutCS.getOrElse("tfp_format","NOT_FOUND")
 
 If `(nonAtomicUsedInCS.size > 0 && nonAtomicUsedInNoCS.size > 0)`, this implies that a non atomic data type is used both in guarded context and not in guarded context, possibly leading to deadlock or starvation.
 
-## 19. Determine the location details of where the non atomic data type is used.
+## Determining the Location Details of Where the Non Atomic Data type is Used
 
 ```scala
 ocular> val udtSet = udtMap("xStreamBufferReset")

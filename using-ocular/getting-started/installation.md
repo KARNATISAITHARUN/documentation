@@ -12,16 +12,16 @@ The process of installing ShiftLeft Ocular is:
 
 1. Unzip the Ocular distribution ZIP file provided by ShiftLeft, by issuing the following command
 
-```
-$ unzip ocular-distribution-[version].zip
-```
-where `[version]` is the actual version number of the distribution file.
+   ```
+   $ unzip ocular-distribution-[version].zip
+   ```
+     where `[version]` is the actual version number of the distribution file.
 
 2. Enter the password you received from ShiftLeft. The folder `ocular-distribution` is created.
 
 3. Navigate to the folder `ocular-distribution`. From there, for Linux and MacOS X run the installer using the `./install.sh` command. For the Windows OS, run the installing using the command `.\install.ps1` and then follow the prompt.
 
-If you don't have permission, first use the  command `chmod +x install.sh` and then run the installer again.
+     If you don't have permission, first use the  command `chmod +x install.sh` and then run the installer again.
 
 4. Identify where you want to install ShiftLeft Ocular (defaults to `~/bin/ocular` on Linux and MacOS X, and to `C:\Users\$USERNAME\bin\ocular` on Windows).
 

@@ -3,11 +3,7 @@
 
 * **Update to ShiftLeft's Terms of Service**. The ShiftLeft [Terms of Service](https://www.shiftleft.io/terms/) have been updated for post-termination obligations (4d). 
 
-## ShiftLeft Ocular
-
-* **New Tutorial on Creating a Code Property Graph (CPG) from a Java Archive (JAR)**. The ShiftLeft Ocular documentation now includes a [tutorial on creating a CPG from a JAR](../using-ocular/tutorials/cpgcreate.md). ShiftLeft Ocular creates a CPG for only the application code, with references to the dependency code. This distinction is made through the use of a built-in Smart Jar Unpacker, which heuristically determines for each namespace whether it contains application or dependency code.
-
-### ShiftLeft Ocular v0.3.20
+## ShiftLeft Ocular v0.3.20
 
 * **[Overlays API](https://ocular.shiftleft.io/api/io/shiftleft/repl/cpgcreation/Overlays$.html)**. The Security Profile is now part of the CPG, as an overlay. This new feature unifies the Ocular Query Language (OQL) for the CPG and Security Profile and removes the need for using `cpg2sp.sh` to create a Security Profile. This means that all Security Profile functionality is now part of the CPG. 
 

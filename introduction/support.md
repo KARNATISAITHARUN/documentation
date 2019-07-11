@@ -5,7 +5,6 @@ Information is provided on ShiftLeft's:
 * [Compliance](#compliance---soc-2-type-1)
 * [Operating System Support](#operating-system-support)
 * [Language Support](#language-support)
-* [Requirements](#requirements)
 
 ## Compliance - SOC 2 Type 1
 

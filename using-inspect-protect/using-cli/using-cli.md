@@ -2,7 +2,7 @@
 
 The ShiftLeft CLI is used to:
 
-- [Use ShiftLeft Inspect to submit applications for analysis and profiling](../analyzing-applications-in-ci.md). 
+- [Use ShiftLeft Inspect to submit applications for analysis and profiling](../inspect/analyzing-applications-in-ci.md). 
 - [Use ShiftLeft Protect to run the Microagent](../protect-java/configuring-the-microagent.md) with analyzed applications for runtime monitoring and metrics.
 
 Before using the ShiftLeft CLI with ShiftLeft Inspect and ShiftLeft Protect, make sure you have [authenticated the CLI with your ShiftLeft Account](../using-cli/authenticating.md).
@@ -55,9 +55,9 @@ sl [global options] command [command options] [arguments...]
 Command | Description
 --- | ---
 `auth` | [Authenticate the CLI with your ShiftLeft account](../using-cli/authenticating.md).
-`analyze [<path>]` | [Use ShiftLeft Inspect to analyze your application](../../using-inspect-protect/analyzing-applications-in-ci.md).  `<path>` can be the path to a `.jar`, `.war` or `.ear` file, or it can be the path to a Java project directory. If `<path>` is not provided, then `.` is implied.
+`analyze [<path>]` | [Use ShiftLeft Inspect to analyze your application](../inspect/analyzing-applications-in-ci.md).  `<path>` can be the path to a `.jar`, `.war` or `.ear` file, or it can be the path to a Java project directory. If `<path>` is not provided, then `.` is implied.
 `run -- <command>` | [Run the target command with ShiftLeft Protect's Microagent](../protect-java/configuring-the-microagent.md).
-`policy <command>` | Commands for managing [Custom Policies](../using-inspect-protect/inspect/custom-policies.md).
+`policy <command>` | Commands for managing [Custom Policies](../inspect/custom-policies.md).
 `update [java-agent,libplugin]` | Update certain components of the ShiftLeft CLI, including the ShiftLeft Java Microagent (`sl update java-agent`).
 `install [dotnet-agent]` | Run the ShiftLeft .NET Microagent installer.
 `help`, `h` | List ShiftLeft CLI commands or help for one command.

@@ -4,11 +4,11 @@ You use ShiftLeft Inspect to analyze your application for vulnerabilities, and S
 
 * A ShiftLeft Account ([contact us](https://www.shiftleft.io/contact/)).
 * All [ShiftLeft requirements](../introduction/requirements.md).
-* A Java application you want to analyze and protect. You can also use the [HelloShiftLeft](../../introduction/helloshiftleft.md) sample application to learn how to use ShiftLeft.
+* A Java application you want to analyze and protect. You can also use the [HelloShiftLeft](../introduction/helloshiftleft.md) sample application to learn how to use ShiftLeft.
 
 The process for quickly starting with ShiftLeft Inspect and ShiftLeft Protect is:
 
-1. [Choose your operating system](#supported-operating-systems).
+1. [Choose your operating system](../introduction/support.md).
 
 2. [Install the ShiftLeft Command Line Interface (CLI)](#installing-the-shiftleft-cli).
 
@@ -20,7 +20,7 @@ The information in this article parallels and provides additional details on the
 
 ## Installing the ShiftLeft CLI
 
-The ShiftLeft (CLI) is used with ShiftLeft Inspect to submit applications for analysis and with ShiftLeft Protect to run the ShiftLeft Microagent. The tool is named `sl`. See more information, on [Using the ShiftLeft CLI](using-cli/using-cli.md).
+The ShiftLeft (CLI) is used with ShiftLeft Inspect to submit applications for analysis and with ShiftLeft Protect to run the ShiftLeft Microagent. The tool is named `sl`. See more information on [Using the ShiftLeft CLI](using-cli/using-cli.md).
 
 There are two methods for installing the ShiftLeft CLI: [downloading the installer](#downloading-the-shiftleft-cli-installer) as explained here, or [running the appropriate CLI install command](../using-inspect-protect/using-cli/using-cli.md).
 
@@ -30,7 +30,7 @@ To download the ShiftLeft CLI Installer:
 
 1. From the Quick Start page, click the Download the ShiftLeft CLI button.
 
-![Click to Download the CLI](img/download-cli.jpg)
+   ![Click to Download the CLI](img/download-cli.jpg)
 
 2. Add the CLI to your system path. The process is different for each operating system, as explained below.
 

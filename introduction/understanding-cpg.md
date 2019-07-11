@@ -8,8 +8,9 @@ The CPG is essentially a “graph of graphs”, depicting control flow graphs, c
 
 For ShiftLeft Ocular users, additional information on the CPG is provided:
 
-* [Working with the CPG](../using-ocular/getting-started/cpg-deep-dive.md)
-* [Deep-Dive: The CPG](../using-oculargetting-started//cpg-deep-dive.md)
+* [Creating the CPG](../using-ocular/getting-started/create-cpg.md)
+* [Working with CPGs](../using-ocular/getting-started/working-with-cpg.md)
+* [Deep-Dive: The CPG](../using-ocular/getting-started/cpg-deep-dive.md)
 
 ## Multi-Layered Semantic Graph
 

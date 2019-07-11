@@ -4,12 +4,12 @@ To integrate Jenkins builds with ShiftLeft and automate code analysis, configure
 
 ## Jenkins Integration Options
 
-There are **two ways** to integrate with Jenkins: by configuring a [final build step](configure-final-build-step.md) or [post build task](configure-post-build-task.md) for *each* Jenkins project you want to submit for analysis to ShiftLeft.
+There are **two ways** to integrate with Jenkins: by configuring a final build step or post build task for *each* Jenkins project you want to submit for analysis to ShiftLeft.
 
 Configuration Option | Description
 --- | ---
-[Final Build Step](configure-final-build-step.md) | Edit the project build configuration and add the `sl analyze` (or `sl analyze --cpg)` shell command as a [final build step](configure-final-build-step.md).
-[Post Build Task](configure-post-build-task.md) | Install the *Hudson Post Build Task Plugin* plugin and add the `sl analyze` (or `sl analyze --cpg)` shell command as a [post build task](configure-post-build-task.md).
+[Final Build Step](configure-final-build-step.md) | Edit the project build configuration and add the `sl analyze` (or `sl analyze --cpg)` shell command as a final build step.
+[Post Build Task](configure-post-build-task.md) | Install the *Hudson Post Build Task Plugin* plugin and add the `sl analyze` (or `sl analyze --cpg)` shell command as a post build task.
 
 ## Jenkins Integration Prerequisites
 
@@ -32,9 +32,9 @@ Initially these credentials will be provided to you by ShiftLeft. Once you have 
   * Name: `SHIFTLEFT_ORG_ID`| Value: Paste your **Organization ID**
   * Name: `SHIFTLEFT_ACCESS_TOKEN`| Value: Paste your **Access Token**
 
-![Adding Jenkins environment variables for ShiftLeft authentication](../img/jenkins-envvars.png)
+   ![Adding Jenkins environment variables for ShiftLeft authentication](../img/jenkins-envvars.png)
 
-5. Configure each Jenkins project you want to [analyze](../../../using-inspect-protect/analyzing-applications-in-ci.md) using one of the following approaches: 
+5. Configure each Jenkins project you want to [analyze](../../../using-inspect-protect/inspect/analyzing-applications-in-ci.md) using one of the following approaches: 
  * [Final Build Step](configure-final-build-step.md), or
  * [Post Build Task](configure-post-build-task.md)
 6. Test and [verify Jenkins integration](verify-jenkins-integration.md).

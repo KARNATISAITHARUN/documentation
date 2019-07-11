@@ -1,11 +1,11 @@
 # Working With Control Property Graphs (CPGs)
 
-You work with existing CPGs, and their associated layers, in your workspace. A workspace is created when you first create a CPG. It contains all data persisted by ShiftLeft Ocular. 
+You work with existing CPGs, and their associated layers, in your workspace. A workspace is created when you first [create a CPG](create-cpg.md). It contains all data persisted by ShiftLeft Ocular. 
 
 Working with CPGs involves:
 
 * [Loading a CPG into your workspace](#loading-a-cpg-into-your-workspace)
-* [Unloading a CPG from your workspace](#removing-a-cpg-from-your-workspace)
+* [Unloading a CPG from your workspace](#unloading-a-cpg-from-your-workspace)
 * [Deleting a CPG from your workspace](#deleting-a-cpg-from-your-workspace)
 * [Viewing the contents of your workspace](#viewing-the-contents-of-your-workspace)
 * [Loading and adding layers](#loading-and-adding-layers)

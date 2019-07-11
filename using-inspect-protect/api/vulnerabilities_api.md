@@ -2,7 +2,7 @@
 
 You use the Vulnerability API to query for data on code vulnerabilities. A vulnerability is a potentially exploitable path in the code base. 
 
-The API returns a list of vulnerabilities, by [organization](#listing-an-organizations-vulnerabilities) or [application version](#listing-an-applications-vulnerabilities), with all the necessary information for you to take action on a code exploitable area. 
+The API returns a list of vulnerabilities, by [organization](#listing-organizational-vulnerabilities) or [application version](#listing-vulnerabilities-of-an-application), with all the necessary information for you to take action on a code exploitable area. 
 
 ## Authenticating API Requests.
 
@@ -86,7 +86,7 @@ to access next page in the form of `nextPageBookmark` , each page has a life of 
 }
 ```
 
-## Listing an Organization's Vulnerabilities
+## Listing Organizational Vulnerabilities
 
 You use the following request to return vulnerabilities by organization
 
@@ -142,7 +142,7 @@ You can filter returns in the body of the query
 
 * `pageBookmark`: If present,`query` will be ignored and next page of the query indicated by this bookmark will be returned if it exists, this is optional.
 
-## Listing an Application's Vulnerabilities
+## Listing Vulnerabilities of an Application
 
 You use the following request to return vulnerabilities by an application
 

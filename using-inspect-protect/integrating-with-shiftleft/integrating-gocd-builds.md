@@ -31,19 +31,19 @@ See [SL Auth](../using-cli/authenticating.md) for more information.
 1. Go into a particular GoCD agent image and add the `sl` binary to the agent path at `/usr/local/bin`.
 2. Use a terminal editor to add a shell script that consists of these two lines:
 
-```bash
-#!/bin/sh
+   ```bash
+   #!/bin/sh
 
-/usr/local/bin/sl analyze
-```
+   /usr/local/bin/sl analyze
+   ```
 
-Or, to use CPG-mode for analysis:
+   Or, to use CPG-mode for analysis:
 
-```bash
-#!/bin/sh
+   ```bash
+   #!/bin/sh
 
-/usr/local/bin/sl analyze --cpg
-```
+   /usr/local/bin/sl analyze --cpg
+   ```
 
 3. Check this shell file into the project's repository.
 
