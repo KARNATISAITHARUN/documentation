@@ -1,6 +1,6 @@
 # Understanding the Code Property Graph (CPG)
 
-All ShiftLeft solutions leverage the CPG. Based on your application code, in the form of either a JAR for Java or as source code for C/C++, ShiftLeft generates a a Code Property Graph (CPG) that can be used as the basis of custom static analysis. The CPG provides an extensible, multi-layered representation of each unique code version, including the various levels of abstraction—all presented in a single graph, across multiple programming languages. CPGs are serializable to various output/exchange formats such as CSV, GraphML, Gryo,and Protobu.
+All ShiftLeft solutions leverage the CPG. Based on your application code, ShiftLeft generates a a Code Property Graph (CPG) that can be used as the basis of custom static analysis. The CPG provides an extensible, multi-layered representation of each unique code version, including the various levels of abstraction—all presented in a single graph, across multiple programming languages. CPGs are serializable to various output/exchange formats such as CSV, GraphML, Gryo,and Protobu.
 
 ![CPG](img/cpg.jpg)
 
