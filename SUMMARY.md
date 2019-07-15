@@ -72,6 +72,7 @@
 * ShiftLeft Policies
   * [Policy Language](policies/spl.md)
 * Monthly Updates
+  * [July 2019](release-notes/july-2019.md)
   * [June 2019](release-notes/june-2019.md)
   * [May 2019](release-notes/may-2019.md)
   * [April 2019](release-notes/april-2019.md)
