@@ -9,7 +9,7 @@ Command Line Tools. The tutorial demonstrates how the tooling can be
 ## Prerequisite
 
 Install ShiftLeft Ocular into your local directory `$shiftleft`. Refer to 
-[Installing ShiftLeft Ocular](../installation.md) for more information.
+[Installing ShiftLeft Ocular](../getting-started/installation.md) for more information.
 
 ## Running the Java Vulnerable Lab Sample Application
 

@@ -13,7 +13,7 @@ The command, with all avaiable options, to create a CPG is
 For additional information about the CPG, refer to:
 
 * [Understanding the CPG](../../introduction/understanding-cpg.md)
-* [Deep-Dive: The CPG](cpg-deep-dive.md)
+* [Deep-Dive: The CPG](../about/cpg-deep-dive.md)
 * [ShiftLeft Ocular API](https://ocular.shiftleft.io/api/io/shiftleft/repl/Console.html)
 
 ## Basic Command

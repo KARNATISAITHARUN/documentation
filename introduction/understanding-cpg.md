@@ -10,7 +10,7 @@ For ShiftLeft Ocular users, additional information on the CPG is provided:
 
 * [Creating the CPG](../using-ocular/getting-started/create-cpg.md)
 * [Working with CPGs](../using-ocular/getting-started/working-with-cpg.md)
-* [Deep-Dive: The CPG](../using-ocular/getting-started/cpg-deep-dive.md)
+* [Deep-Dive: The CPG](../using-ocular/about/cpg-deep-dive.md)
 
 ## Multi-Layered Semantic Graph
 

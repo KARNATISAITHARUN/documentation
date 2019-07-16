@@ -9,16 +9,17 @@
   * [The HelloShiftLeft Sample Application](introduction/helloshiftleft.md)
   * [Understanding the CPG](introduction/understanding-cpg.md)
 * Using ShiftLeft Ocular
+  * About ShiftLeft Ocular
+    * [ShiftLeft Ocular Features](using-ocular/about/ocular-features.md)
+    * [Memory Size Recommendations](using-ocular/about/ocular-memory-size.md)
+    * [Interactive and Non-Interactive Modes](using-ocular/about/modes.md)
+    * [Deep-Dive: The CPG](using-ocular/about/cpg-deep-dive.md)
   * Getting Started
-    * [About ShiftLeft Ocular](using-ocular/getting-started/about-shiftleft-ocular.md)
     * [Quick Start](using-ocular/getting-started/ocular-quick-start.md)
     * [Installing and Updating ShiftLeft Ocular](using-ocular/getting-started/installation.md)
-    * [Memory Size Recommendations](using-ocular/getting-started/ocular-memory-size.md)
     * [Starting ShiftLeft Ocular](using-ocular/getting-started/starting.md)
-    * [Interactive and Non-Interactive Modes](using-ocular/getting-started/modes.md)
     * [Creating a CPG](using-ocular/getting-started/create-cpg.md)
     * [Working with CPGs](using-ocular/getting-started/working-with-cpg.md)
-    * [Deep-Dive: The CPG](using-ocular/getting-started/cpg-deep-dive.md)
   * Common Queries
     * [Analyzing Dependencies](using-ocular/common-queries/dependency-analysis.md)
     * [Analyzing Types and Packages](using-ocular/common-queries/types-packages-analysis.md)

@@ -1,6 +1,6 @@
 # Installing and Updating ShiftLeft Ocular
 
-Before installing or updating ShiftLeft Ocular, make sure you have [met all requirements](../../introduction/requirements.md). In addition, for large applications, you may want to optimize ShiftLeft Ocular performance through the appropriate combination of [memory and disk sizes](ocular-memory-size.md).
+Before installing or updating ShiftLeft Ocular, make sure you have [met all requirements](../../introduction/requirements.md). In addition, for large applications, you may want to optimize ShiftLeft Ocular performance through the appropriate combination of [memory and disk sizes](../about/ocular-memory-size.md).
 
 **Note**: Do not make any changes to any directories, except the installation and policy directories.
 
@@ -34,7 +34,7 @@ export _JAVA_OPTS="-Xmx$NG"
 ```
 where `$N` is the amount of memory in gigabytes. You can add this line to your shell startup script, e.g., `~/.bashrc` or `~/.zshrc`.
 
-Refer to the article [Memory Size Recommendations](ocular-memory-size.md) for more information.
+Refer to the article [Memory Size Recommendations](../about/ocular-memory-size.md) for more information.
 
 ## Updating ShiftLeft Ocular
 

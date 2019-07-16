@@ -2,7 +2,7 @@
 
 ShiftLeft is an application security platform with three solutions: 
 
-* **[ShiftLeft Ocular](../using-ocular/getting-started/about-shiftleft-ocular.md)**. Helps examine the software elements and flows in your application to identify complex business logic vulnerabilities that can't be scanned for automatically. ShiftLeft Ocular gives code auditors and reviewers the ability to construct and tune powerful, highly customized queries for interactive interrogation of your unique code bases and environments.
+* **[ShiftLeft Ocular](../using-ocular/about/ocular-features.md)**. Helps examine the software elements and flows in your application to identify complex business logic vulnerabilities that can't be scanned for automatically. ShiftLeft Ocular gives code auditors and reviewers the ability to construct and tune powerful, highly customized queries for interactive interrogation of your unique code bases and environments.
 
 * **[ShiftLeft Inspect](../using-inspect-protect/inspect/analyzing-applications-in-ci.md)**. A next-generation static application security testing (SAST) solution. In just minutes, ShiftLeft Inspect provides an accurate and exhaustive exploration and analysis of your unique code and identifies complex vulnerabilities and sensitive data leakage.
 

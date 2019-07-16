@@ -9,8 +9,8 @@ In a single graph, the CPG provides multi-layered representation of each code ve
 For additional information, refer to  
 
 * [Understanding the CPG](../../introduction/understanding-cpg.md)
-* [Creating the CPG](create-cpg.md) 
-* [Working with CPGs](working-with-cpg.md)
+* [Creating the CPG](../getting-started/create-cpg.md) 
+* [Working with CPGs](../getting-started/working-with-cpg.md)
 
 ## CPG Base Schema
 
