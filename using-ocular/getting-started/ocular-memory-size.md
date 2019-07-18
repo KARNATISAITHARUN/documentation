@@ -2,9 +2,25 @@
 
 By default, disk overflow is enabled for Code Property Graphs (CPG). Disk overflow moves cache entries to disk only when the number of entries in memory exceed the maximum memory allocation. Based on the query, ShiftLeft Ocular identifies the parts of the CPG needed, which are loaded into RAM. All other sections of the CPG are temporarily stored to disk. 
 
-However, when analyzing large applications, disk overflow can slow down performance. Instead, you can optimize ShiftLeft Ocular performance through the appropriate combination of memory and disk sizes. 
+However, when analyzing large applications, disk overflow can slow down performance. Instead, you can optimize ShiftLeft Ocular performance through the appropriate combination of memory and disk sizes, either by automating the provision of your servers or by doing it manually. 
 
-Note that estimating the necessary amount of memory is non-trivial. ShiftLeft Ocular determines the amount of memory needed and presents the following (example) information when you [create a CPG](create-cpg.md) or [load a CPG](working-with-cpg.md): 
+Note that estimating the necessary amount of memory is non-trivial. 
+
+## Automating the Provision of Your Servers
+
+Use the following script to automate the provision of your servers
+
+```
+./ocular.sh --script scripts/memory-recommendation.sc --params artifactPath=subjects/(<inputPath>
+```
+
+where `<inputPath>` is the absolute path of the target application.
+
+ShiftLeft Ocular returns the estimated required memory size. The last line of the output is the recommended heap size in megabytes that you need in order to run ShiftLeft Ocular. It is suggested that you specify a heap size that includes an additional 20% to ensure that you have sufficient physical memory on your server for other requirements, like Java.
+
+## Manually Provisioning Your Servers
+
+ShiftLeft Ocular determines the amount of memory needed and presents the following (example) information when you [create a CPG](create-cpg.md) or [load a CPG](working-with-cpg.md): 
 
 ```
 createCpg("someBigApp.jar")
