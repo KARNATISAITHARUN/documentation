@@ -8,7 +8,7 @@ Note that estimating the necessary amount of memory is non-trivial.
 
 ## Automating the Provision of Your Servers
 
-Before starting ShiftLeft Ocular to examine a specific application or application version, use the following script to estimate the required memory size
+Before [starting ShiftLeft Ocular](../getting-started/starting.md) to examine a specific application or application version, use the following script to estimate the required memory size
 
 ```
 ./ocular.sh --script scripts/memory-recommendation.sc --params artifactPath=subjects/(<inputPath>
