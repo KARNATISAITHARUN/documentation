@@ -1,6 +1,6 @@
 # Uncovering Data Flows
 
-Using the [HelloShiftLeft](../../introduction/helloshiftleft.md) sample application, this tutorial shows 
+Using [HelloShiftLeft](../../introduction/helloshiftleft.md), a sample application, this tutorial shows 
 how to uncover data flows in your application. 
 
 Upon identifying interesting methods, such as methods that 

@@ -1,6 +1,6 @@
 # Analyzing Dependencies
 
-This tutorial describes using ShiftLeft Ocular to analyze application dependencies. It uses the [HelloShiftLeft](../../introduction/helloshiftleft.md) sample application to illustrate the steps and results.
+This tutorial describes using ShiftLeft Ocular to analyze application dependencies. It uses [HelloShiftLeft](../../introduction/helloshiftleft.md), a sample application, to illustrate the steps and results.
 
 To understand what the HelloShiftLeft application depends on (internal packages as well as external open-source dependencies), use the following Code Property Graph (CPG) query in the ShiftLeft Ocular shell:
 

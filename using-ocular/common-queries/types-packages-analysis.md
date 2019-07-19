@@ -1,6 +1,6 @@
 # Analyzing Types and Packages
 
-This tutorial shows you how to use ShiftLeft Ocular to analyze types and packages. It uses the [HelloShiftLeft](../../introduction/helloshiftleft.md) sample application to illustrate the steps and results.
+This tutorial shows you how to use ShiftLeft Ocular to analyze types and packages. It uses [HelloShiftLeft](../../introduction/helloshiftleft.md), a sample application, to illustrate the steps and results.
 
 The various types (classes) and packages used by the HelloShiftLeft application, including the methods which use or call them,  can be analyzed using ShiftLeft Ocular.
 

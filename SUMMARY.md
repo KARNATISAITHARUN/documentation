@@ -13,7 +13,7 @@
     * [ShiftLeft Ocular Features](using-ocular/about/ocular-features.md)
     * [Memory Size Recommendations](using-ocular/about/ocular-memory-size.md)
     * [Interactive and Non-Interactive Modes](using-ocular/about/modes.md)
-    * [Customizing a Policy]((using-ocular/about/customize-policies.md)
+    * [Customizing a Policy](using-ocular/about/customize-policies.md)
     * [Deep-Dive: The CPG](using-ocular/about/cpg-deep-dive.md)
   * Getting Started
     * [Quick Start](using-ocular/getting-started/ocular-quick-start.md)
