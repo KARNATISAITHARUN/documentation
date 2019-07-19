@@ -8,7 +8,7 @@ Note that estimating the necessary amount of memory is non-trivial.
 
 ## Automating the Provision of Your Servers
 
-Use the following script to automate the provision of your servers
+Before starting ShiftLeft Ocular to examine a specific application or application version, use the following script to estimate the required memory size
 
 ```
 ./ocular.sh --script scripts/memory-recommendation.sc --params artifactPath=subjects/(<inputPath>
@@ -16,7 +16,21 @@ Use the following script to automate the provision of your servers
 
 where `<inputPath>` is the absolute path of the target application.
 
-ShiftLeft Ocular returns the estimated required memory size. The last line of the output is the recommended heap size in megabytes that you need in order to run ShiftLeft Ocular. It is suggested that you specify a heap size that includes an additional 20% to ensure that you have sufficient physical memory on your server for other requirements, like Java.
+ShiftLeft Ocular returns, in the last line of the output, the recommended heap size in megabytes that you need in order to run ShiftLeft Ocular. For example
+
+```
+...
+script finished successfully
+3633
+```
+
+In this example, ShiftLeft Ocular has estimated a required heap size of 3633 megabytes. It is suggested that you use a heap size that includes an additional 20% to ensure that you have sufficient physical memory on your server for other requirements, like Java. So for this example, you would want to use a heap size of approximately 4000 megabytes.
+
+Then each time you start ShiftLeft Ocular, append the command `-J-Xmx<heapsize>`, so for example
+
+```
+./ocular.sh -J-Xmx4000m
+```
 
 ## Manually Provisioning Your Servers
 
