@@ -17,8 +17,6 @@ Policies are specified using a Policy Language, which offers four types of direc
 
 * **[Flow Description Directives](#flow-description-directives).** The policy specifies patterns for information flows that, when observed, should be reported as possible instances of vulnerabilities, particularly data leaks.
 
-* **[Sensitive-Data Directives](#sensitive-data-directives).** ShiftLeft implements natural language processing techniques to identify sensitive data elements based on variable, field and parameter naming. Names specific to the application can be provided using sensitive data directives.
-
 * **[Taint Semantics (Advanced) Directives](#taint-semantics-directives).** At the lowest level of abstraction, policies define taint semantics. These directives map between method input and output parameters that express propagation of taint. This information is stored in the ICFG and can subsequently be accessed by static taint tracking algorithms.
 
 Using each of these directives is documented in detail, with examples of how they are employed in the default policy.
@@ -222,25 +220,6 @@ WHEN CONCLUSION file-to-http => EMIT {
     score: "1.0"
 }
 ```
-
-
-## Sensitive-Data Directives
-
-ShiftLeft Ocular includes sensitive data detection based on heuristics. This process makes use of variable names. So that you can specify variables that are to be treated as sensitive for their applications, the default dictionary of indicative terms is allowed to be extended using sensitive-data directives. These directives have the form
-
-```
-DATA $group = VAR $term1, ..., $term_n
-```
-
-where 
-`$group` is a sensitive-data group such as "internal-secrets"
-`$term1` to `$termn` are keywords. For example, the default policy contains the following directive to characterize highly sensitive data:
-
-```
-DATA highly-sensitive = VAR master key, cvv num, cvv, cvc num, cvc, encrypt key, crypt key
-```
-
-The sensitive-data engine looks for exact matches of these terms as well as variations and combinations of these terms.
 
 ## Taint Semantics Directives
 

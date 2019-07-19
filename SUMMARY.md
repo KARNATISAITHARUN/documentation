@@ -13,6 +13,7 @@
     * [ShiftLeft Ocular Features](using-ocular/about/ocular-features.md)
     * [Memory Size Recommendations](using-ocular/about/ocular-memory-size.md)
     * [Interactive and Non-Interactive Modes](using-ocular/about/modes.md)
+    * [Customizing a Policy]((using-ocular/about/customize-policies.md)
     * [Deep-Dive: The CPG](using-ocular/about/cpg-deep-dive.md)
   * Getting Started
     * [Quick Start](using-ocular/getting-started/ocular-quick-start.md)
@@ -27,6 +28,7 @@
     * [Analyzing Methods](using-ocular/common-queries/methods-analyze.md)
     * [Uncovering Data Flows](using-ocular/common-queries/data-flows.md)
   * Use Cases
+    * [Detecting Data Leaks using a Customized Policy](using-ocular/use-cases/custom-policy-leaks.md)
     * [Detecting 0-Day Vulnerabilities](using-ocular/use-cases/detect-0-day.md)
     * [Discovering HTTP Cookie Poisoning](using-ocular/use-cases/http-cookie-poisoning.md)
     * [Identifying Call Chains](using-ocular/use-cases/call-chains.md)
