@@ -1,6 +1,8 @@
 # ShiftLeft Ocular Memory Size Recommendations
 
-By default, disk overflow is enabled for Code Property Graphs (CPG). Disk overflow moves cache entries to disk only when the number of entries in memory exceed the maximum memory allocation. Based on the query, ShiftLeft Ocular identifies the parts of the CPG needed, which are loaded into RAM. All other sections of the CPG are temporarily stored to disk. 
+ShiftLeft Ocular provisions a proportion of system memory, depending on the operating system. For example, for Linux the default provision is 25%. So if the machine has 16 gigabytes of RAM, the default provision is 4 gigabytes.
+
+Disk overflow is enabled for Code Property Graphs (CPGs). Disk overflow moves cache entries to disk only when the number of entries in memory exceed the maximum memory allocation. Based on the query, ShiftLeft Ocular identifies the parts of the CPG needed, which are loaded into RAM. All other sections of the CPG are temporarily stored to disk. 
 
 However, when analyzing large applications, disk overflow can slow down performance. Instead, you can optimize ShiftLeft Ocular performance through the appropriate combination of memory and disk sizes, either by automating the provision of your servers or by doing it manually. 
 
