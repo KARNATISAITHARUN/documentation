@@ -1,3 +1,5 @@
+Based on Chetan's Webinar "How To Find Malicious Backdoors and Business Logic Vulnerabilities in Your Code"
+
 # Finding Backdoors in Code
 
 A backdoor a piece of code used to access a computer system or encrypted data that bypasses the system's customary security mechanisms. A backdoor may be created inadvertently, maliciously or purposefully by developers so that an application can be accessed for troubleshooting or other purposes. Backdoors pose security risks because they provide a mechanism by which the system can be exploited if discovered. Backdoor mechanisms include:
