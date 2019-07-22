@@ -1,4 +1,6 @@
-# Uncovering Sensitive Data Leak to File
+Based on Chetan's Webinar "How To Find Malicious Backdoors and Business Logic Vulnerabilities in Your Code"
+
+# Uncovering Sensitive Data Leak to File Using Queries
 
 Write PII, PHI, Cloud credentials to log fie. Then exfiltrate log file prior to rotation or aggregation by rsyslog daemon.
 
