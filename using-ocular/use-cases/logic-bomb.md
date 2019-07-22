@@ -1,3 +1,5 @@
+Based on Chetan's Webinar "How To Find Malicious Backdoors and Business Logic Vulnerabilities in Your Code"
+
 # Locating Insider Threats
 
 Insider threats are caused by trusted individuals placing certain patterns in the code to serve their malicious intent. 
