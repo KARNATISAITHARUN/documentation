@@ -1,3 +1,5 @@
+Based on Chetan's Webinar "How To Find Malicious Backdoors and Business Logic Vulnerabilities in Your Code"
+
 # Attack Using Compiler API
 
 DevOps bake in images with JDK (not hardened) rather than just the JRE. This makes Java compiler API available to compile an 
