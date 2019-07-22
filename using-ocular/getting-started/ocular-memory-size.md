@@ -13,10 +13,10 @@ Note that estimating the necessary amount of memory is non-trivial.
 Before [starting ShiftLeft Ocular](../getting-started/starting.md) to examine a specific application or application version, use the following script to estimate the required memory size
 
 ```
-./ocular.sh --script scripts/memory-recommendation.sc --params artifactPath=subjects/(<inputPath>
+./ocular.sh --script scripts/memory-recommendation.sc --params artifactPath=<inputPath>
 ```
 
-where `<inputPath>` is the absolute path of the target application.
+where `<inputPath>` is wither the relative or absolute path of the target application.
 
 ShiftLeft Ocular returns, in the last line of the output, the recommended heap size in megabytes that you need in order to run ShiftLeft Ocular. For example
 
