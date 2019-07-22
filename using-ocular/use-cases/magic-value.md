@@ -1,3 +1,5 @@
+Based on Chetan's Webinar "How To Find Malicious Backdoors and Business Logic Vulnerabilities in Your Code"
+
 # Finding a Magic Value
 
 Developer intentionally places a piece of code (Easter Egg) which is triggered based on a magic value entered in form field or REST API. In order to bypass compliance for debugging production data or preparation for attack. Place a hardcoded value into a field of the form, and using that hardcoded value, for example redirect to another page which exposes the database. 
