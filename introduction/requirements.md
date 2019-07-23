@@ -24,11 +24,11 @@ To verify that you are running the supported Java version, use the `java -versio
 
 ### Requirements for ShiftLeft Inspect
 
-ShiftLeft Inspect is a next-generation static application security testing (SAST) solution for applications written in Java and .NET. It provides an accurate and exhaustive exploration and analysis of your unique code and identifies complex vulnerabilities and sensitive data leakage.
+ShiftLeft Inspect is a next-generation static application security testing (SAST) solution for applications written in Java, Scala and .NET. It provides an accurate and exhaustive exploration and analysis of your unique code and identifies complex vulnerabilities and sensitive data leakage.
 
 #### Java Requirements for ShiftLeft Inspect
 
-ShiftLeft Inspect's Java code analysis is performed on compiled application **bytecode** (not source code). As such, you **must** successfully build your application using a supported build tool **before** you submit the application for analysis. ShiftLeft requires the presence of a supported project build tool to generate security metadata from bytecode. The supported build tool must be installed on the host where you submit an application for analysis. The supported build tools are:
+ShiftLeft Inspect's Java code analysis is performed on compiled application **bytecode** (not source code). As such, you **must** successfully build your application using a supported build tool **before** you submit the application for analysis. 
 
 Component | Requirement
 --- | ---
@@ -39,6 +39,15 @@ Build environment | Linux or Mac with **Java 8** installed locally and with 16GB
 Analysis should be performed for each code commit or build of the application. You can automate analysis submissions using your preferred CI/CD system ([Bamboo](../using-inspect-protect/integrating-with-shiftleft/integrating-bamboo-builds.md), CircleCI, [GoCD](../using-inspect-protect/integrating-with-shiftleft/integrating-gocd-builds.md), [Jenkins](../using-inspect-protect/integrating-with-shiftleft/integrating-jenkins-builds/integrating-jenkins-builds.md), [Travis](../using-inspect-protect/integrating-with-shiftleft/integrating-travis-builds.md), [TeamCity](../using-inspect-protect/integrating-with-shiftleft/integrating-teamcity-builds.md), etc.).
 
 To verify that you are running the supported Java version, use the `java -version` command.
+
+#### Scala Requirements for ShiftLeft Inspect
+
+ShiftLeft Inspect's Scala code analysis is performed on compiled application bytecode (not source code). As such, you must successfully build your application using a supported build tool before you submit the application for analysis. 
+
+Component | Requirement
+--- | ---
+System | Linux, MacOS X, Windows
+Application Type | **Scala 2.12+**
 
 #### .NET Requirements for ShiftLeft Inspect
 
