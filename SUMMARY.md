@@ -47,6 +47,7 @@
     * [CLI Reference](using-inspect-protect/using-cli/cli-reference.md)
   * Analyzing Your Code
     * [Analyzing Applications in CI](using-inspect-protect/inspect/analyzing-applications-in-ci.md)
+    * [Analysis Results](using-inspect-protect/inspect/analysis-results.md)
     * [Using Custom Policies with ShiftLeft Inspect](using-inspect-protect/inspect/custom-policies.md)
   *  Protecting Your Runtime Application
      * [ShiftLeft Protect for Java](using-inspect-protect/protect-java/jvm-based-environments.md)
