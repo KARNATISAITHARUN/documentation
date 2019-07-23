@@ -10,4 +10,4 @@ From this message, you can specify that you want to receive notification when th
 
 Once ShiftLeft Inspect completes the analysis, the message changes to indicate that the full analysis results are now displayed and all metrics have been updated.
 
-![Full Results Message](img/full-results.png)
+![Full Results Message](img/full results.png)
