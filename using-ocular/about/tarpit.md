@@ -6,7 +6,7 @@ such as backdoors, sensitive data leaks, logic bombs and magic values.
 tarpit is used in the documentation to illustrate using ShiftLeft Ocular for various use cases. Before using tarpit in a use case you must:
 
 1. [Download and compile tarpit](#downloading-and-compiling-tarpit).
-2. [Load tarpit into ShiftLeft Ocular](#loading-tarpit-into-shiftleft-ocular).
+2. [Create the tarpit Code Property Graph (CPG) and Security Profile](#loading-tarpit-into-shiftleft-ocular).
 3. [Identify dependencies](#identifying-dependencies).
 4. [Importing convenience functions](#import-convenience-functions).
 
@@ -16,11 +16,11 @@ Before you can use tarpit with ShiftLeft Ocular, you must [clone the tarpit repo
 
 This creates the tarpit WAR file `servlettarpit.war`. The WAR file is used as the ShiftLeft Ocular target application.
 
-## Loading tarpit into ShiftLeft Ocular
+## Creating the tarpit CPG and Security Profile
 
 1. [Start ShiftLeft Ocular](../getting-started/starting.md).
 
-2. Create the Code Property Graph (CPG) and Security Profile for the `tarpit` application, for example 
+2. Create the CPG and Security Profile for the `tarpit` application, for example 
 
 ```scala
 ocular> createCpgAndSp("tarpit/target/servlettarpit.war")
@@ -29,8 +29,9 @@ ocular> createCpgAndSp("tarpit/target/servlettarpit.war")
 
 where `tarpit/target/servlettarpit.war` is the absolute path of the tarpit WAR file.
 
-3. Load the new CPG
+The CPG and Security Profile are created and automatically loaded into your workspace.
 
+\this command and step is redundant
 ```scala
 ocular> loadCpg("tarpit/target/servlettarpit.war")
 ```
