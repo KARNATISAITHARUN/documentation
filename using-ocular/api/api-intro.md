@@ -1,1 +1,1 @@
-The `codepropertygraph` project offers a Scala API for processing of code property graphs, and in the following, we provide Scala examples for accessing this API. The API can however be accessed via any JVM-based language, e.g., from Java, Kotlin, or Groovy.
+
