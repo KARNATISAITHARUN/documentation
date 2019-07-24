@@ -1,22 +1,25 @@
-## Configuring `CpgLoader.load` Using 
-​
-By default, `CpgLoader.load` will
--  load the CPG
-- create indexes
-- use the `overflowdb` feature to swap graphs to disk.
-​
-To alter the behavior of `CpgLoader.load`, you can pass an optional configuration object of type `CpgLoaderConfig` to the method. For example, the following code snippet loads a CPG but does not create indexes, and does not use the overflowdb feature.
-​
+# `CpgLoaderConfig`
+
+The `CpgLoaderConfig` class alters the behavior of the `CpgLoader.load` class, by passing an optional configuration object of type `CpgLoaderConfig` to the method. 
+
+`CpgLoaderConfig` offers a static method named `default`, which provides the default configuration for `CpgLoader.load`, specifically:
+
+* Loads the CPG.
+* Creates indexes
+* Enables the `overflowdb` feature to swap graphs to disk.
+
+## Configuring `CpgLoader.load`
+
+The configuration of `CpgLoader.load` can be altered using the following methods:
+
+* `withStorage(path: String)`. Specifies the `overflowdb` path.
+* `withoutOverflow`. Turns off `overflowdb`.
+*  `doNotCreateIndexesOnLoad`. Turns off indexing.
+* `createIndexesOnLoad`. Turns on indexing.
+
+For example, if you wanted to configure `CpgLoader.load` to load a CPG, but *not* create indexes nor use the `overflowdb`feature, you would use the following Scala code
+
+```scala
+ocular> val config = CpgLoaderConfig().default.doNotCreateIndexesOnLoad.withoutOverflow
+ocular> val cpg = CpgLoader.load(filename, config)
 ```
-val config = CpgLoaderConfig().default.doNotCreateIndexesOnLoad.withoutOverflow
-val cpg = CpgLoader.load(filename, config)
-```
-​
-Just like `CpgLoader`, `CpgLoaderConfig` is defined in the package `io.shiftleft.codepropertygraph.cpgloading`. It offers a static method named `default`, which yields a default configuration. This configuration can be modified via the following methods:
-​
-​
-- withStorage(path: String): returns the existing configuration with overflowdb path as specified by `path`
-- withoutOverflow: returns existing configuration with overflowdb turned off.
-- doNotCreateIndexesOnLoad: existing configuration without indexing on load.
-- createIndexesOnLoad: returns existing configuration but with indexing on load.
-​
