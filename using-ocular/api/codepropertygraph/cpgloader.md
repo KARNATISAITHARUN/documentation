@@ -12,28 +12,34 @@ The method 'CpgLoader.load' loads the CPG of the target application(s).
 
 For example, the following Scala command loads a CPG using `CpgLoader`, makes it available to the variable `cpg`, and queries the CPG to list all methods in your application code:
 
-```Scala
-val cpg = CpgLoader.load(filename)
+```scala
+ocular> val cpg = CpgLoader.load(<filename>)
 cpg.method.fullName.l
 ```
 
+where <filename> is the absolute location of the target application, for example "cpg.bin.zip" 
+  
 `CpgLoader.load` can be configured using the method [`CpgLoaderConfig`](cpgloaderconfig.md).
 
+## `CpgLoader.addOverlays`
 
-# Creating indexes with `CpgLoader.createIndexes`
-​
-If you attempt to make large changes to a CPG right after loading it and before querying it, then you may want to delay creation of indexes. You can achieve this with the following code.
-​
+The method `CpgLoader.addOverlays` loads a layer and adds it to the active CPG. 
+
+For example, use the following Scala code to load the CPG and its Security Profile layer 
+
+```scala
+ocular> val cpg = CpgLoader.load(filename)
+CpgLoader.addOverlays(Seq(filename), cpg)
 ```
-val cpg = CpgLoader.load(filename, CpgLoaderConfig.default.doNotCreateIndexesOnLoad)
+where <filename> is the absolute location of the layer, for example "sp.bin.zip".
+  
+## `CpgLoader.createIndexes`
+
+Creating indexes with If you attempt to make large changes to a CPG right after loading it and before querying it, then you may want to delay creation of indexes. You can achieve this with the following code.
+
+```scala
+ocular> val cpg = CpgLoader.load(filename, CpgLoaderConfig.default.doNotCreateIndexesOnLoad)
 // ... modify `cpg`
 CpgLoader.createIndexes()
 ```
-​
-# Adding overlays with `CpgLoader.addOverlays`
-​
-Overlays stored in Zip archives can be added to CPGs using the method `CpgLoader.addOverlays`. The method accepts a sequence of filenames and a CPG on which to apply the overlays. For example, to load the CPG at `cpg.bin.zip` and the security profile overlay at `sp.bin.zip`, you can use the following code.
-​
-```
-val cpg = CpgLoader.load("cpg.bin.zip")
-CpgLoader.addOverlays(Seq("sp.bin.zip"), cpg)
+
