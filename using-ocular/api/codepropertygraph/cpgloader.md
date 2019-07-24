@@ -35,4 +35,10 @@ where `filename` is the absolute location of the layer, for example "sp.bin.zip"
   
 ## `CpgLoader.createIndexes`
 
+CpgLoader.createIndexes(cpg)
+
+look in the CPG for all methods with the name foo, if the graph is not indexed that Ocular would have to go to every node to check, taking time. Instead create an index once, which precalculate which nodes which have that name. Then the next time you make the query, much faster. By default, Ocular creates indexes. Performance consideration to turn off indexes, make changes to CPG, and then create the indexes. Indexes are not stored, and are recreated each time a CPG. Expensive in terms of run-time (how long your program runs)
+
+Modify CPG for example to add nodes or edges. Use case tag methods of interest, like routines that you have already seen, or false positives.
+
 
