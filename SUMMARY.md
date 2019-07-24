@@ -50,6 +50,7 @@
     * [CLI Reference](using-inspect-protect/using-cli/cli-reference.md)
   * Analyzing Your Code
     * [Analyzing Applications in CI](using-inspect-protect/inspect/analyzing-applications-in-ci.md)
+    * [Analysis Results](using-inspect-protect/inspect/analysis-results.md)
     * [Using Custom Policies with ShiftLeft Inspect](using-inspect-protect/inspect/custom-policies.md)
   *  Protecting Your Runtime Application
      * [ShiftLeft Protect for Java](using-inspect-protect/protect-java/jvm-based-environments.md)
@@ -75,6 +76,7 @@
 * ShiftLeft Policies
   * [Policy Language](policies/spl.md)
 * Monthly Updates
+  * [July 2019](release-notes/july-2019.md)
   * [June 2019](release-notes/june-2019.md)
   * [May 2019](release-notes/may-2019.md)
   * [April 2019](release-notes/april-2019.md)

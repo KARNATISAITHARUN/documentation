@@ -7,11 +7,20 @@ ShiftLeft has specific requirements for:
 * [ShiftLeft Protect](#requirements-for-shiftleft-protect)
 * [Browser](#browser-requirements)
 
-### Requirements for ShiftLeft Ocular
+## Requirements for ShiftLeft Ocular
 
 ShiftLeft Ocular runs on top of the Java virtual machine. Please make sure you have a Java Runtime Environment >= 1.8 installed.
 
-### ShiftLeft CLI Requirements
+### Scala Requirements for ShiftLeft Ocular
+
+You can examine only Scala compiled application bytecode (not source code) using ShiftLeft Ocular. This means that you must successfully build your application using a supported build tool beforehand. 
+
+Component | Requirement
+--- | ---
+System | Linux, MacOS X, Windows
+Application Type | **Scala 2.12+**
+
+## ShiftLeft CLI Requirements
 
 The CLI is used with ShiftLeft Inspect to submit applications for analysis and with ShiftLeft Protect to monitor your applications in runtime. The CLI requires a local installation of a supported Java version. The CLI host must allow outbound connections on the specified port.
 
@@ -22,13 +31,13 @@ JVM | 64-bit **JRE** version **8** (Java 9 is not currently supported).
 
 To verify that you are running the supported Java version, use the `java -version` command.
 
-### Requirements for ShiftLeft Inspect
+## Requirements for ShiftLeft Inspect
 
-ShiftLeft Inspect is a next-generation static application security testing (SAST) solution for applications written in Java and .NET. It provides an accurate and exhaustive exploration and analysis of your unique code and identifies complex vulnerabilities and sensitive data leakage.
+ShiftLeft Inspect is a next-generation static application security testing (SAST) solution for applications written in Java, Scala and .NET. It provides an accurate and exhaustive exploration and analysis of your unique code and identifies complex vulnerabilities and sensitive data leakage.
 
-#### Java Requirements for ShiftLeft Inspect
+### Java Requirements for ShiftLeft Inspect
 
-ShiftLeft Inspect's Java code analysis is performed on compiled application **bytecode** (not source code). As such, you **must** successfully build your application using a supported build tool **before** you submit the application for analysis. ShiftLeft requires the presence of a supported project build tool to generate security metadata from bytecode. The supported build tool must be installed on the host where you submit an application for analysis. The supported build tools are:
+ShiftLeft Inspect's Java code analysis is performed on compiled application **bytecode** (not source code). As such, you **must** successfully build your application using a supported build tool **before** you submit the application for analysis. 
 
 Component | Requirement
 --- | ---
@@ -40,7 +49,16 @@ Analysis should be performed for each code commit or build of the application. Y
 
 To verify that you are running the supported Java version, use the `java -version` command.
 
-#### .NET Requirements for ShiftLeft Inspect
+### Scala Requirements for ShiftLeft Inspect
+
+ShiftLeft Inspect's Scala code analysis is performed on compiled application bytecode (not source code). As such, you must successfully build your application using a supported build tool before you submit the application for analysis. 
+
+Component | Requirement
+--- | ---
+System | Linux, MacOS X, Windows
+Application Type | **Scala 2.12+**
+
+### .NET Requirements for ShiftLeft Inspect
 
 ShiftLeft Inspect's .NET code analysis is performed on **source code** (not on the equivalence of byte code, which is the [CIL](https://en.wikipedia.org/wiki/Common_Intermediate_Language)), and does an actual build of your application as part of the process. Therefore, the system that ShiftLeft Inspect analyzes **must** must be able to successfully build your  application. Remember to restore NuGet packages, if necessary.
 
@@ -65,11 +83,11 @@ To verify whether a .NET Framework target can be built with MSBuild 15.0:
 3. Restore NuGet packages, if any, using the command `nuget.exe restore MySolution.sln`.
 3. Trigger a build using the command `msbuild MyProject.csproj` (and apply additional options, if necessary).
 
-### Requirements for ShiftLeft Protect
+## Requirements for ShiftLeft Protect
 
 ShiftLeft Protect automates the monitoring of production vulnerabilities for applications written in Java and .NET through the deployment of a runtime in-memory Microagent. Support for .NET Core is planned for a future date.
 
-#### Java Requirements for ShiftLeft Protect
+### Java Requirements for ShiftLeft Protect
 
 ShiftLeft Protect requires a supported 64-bit Java Runtime Environment (JRE). The Microagent memory footprint is a minimal (~50MB). ShiftLeft Protect must be able to download data from, and push metrics to, the ShiftLeft Proxy server over the specified port. If using a firewall, open a connection to a remote service on the specified TCP port.
 
@@ -80,7 +98,7 @@ JVM | 64-bit **JRE** version **7** or higher
 
 To verify that you are running a supported 64-bit JRE, use the `java -version` command.
 
-#### .NET Requirements for ShiftLeft Protect
+### .NET Requirements for ShiftLeft Protect
 
 ShiftLeft Protect requires a Windows operating system with the .NET Framework runtime version 4.5 or later installed, and  works with 64-bit .NET Framework applications. ShiftLeft Protect must be able to download data from, and push metrics to, the ShiftLeft Proxy server over the secure port 443.
 
@@ -91,7 +109,7 @@ Component | Requirement
 System | Windows
 .NET Framework Runtime | version **4.5** or higher
 
-### Browser Requirements
+## Browser Requirements
 
 ShiftLeft supports the following browsers for accessing, viewing and interacting with the ShiftLeft Dashboard:
 

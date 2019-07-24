@@ -16,8 +16,22 @@ All ShiftLeft products support the Linux, MacOS X and Windows operating systems.
 
 ## Language Support
 
-ShiftLeft Ocular currently supports Java 7+ (JSP included), C#, MISRA C and C/C++ (based on [Joern](https://github.com/octopus-platform/joern)).
+ShiftLeft Ocular supports the examination of software elements and data flows in applications written in:
 
-ShiftLeft Inspect and Protect analyzes and secures applications written in Java 7+ (JSP included) and C# 7.0. 
+* Java 7+ (JSP included)
+* Scala 2.12+
+* C#
+* MISRA C and C/C++ (based on [Joern](https://github.com/octopus-platform/joern)).
 
-Support for other languages is in development. For inquiries, please fill out our [contact form](https://www.shiftleft.io/contact/).
+ShiftLeft Inspect analyzes applications written in:
+
+* Java 7+ (JSP included)
+* Scala 2.12+
+* C# 7.0
+
+ShiftLeft Protect secures applications written in:
+
+* Java 7+ (JSP included)
+* C# 7.0
+
+Support for other languages is currently in development. For inquiries, please fill out our [contact form](https://www.shiftleft.io/contact/).
