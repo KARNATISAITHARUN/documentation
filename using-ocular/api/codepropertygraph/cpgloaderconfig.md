@@ -4,7 +4,7 @@ The `CpgLoaderConfig` class alters the behavior of the `CpgLoader.load` class, b
 
 * Loads the CPG.
 * Creates indexes.
-* Enables the [`overflowdb`](../about/ocular-memory-size.md) feature.
+* Enables the [`overflowdb` feature](../about/ocular-memory-size.md).
 
 ## Configuring `CpgLoader.load`
 
