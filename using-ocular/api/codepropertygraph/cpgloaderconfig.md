@@ -1,12 +1,10 @@
 # `CpgLoaderConfig`
 
-The `CpgLoaderConfig` class alters the behavior of the `CpgLoader.load` class, by passing an optional configuration object of type `CpgLoaderConfig` to the method. 
-
-`CpgLoaderConfig` offers a static method named `default`, which provides the default configuration for `CpgLoader.load`, specifically:
+The `CpgLoaderConfig` class alters the behavior of the `CpgLoader.load` class, by passing an optional configuration object of type `CpgLoaderConfig` to the method. This class is defined in the package `io.shiftleft.codepropertygraph.cpgloading`. `CpgLoaderConfig` offers a static method named `default`, which provides the default configuration for `CpgLoader.load`, specifically:
 
 * Loads the CPG.
-* Creates indexes
-* Enables the `overflowdb` feature to swap graphs to disk.
+* Creates indexes.
+* Enables the [`overflowdb`](../about/ocular-memory-size.md) feature.
 
 ## Configuring `CpgLoader.load`
 
