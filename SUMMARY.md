@@ -19,8 +19,7 @@
     * [Quick Start](using-ocular/getting-started/ocular-quick-start.md)
     * [Installing and Updating ShiftLeft Ocular](using-ocular/getting-started/installation.md)
     * [Starting ShiftLeft Ocular](using-ocular/getting-started/starting.md)
-    * [Creating a CPG](using-ocular/getting-started/create-cpg.md)
-    * [Working with CPGs](using-ocular/getting-started/working-with-cpg.md)
+    * [Creating and Working with a CPG](using-ocular/getting-started/create-cpg.md)
   * Common Queries
     * [Analyzing Dependencies](using-ocular/common-queries/dependency-analysis.md)
     * [Analyzing Types and Packages](using-ocular/common-queries/types-packages-analysis.md)
@@ -33,6 +32,8 @@
     * [Discovering HTTP Cookie Poisoning](using-ocular/use-cases/http-cookie-poisoning.md)
     * [Identifying Call Chains](using-ocular/use-cases/call-chains.md)
     * [Tracking Non Atomic Data Types](using-ocular/use-cases/tracking-non-atomic.md)
+  * Configuring and Extending ShiftLeft Ocular
+    * [Identifying Application Code and Dependencies](using-ocular/configure-extend/identify-code-dependencies.md)
   * Tutorials
     * [Scanning for Deserialization Sinks](using-ocular/tutorials/deserialization.md)
     * [Analyzing a C Language Application](using-ocular/tutorials/c-language.md)
