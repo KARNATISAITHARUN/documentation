@@ -18,4 +18,4 @@ Components of the ShiftLeft solution are:
 
 * **[ShiftLeft Microagent](../using-inspect-protect/protect-java/configuring-the-microagent.md)**. ShiftLeft Protect deploys a ShiftLeft Microagent in-memory alongside your runtime application. The Microagent protects the residual issues in production and is customized to your application's specific shape and weaknesses through the use of a Security Profile for Runtime (SPR). Each Microagent connects to a ShiftLeft Proxy server to download the SPR and to send events and metrics to the Dashboard. 
 
-* **[Ocular Query Language (OQL)](https://ocular.shiftleft.io/api/)**. Use to query CPGs and SPRs. OQL results are available and exportable via standard JSON format for easy integration into the security tools in use by your organization and for sharing data across the SDLC.
+* **[Ocular Query Language (OQL)](https://ocular.shiftleft.io/api/)**. Use to query CPGs and Security Profiles. OQL results are available and exportable via standard JSON format for easy integration into the security tools in use by your organization and for sharing data across the SDLC.

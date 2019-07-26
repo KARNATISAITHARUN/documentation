@@ -13,7 +13,7 @@
     * [ShiftLeft Ocular Features](using-ocular/about/ocular-features.md)
     * [Memory Size Recommendations](using-ocular/about/ocular-memory-size.md)
     * [Interactive and Non-Interactive Modes](using-ocular/about/modes.md)
-    * [Customizing a Policy](using-ocular/about/customize-policies.md)
+    * [Understanding Layers](using-ocular/about/layers.md)
     * [Deep-Dive: The CPG](using-ocular/about/cpg-deep-dive.md)
   * Getting Started
     * [Quick Start](using-ocular/getting-started/ocular-quick-start.md)
@@ -32,8 +32,6 @@
     * [Discovering HTTP Cookie Poisoning](using-ocular/use-cases/http-cookie-poisoning.md)
     * [Identifying Call Chains](using-ocular/use-cases/call-chains.md)
     * [Tracking Non Atomic Data Types](using-ocular/use-cases/tracking-non-atomic.md)
-  * Configuring and Extending ShiftLeft Ocular
-    * [Identifying Application Code and Dependencies](using-ocular/configure-extend/identify-code-dependencies.md)
   * Tutorials
     * [Scanning for Deserialization Sinks](using-ocular/tutorials/deserialization.md)
     * [Analyzing a C Language Application](using-ocular/tutorials/c-language.md)
@@ -41,6 +39,9 @@
     * [Java Vulnerable Lab](using-ocular/tutorials/java-vuln.md)
     * [Using ShiftLeft Ocular with JSP](using-ocular/tutorials/jsp.md)
     * [Debugging ShiftLeft Ocular Scripts with JDB](using-ocular/tutorials/debug-with-jdb.md)
+  * Configuring and Extending ShiftLeft Ocular
+    * [Identifying Application Code and Dependencies](using-ocular/configure-extend/identify-code-dependencies.md)
+    * [Customizing a Policy](using-ocular/configure-extend/customize-policy.md)
   * [Ocular API](https://ocular.shiftleft.io/api/)
 * Using ShiftLeft Inspect and ShiftLeft Protect
   * [Quick Start](using-inspect-protect/inspect-protect-quick-start.md)
