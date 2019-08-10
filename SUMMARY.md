@@ -4,8 +4,9 @@
 * Introduction
   * [About ShiftLeft](introduction/about.md)
   * [ShiftLeft Products](introduction/products.md)
-  * [ShiftLeft Compliance and Support](introduction/support.md)
-  * [ShiftLeft Requirements](introduction/requirements.md)
+  * [Language Support](introduction/language-support.md)
+  * [Compliance](introduction/compliance.md)
+  * [Requirements](introduction/requirements.md)
   * [The HelloShiftLeft Sample Application](introduction/helloshiftleft.md)
   * [Understanding the CPG](introduction/understanding-cpg.md)
 * Using ShiftLeft Ocular

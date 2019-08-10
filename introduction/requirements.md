@@ -1,6 +1,9 @@
 # ShiftLeft Requirements
 
+All ShiftLeft products support the Linux, MacOS X and Windows operating systems. Information is provided on the [languages ShiftLeft supports](language-support.md).
+
 ShiftLeft has specific requirements for:
+
 * [ShiftLeft Ocular](#requirements-for-shiftleft-ocular)
 * [ShiftLeft CLI](#shiftleft-cli-requirements)
 * [ShiftLeft Inspect](#requirements-for-shiftleft-inspect)
