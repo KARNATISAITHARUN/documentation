@@ -18,7 +18,7 @@ Initially these credentials will be provided to you by ShiftLeft. Once you have 
 
 To integrate ShiftLeft with GoCD builds, install the ShiftLeft CLI on the host where the GoCD server is installed and authenticate with ShiftLeft: 
 
-1. [Install the ShiftLeft CLI](../using-cli/using-cli.md) on the host where GoCD server is installed.
+1. [Install the ShiftLeft CLI](../using-cli/install-cli.md) on the host where GoCD server is installed.
 2. Log in to GoCD server as an administrator. 
 3. Create the following **Environment variables**:
  * Name: `SHIFTLEFT_ORG_ID`| Value: **Organization ID**

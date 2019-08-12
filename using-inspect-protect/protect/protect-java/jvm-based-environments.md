@@ -14,7 +14,7 @@ Before running the Microagent, analysis of the target application must be perfor
 
 Performing analysis can be performed either as a separate step, allowing installation in a build / Continuous Integration (CI) environment, or in the same command used for running the agent itself.
 
-To perform analysis beforehand, see [Analyzing Applications in CI](../../using-inspect-protect/inspect/analyzing-applications-in-ci.md). Note that in this case, you will need to carry the produced `shiftleft.json` file to your runtime environment and make it available to the ShiftLeft Microagent. This allows the Microagent to associate the application to be run with the analysis.
+To perform analysis beforehand, see [Analyzing Applications in CI](../../using-inspect-protect/inspect/analyzing-applications.md). Note that in this case, you will need to carry the produced `shiftleft.json` file to your runtime environment and make it available to the ShiftLeft Microagent. This allows the Microagent to associate the application to be run with the analysis.
 
 To perform analysis in the same command as running the agent, pass the `--analyze` flag to the `sl run` command as shown below. The system will then submit the application to the cloud for analysis, wait for it to finish, then run the application with the Microagent installed. Subsequent runs of the same command, with the same version of the application will start immediately with the Microagent installed, as the analysis is only performed the first time.
 
@@ -38,7 +38,7 @@ sl run -- sbt run
 
 The command performs the following tasks:
 
-* If the `--analyze <file.jar>` flag was provided, it checks with the ShiftLeft server whether analysis of this version of the application was performed before. If it was not, it performs analysis in the cloud and waits for it to complete. If this flag is not passed, then the agent will look for the `shiftleft.json` file which resulted from performing analysis ahead of time. **Note: if you are a current ShiftLeft user and you plan to use the `--analyze` option here, please ensure that you have authenticated yourself to your ShiftLeft tenant using `sl auth` (see [Authenticating with ShiftLeft](../using-cli/authenticating.md)).
+* If the `--analyze <file.jar>` flag was provided, it checks with the ShiftLeft server whether analysis of this version of the application was performed before. If it was not, it performs analysis in the cloud and waits for it to complete. If this flag is not passed, then the agent will look for the `shiftleft.json` file which resulted from performing analysis ahead of time. **Note: if you are a current ShiftLeft user and you plan to use the `--analyze` option here, please ensure that you have authenticated yourself to your ShiftLeft tenant using `sl auth` (see [Authenticating with ShiftLeft](../../using-cli/authenticating.md)).
 **
 * If not already at the latest version, it downloads the latest Microagent to a local directory.
 * It runs the `<command>` with a certain environment variable set, which instructs the JVM to load the Microagent.

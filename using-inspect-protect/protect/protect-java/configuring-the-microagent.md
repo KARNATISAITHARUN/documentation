@@ -1,4 +1,4 @@
-# Configuring the ShiftLeft Protect for Java Microagent
+# Configuring the ShiftLeft Protect Microagent for Java
 
 The ShiftLeft Protect for Java Microagent runs out-of-the-box with default settings. Optionally you can configure the microagent for your environment.
 

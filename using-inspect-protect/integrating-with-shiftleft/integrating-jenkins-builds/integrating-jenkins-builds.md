@@ -25,7 +25,7 @@ Initially these credentials will be provided to you by ShiftLeft. Once you have 
 
 ## Jenkins Integration Instructions
 
-1. [Install the ShiftLeft CLI](../../using-cli/using-cli.md) on the host where Jenkins is installed.
+1. [Install the ShiftLeft CLI](../../using-cli/install-cli.md) on the host where Jenkins is installed.
 2. Log in to Jenkins as an administrator.
 3. Select **Manage Jenkins > Configure System > Global properties**. 
 4. Select (check) **Environment variables** and create the following:

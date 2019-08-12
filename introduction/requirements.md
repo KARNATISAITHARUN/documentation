@@ -71,7 +71,7 @@ Component | Target Type | Requirement
 --- | --- | ---
 Specification | | [MSBuild format](https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild?view=vs-2017), *i.e.*, a .csproj file.
 Language | | C# 7.0
-Build environment | **.NET Framework** targets | MSBuild **15.0**. Visual Studio 2017 already comes with MSBuild 15.0. Otherwise, you can [download MSBuild from Microsoft](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=BuildTools&rel=15).
+Build environment | **.NET Framework** targets | .NET **4.6.1** and MSBuild **15.0**. Visual Studio 2017 already comes with MSBuild 15.0. Otherwise, you can [download MSBuild from Microsoft](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=BuildTools&rel=15).
 Build environment | **.NET Core** targets | .NET Core **2.1** or above.
 
 To determine the version of MSBuild installed in your system:

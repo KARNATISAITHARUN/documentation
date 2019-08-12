@@ -46,21 +46,22 @@
   * [Ocular API](https://ocular.shiftleft.io/api/)
 * Using ShiftLeft Inspect and ShiftLeft Protect
   * [Quick Start](using-inspect-protect/inspect-protect-quick-start.md)
-  * [Windows Installer](using-inspect-protect/windows-installer.md)
-  * [Using the ShiftLeft CLI](using-inspect-protect/using-cli/using-cli.md)
+  * [Installing on Windows](using-inspect-protect/windows-installer.md)
+  * Using the ShiftLeft CLI
     * [Installing the CLI](using-inspect-protect/using-cli/install-cli.md)
     * [Authenticating with ShiftLeft](using-inspect-protect/using-cli/authenticating.md)
     * [CLI Reference](using-inspect-protect/using-cli/cli-reference.md)
   * Analyzing Your Code
-    * [Analyzing Applications in CI](using-inspect-protect/inspect/analyzing-applications-in-ci.md)
+    * [Analyzing Applications](using-inspect-protect/inspect/analyzing-applications.md)
     * [Analysis Results](using-inspect-protect/inspect/analysis-results.md)
     * [Using Custom Policies with ShiftLeft Inspect](using-inspect-protect/inspect/custom-policies.md)
   *  Protecting Your Runtime Application
-     * [ShiftLeft Protect for Java](using-inspect-protect/protect-java/jvm-based-environments.md)
-       * [Configuring the Microagent](using-inspect-protect/protect-java/configuring-the-microagent.md)
-       * [Tomcat Integration](using-inspect-protect/protect-java/tomcat-integration.md)
-       * [Websphere Configuration](using-inspect-protect/protect-java/websphere-configuration.md)
-       * [Wildfly Configuration](using-inspect-protect/protect-java/wildfly-configuration.md)
+     * [Running ShiftLeft Protect](using-inspect-protect/protect/run-protect.md)
+     * [ShiftLeft Protect for Java](using-inspect-protect/protect/protect-java/jvm-based-environments.md)
+       * [Configuring the Microagent](using-inspect-protect/protect/protect-java/configuring-the-microagent.md)
+       * [Tomcat Integration](using-inspect-protect/protect/protect-java/tomcat-integration.md)
+       * [Websphere Configuration](using-inspect-protect/protect/protect-java/websphere-configuration.md)
+       * [Wildfly Configuration](using-inspect-protect/protect/protect-java/wildfly-configuration.md)
   * Integrating ShiftLeft with Your CI/CD System
     * [Integrating with Jenkins Builds](using-inspect-protect/integrating-with-shiftleft/integrating-jenkins-builds/integrating-jenkins-builds.md)
       * [Configure Final Build Step](using-inspect-protect/integrating-with-shiftleft/integrating-jenkins-builds/configure-final-build-step.md)

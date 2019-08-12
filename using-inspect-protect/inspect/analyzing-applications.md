@@ -1,11 +1,13 @@
-# Analyzing Applications in CI
+# Analyzing Applications using ShiftLeft Inspect
 
-Use the `sl analyze` command to submit applications to ShiftLeft for code analysis and security profiling.
+Use the `sl analyze` command to submit applications to ShiftLeft Inspect for code analysis and security profiling.
+
+If you are using ShiftLeft Inspect with [ShiftLeft Protect](../../introduction/products.md), you can analyze your code before running your application, for example to integrate with a build / Continuous Integration (CI) environment. To do so, you must integrate the  shiftleft.json file into your runtime environment and make it available to the ShiftLeft Protect Microagent. This allows the Microagent to be associated with your application.
 
 ## Analysis Workflow
 
 - Review [code analysis requirements](../../introduction/requirements.md).
-- [Install ShiftLeft CLI](../using-cli/using-cli.md) on the host where you will submit applications for analysis.
+- [Install ShiftLeft CLI](../using-cli/install-cli.md) on the host where you will submit applications for analysis.
 - Successfully build the application using a supported build tool (maven, gradle, sbt) **before** you submit the app for analysis. 
 - Submit the application for analysis using one of the supported analysis commands (see below).
 - For each code commit, rebuild the application and resubmit it for analysis by integrating the CLI with an CI/CD build system to automate analysis: [Jenkins](../integrating-with-shiftleft/integrating-jenkins-builds/integrating-jenkins-builds.md), [GoCD](../integrating-with-shiftleft/integrating-gocd-builds.md), [Bamboo](../integrating-with-shiftleft/integrating-bamboo-builds.md), [TeamCity](../integrating-with-shiftleft/integrating-teamcity-builds.md), [Travis](../integrating-with-shiftleft/integrating-travis-builds.md), CircleCI.

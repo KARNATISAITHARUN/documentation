@@ -1,64 +1,73 @@
-# Windows Installer
+# Installing ShiftLeft Inspect and ShiftLeft Protect for Windows
 
-Installation on Windows for ShiftLeft tools (`sl` and .NET microagent) may be done using the installer available from the website.
+For the Windows operating system, you can install ShiftLeft Inspect and ShiftLeft Protect (currently only for .NET Framework)  using the installers provided by ShiftLeft. Information is available on both [installing](#installing) and [uninstalling](#uninstalling) the ShiftLeft products.
+
+The following installers are provided:
+
+* [.NET Framework](https://cdn.shiftleft.io/download/installer-dotnet-framework-latest-windows-x64.zip) 
+* [.NET Core](https://cdn.shiftleft.io/download/installer-dotnet-core-latest-windows-x64.zip) (only for ShiftLeft Inspect)
+
+Note that the Windows installers require a user with administrator privileges.
 
 ## Installing
 
-Use [this installer](https://cdn.shiftleft.io/download/installer-dotnet-framework-latest-windows-x64.zip) for .NET Framework installations or [this installer](https://cdn.shiftleft.io/download/installer-dotnet-core-latest-windows-x64.zip) for .NET Core installations. For ShiftLeft Protect, the installer bundles all dependencies into a single downloadable file, enabling  the installer to run offline (without connecting to the Internet).
+1. Download the appropriate installer.
 
-Simply unpack the downloaded archive and an executable will appear.
+2. Unpack the downloaded archive.
 
-![Unzip Prompt](img/unzip-windows.png)
+   ![Unzip Prompt](img/unzip-windows.png)
 
-The choice between .NET Core and .NET Framework is a setting specific to the .NET microagent only, we provide two executables with different defaults for ease of installation.
+   An executable appears. 
+   
+   For ShiftLeft Protect, the installer bundles all dependencies into a single downloadable file, enabling the installer to run offline (without connecting to the Internet).
+   
+3. Double-click on the executable to start the installer. 
 
-![Installer Variants](img/windows-installer-variants.png)
+4. Using the resulting prompt, confirm elevated privileges.
 
-The installer requires a user with administrator privileges. It will copy `sl.exe` into the global programs directory (specifically `%ProgramFiles%\ShiftLeft`), create a start menu entry with a shortcut to open a shell with `sl.exe` in its path (the folder will be called `ShiftLeft` too), as well as an uninstall shortcut; the .NET microagent will be separately installed into `C:\shiftleftDotNetAgent`.
+   ![Install Account Control](img/windows-user-account-control.png)
 
-In case the installer is run from the command line the flag `--no-prompt` may be added to skip the prompt waiting for user input that's usually there to allow users to read the installer output when running it without a terminal.
+   The installer copies `sl.exe` into the global programs directory (specifically `%ProgramFiles%\ShiftLeft`), creates a Start menu entry with a shortcut to open a shell with `sl.exe` in its path (the folder is called `ShiftLeft`), and an uninstall shortcut. ShiftLeft Protect for .NET Framework is separately installed into `C:\shiftleftDotNetAgent`.
 
-![Start Menu](img/windows-start-menu.png)
+   ![Start Menu](img/windows-start-menu.png)
 
-At this time the installer can simply be executed by double-clicking and confirming when the dialog for elevated privileges pops up afterwards.
 
-![Install Account Control](img/windows-user-account-control.png)
+  The installer prints its output on a terminal window; once done, pressing `Enter` or closing the window finishes the installation process.
 
-It will print its output on a terminal window; once done, pressing `Enter` again or closing the window will finish the installer.
+   ![Installation Progress](img/windows-installing.png)
 
-![Installation Progress](img/windows-installing.png)
 
-### Options
+### Installation Options
 
-The installer binary has a few command line options that modify its default behaviour:
+The installer binary has the following command line options to modify its default behavior:
 
-- `--dotnet-core` / `--dotnet-framework` will select the proper setup for either .NET Core or .NET Framework applications for the agent.  Each downloaded installer will default to one of the two as indicated in the filename.
-- `--no-prompt` will disable any prompts for non-interactive usage.
-- `--install-directory` sets the installation directory, which defaults to `ShiftLeft` in the normal Windows programs folder.
-- `--start-menu-entries` sets the directory for any start menu items to be created.  If empty, this will not install them.  Defaults to `ShiftLeft` in the top level of the start menu.
-- `--sl-home` sets the home directory for any ShiftLeft tools.  This directory will be created and will store any downloaded binaries and configuration files.  Defaults to `.shiftleft` in the users own home directory.
+- `--no-prompt`  Disables prompts for non-interactive usage if you are running the installer from the command line.
+- `--install-directory`  Specifies the installation directory; the default is `ShiftLeft` in the normal Windows Programs folder.
+- `--start-menu-entries`  Sets the directory for the location of created Start menu items. Defaults to `ShiftLeft` in the top level of the Start menu.  If empty, no Start menu items are created. 
+- `--sl-home`  Identifies the home directory for ShiftLeft products.  This directory is created as part of the installation process, and stores any downloaded binaries and configuration files.  Defaults to `.shiftleft` in your Home directory.
+- `--no-dotnet-agent` Installs just ShiftLeft Inspect (i.e. `sl.exe`) and not ShiftLeft Protect.
 
-All the directories will be stored in the registry and then similarly when running the uninstaller.
+All directories are stored in the registry.
 
 ## Uninstalling
 
-You uninstall ShiftLeft tools by double-clicking the Start menu command for the uninstaller. You are prompted to confirm elevated privileges.
+You uninstall ShiftLeft Inspect and ShiftLeft Protect by double-clicking the Start menu Uninstall command. You are prompted to confirm elevated privileges.
 
 ![Uninstall Account Control](img/windows-user-account-control-uninstall.png)
 
-Once confirmed (with `Enter`, and then `Y` at the second prompt to also uninstall ShiftLeft Protect for .NET), the uninstaller removes the installation. To abort the uninstall process, press `Ctrl-C` or close the window.
+Once confirmed (by pressing `Enter`, and then `Y` at the second prompt if you also want to uninstall ShiftLeft Protect for .NET Framework), the uninstaller removes the installation. To abort the uninstall process, press `Ctrl-C` or close the terminal window.
 
 ![Uninstall Progress](img/windows-uninstalling.png)
 
-The window remains open until you press `Enter` or close the window.
+The terminal window remains open until you press `Enter` or close the window.
 
-### Options
+### Uninstallation Options
 
-Use the following command line options to modify uninstaller default behaviour:
+Use the following command line options to modify uninstaller default behavior:
 
-- **`--no-prompt`**. Disables any prompts for non-interactive usage.
-- **`--install-directory`**. Specifies the installation directory.
-- **`--start-menu-entries`**. Specifies the start menu directory.
-- **`--sl-home`**. Specifies the home directory for ShiftLeft tools.
+- **`--no-prompt`**.  Disables any prompts for non-interactive usage.
+- **`--install-directory`**.  Specifies the installation directory.
+- **`--start-menu-entries`**.  Identifies the Start menu directory.
+- **`--sl-home`**.  Sets the Home directory for ShiftLeft products.
 
-The default values are read from the registry after installation.  See above for a more detailed description of the flags on the installer binary.
+The default values are read from the registry after installation.  

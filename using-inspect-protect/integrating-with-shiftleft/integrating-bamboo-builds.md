@@ -18,7 +18,7 @@ Initially these credentials will be provided to you by ShiftLeft. Once you have 
 
 To integrate ShiftLeft with Bamboo builds, install the ShiftLeft CLI on the Bamboo host and authenticate with ShiftLeft:
 
-1. [Install the ShiftLeft CLI](../../using-inspect-protect/using-cli/using-cli.md) on the Bamboo host.
+1. [Install the ShiftLeft CLI](../../using-inspect-protect/using-cli/install-cli.md) on the Bamboo host.
 2. Log in to the Bamboo server as an administrator. 
 3. Create the following **Environment variables**:
  * Name: `SHIFTLEFT_ORG_ID`| Value: Paste your **Organization ID**

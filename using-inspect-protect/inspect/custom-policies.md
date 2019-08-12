@@ -4,7 +4,7 @@ Policies specify how your application communicates with the outside world, which
 
 A common use case for using a custom Policy is the ability to provide application- or organization-specific rules  that more accurately reflect the state of sensitive data variables. This use case is used here as an illustrative example. 
 
-Generally, most custom Policies can be created and managed using the [ShiftLeft CLI](../using-cli/using-cli.md) and a limited set of commands. However, more complex use cases are possible that may require additional features and/or integration with other services. [Contact us](https://www.shiftleft.io/contact/) if you want to implement advanced use cases using custom Policies.
+Generally, most custom Policies can be created and managed using the [ShiftLeft CLI](../using-cli/cli-reference.md) and a limited set of commands. However, more complex use cases are possible that may require additional features and/or integration with other services. [Contact us](https://www.shiftleft.io/contact/) if you want to implement advanced use cases using custom Policies.
 
 ## Use Case: Application-Specific Sensitive-Data Dictionary
 
@@ -15,7 +15,7 @@ The process of creating and using a custom Policy for an application-specific se
 1. [Create a new Policy](#creating-a-new-policy).
 2. [Provide an application-specific dictionary](#providing-an-application-specific-dictionary).
 3. [Validate the new Policy file](#validating-the-new-policy-file).
-4. [Inspect the ShiftLeft default dictionary](#inspecting-the-shiftLeft-default-dictionary).
+4. [Inspect the ShiftLeft default dictionary](#inspecting-the-shiftleft-default-dictionary).
 5. [Upload the custom Policy to the ShiftLeft policy repository](#uploading-the-custom-policy-to-the-shiftleft-policy-repository).
 6. [Use the new Policy](#using-the-new-policy).
 7. [Identify a custom Policy as the default Policy](#identifying-a-custom-policy-as-the-default-policy).

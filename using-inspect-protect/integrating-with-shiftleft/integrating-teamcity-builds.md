@@ -18,7 +18,7 @@ Initially these credentials will be provided to you by ShiftLeft. Once you have 
 
 To integrate ShiftLeft with TeamCity builds:
 
-1. [Install the ShiftLeft CLI](../using-cli/using-cli.md) on the TeamCity host.
+1. [Install the ShiftLeft CLI](../using-cli/install-cli.md) on the TeamCity host.
 2. Create the following **Environment variables** in TeamCity:
  * Name: `SHIFTLEFT_ORG_ID`| Value: Paste your **Organization ID**
  * Name: `SHIFTLEFT_ACCESS_TOKEN`| Value: Paste your **Access Token**
