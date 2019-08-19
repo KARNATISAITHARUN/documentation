@@ -21,6 +21,7 @@
     * [Installing and Updating ShiftLeft Ocular](using-ocular/getting-started/installation.md)
     * [Starting ShiftLeft Ocular](using-ocular/getting-started/starting.md)
     * [Creating and Working with a CPG](using-ocular/getting-started/create-cpg.md)
+    * [Managing Your Workspace](using-ocular/getting-started/manage-workspace.md)
   * Common Queries
     * [Analyzing Dependencies](using-ocular/common-queries/dependency-analysis.md)
     * [Analyzing Types and Packages](using-ocular/common-queries/types-packages-analysis.md)
@@ -33,6 +34,7 @@
     * [Discovering HTTP Cookie Poisoning](using-ocular/use-cases/http-cookie-poisoning.md)
     * [Identifying Call Chains](using-ocular/use-cases/call-chains.md)
     * [Tracking Non Atomic Data Types](using-ocular/use-cases/tracking-non-atomic.md)
+    * [Uncovering the Attack Surface](using-ocular/use-cases/attack-surface.md)
   * Tutorials
     * [Scanning for Deserialization Sinks](using-ocular/tutorials/deserialization.md)
     * [Analyzing a C Language Application](using-ocular/tutorials/c-language.md)
@@ -42,6 +44,7 @@
     * [Debugging ShiftLeft Ocular Scripts with JDB](using-ocular/tutorials/debug-with-jdb.md)
   * Configuring and Extending ShiftLeft Ocular
     * [Identifying Application Code and Dependencies](using-ocular/configure-extend/identify-code-dependencies.md)
+    * [Enhancing the OQL](using-ocular/configure-extend/enhance-oql.md)
     * [Customizing a Policy](using-ocular/configure-extend/customize-policy.md)
   * [Ocular API](https://ocular.shiftleft.io/api/)
 * Using ShiftLeft Inspect and ShiftLeft Protect

@@ -1,6 +1,6 @@
 # Creating and Working with the Code Property Graph (CPG)
 
-Once you've [started ShiftLeft Ocular](starting.md), you can create a CPG for a new application or for a new version of an application. When a CPG is created, it's `base` and default layers are also automatically generated, and all are saved to your workspace and loaded into memory. However you must intentionally generate the Security Profile. 
+Once you've [started ShiftLeft Ocular](starting.md), you can create a CPG for a new application or for a new version of an application. When a CPG is created, it's `base` and default layers are also automatically generated, and all are saved to [your workspace](manage-workspace.md) and loaded into memory. However you must intentionally generate and load the Security Profile. 
 
 By default, all operations are executed on the CPG that was last loaded into memory; this is the active CPG.
 
@@ -28,7 +28,7 @@ ShiftLeft Ocular provides several simpler versions of `createCpg` for convenienc
 
 The option `<inputPaths>` is the path of the target application; multiple applications are separated by a comma. The format of the CPG is automatically inferred by ShiftLeft Ocular.
 
-When you create a CPG, a file named `cpg.bin.zip` containing the CPG in a binary format, is created and automatically loaded into memory; it becomes the active CPG.
+When you create a CPG, a file named `cpg.bin.zip` containing the CPG in a binary format, is created in your workspace and automatically loaded into memory; it becomes the active CPG.
 
 ### Creating a CPG for Java Applications
 
@@ -58,7 +58,7 @@ To create a CPG and its Security Profile at the same time, use
 ocular> createCpgAndSp(<inputPath>)
 ```
   
-Both the CPG and the `securityprofile` layer are created and automatically loaded into memory. The sp.bin.zip file contains the SP in a binary format.
+Both the CPG and the `securityprofile` layer are created in your workspace and automatically loaded into memory. The sp.bin.zip file contains the SP in a binary format.
 
 ### Creating a CPG that Includes Objects Organized by Namespaces
 
@@ -71,7 +71,7 @@ where `<namespace>` is one or more namespaces you want to include in the CPG; mu
 
 ## Working with CPGs
 
-You work with the CPGs, and their associated layers, that are loaded into memory. By default, all operations are executed on the CPG that was last loaded into memory; this is the active CPG.
+You work with the CPGs, and their associated layers, which are in your workspace and loaded into memory. By default, all operations are executed on the CPG that was last loaded into memory; this is the active CPG.
 
 The option `<names>` is the name of one or more CPGs you want to work with; multiple names are separated by a comma. For example `"hello-shiftleft-0.0.1-SNAPSHOT.jar"`. The format of the CPG is automatically inferred by ShiftLeft Ocular.
 

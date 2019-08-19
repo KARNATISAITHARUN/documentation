@@ -2,7 +2,9 @@
 
 The Code Property Graph (CPG) is a multi-layered representation of each unique code version of your application. The most important layers are the `base` layer, the two default layers `semanticcpg` and `tagging`, and the `securityprofile` layer.
 
-Additional information on CPG layers is provided in the [API](https://ocular.shiftleft.io/api/io/shiftleft/repl/cpgcreation/Overlays$.html). Layers are also frequently referred to as "overlays".
+You [work with layers in your workspace](../getting-started/manage-workspace.md). Layers are frequently referred to as "overlays".
+
+Additional information on CPG layers is provided in the [API](https://ocular.shiftleft.io/api/io/shiftleft/repl/cpgcreation/Overlays$.html). 
 
 ### `base` Layer
 
@@ -36,4 +38,4 @@ The `securityprofile` layer is dervied from [Policies](../../policies/spl.md), a
 * Information flows
 * Findings
 
-Unlike the `base` and default layers, because the Security Profile is so expensive, it must be intentially created and loaded. 
+Unlike the `base` and default layers, because the Security Profile is so expensive at runtime, it must be intentially created and loaded. 

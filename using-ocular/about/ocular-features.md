@@ -16,4 +16,4 @@ ShiftLeft Ocular provides the following core features:
 
 * **Automatic Code Scanning through Security Profiles.** Security Profiles are dervied from Policies, and summarize the  vulnerabilities and data leaks present in the code. The Security Profile is part of the CPG, as a [layer](layers.md). 
   
-* **Workspaces for Managing CPGs and Security Profiles.** A workspace is a container for all data persisted by ShiftLeft Ocular. Workspaces allow you to easily manage CPGs and Security Profiles, load and simultaneously work with more than one CPG, and combine queries. 
+* **[Workspaces for Working with CPGs and Security Profiles](../getting-started/manage-workspace.md).** A workspace is a container for all data persisted by ShiftLeft Ocular. Workspaces allow you to easily work with CPGs and Security Profiles, load and simultaneously work with more than one CPG, and combine queries. 
