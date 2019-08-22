@@ -1,7 +1,5 @@
 # Running ShiftLeft Protect
 
-ShiftLeft Protect secures applications against exploitation of vulnerabilities by leveraging "code informed" insights. ShiftLeft Protect creates runtime security specifications based on identified vulnerabilities discovered by [ShiftLeft Inspect](../../introduction/products.md) during analysis of your code. ShiftLeft Protect deploys a ShiftLeft Microagent in-memory alongside your application in production (or other environments such as staging, test, UAT). The Microagent is customized to your application's specific shape and weaknesses and connects to a ShiftLeft Proxy server to display events and metrics in the Dashboard.
-
 Running ShiftLeft Protect is different for Java or .NET Framework applications. Before using ShiftLeft Protect, make sure you have met all [product requirements](../../introduction/requirements.md). 
 
 ## Running ShiftLeft Protect for Java Applications

@@ -16,7 +16,7 @@ This information parallels and provides additional details on the [Welcome page]
    
 The process for quickly starting with ShiftLeft Inspect and ShiftLeft Protect on Linux and MacOS X is:
 
-1. [Choose your operating system](../introduction/support.md).
+1. [Choose your operating system](../introduction/requirements.md).
 
    ![Choose OS](img/os.jpg)
 
@@ -26,7 +26,7 @@ The process for quickly starting with ShiftLeft Inspect and ShiftLeft Protect on
 
 4. [Use ShiftLeft Inspect](inspect/analyzing-applications.md) to analyze your code.
 
-5. [Implement ShiftLeft Protect](protect/implement-protect.md) to secure your application.
+5. [Run ShiftLeft Protect](protect/run-protect.md) to secure your application.
 
 
 ## Quick Start on Windows

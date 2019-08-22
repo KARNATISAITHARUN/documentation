@@ -5,7 +5,7 @@ The ShiftLeft Microagent is run with an application that has been analyzed by Sh
 ## Requirements
 
 To run the ShiftLeft microagent, you must:
-- Use a [supported 64-bit JVM](../../introduction/requirements.md)
+- Use a [supported 64-bit JVM](../../../introduction/requirements.md)
 - Analyze the application beforehand OR pass in `--analyze <path.jar>` flag to perform analysis before running the application. If analyzed beforehand, include the `shiftleft.json` file (that was generated during analysis) with the target application you are deploying, or specify the `SHIFTLEFT_CONFIG` environment variable that points to the path for this file.
 
 ## Performing Analysis
@@ -14,7 +14,7 @@ Before running the Microagent, analysis of the target application must be perfor
 
 Performing analysis can be performed either as a separate step, allowing installation in a build / Continuous Integration (CI) environment, or in the same command used for running the agent itself.
 
-To perform analysis beforehand, see [Analyzing Applications in CI](../../using-inspect-protect/inspect/analyzing-applications.md). Note that in this case, you will need to carry the produced `shiftleft.json` file to your runtime environment and make it available to the ShiftLeft Microagent. This allows the Microagent to associate the application to be run with the analysis.
+To perform analysis beforehand, see [Analyzing Applications in CI](../../../using-inspect-protect/inspect/analyzing-applications.md). Note that in this case, you will need to carry the produced `shiftleft.json` file to your runtime environment and make it available to the ShiftLeft Microagent. This allows the Microagent to associate the application to be run with the analysis.
 
 To perform analysis in the same command as running the agent, pass the `--analyze` flag to the `sl run` command as shown below. The system will then submit the application to the cloud for analysis, wait for it to finish, then run the application with the Microagent installed. Subsequent runs of the same command, with the same version of the application will start immediately with the Microagent installed, as the analysis is only performed the first time.
 

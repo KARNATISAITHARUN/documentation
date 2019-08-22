@@ -56,9 +56,10 @@
     * [CLI Reference](using-inspect-protect/using-cli/cli-reference.md)
   * Analyzing Your Code
     * [Analyzing Applications](using-inspect-protect/inspect/analyzing-applications.md)
-    * [Analysis Results](using-inspect-protect/inspect/analysis-results.md)
+    * [Viewing Analysis Results](using-inspect-protect/inspect/analysis-results.md)
     * [Using Custom Policies with ShiftLeft Inspect](using-inspect-protect/inspect/custom-policies.md)
-  *  Protecting Your Runtime Application
+  *  Protecting Runtime Applications
+     * [Securing Your Applications Using ShiftLeft Protect](using-inspect-protect/protect/securing-applications.md)
      * [Running ShiftLeft Protect](using-inspect-protect/protect/run-protect.md)
      * [ShiftLeft Protect for Java](using-inspect-protect/protect/protect-java/jvm-based-environments.md)
        * [Configuring the Microagent](using-inspect-protect/protect/protect-java/configuring-the-microagent.md)

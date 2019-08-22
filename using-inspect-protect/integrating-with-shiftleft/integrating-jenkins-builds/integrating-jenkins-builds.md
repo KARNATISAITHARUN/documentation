@@ -34,7 +34,7 @@ Initially these credentials will be provided to you by ShiftLeft. Once you have 
 
    ![Adding Jenkins environment variables for ShiftLeft authentication](../img/jenkins-envvars.png)
 
-5. Configure each Jenkins project you want to [analyze](../../../using-inspect-protect/inspect/analyzing-applications-in-ci.md) using one of the following approaches: 
+5. Configure each Jenkins project you want to [analyze](../../../using-inspect-protect/inspect/analyzing-applications.md) using one of the following approaches: 
  * [Final Build Step](configure-final-build-step.md), or
  * [Post Build Task](configure-post-build-task.md)
 6. Test and [verify Jenkins integration](verify-jenkins-integration.md).
