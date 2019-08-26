@@ -110,7 +110,7 @@ You can filter returns in the body of the query
 ```json
 {
 "query": {
-        "orderByDirection": "DESC",
+        "orderByDirection": "VULNERABILITY_ORDER_DIRECTION_DESC",
         "applicationId": [
             "project1549413585aa"
         ],
@@ -129,7 +129,7 @@ You can filter returns in the body of the query
 
 **Filter**
 
-* `orderByDirection`. Either `DESC` or `ASC` is applied to the `firstDetected` field of a vulnerability.
+* `orderByDirection`. Either `VULNERABILITY_ORDER_DIRECTION_DESC` or `VULNERABILITY_ORDER_DIRECTION_ASC` is applied to the `firstDetected` field of a vulnerability.
 * `applicationId`. If included, only returns results for these application IDs.
 * `statusFilter`. If present, only returns results for vulnerabilities with these statuses.
 * `severityFilter`. If present, only returns results for vulnerabilities of these severities.
@@ -171,7 +171,7 @@ You can filter returns in the body of the query
 ```json
 {
 "query": {
-        "orderByDirection": "DESC",
+        "orderByDirection": "VULNERABILITY_ORDER_DIRECTION_DESC",
         "statusFilter": [
             "FIXED", "ASSIGNED"
         ],
@@ -186,7 +186,7 @@ You can filter returns in the body of the query
 }
 ```
 
-* `orderByDirection`. Either `DESC` or `ASC` is applied to the `firstDetected` field of a vulnerability.
+* `orderByDirection`. Either `VULNERABILITY_ORDER_DIRECTION_DESC` or `VULNERABILITY_ORDER_DIRECTION_ASC` is applied to the `firstDetected` field of a vulnerability.
 * `applicationId`. If included, only returns results for these application IDs.
 * `statusFilter`. If present, only returns results for vulnerabilities with these statuses.
 * `severityFilter`. If present, only returns results for vulnerabilities of these severities.
