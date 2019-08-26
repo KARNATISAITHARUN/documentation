@@ -6,10 +6,10 @@ For CoCD you need to create a script file as part of the build project. With GoC
 
 To integrate GoCD builds with ShiftLeft, please adhere to the following prerequisites:
 
-- [GoCD installation](https://docs.gocd.org/current/installation/) (server and agent)
-- Supported application and build tool (see [code analysis requirements](../../introduction/requirements.md))
-- Familiarity with [ShiftLeft Inspect and Protect](../../using-inspect-protect/inspect-protect-quick-start.md)
-- ShiftLeft account credentials: **Organization ID** and **Access Token**
+- [GoCD installation](https://docs.gocd.org/current/installation/) (server and agent).
+- Supported application and build tool (see [ShiftLeft Inspect requirements](../../introduction/requirements.md)).
+- Familiarity with [ShiftLeft Inspect and Protect](../../using-inspect-protect/inspect-protect-quick-start.md).
+- ShiftLeft account credentials: **Organization ID** and **Access Token**.
 Initially these credentials will be provided to you by ShiftLeft. Once you have established your account you can copy them from the **My Profile** page at the ShiftLeft Dashboard.
 
 ![Get ShiftLeft Account Credentials](img/copy-org.png)

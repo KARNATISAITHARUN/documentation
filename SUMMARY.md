@@ -53,9 +53,8 @@
     * [Authenticating with ShiftLeft](using-inspect-protect/using-cli/authenticating.md)
     * [CLI Reference](using-inspect-protect/using-cli/cli-reference.md)
   * Analyzing Your Code
-    * [Analyzing Applications](using-inspect-protect/inspect/analyzing-applications.md)
-    * [Viewing Analysis Results](using-inspect-protect/inspect/analysis-results.md)
-    * [Using Custom Policies with ShiftLeft Inspect](using-inspect-protect/inspect/custom-policies.md)
+    * [Analyzing Applications Using ShiftLeft Inspect](using-inspect-protect/inspect/analyzing-applications.md)
+    * [Viewing Analysis Results](using-inspect-protect/inspect/view-results.md)
   *  Protecting Runtime Applications
      * [Securing Your Applications Using ShiftLeft Protect](using-inspect-protect/protect/securing-applications.md)
      * [Running ShiftLeft Protect](using-inspect-protect/protect/run-protect.md)
@@ -70,15 +69,15 @@
       * [Configure Post Build Task](using-inspect-protect/integrating-with-shiftleft/integrating-jenkins-builds/configure-post-build-task.md)
       * [Verify Jenkins Integration](using-inspect-protect/integrating-with-shiftleft/integrating-jenkins-builds/verify-jenkins-integration.md)
     * [Integrating with Bamboo Builds](using-inspect-protect/integrating-with-shiftleft/integrating-bamboo-builds.md)
-    * [Integrating with Docker Builds](using-inspect-protect/integrating-with-shiftleft/integrating-docker-builds.md)
+    * [Integrating with Docker](using-inspect-protect/integrating-with-shiftleft/integrating-docker.md)
     * [Integrating with GoCD Builds](using-inspect-protect/integrating-with-shiftleft/integrating-gocd-builds.md)
     * [Integrating with TeamCity Builds](using-inspect-protect/integrating-with-shiftleft/integrating-teamcity-builds.md)
     * [Integrating with Travis Builds](using-inspect-protect/integrating-with-shiftleft/integrating-travis-builds.md)
   * Application Programming Interfaces (APIs)
     * [Identifying Code Vulnerabilities using the API](using-inspect-protect/api/vulnerabilities_api.md)
   * Using ShiftLeft in Your Workflow
-    * [Integrating Jira](using-inspect-protect/using-workflow/jira-integration.md)
-    * [Vulnerability Dashboard](using-inspect-protect/using-workflow/vulnerability-dashboard.md)
+    * [Integrating with Jira](using-inspect-protect/using-workflow/jira-integration.md)
+    * [Vulnerabilities Dashboard](using-inspect-protect/using-workflow/vulnerability-dashboard.md)
 * ShiftLeft Policies
   * [About Policies](policies/about-policy.md)
   * [Creating a Custom Policy](policies/custom-policy.md)
