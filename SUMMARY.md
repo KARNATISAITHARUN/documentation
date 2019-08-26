@@ -29,7 +29,6 @@
     * [Analyzing Methods](using-ocular/common-queries/methods-analyze.md)
     * [Uncovering Data Flows](using-ocular/common-queries/data-flows.md)
   * Use Cases
-    * [Detecting Data Leaks using a Customized Policy](using-ocular/use-cases/custom-policy-leaks.md)
     * [Detecting 0-Day Vulnerabilities](using-ocular/use-cases/detect-0-day.md)
     * [Discovering HTTP Cookie Poisoning](using-ocular/use-cases/http-cookie-poisoning.md)
     * [Identifying Call Chains](using-ocular/use-cases/call-chains.md)
@@ -45,7 +44,6 @@
   * Configuring and Extending ShiftLeft Ocular
     * [Identifying Application Code and Dependencies](using-ocular/configure-extend/identify-code-dependencies.md)
     * [Enhancing the OQL](using-ocular/configure-extend/enhance-oql.md)
-    * [Customizing a Policy](using-ocular/configure-extend/customize-policy.md)
   * [Ocular API](https://ocular.shiftleft.io/api/)
 * Using ShiftLeft Inspect and ShiftLeft Protect
   * [Quick Start](using-inspect-protect/inspect-protect-quick-start.md)
@@ -82,7 +80,11 @@
     * [Integrating Jira](using-inspect-protect/using-workflow/jira-integration.md)
     * [Vulnerability Dashboard](using-inspect-protect/using-workflow/vulnerability-dashboard.md)
 * ShiftLeft Policies
-  * [Policy Language](policies/spl.md)
+  * [About Policies](policies/about-policy.md)
+  * [Creating a Custom Policy](policies/custom-policy.md)
+  * [Policy Language](policies/policy-language.md)
+  * [Use Case: Identifying Sensitive Data Variables](policies/policy-sensitive-data.md)
+  * [Use Case: Excluding Vulnerabilities with a Sanitization Function](policies/policy-sanitization-function.md)
 * Monthly Updates
   * [July 2019](release-notes/july-2019.md)
   * [June 2019](release-notes/june-2019.md)

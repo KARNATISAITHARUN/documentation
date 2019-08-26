@@ -1,31 +1,22 @@
-# Policy Language
+# ShiftLeft Policy Language
 
-ShiftLeft's Policy Language provides support for core language features, libraries, and frameworks through the use of policy files. Policy files specify how the application communicates with the outside world, which transformations exist on data, and which information flows should be considered security violations. ShiftLeft provides a database of default policy rules, and additionally allows you to create your own custom policy. Custom policy rules can exclude parts of the default policy that do not apply to the application, or may introduce additional knowledge about the application.
+The ShiftLeft Policy Language is used to create and manage Policies. The Policy Language is made up of three types of directives:
 
+* **[Tagging Directives](#tagging-directives).** Exposed methods, interface interactions and transformations are determined by tagging the [Code Property Graph (CPG)](../introduction/understanding-cpg.md) based on syntax-patterns. The Policy contains tagging directives to encode these patterns.
 
-The default policy is found in the directory
+* **[Flow Description Directives](#flow-description-directives).** The Policy specifies patterns for information flows that, when observed, should be reported as possible instances of vulnerabilities, particularly data leaks.
 
-```
-~/.shiftleft/policy/
-```
+* **[Taint Semantics (Advanced) Directives](#taint-semantics-directives).** At the lowest level of abstraction, Policies define taint semantics. These directives map between method input and output parameters that express propagation of taint. This information is stored in the ICFG and can subsequently be accessed by static taint tracking algorithms.
 
-and is automatically loaded and applied when loading CPGs in the REPL using the `loadCpg` command. If you edit the policy, invoke`loadCpg` again to apply any policy changes.
+Using each of these directives is documented in detail, with examples of how they are employed in the default Policy.
 
-Policies are specified using a Policy Language, which offers four types of directives:
-
-* **[Tagging Directives](#tagging-directives).** Exposed methods, interface interactions and transformations are determined by tagging the CPG based on syntax-patterns. The policy contains tagging directives to encode these patterns.
-
-* **[Flow Description Directives](#flow-description-directives).** The policy specifies patterns for information flows that, when observed, should be reported as possible instances of vulnerabilities, particularly data leaks.
-
-* **[Taint Semantics (Advanced) Directives](#taint-semantics-directives).** At the lowest level of abstraction, policies define taint semantics. These directives map between method input and output parameters that express propagation of taint. This information is stored in the ICFG and can subsequently be accessed by static taint tracking algorithms.
-
-Using each of these directives is documented in detail, with examples of how they are employed in the default policy.
+Note that for more complex use cases that may require additional features and/or integration with other services, [contact us](https://www.shiftleft.io/contact/) if you want to implement advanced use cases with [custom Policies](custom-policy.md).
 
 ## Tagging Directives 
 
 ### Tagging Directives to Mark IO Endpoints, Transformations and Exposed Methods
 
-As a result of invoking library methods, data may be read from the outside world or written to it. Tagging directives can be used to inform ShiftLeft Ocular about these methods. These directives result in tagging of the CPG with a set of predefined tags that ShiftLeft Ocular can use.
+As a result of invoking library methods, data may be read from the outside world or written to it. Tagging directives can be used to inform ShiftLeft about these methods. These directives result in tagging of the CPG with a set of predefined tags that ShiftLeft can use.
 
 The Policy Language provides the IO, TRANSFORMER and EXPOSED directives to tag IO endpoints, transformers and exposed methods, respectively. The directives all follow the format
 
@@ -40,13 +31,13 @@ where
 
 ### IO Tagging Directives
 
-Employed to describe the effects of calls to external libraries. An example is the following line from the default policy for "java.io.FileInputStream":
+Employed to describe the effects of calls to external libraries. An example is the following line from the default Policy for "java.io.FileInputStream":
 
 ```
 IO file = METHOD -f "java.io.FileInputStream.read:int(byte[])" { PAR -i 1 "SOURCE" }
 ```
 
-This line specifies that, upon invoking the  method "java.io.FileInputStream.read:int(byte[]), its first parameter serves as a data source, and that this is data read from a file. Similarly,  the method "java.io.FileInputStream.read:int()"  introduces an integer read from a file into the program. This can be encoded via the policy line
+This line specifies that, upon invoking the  method "java.io.FileInputStream.read:int(byte[]), its first parameter serves as a data source, and that this is data read from a file. Similarly,  the method "java.io.FileInputStream.read:int()"  introduces an integer read from a file into the program. This can be encoded via the Policy line
 
 ```
 IO file = METHOD -f "java.io.FileInputStream.read:int()" { RET "SOURCE" }
@@ -86,19 +77,19 @@ Considering the IO flow, a more detailed flow is specified during the write/read
 IO file = METHOD -f "java.io.FileOutputStream.write:void(byte[])" { PAR -i 1 "SINK", INST "DESCRIPTOR_USE" }
 ```
 
-To describe those descriptors instances, tag (`DESCRIPTOR`) the creation of the descriptors instances to augment the information of an IO flow summary.
+To describe those descriptors instances, tag (`DESCRIPTOR`) the creation of the descriptors instances to augment the information of an IO flow summary is
 
 ```
 IO fileStream = METHOD -f "java.io.FileOutputStream.<init>:void()" { INST "DESCRIPTOR" }
 ```
 
-Finding Descriptor flows is done recursively, so even a descriptor creation can make use of other descriptors. This is the case especially in constructors parameters.
+Finding Descriptor flows is done recursively, so even a descriptor creation can make use of other descriptors. This is the case especially in constructors parameters
 
 ```
 IO fileStream = METHOD -f "java.io.FileOutputStream.<init>:void(java.io.File)" { INST "DESCRIPTOR", PAR -i 1 "DESCRIPTOR_USE" }
 ```
 
-N.B. Parameters can have different IO names and tags depending on the actual context and only the correct one is considered.
+N.B. parameters can have different IO names and tags depending on the actual context and only the correct one is considered.
 
 ```
 IO fileStream = METHOD -f "java.io.FileOutputStream.<init>:void(java.lang.String)" { INST "DESCRIPTOR", PAR -i 1 "DESCRIPTOR_USE" }
@@ -107,7 +98,7 @@ IO filePath = METHOD -f "java.io.FileOutputStream.<init>:void(java.lang.String)"
 
 ### TRANSFORMER Tagging Directives
 
-Allows you to specify which methods transform data or may be considered data validation routines. As an example, consider the method "encodeBase64", which takes an input string as its first argument and returns a base64-encoded version of that string. This behavior is captured by the following directive:
+Allows you to specify which methods transform data or may be considered data validation routines. As an example, consider the method "encodeBase64", which takes an input string as its first argument and returns a base64-encoded version of that string. This behavior is captured by the following directive
 
 ```
 TRANSFORM base64 = METHOD -f "org.apache.commons.codec.binary.Base64.encodeBase64:byte[](byte[])" { PAR -i 1 "SINK", RET "SOURCE" }
@@ -131,7 +122,7 @@ Describes the effects of transformers. For example, a base64 encoder generates e
 WHEN TRANSFORM base64 => DATA +encoded
 ```
 
-specifies that, on invocation of the base64 method, the tag "encoded" is added to the output datag. Similarly, the tag "encoded" can be removed via the directive
+specifies that, on invocation of the base64 method, the tag "encoded" is added to the output tag. Similarly, the tag "encoded" can be removed via the directive
 
 ```
 WHEN TRANSFORM base64-decode => DATA -encoded
@@ -158,7 +149,7 @@ With data sources, sinks, descriptors and transformers tagged, these are now com
 CONCLUSION label = FLOW (DATA | IO) $expr1 [-> (DATA | IO) $expr2]
 ```
 
-where `$expr1` and `$expr2` are Boolean expressions over tags in accordance with the grammar:
+where `$expr1` and `$expr2` are Boolean expressions over tags in accordance with the grammar
 
 ```
 expr := tag
@@ -225,7 +216,7 @@ WHEN CONCLUSION file-to-http => EMIT {
 
 For advanced use only.
 
-Library methods may also simply propagate taint without performing any transformations on the data that change its Security Properties. For standard libraries, these propagation rules are already provided by the ShiftLeft default policy. However, for exotic libraries unavailable in code to ShiftLeft Ocular, these rules can also be specified manually via MAP directives. These directives specify how taint is propagated from the input parameters of a library method to its output parameters. MAP directives follow the form
+Library methods may also simply propagate taint without performing any transformations on the data that change its security properties. For standard libraries, these propagation rules are already provided by the ShiftLeft default Policy. However, for exotic libraries unavailable in code to ShiftLeft, these rules can also be specified manually via MAP directives. These directives specify how taint is propagated from the input parameters of a library method to its output parameters. MAP directives follow the form
 
 ```
 MAP -[override|preserve] -d (RET | INST | PAR -i $i) -s (INST | PAR -i $i) METHOD -f "$fullName"
@@ -235,7 +226,7 @@ where
 `$i` is a parameter number 
 `$fullName` is the full name of a method. 
 
-MAP statements associate a source parameter of a given method with a destination parameter. As a result, ShiftLeft Ocular is informed that, if the source parameter is tainted, then the destination parameter is tainted after execution of the library method. 
+MAP statements associate a source parameter of a given method with a destination parameter. As a result, ShiftLeft is informed that, if the source parameter is tainted, then the destination parameter is tainted after execution of the library method. 
 
 As an example, if the method "java.lang.String.concat:java.lang.String(java.lang.String)" of the Java standard library has a tainted instance parameter, then so is the return value of the library call. This rule is specify using the MAP directive
 
@@ -249,7 +240,7 @@ The rule indicates that, if the instance parameter (INST) is tainted, then the r
 MAP -preserve -d INST -s PAR -i 1 METHOD -f "java.lang.StringBuffer.append:java.lang.StringBuffer(java.lang.StringBuffer)"
 ```
 	
-Is the shorthand of:
+Is the shorthand of
 
 ```
 MAP -override -d INST -s PAR -i 1 METHOD -f "java.lang.StringBuffer.append:java.lang.StringBuffer(java.lang.StringBuffer)"

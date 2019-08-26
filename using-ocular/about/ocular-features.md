@@ -8,9 +8,9 @@ ShiftLeft Ocular provides the following core features:
 
 * **[Creation of Code Property Graphs (CPG)](../getting-started/create-cpg.md)** (Included in the ShiftLeft Ocular trial version). Based on your application code, ShiftLeft Ocular creates a CPG that can be used as the basis of custom static analysis. CPGs provide an extensible, multi-layered representation of each unique code version.
 
-* **Framework and Library Support through Policies.** ShiftLeft Ocular includes Policies, which are annotations for common frameworks and libraries. Policies are preloaded and repurposed for use in generating and working with Security Profiles and for finding data flows in your application code. You can [customize Policies](../configure-extend/customize-policy.md) to extend supported frameworks and libraries or encode additional vulnerability patterns.
+* **[Framework and Library Support through Policies](../../policies/about-policy.md).** ShiftLeft Ocular includes Policies, which are annotations for common frameworks and libraries. Policies are preloaded and repurposed for use in generating and working with Security Profiles and for finding data flows in your application code. You can customize Policies to extend supported frameworks and libraries or encode additional vulnerability patterns.
 
-* **Extensibility**. ShiftLeft Ocular is highly extensible through the use of custom queries and [Policies](../configure-extend/customize-policy.md), by enhancing the OQL, and by creating a CPG pass and introducing new layers into the CPG.
+* **Extensibility**. ShiftLeft Ocular is highly extensible through the use of custom queries and [Policies](../../policies/custom-policies.md), by enhancing the OQL, and by creating a CPG pass and introducing new layers into the CPG.
 
 * **[Interactive and Non-Interactive Modes](modes.md)** (Included in the ShiftLeft Ocular trial version). CPGs and Security Profiles can be interactively explored using a REPL, an interactive shell with support for the OQL. And user-provided REPL scripts can be executed non-interactively to perform automated custom scans for security issues.
 
