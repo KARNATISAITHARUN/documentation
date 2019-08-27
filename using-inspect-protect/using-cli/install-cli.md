@@ -12,7 +12,7 @@ The ShiftLeft CLI is invoked using the following syntax:
 sl [global options] command [command options] [arguments...]
 ```
 
-Once you have installed the ShiftLeft CLI, make sure you have [authenticated the CLI with your ShiftLeft Account](../using-cli/authenticating.md). Refer to the [CLI Command Reference](cli-reference.md) for additional information.
+Once you have installed the ShiftLeft CLI, make sure you have [authenticated the CLI with your ShiftLeft Account](../using-cli/authenticating.md). Refer to the [CLI Reference](cli-reference.md) for additional information.
 
 ## Using the Welcome Page
 

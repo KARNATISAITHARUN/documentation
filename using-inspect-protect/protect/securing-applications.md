@@ -14,11 +14,11 @@ ShiftLeft Protect detects exploits and payload, also blocks and sanitizes, vulne
 
 | URL	  | Purpose |
 | ------------- | ------------- |
-| http://localhost:8081/customers/1 | Returns JSON representation of Customer resource based on Id (1) specified in URL |
-| http://localhost:8081/customers | Returns JSON representation of all available Customer resources |
-| http://localhost:8081/patients | Returns JSON representation of all available patients in record |
-| http://localhost:8081/account/1 | Returns JSON representation of Account based on Id (1) specified |
-| http://localhost:8081/account | Returns JSON representation of all available accounts and their details |
+| http://<span></span>localhost:8081/customers/1 | Returns JSON representation of Customer resource based on Id (1) specified in URL |
+| http://<span></span>localhost:8081/customers | Returns JSON representation of all available Customer resources |
+| http://<span></span>localhost:8081/patients | Returns JSON representation of all available patients in record |
+| http://<span></span>localhost:8081/account/1 | Returns JSON representation of Account based on Id (1) specified |
+| http://<span></span>localhost:8081/account | Returns JSON representation of all available accounts and their details |
 	
 All the above requests leak sensitive medical and PII data to the logging service. In addition other endpoints such as `/saveSettings`, `/search/user`, `/admin/login` etc. are also available. Along with the list above, users can explore variations of `GET`, `POST` and `PUT` requests sent to these endpoints.
 

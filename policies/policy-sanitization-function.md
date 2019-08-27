@@ -14,6 +14,8 @@ For additional information, refer to the articles:
 
 * [About ShiftLeft Policies](about-policy.md)
 * [ShiftLeft Policy Language](policy-language.md)
+* [Creating a Custom Policy](custom-policy.md)
+* [ShiftLeft Policy Language](policy-language.md)
 
 ## Specifying the Policy
 

@@ -44,6 +44,7 @@
   * Configuring and Extending ShiftLeft Ocular
     * [Identifying Application Code and Dependencies](using-ocular/configure-extend/identify-code-dependencies.md)
     * [Enhancing the OQL](using-ocular/configure-extend/enhance-oql.md)
+    * [Executing Code and Scripts at Startup](using-ocular/configure-extend/execute-code.md)
   * [Ocular API](https://ocular.shiftleft.io/api/)
 * Using ShiftLeft Inspect and ShiftLeft Protect
   * [Quick Start](using-inspect-protect/inspect-protect-quick-start.md)

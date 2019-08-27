@@ -51,13 +51,13 @@ sl policy create [default|no-dictionary] [<path-to-policy-file>]
 
 where
 
-`default|no-dictionary`. Option to specify which [default policy template](#default-policy-templates) to use.
+`default|no-dictionary`. Option to specify which [default policy template](#default-shiftleft-inspect-policy-templates) to use.
 
 `<path-to-policy-file>`. The name and location for the new Policy. Policy files end in the `.policy` filename extension.
 
 ### Specifying the Policy Definition
 
-Using a text editor, open the new Policy file. Write new Policy definitions, or edit those imported if you used the [`default` template](#default-policy-templates), by [using the ShiftLeft Policy Language](policy-language.md).
+Using a text editor, open the new Policy file. Write new Policy definitions, or edit those imported if you used the [`default` template](#default-shiftleft-inspect-policy-templates), by [using the ShiftLeft Policy Language](policy-language.md).
 
 ### Validating the New Policy
 
@@ -151,4 +151,4 @@ where
 
 ### Editing a Custom Policy
 
-Once you have created a custom Policy, you can edit it by [changing the Policy definitions](#specifying-the-policy-definition), and then [validating the updates](#validating-the-new-policy). For example, if you created a new Policy using the [`default` template](#default-policy-templates), you may want to edit the standard definitions imported into your new file to create a custom Policy
+Once you have created a custom Policy, you can edit it by [changing the Policy definitions](#specifying-the-policy-definition), and then [validating the updates](#validating-the-new-policy). For example, if you created a new Policy using the [`default` template](#default-shiftleft-inspect-policy-templates), you may want to edit the standard definitions imported into your new file to create a custom Policy
