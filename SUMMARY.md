@@ -86,6 +86,7 @@
   * [Use Case: Identifying Sensitive Data Variables](policies/policy-sensitive-data.md)
   * [Use Case: Excluding Vulnerabilities with a Sanitization Function](policies/policy-sanitization-function.md)
 * Monthly Updates
+  * [August 2019](release-notes/august-2019.md)
   * [July 2019](release-notes/july-2019.md)
   * [June 2019](release-notes/june-2019.md)
   * [May 2019](release-notes/may-2019.md)
