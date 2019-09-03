@@ -24,7 +24,7 @@ To integrate ShiftLeft with GoCD builds, install the ShiftLeft CLI on the host w
  * Name: `SHIFTLEFT_ORG_ID`| Value: **Organization ID**
  * Name: `SHIFTLEFT_ACCESS_TOKEN`| Value: **Access Token**
 
-See [SL Auth](../using-cli/authenticating.md) for more information.
+See the article [Authenticating with ShiftLeft](../using-cli/authenticating.md) for more information.
 
 ## Copy the SL binary to the agent image
 

@@ -7,7 +7,7 @@ Information is provided on
 
 ## Analysis Results Notification
 
-The first time you submit an application, or if your application has major library changes, it may take ShiftLeft Inspect a day or two to complete a full analysis. In those situations, ShiftLeft Inspect initially displays the partial analysis results, which is indicated by a message on the application's card and in the Vulnerabilities Dashboard. 
+When you submit an application with a new library, it may take ShiftLeft Inspect additional time to complete a full analysis. In those situations, ShiftLeft Inspect initially displays the partial analysis results, which is indicated by a message on the application's card and in the Vulnerabilities Dashboard. 
 
  ![Partial Results Message](img/partial-results.png)
 

@@ -1,4 +1,4 @@
-# ShiftLeft Features
+# ShiftLeft Ocular Features
 
 ShiftLeft Ocular is a set of command line tools that provide a static analysis framework for application security. Developers and security researchers use ShiftLeft Ocular to explore code bases to determine vulnerabilities. This is done by formulating queries in the Ocular Query Language (OQL), a concise and expressive language. Queries can be persisted, allowing code to be automatically scanned for the same vulnerabilities in the future. And ShiftLeft Ocular can be adapted and extended to suit your specific needs.
 

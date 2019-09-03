@@ -1,22 +1,22 @@
 # ShiftLeft Requirements
 
-All ShiftLeft products support the Linux, MacOS X and Windows operating systems. Information is provided on the [languages ShiftLeft supports](language-support.md).
+All ShiftLeft products support the Linux, MacOS X and Windows operating systems. Information is also provided on the [languages ShiftLeft supports](language-support.md).
 
 ShiftLeft has specific requirements for:
 
 * [ShiftLeft Ocular](#requirements-for-shiftleft-ocular)
-* [ShiftLeft CLI](#shiftleft-cli-requirements)
+* [ShiftLeft Command Line Interface (CLI)](#shiftleft-cli-requirements)
 * [ShiftLeft Inspect](#requirements-for-shiftleft-inspect)
 * [ShiftLeft Protect](#requirements-for-shiftleft-protect)
 * [Browser](#browser-requirements)
 
 ## Requirements for ShiftLeft Ocular
 
-ShiftLeft Ocular runs on top of the Java virtual machine. Please make sure you have a Java Runtime Environment >= 1.8 installed.
+[ShiftLeft Ocular](products.md) runs on top of the Java virtual machine. Please make sure you have a Java Runtime Environment >= 1.8 installed.
 
 ### Scala Requirements for ShiftLeft Ocular
 
-You can examine only Scala compiled application bytecode (not source code) using ShiftLeft Ocular. This means that you must successfully build your application using a supported build tool beforehand. 
+You can examine only Scala compiled application bytecode (not source code) using ShiftLeft Ocular. This means that you **must** successfully build your application using a supported build tool beforehand. 
 
 Component | Requirement
 --- | ---
@@ -25,7 +25,7 @@ Application Type | **Scala 2.12+**
 
 ## ShiftLeft CLI Requirements
 
-The CLI is used with ShiftLeft Inspect to submit applications for analysis and with ShiftLeft Protect to monitor your applications in runtime. The CLI requires a local installation of a supported Java version. The CLI host must allow outbound connections on the specified port.
+[The CLI](products.md) requires a local installation of a supported Java version. The CLI host must allow outbound connections on the specified port.
 
 Component | Requirement
 --- | ---
@@ -36,11 +36,11 @@ To verify that you are running the supported Java version, use the `java -versio
 
 ## Requirements for ShiftLeft Inspect
 
-ShiftLeft Inspect is a next-generation static application security testing (SAST) solution for applications written in Java, Scala and .NET. It provides an accurate and exhaustive exploration and analysis of your unique code and identifies complex vulnerabilities and sensitive data leakage.
+[ShiftLeft Inspect](products.md) has specific requirements for applications written in Java, Scala and .NET. 
 
 ### Java Requirements for ShiftLeft Inspect
 
-ShiftLeft Inspect's Java code analysis is performed on compiled application **bytecode** (not source code). As such, you **must** successfully build your application using a supported build tool **before** you submit the application for analysis. 
+ShiftLeft Inspect's Java code analysis is performed on compiled application bytecode (not source code). As such, you **must** successfully build your application using a supported build tool before you submit the application for analysis. 
 
 Component | Requirement
 --- | ---
@@ -54,7 +54,7 @@ To verify that you are running the supported Java version, use the `java -versio
 
 ### Scala Requirements for ShiftLeft Inspect
 
-ShiftLeft Inspect's Scala code analysis is performed on compiled application bytecode (not source code). As such, you must successfully build your application using a supported build tool before you submit the application for analysis. 
+ShiftLeft Inspect's Scala code analysis is performed on compiled application bytecode (not source code). As such, you **must** successfully build your application using a supported build tool before you submit the application for analysis. 
 
 Component | Requirement
 --- | ---
@@ -88,7 +88,7 @@ To verify whether a .NET Framework target can be built with MSBuild 15.0:
 
 ## Requirements for ShiftLeft Protect
 
-ShiftLeft Protect automates the monitoring of production vulnerabilities for applications written in Java and .NET through the deployment of a runtime in-memory Microagent. Support for .NET Core is planned for a future date.
+[ShiftLeft Protect](products.md) has requirements for applications written in Java and .NET Framework. Support for .NET Core is planned for a future date.
 
 ### Java Requirements for ShiftLeft Protect
 
@@ -114,10 +114,10 @@ System | Windows
 
 ## Browser Requirements
 
-ShiftLeft supports the following browsers for accessing, viewing and interacting with the ShiftLeft Dashboard:
+ShiftLeft supports the following browsers for accessing, viewing and interacting with the [ShiftLeft Dashboard](products.md):
 
-- Google Chrome (tested with v61, v62)
-- Mozilla Firefox (tested with v57, v58b)
-- macOS Safari (tested with v11)
+* Google Chrome (tested with v61, v62)
+* Mozilla Firefox (tested with v57, v58b)
+* MacOS Safari (tested with v11)
 
 Microsoft Edge* is currently not officially supported but has been verified with v41.

@@ -28,5 +28,3 @@
 ## ShiftLeft Protect
 
 * **[Scala Support for Inspect Protect (Early Access)](../introduction/language-support.md)**. You can now use ShiftLeft Protect to secure your Scala applications. As part of this early access, Scala support is available from version 2.12+.
-
-* **[Information on ShiftLeft Protect's Monitoring, Detection and Sanitization Features](../using-inspect-protect/protect/securing-applications.md)**. The ShiftLeft Protect documentation now includes information on features that enable monitoring and detection and sanitization.

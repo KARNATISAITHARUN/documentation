@@ -1,6 +1,6 @@
 # Configuring the ShiftLeft Protect Microagent for Java
 
-The ShiftLeft Protect for Java Microagent runs out-of-the-box with default settings. Optionally you can configure the microagent for your environment.
+The ShiftLeft Protect for Java Microagent runs out-of-the-box with default settings. Optionally you can configure the Microagent for your environment.
 
 ## Configuration Options
 
@@ -14,7 +14,7 @@ The ShiftLeft Protect for Java Microagent supports various configuration mechani
 
 ### JSON
 
-You can configure the microagent using the JSON file named `shiftleft.json` located in the working directory with the application binary. This file is generated when you run `sl analyze`.
+You can configure the Microagent using the JSON file named `shiftleft.json` located in the working directory with the application binary. This file is generated when you run `sl analyze`.
 
 Syntax: Must conform to the ShiftLeft format.
 
@@ -99,9 +99,9 @@ If you are using a SCM system such as Git, when you reanalyze the app after chan
 
 ## Strictness
 
-The strictness setting determines how the microagent behaves if there is a disconnection between it and the proxy server. The ShiftLeft Protect for Java Microagent runs in two modes: non-strict (default) and strict.
+The strictness setting determines how the Microagent behaves if there is a disconnection between it and the proxy server. The ShiftLeft Protect for Java Microagent runs in two modes: non-strict (default) and strict.
 
-In non-strict mode (default), the Microagent does not require the SPR at startup. In this case the app starts but may not be monitored by ShifLeft, or in case it is, metrics generated during disconnection are ignored.
+In non-strict mode (default), the Microagent does not require the SPR at startup. In this case the app starts but may not be monitored by ShiftLeft, or in case it is, metrics generated during disconnection are ignored.
 
 In strict mode (`"strict":"true"`) the Microagent requires the SPR to let the application run. If the Microagent loses connection with the proxy, the application methods calling the proxy are paused until connection is reestablished.
 
@@ -213,7 +213,7 @@ JVM | `-Dshiftleft.sec.mode`
 Environment Variable | `SHIFTLEFT_SEC_MODE`
 
 Values:
-- `REPORT`(default): Do not alter application behaviour, just report the detected attacks
+- `REPORT`(default): Do not alter application behavior, just report the detected attacks
 - `BLOCK`: Block application execution when attacks are found, by throwing a java.lang.SecurityException, and report the attack
 
 ### XXE
@@ -242,7 +242,7 @@ JVM | `-Dshiftleft.sec.collect.attack.info`
 Environment Variable | `SHIFTLEFT_SEC_COLLECT_ATTACK_INFO`
 
  Values:
-  - `true`: Attack payloads are collected and sent to ShiftLeft's infrastructure for viewing in the [Vulnerability Dasboard Event Viewer](../../../using-inspect-protect/using-workflow/vulnerability-dashboard.md#event-details).
+  - `true`: Attack payloads are collected and sent to ShiftLeft's infrastructure for viewing in the [Vulnerability Dashboard Event Viewer](../../../using-inspect-protect/using-workflow/vulnerability-dashboard.md#event-details).
   - `false`: (default)
 
 ## HTTPS Proxy Configuration

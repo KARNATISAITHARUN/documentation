@@ -8,7 +8,7 @@ Policies are written in the ShiftLeft [Policy Language](policy-language.md) and 
 
 ## Policies and ShiftLeft Ocular
 
-When you [create and work with a CPG using ShiftLeft Ocular](../using-ocular/getting-started/create-cpg.md), policies are automatically loaded and assigned
+When you [create and work with a CPG using ShiftLeft Ocular](../using-ocular/getting-started/create-cpg.md), policies are automatically loaded and assigned.
 
 ShiftLeft Ocular Policies are located in the directory
 
@@ -36,7 +36,7 @@ The default Policy for ShiftLeft Inspect contains directives that define and ide
 
 * Taint semantics. 
 
-To illustrate the default Policy, take a look at how  deserialization vulnerabilities are identified. The following lines
+To illustrate the default Policy, take a look at how  deserialization vulnerabilities are identified. The following directive
 
 ```
 // [~/.shiftleft/policy/dynamic/java/io/ObjectInputStream.policy:]
@@ -44,9 +44,9 @@ To illustrate the default Policy, take a look at how  deserialization vulnerabil
 IO deserializer = METHOD -f "java.io.ObjectInputStream.readObject:java.lang.Object()" { INST "SINK" }
 ```
 
-specify that the instance parameter of the method `readObject` should be considered as a data sink of a deserializer, that is, the instance parameter is deserialized.
+specifies that the instance parameter of the method `readObject` should be considered as a data sink of a deserializer, that is, the instance parameter is deserialized.
 
-This directive specifies that all parameters tagged with the Spring annotations `CookieValue`, `PathVariable`, and a few others are to be tagged as "attacker-controlled". 
+This directive determines that all parameters tagged with the Spring annotations `CookieValue`, `PathVariable`, and a few others are to be tagged as "attacker-controlled". 
 
 ```
 // ~/.shiftleft/policy/dynamic/org/springframework/exposed.policy:
@@ -68,7 +68,7 @@ WHEN CONCLUSION attacker-to-deserializer => EMIT {
 }
 ```
 
-In this directive, the Policy also allows data transformations and checks to be specified in order to report flows of data, for data that does not undergo validation. 
+In this directive, the Policy also allows data transformations and checks to be identified in order to report flows of data, for data that does not undergo validation. 
 
 Refer to the ShiftLeft [Policy Language](policy-language.md) for additional information and examples.
 

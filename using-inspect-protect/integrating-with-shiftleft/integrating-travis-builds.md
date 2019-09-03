@@ -40,12 +40,10 @@ after_script:
  - <RUN CLI & EXECUTE COMMAND sl analyze> 
 ```
 
-See [SL Auth](../using-cli/authenticating.md) for more information on using environment variables for authentication. See also the [Travis documentation](https://docs.travis-ci.com/user/environment-variables#Default-Environment-Variables).
+See the article [Authenticating with ShiftLeft](../using-cli/authenticating.md) for more information on using environment variables for authentication. See also the [Travis documentation](https://docs.travis-ci.com/user/environment-variables#Default-Environment-Variables).
 
 ### Option 2: Customize the container
 
 Each Travis build uses an ephemeral Linux container (Docker). If desired you could modify the build containers to do the `install` (CLI installation) and `after_install` (`analyze`) steps. This involves editing the Dockerfile as described in the [Travis documentation](https://docs.travis-ci.com/user/enterprise/build-images/#Customizing-build-images).
 
-> #### Note
->
-> Modifying the build container is a Travis Enterprise (on-prem) feature only; you cannot modify the build container using hosted Travis.
+**Note**: Modifying the build container is a Travis Enterprise (on-prem) feature only; you cannot modify the build container using hosted Travis.

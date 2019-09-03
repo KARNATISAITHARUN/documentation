@@ -2,42 +2,43 @@
 
 The ShiftLeft Policy Language is used to create and manage Policies. The Policy Language is made up of three types of directives:
 
-* **[Tagging Directives](#tagging-directives).** Exposed methods, interface interactions and transformations are determined by tagging the [Code Property Graph (CPG)](../introduction/understanding-cpg.md) based on syntax-patterns. The Policy contains tagging directives to encode these patterns.
+* **[Tagging](#tagging-directives).** Exposed methods, interface interactions and transformations are tagged in the [Code Property Graph (CPG)](../introduction/understanding-cpg.md) based on syntax-patterns. The Policy contains tagging directives to encode these patterns.
 
-* **[Flow Description Directives](#flow-description-directives).** The Policy specifies patterns for information flows that, when observed, should be reported as possible instances of vulnerabilities, particularly data leaks.
+* **[Flow Description](#flow-description-directives).** The Policy specifies patterns for information flows that should be reported as possible instances of vulnerabilities, particularly data leaks.
 
-* **[Taint Semantics (Advanced) Directives](#taint-semantics-directives).** At the lowest level of abstraction, Policies define taint semantics. These directives map between method input and output parameters that express propagation of taint. This information is stored in the ICFG and can subsequently be accessed by static taint tracking algorithms.
+* **[(Advanced) Taint Semantics](#taint-semantics-directives).** At the lowest level of abstraction, Policies define taint semantics. These directives map between method input and output parameters that express propagation of taint. This information is stored in the ICFG and can subsequently be accessed by static taint tracking algorithms.
 
-Using each of these directives is documented in detail, with examples of how they are employed in the default Policy.
+Specifying each type of directive is documented in detail, with examples of how they are employed in the default Policy.
 
-Note that for more complex use cases that may require additional features and/or integration with other services, [contact us](https://www.shiftleft.io/contact/) if you want to implement advanced use cases with [custom Policies](custom-policy.md).
+Note that for more complex Policy use cases that may require additional features and/or integration with other services, [contact us](https://www.shiftleft.io/contact/).
 
 ## Tagging Directives 
 
 ### Tagging Directives to Mark IO Endpoints, Transformations and Exposed Methods
 
-As a result of invoking library methods, data may be read from the outside world or written to it. Tagging directives can be used to inform ShiftLeft about these methods. These directives result in tagging of the CPG with a set of predefined tags that ShiftLeft can use.
+As a result of invoking library methods, data may be read from the outside world or written to it. Tagging directives are  used to inform ShiftLeft about these methods. These directives result in tagging the CPG.
 
-The Policy Language provides the IO, TRANSFORMER and EXPOSED directives to tag IO endpoints, transformers and exposed methods, respectively. The directives all follow the format
+The Policy Language provides the IO, TRANSFORMER and EXPOSED tagging directives to for IO endpoints, transformers and exposed methods, respectively. The directives all follow the format
 
 ```
 $command label = METHOD -f "$fullName" [{ (PAR -i $i|RET|INST) "(SOURCE|SINK|DESCRIPTOR|DESCRIPTOR_USE)" }]
 ```
 
 where 
-* `$command` is either IO, TRANSFORMER or EXPOSED
-* `$fullName` is a method signature 
-* `$i` is a parameter number. 
+
+* `$command` Either IO, TRANSFORMER or EXPOSED
+* `$fullName` Method signature 
+* `$i` Parameter number. 
 
 ### IO Tagging Directives
 
-Employed to describe the effects of calls to external libraries. An example is the following line from the default Policy for "java.io.FileInputStream":
+Employed to describe the effects of calls to external libraries. An example is the following directive from the default Policy for "java.io.FileInputStream":
 
 ```
 IO file = METHOD -f "java.io.FileInputStream.read:int(byte[])" { PAR -i 1 "SOURCE" }
 ```
 
-This line specifies that, upon invoking the  method "java.io.FileInputStream.read:int(byte[]), its first parameter serves as a data source, and that this is data read from a file. Similarly,  the method "java.io.FileInputStream.read:int()"  introduces an integer read from a file into the program. This can be encoded via the Policy line
+This directive specifies that, upon invoking the  method "java.io.FileInputStream.read:int(byte[]), its first parameter serves as a data source, and that this is data read from a file. Similarly,  the method "java.io.FileInputStream.read:int()"  introduces an integer read from a file into the program. This can be encoded via the Policy directive
 
 ```
 IO file = METHOD -f "java.io.FileInputStream.read:int()" { RET "SOURCE" }
@@ -49,13 +50,13 @@ Library methods can also write data to the outside. Analogously to FileInputStre
 IO file = METHOD -f "java.io.FileOutputStream.write:void(byte[])" { PAR -i 1 "SINK" }
 ```
 
-This line indicates that data which reaches the first parameter of the method "java.io.FileOutputStream.write:void(byte[])" is written to a file.
+This directive indicates that data which reaches the first parameter of the method "java.io.FileOutputStream.write:void(byte[])" is written to a file.
 
 ### DESCRIPTOR Flows Tagging Directives
 
 Usually, the single data flow (primary) of an IO flow does not include less relevant objects creations. However, sometimes these object creations are important if the flow is actually vulnerable. For this reason, descriptor flows of source and sink can provide additional clues about the primary data flow.
 
-An example when descriptors are required:
+An example when descriptors are required 
 
 ```
 File f1 = new File(HttpRequest.read());
@@ -158,7 +159,7 @@ expr := tag
       | not expr
 ```
 
-Examples for valid expressions are "http", "http OR ftp", "http AND NOT sensitive". The simplest flow expressions only characterize tags at the end of an information flow. For example, to capture all flows that reach the outside world and are encrypted, the flow description is formulated as
+Examples for valid expressions are `http`, `http OR ftp` and `http AND NOT sensitive`. The simplest flow expressions only characterize tags at the end of an information flow. For example, to capture all flows that reach the outside world and are encrypted, the flow description is formulated as
 
 ```
 CONCLUSION encrypted-to-outside = FLOW DATA encrypted
@@ -170,7 +171,7 @@ Similarly, to capture all flows to http methods, use the description
 CONCLUSION to-http = FLOW IO http
 ```
 
-It is also possible to constrain both data tags and method tags. For example, to capture unencrypted data sent out using  HTTP, formulate the rule
+It is also possible to constrain both data tags and method tags. For example, to capture unencrypted data sent out using  HTTP, formulate the directive
 
 ```
 CONCLUSION unencrypted-to-http = FLOW DATA (NOT encrypted) -> IO http
@@ -182,7 +183,7 @@ Moreover, it is possible to restrict tags at the data source. So all flows where
 CONCLUSION attacker-controlled-from-http = FLOW IO http -> DATA attacker-controlled
 ```
 
-Finally, both source and sink tags can be restricted, e.g., to capture flows from files to http, using the rule
+Both source and sink tags can be restricted, e.g., to capture flows from files to http, using the directive
 
 ```
 CONCLUSION file-to-http = FLOW IO file -> IO http
@@ -216,7 +217,7 @@ WHEN CONCLUSION file-to-http => EMIT {
 
 For advanced use only.
 
-Library methods may also simply propagate taint without performing any transformations on the data that change its security properties. For standard libraries, these propagation rules are already provided by the ShiftLeft default Policy. However, for exotic libraries unavailable in code to ShiftLeft, these rules can also be specified manually via MAP directives. These directives specify how taint is propagated from the input parameters of a library method to its output parameters. MAP directives follow the form
+Library methods may also simply propagate taint without performing any transformations on the data that change its security properties. For standard libraries, these propagation rules are already provided by the default Policy. However, for exotic libraries unavailable in code to ShiftLeft, these rules can also be specified manually via MAP directives. These directives specify how taint is propagated from the input parameters of a library method to its output parameters. MAP directives follow the form
 
 ```
 MAP -[override|preserve] -d (RET | INST | PAR -i $i) -s (INST | PAR -i $i) METHOD -f "$fullName"
@@ -228,19 +229,19 @@ where
 
 MAP statements associate a source parameter of a given method with a destination parameter. As a result, ShiftLeft is informed that, if the source parameter is tainted, then the destination parameter is tainted after execution of the library method. 
 
-As an example, if the method "java.lang.String.concat:java.lang.String(java.lang.String)" of the Java standard library has a tainted instance parameter, then so is the return value of the library call. This rule is specify using the MAP directive
+As an example, if the method "java.lang.String.concat:java.lang.String(java.lang.String)" of the Java standard library has a tainted instance parameter, then so is the return value of the library call. This directive is specify using the MAP directive
 
 ```
 MAP -override -d RET -s INST METHOD -f "java.lang.String.concat:java.lang.String(java.lang.String)"
 ```
 
-The rule indicates that, if the instance parameter (INST) is tainted, then the return parameter (RET) is tainted after execution of the method. The flag "-preserve" indicates to additionally add a mapping from the destination to itself.
+The directive indicates that, if the instance parameter (INST) is tainted, then the return parameter (RET) is tainted after execution of the method. The flag "-preserve" indicates to additionally add a mapping from the destination to itself.
 
 ```
 MAP -preserve -d INST -s PAR -i 1 METHOD -f "java.lang.StringBuffer.append:java.lang.StringBuffer(java.lang.StringBuffer)"
 ```
 	
-Is the shorthand of
+is the shorthand of
 
 ```
 MAP -override -d INST -s PAR -i 1 METHOD -f "java.lang.StringBuffer.append:java.lang.StringBuffer(java.lang.StringBuffer)"

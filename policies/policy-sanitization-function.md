@@ -1,6 +1,6 @@
 # Use Case: Creating a Custom Policy to Exclude Vulnerabilities with a Sanitization Function
 
-Developers often use sanitization functions in their application source code to sanitize user input for common attacks such as SQL Injection(SQLi). If you use sanitization functions, you want to ShiftLeft ignore vulnerabilities that have a sanitization function in the dataflow when analyzing your application. 
+Developers often use sanitization functions in their application source code to sanitize user input for common attacks such as SQL Injection (SQLi). If you use sanitization functions, you want ShiftLeft to ignore vulnerabilities that have a sanitization function in the dataflow when analyzing your application. 
 
 The process is:
 
@@ -15,11 +15,11 @@ For additional information, refer to the articles:
 * [About ShiftLeft Policies](about-policy.md)
 * [ShiftLeft Policy Language](policy-language.md)
 * [Creating a Custom Policy](custom-policy.md)
-* [ShiftLeft Policy Language](policy-language.md)
+* [Use Case: Creating a Custom Policy to Identify Sensitive Data Variables](policy-sensitive-data.md)
 
 ## Specifying the Policy
 
-Add the following directives to the new Policy file 
+Add the following directive to the new Policy file 
 
 ```
 IMPORT io.shiftleft/default

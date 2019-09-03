@@ -1,13 +1,13 @@
 # About the HelloShiftLeft Sample Application
 
 [HelloShiftLeft](https://github.com/ShiftLeftSecurity/HelloShiftLeft) is a Spring-based sample Java Web application. It 
-contains various classes of vulnerabilitie, such as path traversal, sensitive data leaks and code execution. 
+contains various classes of vulnerabilities, such as path traversal, sensitive data leaks and code execution. 
 
-HelloShiftLeft is used throughout the ShiftLeft documentation to illustrate examples and to help you learn how to use ShiftLeft. The method for acessing and using HelloShiftLeft is different depending on whether you are using ShiftLeft Ocular or ShiftLeft Inspect.
+HelloShiftLeft is used throughout the ShiftLeft documentation to illustrate examples and to help you learn how to use ShiftLeft. The method for accessing and using HelloShiftLeft is different depending on whether you are using ShiftLeft Ocular or ShiftLeft Inspect.
 
 ## ShiftLeft Ocular and HelloShiftLeft
 
-For ShiftLeft Ocular, the HellowShiftLeft sample appication is included in the ShiftLeft Ocular distribution. When you install ShiftLeft Ocular, HelloShiftLeft is automatically placed in the `subjects` subdirectory. The file is `hello-shiftleft-0.0.1-SNAPSHOT.jar`.
+For ShiftLeft Ocular, the HelloShiftLeft sample application is included in the ShiftLeft Ocular distribution. When you install ShiftLeft Ocular, HelloShiftLeft is automatically placed in the `subjects` subdirectory. The file is `hello-shiftleft-0.0.1-SNAPSHOT.jar`.
 
 ## Downloading and Compiling HelloShiftLeft for ShiftLeft Inspect
 
@@ -33,7 +33,7 @@ sl run
 
 ### Triggering HelloShiftLeft Activity
 
-Use the following script (in a separate terminal window) to trigger HelloShiftLeft activity, and view that activity in the ShiftLeft Dashboard
+Use the following script (in a separate terminal window) to trigger HelloShiftLeft activity, and view that activity in the [ShiftLeft Dashboard](../using-inspect-protect/using-workflow/vulnerability-dashboard.md).
 
 ```
 curl -s localhost:8081/customers/1 >/dev/null ;

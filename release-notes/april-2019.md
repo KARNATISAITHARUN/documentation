@@ -5,7 +5,7 @@
 
 ## ShiftLeft Ocular v0.3.20
 
-* **[Overlays API](https://ocular.shiftleft.io/api/io/shiftleft/repl/cpgcreation/Overlays$.html)**. The Security Profile is now part of the CPG, as an overlay. This new feature unifies the Ocular Query Language (OQL) for the CPG and Security Profile and removes the need for using `cpg2sp.sh` to create a Security Profile. This means that all Security Profile functionality is now part of the CPG. 
+* **[Overlays API](https://ocular.shiftleft.io/api/io/shiftleft/repl/cpgcreation/Overlays$.html)**. The Security Profile is now part of the CPG, as an layer. This new feature unifies the Ocular Query Language (OQL) for the CPG and Security Profile and removes the need for using `cpg2sp.sh` to create a Security Profile. This means that all Security Profile functionality is now part of the CPG. 
 
 * **Integrated CPG and Security Profile Generation**. CPG and Security Profile generation can now be performed from inside ShiftLeft Ocular, with both CPGs and their overlays managed in a workspace. This new feature allows you to effectively work with multiple CPGs at once. [Refer to the API](https://ocular.shiftleft.io/api/io/shiftleft/repl/Workspace.html) for additional information. Older APIs and functionality (e.g. `loadCpg` and `loadSp`) are now backwards compatible.
 

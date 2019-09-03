@@ -23,7 +23,7 @@ To integrate ShiftLeft with TeamCity builds:
  * Name: `SHIFTLEFT_ORG_ID`| Value: Paste your **Organization ID**
  * Name: `SHIFTLEFT_ACCESS_TOKEN`| Value: Paste your **Access Token**
 
-See [SL Auth](../using-cli/authenticating.md) for more information. See also the [TeamCity documentation](https://confluence.jetbrains.com/display/TCD65/Configuring+Build+Parameters#ConfiguringBuildParameters-SystemPropertiesandEnvironmentVariables).
+See the article [Authenticating with ShiftLeft](../using-cli/authenticating.md) for more information. See also the [TeamCity documentation](https://confluence.jetbrains.com/display/TCD65/Configuring+Build+Parameters#ConfiguringBuildParameters-SystemPropertiesandEnvironmentVariables).
 
 ## Configure the Build
 

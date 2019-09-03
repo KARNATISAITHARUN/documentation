@@ -6,21 +6,21 @@ If you are using ShiftLeft Inspect with [ShiftLeft Protect](../../introduction/p
 
 ## Analysis Workflow
 
-- Review [code analysis requirements](../../introduction/requirements.md).
-- [Install ShiftLeft CLI](../using-cli/install-cli.md) on the host where you will submit applications for analysis.
-- Successfully build the application using a supported build tool (maven, gradle, sbt) **before** you submit the app for analysis. 
-- Submit the application for analysis using one of the supported analysis commands (see below).
-- For each code commit, rebuild the application and resubmit it for analysis by integrating the CLI with an CI/CD build system to automate analysis: [Jenkins](../integrating-with-shiftleft/integrating-jenkins-builds/integrating-jenkins-builds.md), [GoCD](../integrating-with-shiftleft/integrating-gocd-builds.md), [Bamboo](../integrating-with-shiftleft/integrating-bamboo-builds.md), [TeamCity](../integrating-with-shiftleft/integrating-teamcity-builds.md), [Travis](../integrating-with-shiftleft/integrating-travis-builds.md), CircleCI.
+1. Review the [ShiftLeft Inspect requirements](../../introduction/requirements.md).
+2. [Install the ShiftLeft Command Line Interface (CLI)](../using-cli/install-cli.md) on the host where you will submit applications for analysis.
+3. Successfully build the application using a supported build tool (maven, gradle, sbt) **before** you submit the application for analysis using ShiftLeft Inspect. 
+4. Submit the application for analysis using one of the supported analysis commands (see below).
+5. For each code commit, rebuild the application and resubmit it for analysis by integrating the CLI with an CI/CD build system to automate analysis: [Jenkins](../integrating-with-shiftleft/integrating-jenkins-builds/integrating-jenkins-builds.md), [GoCD](../integrating-with-shiftleft/integrating-gocd-builds.md), [Bamboo](../integrating-with-shiftleft/integrating-bamboo-builds.md), [TeamCity](../integrating-with-shiftleft/integrating-teamcity-builds.md), [Travis](../integrating-with-shiftleft/integrating-travis-builds.md), CircleCI.
 
 ## Analysis Commands
 
-The ShiftLeft CLI supports three modes of analysis. The mode you choose depends on your business requirements.
+The ShiftLeft CLI supports two modes of analysis. The mode you choose depends on your business requirements.
 
 ### sl analyze --app <name> [<path>] 
 
 Use `sl analyze --app <name> <path>` to upload the application to the ShiftLeft cloud for analysis. This mode of analysis is suitable for most use cases.
 
-The flag `--app <name>` tells ShiftLeft to associate the analysis with the application `<name>`. This allows different analysis requests (of different versions of the same app) to be associated in the ShiftLeft UI.
+The flag `--app <name>` tells ShiftLeft to associate the analysis with the application `<name>`. This allows different analysis requests (for different versions of the same application) to be associated in the ShiftLeft UI.
 
 The `sl analyze` command scans the artifact (JAR/WAR) provided by `<path>`.
 

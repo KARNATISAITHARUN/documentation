@@ -8,7 +8,7 @@ You can use ShiftLeft Protect in monitoring mode with your IAST tool.
 
 ## Example of ShiftLeft Protect Monitoring
 
-ShiftLeft Protect detects exploits and payload, also blocks and sanitizes, vulnerabilities. For example, vulnerabilites and exposures in the [HelloShiftLeft sample application](../../introduction/helloshiftleft.md) can be tested with API access patterns described below and through example scripts provided in the [exploits directory](https://github.com/ShiftLeftSecurity/HelloShiftLeft/tree/master/exploits). 
+ShiftLeft Protect detects exploits and payload, also blocks and sanitizes, vulnerabilities. For example, vulnerabilities and exposures in the [HelloShiftLeft sample application](../../introduction/helloshiftleft.md) can be tested with API access patterns described below and through example scripts provided in the [exploits directory](https://github.com/ShiftLeftSecurity/HelloShiftLeft/tree/master/exploits). 
 
 ### Sensitive Data Leaks to Log
 
@@ -30,7 +30,7 @@ http://<span></span>localhost:8081/search/user?foo=new java.lang.ProcessBuilder(
 
 This creates a file `/tmp/hacked` with the content `3vilhax0r`.
 
-### Arbritary File Write
+### Arbitrary File Write
 
 The [filewriteexploit.py](https://github.com/ShiftLeftSecurity/HelloShiftLeft/blob/master/exploits/filewriteexploit.py) script can be executed as follows to trigger the arbritary file writing through the `/saveSettings` endpoint:
 
@@ -57,8 +57,10 @@ Palo Alto;January;200,000
 ### XSS
 ```
 
-A reflected XSS vulnerability exists in the application and can be triggered using the **hidden** `/debug` endpoint as follows:
+A reflected XSS vulnerability exists in the application and can be triggered using the **hidden** `/debug` endpoint as 
 
+```
 http://<span></span>localhost:8081/debug?customerId=1&clientId=1&firstName=a&lastName=b&dateOfBirth=123&ssn=123&socialSecurityNum=1&tin=123&phoneNumber=5432alert(1)
+```
 
-It raises and alert dialogue and returns the Customer object data.
+The result is an alert and returns the Customer object data.

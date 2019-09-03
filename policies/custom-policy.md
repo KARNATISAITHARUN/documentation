@@ -2,7 +2,7 @@
 
 ShiftLeft Ocular users can create custom Policies, for example to exclude parts of a default Policy that does not apply to, and to introduce additional knowledge about, your application. 
 
-A common use of custom Policies is to use ShiftLeft Ocular to examine and investigate your code, create a custom Policy tuned to your application, and then automatically analyze and report on these vulnerabilities using ShiftLeft Inspect. For example, to [identify sensitive data variables](policy-sensitive-data.md)
+A common use of custom Policies is to use ShiftLeft Ocular to examine and investigate your code, create a custom Policy tuned to your application, and then automatically analyze and report on these vulnerabilities using ShiftLeft Inspect. For example, to [identify sensitive data variables](policy-sensitive-data.md).
 
 Policies are written in the ShiftLeft [Policy Language](policy-language.md) and are identified by the filename extension `.Policy`. Policies are stored under organization-bound domains.
 
@@ -61,7 +61,7 @@ Using a text editor, open the new Policy file. Write new Policy definitions, or 
 
 ### Validating the New Policy
 
-ShiftLeft’s repository only contains a curated list of Policies. Creating a custom Policy can result in accidental mistakes, even if carefully reviewed. Therefore, make sure you validate your new Policy by using the command
+ShiftLeft’s repository contains a curated list of Policies. Creating a custom Policy can result in accidental mistakes, even if carefully reviewed. Therefore, make sure you validate your new Policy by using the command
 
 ```
 sl policy validate [<path-to-policy-file>]
@@ -90,7 +90,7 @@ where
 
 `<path-to-policy-file>`. The name and location for the new Policy.
 
-If successful, the command returns the full name under which the Policy is available, made up of the organization ID from which the Policy was submitted and tag, for example `ebad68cf-b1bf-4b00-b524-8d41c6b4ff7e/myNewDictionary:latest`. 
+If successful, the command returns the full name of the Policy, made up of the organization ID from which the Policy was submitted and tag, for example `ebad68cf-b1bf-4b00-b524-8d41c6b4ff7e/myNewDictionary:latest`. 
 
 Check that the new Policy is present in the repository by running the command 
 

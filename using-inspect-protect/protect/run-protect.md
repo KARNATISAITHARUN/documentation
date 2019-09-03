@@ -39,4 +39,4 @@ If you are running ShiftLeft Protect with IIS Express, start the application thr
 ```
 "C:\Program Files\Shiftleft\sl.exe" run --csharp "C:\Program Files\IIS Express\iisexpress.exe" <full path to the project location>
 ```
-You can then send requests to the target application using using the method of your choice, such as a browser or a utility like curl. For IIS Express, your application runs on port 8500, for example curl http://<span></span>localhost:8500/vulnerable_asp_net_framework.
+You can then send requests to the target application using the method of your choice, such as a browser or a utility like curl. For IIS Express, your application runs on port 8500, for example curl http://<span></span>localhost:8500/vulnerable_asp_net_framework.

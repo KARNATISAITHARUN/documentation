@@ -1,10 +1,10 @@
 # Integrating Jenkins Builds
 
-To integrate Jenkins builds with ShiftLeft and automate code analysis, configure each Jenkins project to execute the `sl analyze` (or `sl analyze --cpg)` shell command.
+To integrate Jenkins builds with ShiftLeft and automate code analysis, configure each Jenkins project to execute the ShiftLeft Inspect [`sl analyze` (or `sl analyze --cpg)` shell command](../../inspect/analyzing-applications.md).
 
 ## Jenkins Integration Options
 
-There are **two ways** to integrate with Jenkins: by configuring a final build step or post build task for *each* Jenkins project you want to submit for analysis to ShiftLeft.
+There are two ways to integrate with Jenkins: by configuring a final build step or post build task for **each** Jenkins project you want to submit for analysis to ShiftLeft.
 
 Configuration Option | Description
 --- | ---
@@ -25,7 +25,7 @@ Initially these credentials will be provided to you by ShiftLeft. Once you have 
 
 ## Jenkins Integration Instructions
 
-1. [Install the ShiftLeft CLI](../../using-cli/install-cli.md) on the host where Jenkins is installed.
+1. [Install the ShiftLeft Command Line Interface (CLI)](../../using-cli/install-cli.md) on the host where Jenkins is installed.
 2. Log in to Jenkins as an administrator.
 3. Select **Manage Jenkins > Configure System > Global properties**. 
 4. Select (check) **Environment variables** and create the following:
