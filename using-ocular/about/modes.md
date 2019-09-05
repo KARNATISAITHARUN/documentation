@@ -22,13 +22,25 @@ ShiftLeft Ocular can be used in non-interactive mode, to execute commands and op
    loadCpg(cpgFile)
    cpg.namespace.name.l |> outFile
 }
-
 ```
 You can include arbitrary Scala code in `test.sc` and use the `|>`
 operator to pipe output into files. The script is run as 
 
 ```
 ./ocular.sh --script test.sc --params cpgFile=/fullpath/to/cpg.bin.zip,outFile=out.log
+```
+
+### Importing additional scripts
+If your script depends on code from one or more additional scripts, you can use the `--import` parameter, which accepts a comma-separated list of input scripts:
+
+```
+echo 'def hello(name: String) = println(s"hello, $name")' > scripts/hello.sc
+echo '@main def exec(name: String) = hello(name)' > scripts/myScript.sc
+./ocular.sh --script scripts/myScript.sc --params name=shiftleft --import scripts/hello.sc
+
+# prints: 
+# hello, shiftleft
+# script finished successfully
 ```
 
 ### Writing JSON and Pretty-Printed JSON
@@ -58,3 +70,4 @@ To append to a Pretty-Printed JSON file
 ```
 ocular> cpg.method.toPrettyJson ||> "/tmp/foo"
 ```
+
