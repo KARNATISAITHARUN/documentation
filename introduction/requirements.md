@@ -30,7 +30,7 @@ Application Type | **Scala 2.12+**
 Component | Requirement
 --- | ---
 System | Linux, MacOS X, Windows
-JVM | 64-bit **JRE** version **8** (Java 9 is not currently supported). 
+JVM | 64-bit **JRE** version **8** Update 20+ (Java 9 is not currently supported). 
 
 To verify that you are running the supported Java version, use the `java -version` command.
 
