@@ -1,6 +1,6 @@
-# Integrating Bamboo Builds
+# Integrating with Bamboo
 
-This section describes how to integrate Bamboo builds with ShiftLeft.
+This section describes how to integrate Bamboo with ShiftLeft.
 
 ## Bamboo Integration Prerequisites
 

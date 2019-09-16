@@ -21,7 +21,7 @@
 
 * **[On-Demand and Scheduled Analysis](../using-inspect-protect/inspect/analyzing-applications.md)**. You can use ShiftLeft Inspect either on-demand for manual analysis, or scheduled for automatic and repeatable analysis.
 
-* **[Integration with Jira](../using-inspect-protect/using-workflow/jira-integration.md)**. Integrate ShiftLeft Inspect with Jira to automatically generate Jira tickets for the vulnerabilities in your ShiftLeft Dashboard. 
+* **[Integration with Jira](../using-inspect-protect/integrating-with-shiftleft/jira-integration.md)**. Integrate ShiftLeft Inspect with Jira to automatically generate Jira tickets for the vulnerabilities in your ShiftLeft Dashboard. 
 
 * **[Integration with Docker](../using-inspect-protect/integrating-with-shiftleft/integrating-docker.md)**. ShiftLeft Inspect can be integrated with your Docker builds and deployments.
 

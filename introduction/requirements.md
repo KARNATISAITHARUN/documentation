@@ -8,7 +8,7 @@ ShiftLeft has specific requirements for:
 * [ShiftLeft Command Line Interface (CLI)](#shiftleft-cli-requirements)
 * [ShiftLeft Inspect](#requirements-for-shiftleft-inspect)
 * [ShiftLeft Protect](#requirements-for-shiftleft-protect)
-* [Browser](#browser-requirements)
+* [Browser](#browser-requirements) for the ShiftLeft Dashboard 
 
 ## Requirements for ShiftLeft Ocular
 

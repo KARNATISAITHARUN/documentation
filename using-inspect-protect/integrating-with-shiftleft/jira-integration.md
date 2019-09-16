@@ -1,6 +1,6 @@
 # Integrating with Jira
 
-You can integrate Jira with ShiftLeft to create Jira tickets for the vulnerabilities shown on your ShiftLeft Dashboard. The process is:
+You can integrate Jira with ShiftLeft to create Jira tickets for the vulnerabilities shown on your [ShiftLeft Dashboard](../using-dashboard/vulnerability-dashboard.md). The process is:
 
 1. [Make sure you meet all requirements](#requirements).
 2. [Establish the connection between ShiftLeft and Jira](#establishing-the-connection-between-shiftleft-and-jira). 

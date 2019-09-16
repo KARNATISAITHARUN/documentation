@@ -1,6 +1,6 @@
-# Integrating TeamCity Builds
+# Integrating with TeamCity
 
-Instructions for integrating TeamCity builds with ShiftLeft for code analysis and profiling.
+Instructions for integrating TeamCity with ShiftLeft for code analysis and profiling.
 
 ## TeamCity Integration Prerequisites
 

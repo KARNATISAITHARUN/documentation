@@ -8,7 +8,7 @@ Policies are written in the ShiftLeft [Policy Language](policy-language.md) and 
 
 ## Policies and ShiftLeft Ocular
 
-When you [create and work with a CPG using ShiftLeft Ocular](../using-ocular/getting-started/create-cpg.md), policies are automatically loaded and assigned.
+When you [create and work with a CPG using ShiftLeft Ocular](../using-ocular/getting-started/create-cpg.md), Policies are automatically loaded and assigned.
 
 ShiftLeft Ocular Policies are located in the directory
 

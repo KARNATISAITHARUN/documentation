@@ -1,4 +1,4 @@
-# Integrating GoCD Builds
+# Integrating with GoCD
 
 For CoCD you need to create a script file as part of the build project. With GoCD, all builds occur on agents: either containers or instances. 
 

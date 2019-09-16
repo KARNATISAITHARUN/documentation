@@ -1,6 +1,6 @@
-# Integrating Jenkins Builds
+# Integrating with Jenkins
 
-To integrate Jenkins builds with ShiftLeft and automate code analysis, configure each Jenkins project to execute the ShiftLeft Inspect [`sl analyze` (or `sl analyze --cpg)` shell command](../../inspect/analyzing-applications.md).
+To integrate Jenkins with ShiftLeft and automate code analysis, configure each Jenkins project to execute the ShiftLeft Inspect [`sl analyze` (or `sl analyze --cpg)` shell command](../../inspect/analyzing-applications.md).
 
 ## Jenkins Integration Options
 

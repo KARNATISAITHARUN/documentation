@@ -1,6 +1,6 @@
-# Integrating Travis Builds
+# Integrating with Travis
 
-This section describes how to integrate Travis builds with ShiftLeft. 
+This section describes how to integrate Travis with ShiftLeft. 
 
 ## Travis Integration Prerequisites
 
