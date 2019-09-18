@@ -6,7 +6,7 @@ The various types (classes) and packages used by the HelloShiftLeft application,
 
 ## Listing all the Types Used in the Code
 
-The query returns a list (`l`) of the full name of all the type ceclarations (`typeDecl`) in the CPG.
+The query returns a list (`l`) of the full name of all the type declarations (`typeDecl`) in the CPG.
 
 ```
 ocular> cpg.typeDecl.fullName.l
@@ -27,7 +27,7 @@ res3: List[String] = List( "org.springframework.web.bind.annotation.ExceptionHan
 )
 ```
 
-## Listing all the External Packages Using in the Code
+## Listing all the External Packages Used in the Code
 
 The query returns a sorted distinct list (`l`) of the name of all the external namespace type declarations (`typeDecl`) in the CPG.
 
@@ -51,7 +51,7 @@ res4: List[String] = List( "com.ulisesbocchio.jasyptspringboot.annotation", "jav
 )
 ```
 
-## Filting the List of Packages Used in the Code
+## Filtering the List of Type Declarations Used in the Code
 
 The query returns a list (`l`) of the name of all the type declarations (`typeDecl`) in the CPG Containing Http in their 
 names.
