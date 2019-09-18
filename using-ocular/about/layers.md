@@ -18,7 +18,7 @@ The default layers are automatically created and loaded into memory when you cre
 
 ### `semanticcpg` Layer
 
-The `semanticcp` layer links together the methods and type declaration. Using the `base` layer and semantic information, the `semanticcp` layer
+The `semanticcpg` layer links together the methods and type declaration. Using the `base` layer and semantic information, the `semanticcpg` layer
 
 * introduces additional information based on framework specific passes.
 * adds data flow semantics to the CPG as specified by [Policies](../../policies/spl.md).
