@@ -13,10 +13,10 @@ Command | Description
 `auth` | [Authenticate the CLI with your ShiftLeft account](../using-cli/authenticating.md).
 `analyze [<path>]` | [Use ShiftLeft Inspect to analyze your application](../../using-inspect-protect/inspect/analyzing-applications.md).  `<path>` can be the path to a `.jar`, `.war` or `.ear` file, or it can be the path to a Java project directory. If `<path>` is not provided, then `.` is implied.
 `help`, `h` | List ShiftLeft CLI commands or help for one command.
-`install [dotnet-agent]` | Runs the ShiftLeft Protect for .NET Microagent installer.
+`install [dotnet-agent]` | Runs the ShiftLeft Protect for .NET installer.
 `policy <command>` | Commands for managing [Custom Policies](../../policies/custom-policy.md).
-`run -- <command>` | [Run the target command with ShiftLeft Protect's Microagent](../protect/protect-java/configuring-the-microagent.md).
-`update [java-agent,libplugin]` | Update certain components of the ShiftLeft CLI, including the ShiftLeft Java Microagent (`sl update java-agent`).
+`run -- <command>` | [Run the target command with ShiftLeft Protect](../protect/protect-java/configuring-the-microagent.md).
+`update [java-agent,libplugin]` | Update certain components of the ShiftLeft CLI, including ShiftLeft Protect for Java (`sl update java-agent`).
 
 
 ## `sl` Global Options
@@ -42,8 +42,7 @@ None | `https_proxy=<proxy>` | Proxy configuration.
 `--force` | | Force analysis (instead of using a cached result).
 `--dotnet-core` | | Use .NET Core. (Only valid for C#.)
 `--dotnet-framework` | | Use .NET Framework. (Only valid for C#.)
-`--shiftleft-json-file` | `SHIFTLEFT_JSON_FILE=<path>` | Path of Microagent configuration file `shiftleft.json`. Defaults to `shiftleft.json` (in the current working directory).
-`--version-id <id>` | | Sets the version field of the SPR ID that's written to the config file.
+`--shiftleft-json-file` | `SHIFTLEFT_JSON_FILE=<path>` | Path of ShiftLeft Protect configuration file `shiftleft.json`. Defaults to `shiftleft.json` (in the current working directory).
 
 ## `sl run` Options
 
@@ -119,5 +118,5 @@ Artifact  | Description
 `$SHIFTLEFT_HOME/config.json` | Credentials file generated on successful authentication.
 `$SHIFTLEFT_HOME/libplugin-a.b.c.jar` | ShiftLeft Analyzer Plugin downloaded or updated during analysis.
 `$SHIFTLEFT_HOME/libplugin-latest.jar` | Symlink to the latest downloaded ShiftLeft Analyzer Plugin.
-`$SHIFTLEFT_HOME/sl-microagent-x.y.z.jar` | Downloaded ShiftLeft Microagent.
-`$SHIFTLEFT_HOME/sl-microagent-latest.jar` | Symlink to the latest downloaded ShiftLeft Microagent.
+`$SHIFTLEFT_HOME/sl-microagent-x.y.z.jar` | Downloaded the ShiftLeft Protect Microagent.
+`$SHIFTLEFT_HOME/sl-microagent-latest.jar` | Symlink to the latest downloaded the ShiftLeft Protect Microagent.

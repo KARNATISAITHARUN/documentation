@@ -1,66 +1,59 @@
 # Securing Your Applications Using ShiftLeft Protect
 
-ShiftLeft Protect secures applications against exploitation of vulnerabilities by leveraging "code informed" insights. ShiftLeft Protect creates runtime security specifications based on identified vulnerabilities discovered by [ShiftLeft Inspect](../../introduction/products.md) during analysis of your code. ShiftLeft Protect deploys a ShiftLeft Microagent in-memory alongside your application in production (or other environments such as staging, test, UAT). The Microagent is customized to your application's specific shape and weaknesses and connects to a ShiftLeft Proxy server to display events and metrics in the Dashboard.
+ShiftLeft Protect secures applications against exploitation of vulnerabilities by leveraging code informed insights discovered by [ShiftLeft Inspect](../../introduction/products.md) to create runtime security specifications. This approach allows ShiftLeft Protect to operate with minimal footprint and overhead.
 
-## Monitoring Mode
+The ShiftLeft Protect process is:
 
-You can use ShiftLeft Protect in monitoring mode with your IAST tool.
+1. Download the latest version of the [ShiftLeft Protect Microagent](#shiftleft-protect-microagent), if necessary.
+2. Deploy the Microagent, using the [specific environment variable](protect-java/configuring-the-microagent.md).
+3. Use the [ShiftLeft JSON file](#the-shiftleft-json-file) to provide the Microagent with required information from the analysis. 
+4. Connect to the [ShiftLeft Proxy Server](#the-shiftleft-proxy-server) to download the [ShiftLeft Security Profile for Runtime (SPR)](#the-shiftleft-security-profile-for-runtime). 
+5. Push events and metrics to the [ShiftLeft Dashboard](#the-shiftleft-dashboard).
 
-## Example of ShiftLeft Protect Monitoring
+## ShiftLeft Protect Microagent
 
-ShiftLeft Protect detects exploits and payload, also blocks and sanitizes, vulnerabilities. For example, vulnerabilities and exposures in the [HelloShiftLeft sample application](../../introduction/helloshiftleft.md) can be tested with API access patterns described below and through example scripts provided in the [exploits directory](https://github.com/ShiftLeftSecurity/HelloShiftLeft/tree/master/exploits). 
+The Microagent is a lightweight agent that is deployed and runs in-memory with applications (in production or other environments such as staging, test and UAT) you want to monitor and protect from residual issues. The Microagent is customized to your application's specific shape and weaknesses. 
 
-### Sensitive Data Leaks to Log
+The Microagent is configured with default settings that support core operations. These default settings support various configuration mechanisms, including values in the `shiftleft.json` file, Java properties and environment variables. You can [configure the Microagent for your specific environment](protect-java/configuring-the-microagent.md).
 
-| URL	  | Purpose |
-| ------------- | ------------- |
-| http://<span></span>localhost:8081/customers/1 | Returns JSON representation of Customer resource based on Id (1) specified in URL |
-| http://<span></span>localhost:8081/customers | Returns JSON representation of all available Customer resources |
-| http://<span></span>localhost:8081/patients | Returns JSON representation of all available patients in record |
-| http://<span></span>localhost:8081/account/1 | Returns JSON representation of Account based on Id (1) specified |
-| http://<span></span>localhost:8081/account | Returns JSON representation of all available accounts and their details |
-	
-All the above requests leak sensitive medical and PII data to the logging service. In addition other endpoints such as `/saveSettings`, `/search/user`, `/admin/login` etc. are also available. Along with the list above, users can explore variations of `GET`, `POST` and `PUT` requests sent to these endpoints.
+## The ShiftLeft JSON File
 
-### Remote Code Execution
+ShiftLeft Inspect generates the `shiftleft.json` file as part of the process of analyzing your application. This file includes the parameters required by ShiftLeft Protect. 
 
-An RCE can be triggered through the `/search/user` endpoint by sending a `GET` HTTP request as follows:
+Note that if you analyze your Java application using ShiftLeft Inspect as a [separate step before runtime](../inspect/analyzing-applications.md), the `shiftleft.json` file must be passed to ShiftLeft Protect. 
 
-http://<span></span>localhost:8081/search/user?foo=new java.lang.ProcessBuilder({'/bin/bash','-c','echo 3vilhax0r>/tmp/hacked'}).start()
+Refer to the article on [the ShiftLeft JSON File](json-file.md) for additional information.
 
-This creates a file `/tmp/hacked` with the content `3vilhax0r`.
+## The ShiftLeft Proxy Server
 
-### Arbitrary File Write
+The Microagent connects to the ShiftLeft Proxy server to obtain the SPR and push runtime metrics to the ShiftLeft Dashboard. The following options are available for Microagent-proxy connections.
 
-The [filewriteexploit.py](https://github.com/ShiftLeftSecurity/HelloShiftLeft/blob/master/exploits/filewriteexploit.py) script can be executed as follows to trigger the arbritary file writing through the `/saveSettings` endpoint:
+**Important**. The ShiftLeft Proxy Server is not to be confused with system proxy configuration.
 
-```
-$ python2 filewriteexploit.py http://localhost:8081/saveSettings testfile 3vilhax0r
-```
+### Proxy Host Name
 
-This creates a file named `testfile` with `3vilhax0r` as its contents.
+Proxy host name or IP address.
 
-### Authentication Bypass
+Parameter | Name
+--- | ---
+JSON | `slProxy.host`
+JVM | `-Dshiftleft.sl.proxy.host=`
+Environment Variable | `SHIFTLEFT_SL_PROXY_HOST`
 
-The [exploit.py](https://github.com/ShiftLeftSecurity/helloshiftleft/blob/master/exploits/JavaSerializationExploit/src/main/java/exploit.py) script allows an authentication bypass by exposing a deserialization vulnerability which allows administrator access:
+### Proxy Port
 
-```
-$ python2 exploit.py
-```
+Proxy listening TCP port.
 
-This returns the following sensitive data:
+Parameter | Name
+--- | ---
+JSON | `slProxy.port`
+JVM | `-Dshiftleft.sl.proxy.port`
+Environment Variable | `SHIFTLEFT_SL_PROXY_PORT`
 
-```
-Customer;Month;Volume
-Netflix;January;200,000
-Palo Alto;January;200,000
-### XSS
-```
+## The ShiftLeft Security Profile for Runtime
 
-A reflected XSS vulnerability exists in the application and can be triggered using the **hidden** `/debug` endpoint as 
+The ShiftLeft Security Profile for Runtime (SPR) is generated by the code analysis step for use by the Microagent. 
 
-```
-http://<span></span>localhost:8081/debug?customerId=1&clientId=1&firstName=a&lastName=b&dateOfBirth=123&ssn=123&socialSecurityNum=1&tin=123&phoneNumber=5432alert(1)
-```
+## The ShiftLeft Dashboard
 
-The result is an alert and returns the Customer object data.
+ShiftLeft Protect pushes runtime metrics to the [ShiftLeft Dashboard](../using-dashboard/vulnerability-dashboard.md). The Dashboard is a singular view of application security quality metrics, providing a list of vulnerabilities based on ShiftLeft Protect runtime analysis of your applications. 

@@ -60,6 +60,7 @@
   * Protecting Runtime Applications
     * [Securing Your Applications Using ShiftLeft Protect](using-inspect-protect/protect/securing-applications.md)
     * [Running ShiftLeft Protect](using-inspect-protect/protect/run-protect.md)
+    * [The ShiftLeft JSON File](using-inspect-protect/protect/json-file.md)
     * [ShiftLeft Protect for Java](using-inspect-protect/protect/protect-java/jvm-based-environments.md)
       * [Configuring the Microagent](using-inspect-protect/protect/protect-java/configuring-the-microagent.md)
       * [Tomcat Integration](using-inspect-protect/protect/protect-java/tomcat-integration.md)

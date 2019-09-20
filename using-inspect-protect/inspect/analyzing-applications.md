@@ -2,7 +2,7 @@
 
 Use the `sl analyze` command to submit applications to ShiftLeft Inspect for code analysis and security profiling.
 
-If you are using ShiftLeft Inspect with [ShiftLeft Protect](../../introduction/products.md), you can analyze your code before running your application, for example to integrate with a build / Continuous Integration (CI) environment. To do so, you must integrate the  shiftleft.json file into your runtime environment and make it available to the ShiftLeft Protect Microagent. This allows the Microagent to be associated with your application.
+If you are using ShiftLeft Inspect with [ShiftLeft Protect](../../introduction/products.md), you can analyze your code before running your application, for example to integrate with a build / Continuous Integration (CI) environment. To do so, you must integrate the  [ShiftLeft JSON file](../protect/json-file.md) into your runtime environment and make it available to the ShiftLeft Protect Microagent. This allows the Microagent to be associated with your application.
 
 ## Analysis Workflow
 
