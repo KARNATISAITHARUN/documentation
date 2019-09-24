@@ -21,6 +21,7 @@
     * [Installing and Updating ShiftLeft Ocular](using-ocular/getting-started/installation.md)
     * [Starting ShiftLeft Ocular](using-ocular/getting-started/starting.md)
     * [Creating and Working with a CPG](using-ocular/getting-started/create-cpg.md)
+    * [Generating and Working with Security Profiles](using-ocular/getting-started/generate-sp.md)
     * [Managing Your Workspace](using-ocular/getting-started/manage-workspace.md)
   * Common Queries
     * [Analyzing Dependencies](using-ocular/common-queries/dependency-analysis.md)

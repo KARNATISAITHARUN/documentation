@@ -13,11 +13,10 @@ Command | Description
 `auth` | [Authenticate the CLI with your ShiftLeft account](../using-cli/authenticating.md).
 `analyze [<path>]` | [Use ShiftLeft Inspect to analyze your application](../../using-inspect-protect/inspect/analyzing-applications.md).  `<path>` can be the path to a `.jar`, `.war` or `.ear` file, or it can be the path to a Java project directory. If `<path>` is not provided, then `.` is implied.
 `help`, `h` | List ShiftLeft CLI commands or help for one command.
-`install [dotnet-agent]` | Runs the ShiftLeft Protect for .NET installer.
-`policy <command>` | Commands for managing [Custom Policies](../../policies/custom-policy.md).
-`run -- <command>` | [Run the target command with ShiftLeft Protect](../protect/protect-java/configuring-the-microagent.md).
-`update [java-agent,libplugin]` | Update certain components of the ShiftLeft CLI, including ShiftLeft Protect for Java (`sl update java-agent`).
-
+`install [dotnet-agent]` | Runs the ShiftLeft Protect for .NET Microagent installer.
+`policy <command>` | Commands for managing [custom Policies](../../policies/custom-policy.md).
+`run -- <command>` | [Run the target command with ShiftLeft Protect's Microagent](../protect/protect-java/configuring-the-microagent.md).
+`update [java-agent,libplugin]` | Update certain components of the ShiftLeft CLI, including the ShiftLeft Java Microagent (`sl update java-agent`).
 
 ## `sl` Global Options
 

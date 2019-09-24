@@ -4,7 +4,7 @@ ShiftLeft Ocular users can create custom Policies, for example to exclude parts 
 
 A common use of custom Policies is to use ShiftLeft Ocular to examine and investigate your code, create a custom Policy tuned to your application, and then automatically analyze and report on these vulnerabilities using ShiftLeft Inspect. For example, to [identify sensitive data variables](policy-sensitive-data.md).
 
-Policies are written in the ShiftLeft [Policy Language](policy-language.md) and are identified by the filename extension `.Policy`. Policies are stored under organization-bound domains.
+Policies are written in the ShiftLeft [Policy Language](policy-language.md). Policies are stored under organization-bound domains.
 
 ## Custom Policies for ShiftLeft Ocular
 

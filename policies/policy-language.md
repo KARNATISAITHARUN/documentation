@@ -1,6 +1,6 @@
 # ShiftLeft Policy Language
 
-The ShiftLeft Policy Language is used to create and manage Policies. The Policy Language is made up of three types of directives:
+The ShiftLeft Policy Language is used to create, customize and manage Policies. The Policy Language is made up of three types of directives:
 
 * **[Tagging](#tagging-directives).** Exposed methods, interface interactions and transformations are tagged in the [Code Property Graph (CPG)](../introduction/understanding-cpg.md) based on syntax-patterns. The Policy contains tagging directives to encode these patterns.
 
@@ -10,7 +10,7 @@ The ShiftLeft Policy Language is used to create and manage Policies. The Policy 
 
 Specifying each type of directive is documented in detail, with examples of how they are employed in the default Policy.
 
-Note that for more complex Policy use cases that may require additional features and/or integration with other services, [contact us](https://www.shiftleft.io/contact/).
+Note that for more complex Policy use cases, that may require additional features and/or integration with other services, [contact us](https://www.shiftleft.io/contact/).
 
 ## Tagging Directives 
 

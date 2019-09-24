@@ -462,4 +462,4 @@ WHEN CONCLUSION http-to-sql => EMIT {
 
 The Policy also allows data transformations and
 checks to be specified in order to report flows of data, for data that 
-does not undergo validation. For more information, refer to the [Policy Language](../../policies/spl.md) article.
+does not undergo validation. For more information, refer to the [Policy Language](../../policies/policy-language.md) article.

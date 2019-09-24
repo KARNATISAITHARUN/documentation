@@ -1,47 +1,69 @@
 # About ShiftLeft Policies
 
-Policies are used by ShiftLeft Inspect and ShiftLeft Ocular to identify how your application communicates with the outside world, which transformations exist on data, and which information flows should be considered security violations. Security Profiles, which automate code analysis by summarizing the vulnerabilities and data leaks present in code, are derived from Policies.
+Policies are used by ShiftLeft to identify how your application communicates with the outside world, which transformations exist on data, and which information flows should be considered security violations. Policies are also used as the basis for Security Profiles, which automate code analysis by summarizing the vulnerabilities and data leaks present in code.
 
-ShiftLeft includes default Policies that specify the most common types of vulnerabilities. In addition, ShiftLeft Ocular users can [create custom Policies](custom-policy.md) to introduce additional knowledge about, and to exclude parts of a default Policy that does not apply to, your application.
+ShiftLeft includes default Policies that specify the most common types of vulnerabilities. In addition, you can [create custom Policies](custom-policy.md) to introduce desired security semantics, such as additional knowledge about, or to exclude parts of a default Policy that does not apply to, your application.
 
-Policies are written in the ShiftLeft [Policy Language](policy-language.md) and are identified by the filename extension `.Policy`. Policies are stored under organization-bound domains.
+Policies are written in the ShiftLeft [Policy Language](policy-language.md).
+
+## Types of ShiftLeft Policies
+
+There are two types of Policies:
+ - Library Policies
+ - Application Policies
+
+Library Policies are applied as needed, when ShiftLeft ascertains that a particular library is used in your application. Library Policies define generic information flow that is independent of the application code.
+
+Application Policies define application-specific security violations or transformations. ShiftLeft either selects a default Application Policy based on the code language, or uses the custom Policy you have specified.
 
 ## Policies and ShiftLeft Ocular
 
-When you [create and work with a CPG using ShiftLeft Ocular](../using-ocular/getting-started/create-cpg.md), Policies are automatically loaded and assigned.
-
-ShiftLeft Ocular Policies are located in the directory
+Policies are identified by the filename extension `.policy` and are stored in the ShiftLeft Ocular directory
 
 ```
 ~/bin/ocular/policy
 ```
 
+When you [create and work with a CPG using ShiftLeft Ocular](../using-ocular/getting-started/create-cpg.md), the appropriate Library and Application Policies are automatically loaded and assigned.
+
+Policies are stored based on their namespace information. For example, a Policy for
+a class from a Java Standard Library, `java.io.ObjectInputStream`, is available as
+
+```
+~/bin/ocular/policy/dynamic/java/io/ObjectInputStream.policy
+```
+
 ## Policies and ShiftLeft Inspect
 
-The default or assigned Policy is automatically loaded and applied when ShiftLeft Inspect uses your application's [Code Property Graph (CPG)](../introduction/understanding-cpg.md). ShiftLeft infers the correct Policy to use, based on the source language. By default, Policies use a generic set of sensitive variable names, which directly affect the security results you see. 
+Policies for ShiftLeft Inspect are located in the ShiftLeft repository. Using the [Command Line Interface (CLI)](../using-inspect-protect/using-cli/cli-reference.md#sl-policy-commands), you can
 
-ShiftLeft Inspect Policies are located in the directory
+* View a Policy
+* Upload a Policy
+* Manage default Policies
 
-```
-~/.shiftleft/policy/
-```
-
-### The ShiftLeft Inspect Default Policy
-
-The default Policy for ShiftLeft Inspect contains directives that define and identify:
-
-* Exposed methods, interface interactions and transformations.
-
-* Information flows, particularly data leaks.
-
-* Taint semantics. 
-
-To illustrate the default Policy, take a look at how  deserialization vulnerabilities are identified. The following directive
+Policies are named in the repository based on the namespace information. For example, a Policy for
+a class from a Java Standard Library, `java.io.ObjectInputStream`, is available in ShiftLeft's repository as
 
 ```
-// [~/.shiftleft/policy/dynamic/java/io/ObjectInputStream.policy:]
+java.io/ObjectInputStream
+```
 
-IO deserializer = METHOD -f "java.io.ObjectInputStream.readObject:java.lang.Object()" { INST "SINK" }
+## The Default ShiftLeft Policy
+
+The default ShiftLeft Policy contains directives that define and identify:
+
+* Exposed methods, interface interactions and transformations
+
+* Information flows, particularly data leaks
+
+* Taint semantics
+
+Policies use a generic set of sensitive variable names, which directly affect the security results you see. To illustrate the default Policy, take a look at how deserialization vulnerabilities are identified. The following directive
+
+```
+// A policy for java.io.ObjectInputStream class
+
+IO deserialization = METHOD -f "java.io.ObjectInputStream.readObject:java.lang.Object()" { INST "SINK" }
 ```
 
 specifies that the instance parameter of the method `readObject` should be considered as a data sink of a deserializer, that is, the instance parameter is deserialized.
@@ -49,15 +71,15 @@ specifies that the instance parameter of the method `readObject` should be consi
 This directive determines that all parameters tagged with the Spring annotations `CookieValue`, `PathVariable`, and a few others are to be tagged as "attacker-controlled". 
 
 ```
-// ~/.shiftleft/policy/dynamic/org/springframework/exposed.policy:
+// A generic policy for org.springframework.web.bind.annotation.* classes
 
 TAG "DATA_TYPE" -v "attacker-controlled" METHOD -a r"org\.springframework\.web\.bind\.annotation\.(Request|Get|Post|Put|Delete|Patch)Mapping" PAR -a r"org\.springframework\.web\.bind\.annotation\.(CookieValue|PathVariable|RequestParam|RequestBody)"
 ```
 
-And this directive specifies that flows of attacker-controlled data into deserializers are worth reporting
+And this directive specifies that flows of `attacker-controlled` data into `deserializers` are worth reporting
 
 ```
-// ~/.shiftleft/policy/static/execute.policy:
+// An Application Policy describing execution vulnerabilities
 
 CONCLUSION attacker-to-deserializer = FLOW DATA (attacker-controlled) -> IO (deserializer)
 WHEN CONCLUSION attacker-to-deserializer => EMIT {
@@ -71,14 +93,3 @@ WHEN CONCLUSION attacker-to-deserializer => EMIT {
 In this directive, the Policy also allows data transformations and checks to be identified in order to report flows of data, for data that does not undergo validation. 
 
 Refer to the ShiftLeft [Policy Language](policy-language.md) for additional information and examples.
-
-### Working with Policies with ShiftLeft Inspect
-
-Using the ShiftLeft Command Line Interface (CLI), you can
-
-* View a Policy.
-* List the default Policy assignment.
-* Assign another Policy as the default.
-* Delete the default Policy assignment.
-
-Refer to the [CLI Reference](../using-inspect-protect/using-cli/cli-reference.md) for information.

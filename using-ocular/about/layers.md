@@ -21,15 +21,15 @@ The default layers are automatically created and loaded into memory when you cre
 The `semanticcpg` layer links together the methods and type declaration. Using the `base` layer and semantic information, the `semanticcpg` layer
 
 * introduces additional information based on framework specific passes.
-* adds data flow semantics to the CPG as specified by [Policies](../../policies/spl.md).
+* adds data flow semantics to the CPG as specified by [Policies](../../policies/about-policy.md).
       
 ### `tagging` Layer
 
-The `tagging` layer identifies possible attacker-controlled data sources and interesting sinks as specified by [Policies](../../policies/spl.md).
+The `tagging` layer identifies possible attacker-controlled data sources and interesting sinks as specified by [Policies](../../policies/about-policy.md).
       
 ## The `securityprofile` Layer
 
-The `securityprofile` layer is dervied from [Policies](../../policies/spl.md), and summarizes the vulnerabilities and data leaks present in your code. Specifically, it describes: 
+The `securityprofile` layer is dervied from [Policies](../../policies/about-policy.md) and the CPG, and summarizes the vulnerabilities and data leaks present in your code. Specifically, it describes: 
 
 * Read operations
 * Write operations
