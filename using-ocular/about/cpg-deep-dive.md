@@ -48,14 +48,14 @@ The file contains a JSON object with the following members:
 
 * `nodeTypes/edgeTypes`. List of all node/edge types (i.e. edge lables in the original property graph definition), where each node/edge type is given by an object that specifies an ID, name,keys, comment, and, for node types (each note is required to have a mandatory note type, represented by a node attribute), valid outgoing edge types.
 
-There are a total of 20 node types across five categories:
+There are a total of 19 node types across five categories:
 
 Category          | Names
 ------------------| -------------------------------------------------------------------------------------------------
 Program structure | FILE, NAMESPACE_BLOCK
 Type declarations | TYPE_DECL, TYPE_PARAMETER, MEMBER, TYPE, TYPE_ARGUMENT
 Method header     | METHOD, METHOD_PARAMETER_IN, METHOD_RETURN, LOCAL, BLOCK, MODIFIER
-Method body       | LITERAL, IDENTIFIER, CALL, RETURN, METHOD_INST, METHOD_REF
+Method body       | LITERAL, IDENTIFIER, CALL, RETURN, METHOD_REF
 Meta data         | META_DATA
 
 
@@ -179,7 +179,7 @@ which represents the method body.
 
 #### Method Body
 
-Node types: LITERAL, IDENTIFIER, CALL, RETURN, METHOD_INST, METHOD_REF
+Node types: LITERAL, IDENTIFIER, CALL, RETURN, METHOD_REF
 
 Method bodies contain the method implementation, given by the
 operations the method carries out. Method bodies are represented as
@@ -195,12 +195,7 @@ designated call node (type CALL). Arguments are either identifiers
 or method references (type METHOD_REF). Each argument has an argument
 index property (type ARGUMENT_INDEX) to indicate with which parameter it is
 associated. Calls are connected to their arguments through outgoing
-AST edges, and are associated with their corresponding method-instance
-(type METHOD_INST) via their METHOD_INST_FULL_NAME property.
-Method-instance nodes represent concrete instantiations of method
-declarations, that is, method declarations along with type parameters.
-Method nodes are connected to type arguments (type TYPE_ARGUMENT) via
-AST edges, and are associated with their corresponding method via their
+AST edges, and are associated to the called method via their
 METHOD_FULL_NAME property.
 
 ![Call Site](img/call-site.jpg)
