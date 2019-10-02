@@ -29,3 +29,11 @@ To clear out your workspace, removing all CPGs and layers from memory and disk, 
 ```scala
 ocular> workspace.reset
 ```
+
+## Resetting The Current CPG
+
+If a CPG is currently loaded, the below command allows resetting only that single CPG in order to recreate it: 
+
+```scala
+ocular> workspace.deleteCurrentRecord
+```
