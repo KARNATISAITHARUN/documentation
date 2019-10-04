@@ -6,6 +6,8 @@ A common use of custom Policies is to use ShiftLeft Ocular to examine and invest
 
 Policies are written in the ShiftLeft [Policy Language](policy-language.md). Policies are stored under organization-bound domains.
 
+A new custom Policy is stored in the file defined by the `path-to-policy-file` argument, or printed to standard output if the argument is omitted.
+
 ## Custom Policies for ShiftLeft Ocular
 
 ShiftLeft Ocular Policies are located in the directory
@@ -36,10 +38,9 @@ For testing purposes, use one of the available open-source projects with known v
 
 #### Default ShiftLeft Inspect Policy Templates
 
-There are two default Policy templates available, which you use as the basis for creating a new custom Policy: `default` and `no-dictionary`. The `default` template creates a Policy that imports all standard definitions as used by ShiftLeft and the sensitive-data dictionary. 
+There are two default Policy templates available, which you use as the basis for creating a new custom Policy: `default` and `no-dictionary`. The `default` template creates a Policy that imports all standard definitions as used by ShiftLeft, including the generic dictionary of sensitive-data variables. 
 
-The `no-dictionary` template imports default definitions, as declared by ShiftLeft, except for the sensitive-data dictionary.
-
+The `no-dictionary` template  excludes these standard definitions.
 
 ### Creating a New Policy File
 

@@ -1,10 +1,11 @@
 # Installing the ShiftLeft Command Line Interface (CLI)
 
-The ShiftLeft CLI is used with [ShiftLeft Inspect to analyze your application for vulnerabilities](../inspect/analyzing-applications.md) and with [ShiftLeft Protect to monitor and protect your application at runtime](../protect/run-protect.md). The tool is named `sl`. There are three methods for installing the ShiftLeft CLI: 
+The ShiftLeft CLI is used with [ShiftLeft Inspect to analyze your application for vulnerabilities](../inspect/analyzing-applications.md) and with [ShiftLeft Protect to monitor and protect your application at runtime](../protect/run-protect.md). The tool is named `sl`. There are two methods for downloading the ShiftLeft CLI installer: 
 
-* [Using the Welcome page](#using-the-welcome-page).
-* [Downloading the installer](#downloading-the-cli-installer). 
-* [Running the appropriate CLI install command](cli-reference.md).
+* [From the ShiftLeft Dashboard](#from-the-shiftleft-dashboard) (only Linux or MacOS X operating systems).
+* [Using the command line](#using-the-command-line). 
+
+The benefit of using the command line is that the ShiftLeft CLI automatically updates so that you don't have to reinstall the CLI whenever there are new features or fixes.
 
 The ShiftLeft CLI is invoked using the following syntax:
 
@@ -12,19 +13,25 @@ The ShiftLeft CLI is invoked using the following syntax:
 sl [global options] command [command options] [arguments...]
 ```
 
-Once you have installed the ShiftLeft CLI, make sure you have [authenticated the CLI with your ShiftLeft Account](../using-cli/authenticating.md). Refer to the [CLI Reference](cli-reference.md) for additional information.
+Once you have installed the ShiftLeft CLI, make sure you have [authenticated the CLI with your ShiftLeft Account](../using-cli/authenticating.md). 
 
-## Using the Welcome Page
+Refer to the [CLI Reference](cli-reference.md) for information on using the CLI.
 
-You can use the Welcome page to install the CLI only if you are running ShiftLeft on either the Linux or MacOS X operating systems. The [Welcome page](https://www.shiftleft.io/dashboard) is displayed the first time you log into ShiftLeft.
+## From the ShiftLeft Dashboard
 
-1. Click the Download the ShiftLeft CLI button.
+You can use the ShiftLeft Dashboard to download the ShiftLeft CLI installer only if you are running ShiftLeft on either the Linux or MacOS X operating systems. 
 
-   ![Click to Download the CLI](img/download-cli.jpg)
+The first time you log into ShiftLeft, you can download the ShiftLeft CLI from the [Welcome page](https://www.shiftleft.io/dashboard) by clicking the Download the ShiftLeft CLI button.
 
-2. Add the CLI to your system path. The process is different for each operating system, as explained below.
+   ![Click to Download the CLI](img/download-cli-welcome.jpg)
+   
+Or you can download the ShiftLeft CLI anytime from the Profile page > Downloads section. Click on the operating system that you are using.
 
-3. Verify the CLI installation by typing `sl help`.
+  ![Click to Download the CLI](img/download-cli-profile.jpg)
+
+Once you have downloaded the ShiftLeft CLI installer, add the CLI to your system path. The process is different for each operating system, as explained below.
+
+You can verify the CLI installation by typing `sl help`.
 
 ### Adding the CLI to your System Path for Linux and MacOS X
 
@@ -38,9 +45,13 @@ Note that for Windows .NET there are two variants: .NET Framework and .NET Core.
 
 After you have downloaded the appropriate installer, unzip the file and invoke the installer. If you are running the installer from the terminal, add `--no-prompt` to disable waiting for user input.
 
-## Downloading the CLI Installer
+## Using the Command Line
 
 The process is different, depending on your operating system.
+
+The ShiftLeft CLI automatically updates so that you don't have to reinstall the CLI whenever there are new features or fixes (`curl` or `wget` are required for automatic updates). You can disable automatic updating by setting the environment variable `SHIFTLEFT_NO_AUTO_UPDATE=true` when running `sl`.
+
+You can verify the CLI installation by typing `sl help`.
 
 ### Linux and MacOS X
 
@@ -49,8 +60,6 @@ Use the command
 ```
 curl https://cdn.shiftleft.io/download/sl >/usr/local/bin/sl && chmod a+rx /usr/local/bin/sl
 ```
-
-The ShiftLeft CLI automatically updates so that you don't have to reinstall the CLI whenever there are new features or fixes (`curl` or `wget` are required for automatic updates). You can disable automatic updating by setting the environment variable `SHIFTLEFT_NO_AUTO_UPDATE=true` when running `sl`.
 
 ### Windows .NET Framework
 
