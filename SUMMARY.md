@@ -62,6 +62,8 @@
       * [sl run Options](using-inspect-protect/using-cli/options/run-options.md)
   * Analyzing Your Code
     * [Analyzing Applications Using ShiftLeft Inspect](using-inspect-protect/inspect/analyzing-applications.md)
+    * [Analyzing Java and Scala Applications](using-inspect-protect/inspect/analyze-java.md)
+    * [Analyzing C# Applications](using-inspect-protect/inspect/analyze-csharp.md)
     * [Identifying Branch Names](using-inspect-protect/inspect/identify-branches.md)
     * [Failing a Build Based on Analysis Results](using-inspect-protect/inspect/fail-build.md)
   * Protecting Runtime Applications

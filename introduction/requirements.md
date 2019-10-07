@@ -14,18 +14,16 @@ ShiftLeft has specific requirements for:
 
 [ShiftLeft Ocular](products.md) runs on top of the Java virtual machine. Please make sure you have a Java Runtime Environment >= 1.8 installed.
 
-### Scala Requirements for ShiftLeft Ocular
-
-You can examine only Scala compiled application bytecode (not source code) using ShiftLeft Ocular. This means that you **must** successfully build your application using a supported build tool beforehand. 
+For Java and Scala, you can examine only compiled application bytecode (not source code) using ShiftLeft Ocular. This means that for Java and Scala applications, you **must** successfully build your application using a supported build tool beforehand. 
 
 Component | Requirement
 --- | ---
 System | Linux, MacOS X, Windows
-Application Type | **Scala 2.12+**
+Application Type | **Java 7+**, **Scala 2.12+**
 
 ## ShiftLeft CLI Requirements
 
-[The CLI](products.md) requires a local installation of a supported Java version. The CLI host must allow outbound connections on the specified port.
+[The ShiftLeft CLI](products.md) requires a local installation of a supported Java version. The ShiftLeft CLI host must allow outbound connections on the specified port.
 
 Component | Requirement
 --- | ---
