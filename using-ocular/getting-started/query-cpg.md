@@ -42,6 +42,8 @@ To run a query on all CPGs in your workspace and join the results, use the comma
 ocular> cpgs.flatMap(_.method.fullName.l)
 ```
 
+Note that this query can only be run against individual CPGs in succession, and not on a merged CPG. Merging and querying  CPGs as a single unit is not supported yet.
+
 To combine queries from multiple CPGs use
 
 ```scala
@@ -50,7 +52,7 @@ cpgs.flatMap{cpg => cpg.method.l }
 
 ## Querying Security Profiles
 
-The Security Profile must be loaded into memory in order for you to query it using the OQL. Use the commands 
+Technical vulnerabilities are summarized as findings in the Security Profile layer, which must be loaded into memory in order for you to query it using the OQL. You can determine whether a Security Profile is loaded [using your workspace](#manage-workspace.md). To query a Security Profile, use the commands 
 
 ```scala
 ocular> cpg.finding.p.<finding>
@@ -73,7 +75,7 @@ where <query> is the actual query whose results you want to browse.
 
 ## Writing Query Results to a File
 
-ShiftLeft Ocular uses `.l` (**not** `.p`) to list query results.
+ShiftLeft Ocular uses `.l` (**not** `.p`) to generate output in a list format specific to Scala. If you use `.l`. to write the results to a file, for example `cpg.finding.l |> "test.txt"`, the command appends object references. Thererefore, it is  recommended to append strings such as those output by queries such as `cpg.method.toJsonPretty`. 
 
 Use either of the following commands to write query results to a file, where <query> is the actual query whose results you want to output, for example `cpg.namespace.name`.
   

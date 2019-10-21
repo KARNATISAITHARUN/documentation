@@ -129,7 +129,7 @@ i = 0
 
 The return shows that most potential checks involve some kind of a size element (as expected).
 
-Some outputs from copy_from_user have `kfib` as their first argument, which may be an interesting pointer giving access to a header. The size of `kfib` seems to have an involvement in the check `kfib->header.Size`. To confirm this in the source code (commctrl.c:90), use
+Some outputs from `copy_from_user` have `kfib` as their first argument, which may be an interesting pointer giving access to a header. The size of `kfib` seems to have an involvement in the check `kfib->header.Size`. To confirm this in the source code (`commctrl.c`, line 90), use
 
 ```
 size = le16_to_cpu(kfib->header.Size) + sizeof(struct aac_fibhdr);

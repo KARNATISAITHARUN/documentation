@@ -59,7 +59,7 @@ To create a CPG and its Security Profile at the same time, use
 ocular> createCpgAndSp(<inputPath>)
 ```
   
-Both the CPG and the `securityprofile` layer are created in your workspace and automatically loaded into memory. The sp.bin.zip file contains the Security Profile in a binary format.
+Both the CPG and the `securityprofile` layer are created in your workspace and automatically loaded into memory. The `x_securityprofile` file contains the Security Profile in a binary format.
 
 ### Creating a CPG that Includes Objects Organized by Namespaces
 

@@ -181,9 +181,9 @@ The query returns
 The filter the results further, you can use `passes` and `passesNot` to check if operations were performed on the malloc argument.
 
 
-## Advanced Code Property Graph (CPG) Analysis
+## Advanced Control Flow Graph Analysis
 
-Use this query to examine a specific malloc call site (specifically line 23, obtained from the first query listing all call sites) and then look at the CPG, listing expressions, line numbers, etc. to reach the source backwards while navigating the CPG. This usually is a one-off analysis to reach the source variable by listing code expressions (e.g. `a`) while tracing backwards. 
+Use this query to examine a specific malloc call site (specifically line 23, obtained from the first query listing all call sites) and then look at the Control Flow Graph, listing expressions, line numbers, etc. to reach the source backwards while navigating the Control Flow Graph. This usually is a one-off analysis to reach the source variable by listing code expressions (e.g. `a`) while tracing backwards. 
 
 ```scala
 ocular> cpg.method.callOut.name("malloc").filter(_.lineNumber(23)).repeat(_.cfgPrev).emit().map( x=> (x.code, x.location.filename, x.lineNumber.get)).l 
