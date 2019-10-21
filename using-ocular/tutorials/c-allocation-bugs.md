@@ -1,6 +1,6 @@
 # Identifying Incorrect or Zero Memory Allocation Bugs in C
 
-A common heap related bug is arithmetic operations that are performed on parameter of memory allocation functions, such as `malloc()`. In certain cases, the arithmetic operations can lead to integer overflow (resulting in less memory being allocated) or the arithmetic operation computes to zero. These conditions may lead to exploitable vulnerabilities. This tutorial uses ShiftLeft Ocular to determine if such a condition exists, using three allocation scenarios shown in
+A common heap related bug is arithmetic operations that are performed on parameter of memory allocation functions, such as `malloc()`. In certain cases, the arithmetic operations can lead to integer overflow (resulting in less memory being allocated) or the arithmetic operation computes to zero. These conditions may lead to exploitable vulnerabilities. This tutorial uses ShiftLeft Ocular to determine if such a condition exists, using three allocation scenarios.
 
 ## `allocation.c`
 
@@ -48,7 +48,7 @@ List[(String, Integer)] = List(
 
 ### `atoi` Case 
 
-The following query examines dataflow from return of atoi to argument of malloc, at all malloc call sites:
+The following query examines dataflow from return of atoi to argument of malloc, at all malloc call sites
 
 ```scala
 val sink = cpg.method.callOut.name("malloc").argument
@@ -95,7 +95,7 @@ The query returns the same flow above if the condition is true.
 
 ### Verifying Arithmetic Operations
 
-The following query looks for a parameter of some function to argument of malloc, at all malloc call sites while passing through an arithmetic operation
+The following query looks for a parameter of some function to an argument of malloc, at all malloc call sites while passing through an arithmetic operation
 
 ```scala
 val sink = cpg.method.callOut.name("malloc").argument
@@ -132,10 +132,10 @@ This query defines a source by:
 
 1. Examining all call sites of all methods.
 2. Filtering out the methods having malloc (sink of interest) and any arithmetic operation.
-3. Making the source a return (methodReturn) of the actual methods of the call sites (which are `atoi` and `getnumber` here). 
+3. Making the source a return (methodReturn) of the actual methods of the call sites (which are `atoi` and `getnumber`). 
 4. Find flows from the methods to the malloc call site argument as sink.      
 
-```
+```scala
 val sink = cpg.method.callOut.name("malloc").argument
 var source = cpg.method.callOut.nameNot(".*(<operator>|malloc).*").calledMethod.methodReturn 
 
@@ -178,14 +178,14 @@ The query returns
  | a          | 23        | scenario3            | ../../Projects/tarpitc/src/alloc/allocation.c|
 ```
 
-You can use `passes` and `passesNot` to check if operations were performed on the malloc argument just as in previous queries to filter further.
+The filter the results further, you can use `passes` and `passesNot` to check if operations were performed on the malloc argument.
 
 
-## Advanced CFG Analysis
+## Advanced Code Property Graph (CPG) Analysis
 
-Use this query to examine a specific malloc call site (specifically line 23, obtained from the first query of listing all call sites) and then look at the CFG, listing expressions, line numbers, etc. to reach the source backwards while navigating the CPG. This usually is a one-off analysis to reach the source variable by listing code expressions (here it's `a`) while tracing backwards. 
+Use this query to examine a specific malloc call site (specifically line 23, obtained from the first query listing all call sites) and then look at the CPG, listing expressions, line numbers, etc. to reach the source backwards while navigating the CPG. This usually is a one-off analysis to reach the source variable by listing code expressions (e.g. `a`) while tracing backwards. 
 
-```
+```scala
 ocular> cpg.method.callOut.name("malloc").filter(_.lineNumber(23)).repeat(_.cfgPrev).emit().map( x=> (x.code, x.location.filename, x.lineNumber.get)).l 
 res99: List[(String, String, Integer)] = List(
   ("a", "alloc/allocation.c", 23),

@@ -9,7 +9,8 @@ If you are automating the provision of your servers, you need to append the comm
 After starting ShiftLeft Ocular, you can: 
 
 * [Create a CPG](create-cpg.md) for a new application or a new version of an application.
-* [Work with an exisitng CPG and its layers](working-with-cpg.md).
+* [Generate a Security Profile](generate-sp.md) to automate code analysis by summarizing the vulnerabilities and data leaks present in code.
+* Easily work with CPGs and Security Profiles [using your Workspace](manage-workspace.md) for a new application or a new version of an application.
 
 ## Linux and MacOS X
 

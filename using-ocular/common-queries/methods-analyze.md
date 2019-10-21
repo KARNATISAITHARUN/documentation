@@ -1,8 +1,8 @@
-# Analyzing Methods
+# Investigating Methods
 
-This tutorial describes using ShiftLeft Ocular to analyze methods. It uses [HelloShiftLeft](../../introduction/helloshiftleft.md), a sample application, to illustrate the steps and results.
+This example explains using ShiftLeft Ocular to examine methods. It uses [HelloShiftLeft](../../introduction/helloshiftleft.md) to illustrate the steps and results.
 
-ShiftLeft Ocular analyzes your application using methods directly in the code, by helping you navigate to exposed methods. The analysis can be mixed with parameters, method annotations and types to perform more powerful queries on the CPG. As an example, it is possible to navigate to the specific function in the code that accepts data from a publicly exposed Web API endpoint. In modern applications, Java annotations are used to link a given endpoint URI to a function that handles user provided data through the endpoint URI (for example, in Spring Framework, @GetMapping, @PostMapping and @PathVariable are used). 
+ShiftLeft Ocular examines your application using methods directly in the code, by helping you navigate to exposed methods. The analysis can be mixed with parameters, method annotations and types, to perform more powerful Code Property Graph (CPG) queries. For example, it is possible to navigate to the specific function in the code that accepts data from a publicly exposed Web API endpoint. In modern applications, Java annotations are used to link a given endpoint URI to a function that handles user provided data through the endpoint URI (for example, in the Spring Framework, @GetMapping, @PostMapping and @PathVariable are used). 
 
 ## List HTTP Endpoint Handler Methods
 

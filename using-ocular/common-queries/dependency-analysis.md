@@ -1,8 +1,8 @@
-# Analyzing Dependencies
+# Examining Dependencies
 
-This tutorial describes using ShiftLeft Ocular to analyze application dependencies. It uses [HelloShiftLeft](../../introduction/helloshiftleft.md), a sample application, to illustrate the steps and results.
+This example describes using ShiftLeft Ocular to examine application dependencies. It uses [HelloShiftLeft](../../introduction/helloshiftleft.md) to illustrate the steps and results.
 
-To understand what the HelloShiftLeft application depends on (internal packages as well as external open-source dependencies), use the following Code Property Graph (CPG) query in the ShiftLeft Ocular shell:
+To understand the HelloShiftLeft application dependencies (internal packages as well as external open-source dependencies), query the application's Code Property Graph (CPG) 
 
 ```
 ocular> cpg.dependency.map(x => (x.name, x.version)).l
@@ -13,4 +13,4 @@ res2: List[(String, String)] = List( ("jackson-core", "2.8.6"),
 .. )
 ```
 
-Notice the snippet of the dependency list, which can be further investigated against known CVEs from the vulnerability databases such as NVD.
+Notice the snippet of the dependency list, which can be further investigated against known CVEs from vulnerability databases such as NVD.

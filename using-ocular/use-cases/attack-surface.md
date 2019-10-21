@@ -2,7 +2,7 @@
 
 Your application's attack surface is the total sum of vulnerabilities that can be exploited to carry out a security attack. The attack surface should be limited in size to protect from unauthorized and malicious users. You examine your code's attack surface using ShiftLeft Ocular. This is frequently the first step in investigating and mitigating vulnerabilities, so that you can prioritize strengthening the most vulnerable attack points. 
 
-This use case is based on [HelloShiftLeft](../../introduction/helloshiftleft.md). The focus is an object deserialization vulnerability in the `AdminController`:
+This use case is based on [HelloShiftLeft](../../introduction/helloshiftleft.md). The focus is an object deserialization vulnerability in the `AdminController`
 
 ```java
 ...
@@ -40,7 +40,7 @@ try {
 ...
 ```
 
-In this code fragment, a cookie is received via HTTP and eventually deserialized to create a Java object, an optimistic practice that is often exploited by attackers for arbitrary code execution.
+In this code fragment, a cookie is received through HTTP and eventually deserialized to create a Java object, an optimistic practice that is often exploited by attackers for arbitrary code execution.
 
 The Code Property Graph (CPG) contains information about the processed code on different levels of abstraction: dependencies, type hierarchies, control flow, data flow, and instruction-level information. The CPG can be queried using  ShiftLeft Ocular in either [interactive or non-interactive modes](../about/modes.md).
 
@@ -50,7 +50,7 @@ Using interactive querying, explore the program dependencies by
 ocular> cpg.dependency.name.l
 ```
 
-A complete list of all dependency names is returned. Since the Ocular Query Language (OQL) is a Scala-based DSL, it also  supports functional combinators. For example, to output (name, version) pairs, use the following expression
+A complete list of all dependency names is returned. Since the Ocular Query Language (OQL) is a Scala-based DSL, it also  supports functional combinators. For example, to output (name, version) pairs, use the expression
 
 ```scala
 ocular> cpg.dependency.map(x => (x.name, x.version)).l

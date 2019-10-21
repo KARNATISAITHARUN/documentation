@@ -1,7 +1,7 @@
-# Analyzing Method Parameters
+# Examining Method Parameters
 
-You can use ShiftLeft Ocular to analyze your application's method parameters. This tutorial illustrates how to do so
-uses [HelloShiftLeft](../../introduction/helloshiftleft.md), a sample application.
+You can use ShiftLeft Ocular to examine your application's method parameters. This example shows how to do so
+using [HelloShiftLeft](../../introduction/helloshiftleft.md).
 
 Analysis can be driven by the parameters of methods, and their types.
 

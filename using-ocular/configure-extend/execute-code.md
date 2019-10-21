@@ -3,9 +3,10 @@
 You can execute code and scripts when you start ShiftLeft Ocular.
 This is useful if you find yourself copy and pasting the same code snippets into every ShiftLeft Ocular session.
 
-## For a particular session
+## Specific Session
 
-To execute initialization code for one session, you can provide your input scripts with `--import`, which allows to specify a comma-separated list of scripts:
+To execute initialization code for a specific session, include in your input scripts the flag `--import`, which allows you to specify a comma-separated list of scripts
+
 ```
 echo 'def foo = 42' > scripts/myScript1.sc
 echo 'def bar = 43' > scripts/myScript2.sc
@@ -17,10 +18,11 @@ res1: Int = 42
 ```
 
 
-## Every time you start Ocular
+## Every Session
 
-To execute initialization code every time you start ShiftLeft Ocular, simply write it to a `.sc` file in your `~/.shiftleft/ocular/` directory. 
-A good convention is to use `~/.shiftleft/ocular/predef.sc`, but Ocular will execute all `.sc` files on every startup.
+To execute initialization code every time you start ShiftLeft Ocular, simply write the initialization code to a `.sc` file in your `~/.shiftleft/ocular/` directory. 
+
+A good convention is to use `~/.shiftleft/ocular/predef.sc`, but ShiftLeft Ocular executes all `.sc` files on every startup.
 
 ```
 echo 'def foo = 42' > ~/.shiftleft/ocular/predef.sc

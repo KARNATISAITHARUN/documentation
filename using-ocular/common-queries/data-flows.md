@@ -1,22 +1,21 @@
 # Uncovering Data Flows
 
-Using [HelloShiftLeft](../../introduction/helloshiftleft.md), a sample application, this tutorial shows 
+Using [HelloShiftLeft](../../introduction/helloshiftleft.md), this example shows 
 how to uncover data flows in your application. 
 
-Upon identifying interesting methods, such as methods that 
+Once you have identified interesting methods, such as methods that 
 * take user controlled inputs (eg. HTTP handlers)
 * transform data (serilaize, deserialize) 
 * act on the data (loggers, spawn a process, store data in DB etc.)
 
-it is possible to identify how data flows between methods. Assigning some methods as sources, and others as sinks, helpt to 
-find flows between them. An illustration of a typical sources and sinks in HelloShiftLeft application is
+it is possible to identify how data flows between these methods. Assigning some methods as sources, and others as sinks, helps to find flows between them. An illustration of typical sources and sinks in the HelloShiftLeft application is
 
 ![Data Flow](img/data-flow.jpg)
 
 ## Finding Flows from Source to Sink
 
-This query creates a temporary variable (`source`) and assign to it all the parameters of all methods
-named `getLedger`. These parameters all can now act as sources.
+This query creates a temporary variable (`source`) and assigns to it all the parameters of all methods
+named `getLedger`. These parameters can now act as sources.
 
 ```
 ocular> val source = cpg.method.name("getLedger").parameter
@@ -36,8 +35,7 @@ The query prints all the flows (`f`) reachable by the method parameters `source`
 
 ## Finding Flows from a Sink to Source
 
-With ShiftLeft Ocular, it is actually possible to traverse back from a source to a sink. For cases in which there might be multiple flows, use `.caller` construct on the `sink` method repeatedly until a source function is reached that satisfies 
-the traits of interest.
+With ShiftLeft Ocular, it is actually possible to traverse back from a source to a sink. For cases in which there might be multiple flows, use the `.caller` construct on the `sink` method repeatedly until a source function is reached that satisfies the traits of interest.
 
 For the given `sink` (a method having a name with `Runtime` and `exec` in its full name), the query recursively find its calling methods (`.caller`) until a method is reached that is accessible from outside (`isPublic`), and has at least one parameter of the type `java.Lang.String` which is the required `source`.
 

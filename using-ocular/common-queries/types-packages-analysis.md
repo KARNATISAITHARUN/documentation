@@ -1,12 +1,10 @@
-# Analyzing Types and Packages
+# Scanning for Types and Packages
 
-This tutorial shows you how to use ShiftLeft Ocular to analyze types and packages. It uses [HelloShiftLeft](../../introduction/helloshiftleft.md), a sample application, to illustrate the steps and results.
-
-The various types (classes) and packages used by the HelloShiftLeft application, including the methods which use or call them,  can be analyzed using ShiftLeft Ocular.
+This example shows you how to use ShiftLeft Ocular to examine types (classes) and packages, including the methods which use or call them. It uses [HelloShiftLeft](../../introduction/helloshiftleft.md) to demonstrate the steps and results.
 
 ## Listing all the Types Used in the Code
 
-The query returns a list (`l`) of the full name of all the type declarations (`typeDecl`) in the CPG.
+The query returns a list (`l`) of the full name of all the type declarations (`typeDecl`) in the Code Property Graph (CPG).
 
 ```
 ocular> cpg.typeDecl.fullName.l
@@ -53,7 +51,7 @@ res4: List[String] = List( "com.ulisesbocchio.jasyptspringboot.annotation", "jav
 
 ## Filtering the List of Type Declarations Used in the Code
 
-The query returns a list (`l`) of the name of all the type declarations (`typeDecl`) in the CPG Containing Http in their 
+The query returns a list (`l`) of the name of all the type declarations (`typeDecl`) in the CPG containing Http in their 
 names.
 
 ```

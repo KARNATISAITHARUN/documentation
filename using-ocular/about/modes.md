@@ -30,8 +30,9 @@ operator to pipe output into files. The script is run as
 ./ocular.sh --script test.sc --params cpgFile=/fullpath/to/cpg.bin.zip,outFile=out.log
 ```
 
-### Importing additional scripts
-If your script depends on code from one or more additional scripts, you can use the `--import` parameter, which accepts a comma-separated list of input scripts:
+### Importing Additional Scripts
+
+If your script depends on code from one or more additional scripts, you can use the `--import` parameter, which accepts a comma-separated list of input scripts
 
 ```
 echo 'def hello(name: String) = println(s"hello, $name")' > scripts/hello.sc

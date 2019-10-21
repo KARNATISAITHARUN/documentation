@@ -38,4 +38,4 @@ The `securityprofile` layer is dervied from [Policies](../../policies/about-poli
 * Information flows
 * Findings
 
-Unlike the `base` and default layers, because the Security Profile is so expensive at runtime, it must be intentially created and loaded. 
+Unlike the `base` and default layers, because the Security Profile is so expensive at runtime, it must be explicitly [created and loaded](../getting-started/generate-sp.md). 

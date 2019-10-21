@@ -1,6 +1,6 @@
 # Creating and Working with the Code Property Graph (CPG)
 
-Once you've [started ShiftLeft Ocular](starting.md), you can create a CPG for a new application or for a new version of an application. When a CPG is created, it's `base` and default layers are also automatically generated, and all are saved to [your workspace](manage-workspace.md) and loaded into memory. However you must intentionally [generate and load the Security Profile](generate-sp.md) layer. 
+Once you've [started ShiftLeft Ocular](starting.md), you can create a CPG for a new application or for a new version of an application. When a CPG is created, it's [`base` and default layers](../about/layers.md) are also automatically generated, and all are saved to [your workspace](manage-workspace.md) and loaded into memory. However you must intentionally [generate and load the Security Profile.](generate-sp.md) 
 
 By default, all operations are executed on the CPG that was last loaded into memory; this is the active CPG.
 
@@ -14,6 +14,7 @@ For additional information about the CPG, refer to:
 
 * [Understanding the CPG](../../introduction/understanding-cpg.md)
 * [Deep-Dive: The CPG](../about/cpg-deep-dive.md)
+* [Querying the CPG and Security Profiles](query-cpg.md)
 * [ShiftLeft Ocular API](https://ocular.shiftleft.io/api/io/shiftleft/repl/Console.html)
 
 ## Creating a CPG
@@ -71,7 +72,7 @@ where `<namespace>` is one or more namespaces you want to include in the CPG; mu
 
 ## Working with CPGs
 
-You work with the CPGs, and their associated layers, which are in your workspace and loaded into memory. By default, all operations are executed on the CPG that was last loaded into memory; this is the active CPG.
+You work with the CPGs, and their associated layers, that are in your workspace and loaded into memory. By default, all operations are executed on the CPG that was last loaded into memory; this is the active CPG.
 
 The option `<names>` is the name of one or more CPGs you want to work with; multiple names are separated by a comma. For example `"hello-shiftleft-0.0.1-SNAPSHOT.jar"`. The format of the CPG is automatically inferred by ShiftLeft Ocular.
 

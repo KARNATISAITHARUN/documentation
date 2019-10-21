@@ -1,6 +1,6 @@
 # Enhancing the Ocular Query Language (OQL)
 
-The OQL is used to query Code Property Graphs (CPGs) and Security Profiles. OQL results can be integrated into your security tools and for sharing data across the SDLC (link to integrating article).
+The OQL is used to query Code Property Graphs (CPGs) and Security Profiles. OQL results can be integrated into your security tools and for sharing data across the SDLC.
 
 The OQL can be enhanced for use with your specific code base or environment, to represent queries that you use over and over again, or to combine complex and multiple queries into a single query. 
 

@@ -1,6 +1,6 @@
 # Detecting 0-Day Vulnerabilities
 
-A 0-day vulnerability is unknown to, or unaddressed by, developers and security researchers, and is considered a severe threat. Until an 0-day vulnerability is identified and mitigated, hackers can exploit it.
+A 0-day vulnerability is unknown to, or unaddressed by, developers and security researchers and is considered a severe threat. Until an 0-day vulnerability is identified and mitigated, hackers can exploit it.
 
 This use case is based on CVE-2018-19859, a vulnerability allowing an attacker to execute arbitrary file
 writes through [OpenRefine](https://github.com/OpenRefine/OpenRefine/). The process is:
@@ -34,7 +34,7 @@ file structure as long as its input is provided in the ZIP format. This format i
 equivalent to a JAR archive; a ZIP file with a `.jar` suffix containing the
 `.class` files of interest is sufficient. Based on the OpenRefine sources, which
 you can download as a `.tar.gz` archive, prepare the `.jar` for `java2cpg`
-by executing:
+by executing
 
 ```
 wget https://github.com/OpenRefine/OpenRefine/releases/download/3.1/openrefine-linux-3.1.tar.gz
@@ -82,7 +82,7 @@ addition of `do(Get|Post)` to the search pattern: HTTP Get handlers are named
 `doGet`, while HTTP POST handlers are named `doPost`. By executing this query, the number of results is reduced to only 13 methods, a small enough number
 to inspect manually.
 
-```
+```scala
 ocular> cpg.method.fullName(".*Import.*do(Get|Post).*").toList.size
 res2: Int = 13
 ```
@@ -92,19 +92,19 @@ which, as suggested by its name, may be interesting from a security standpoint.
 The query is enhanced by replacing `Import` with `DefaultImportingController`.
 The new search result consists of a `doGet` and a `doPost` method
 
-```
+```scala
 ocular> cpg.method.fullName(".*DefaultImportingController.*do(Get|Post).*").fullName.p
 
 com.google.refine.importing.DefaultImportingController.doGet:void(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
 com.google.refine.importing.DefaultImportingController.doPost:void(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
 ```
 
-Based on these results, by only issuing three queries, a source is found as the starting point for the 
+Based on these results, and by only issuing three queries, a source is found as the starting point for the 
 security analysis. This following query defines a
 source by applying the search filter. To be more specific, the query also
 specifies the required type of the parameters (which is `HttpServletRequest`)
 
-```
+```scala
 ocular> val source = cpg.method.fullName(".*DefaultImportingController.*do(Get|Post).*").parameter.evalType(".*HttpServletRequest.*")
 ```
 
@@ -121,7 +121,7 @@ Using a very basic query, first identify methods which are part of the
 `zip` package; among them calls to methods with `getName` as
 part of their name. As a result, the method `explodeArchive`
 
-```
+```scala
 ocular> cpg.method.fullName(".*zip.*getName.*").caller.fullName.p
 
 com.google.refine.importing.ImportingUtilities.explodeArchive:boolean(java.io.File,java.io.InputStream,org.json.JSONObject,org.json.JSONArray,com.google.refine.importing.ImportingUtilities$Progress)
@@ -131,14 +131,14 @@ Judging from its name, the function `explodeArchive` appears to be worth
 investigating. This query tags the parameter of the method 
 `explodeArchive` as a sink
 
-```
+```scala
 ocular> val sink = cpg.method.name("explodeArchive").parameter
 ```
 
 To find a possible data flow between sources and sinks, issue a
 `reachableBy` query, as in the snippet
 
-```
+```scala
 ocular> sink.reachableBy(source).flows.p
 ```
 
@@ -275,7 +275,7 @@ the destination path to which a ZIP file is extracted by passing malicious input
 method. After applying the `passes` filter on the flows, the number of flows
 is reduced to `2`!
 
-```
+```scala
 ocular> sink.reachableBy(source).flows.l.size
 res28: Int = 1847
 
@@ -336,7 +336,7 @@ to the `reachableBy` query, use the `passesNot` filter, which ensures that
 only flows without an `uncompressFile` method, a method that that handles `.gz` and
 `.bz2`, are considered.
 
-```
+```scala
 ocular> val source = cpg.method.name("explodeArchive").parameter
 ocular> val sink = cpg.method.fullName(".*FileOutputStream.*write.*").parameter.index(1)
 ocular> sink.reachableBy(source).passesNot("uncompressFile").p

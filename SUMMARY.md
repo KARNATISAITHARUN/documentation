@@ -23,11 +23,12 @@
     * [Creating and Working with a CPG](using-ocular/getting-started/create-cpg.md)
     * [Generating and Working with Security Profiles](using-ocular/getting-started/generate-sp.md)
     * [Managing Your Workspace](using-ocular/getting-started/manage-workspace.md)
+    * [Querying the CPG and Security Profiles](using-ocular/getting-started/query-cpg.md)
   * Common Queries
-    * [Analyzing Dependencies](using-ocular/common-queries/dependency-analysis.md)
-    * [Analyzing Types and Packages](using-ocular/common-queries/types-packages-analysis.md)
-    * [Analyzing Method Parameters](using-ocular/common-queries/parameters-analyze.md)
-    * [Analyzing Methods](using-ocular/common-queries/methods-analyze.md)
+    * [Examining Dependencies](using-ocular/common-queries/dependency-analysis.md)
+    * [Scanning for Types and Packages](using-ocular/common-queries/types-packages-analysis.md)
+    * [Examining Method Parameters](using-ocular/common-queries/parameters-analyze.md)
+    * [Investigating Methods](using-ocular/common-queries/methods-analyze.md)
     * [Uncovering Data Flows](using-ocular/common-queries/data-flows.md)
   * Use Cases
     * [Detecting 0-Day Vulnerabilities](using-ocular/use-cases/detect-0-day.md)
@@ -37,7 +38,7 @@
     * [Uncovering the Attack Surface](using-ocular/use-cases/attack-surface.md)
   * Tutorials
     * [Scanning for Deserialization Sinks](using-ocular/tutorials/deserialization.md)
-    * [Analyzing a C Language Application](using-ocular/tutorials/c-language.md)
+    * [Investigating a C Language Application](using-ocular/tutorials/c-language.md)
     * [Identifying Incorrect or Zero Memory Allocation Bugs in C](using-ocular/tutorials/c-allocation-bugs.md)
     * [Using ShiftLeft Ocular with MISRA C Applications](using-ocular/tutorials/misra-c.md)
     * [Java Vulnerable Lab](using-ocular/tutorials/java-vuln.md)

@@ -1,17 +1,16 @@
 # Using ShiftLeft Ocular with JavaServer Pages (JSP)
 
-You can use ShiftLeft Ocular to examine the software elements and flows in your JSP to identify complex business logic 
-vulnerabilities that can't be scanned for automatically. Note that this support does not include JSP Expression Language. 
+You can use ShiftLeft Ocular to examine the software elements and flows in your JSP application, to identify complex business logic vulnerabilities that can't be scanned for automatically. Note that this support does not include JSP Expression Language. 
 
 This tutorial illustrates the use of ShiftLeft Ocular with JSP, based on the sample project Java Vulnerable Lab. The process is:
 
 1. [Download and build the Java Vulnerable Lab](https://github.com/CSPF-Founder/JavaVulnerableLab).
 
-2. Start ShiftLeft Ocular.
+2. [Start ShiftLeft Ocular](../getting-started/starting.md).
 
-3. In the ShiftLeft Ocular shell, create the CPG, the Security Profile overlay and the query _findings_ as follows:
+3. In the ShiftLeft Ocular shell, create the CPG, the Security Profile layer and the query _findings_ , by using the  commands
 
-```
+```scala
 ocular> createCpgAndSp("JavaVulnerableLab.war")
 ocular> cpg.finding.p 
 ```
@@ -72,9 +71,9 @@ ________________________________________________________________________________
 
 ## Identifying the Vulnerable Flow Through JSP
 
-In the flow associated with the vulnerability, the call starts from `io/shiftleft/precompiledjsp/admin/manageusers_jsp.java`, which is essentially a precompiled JSP created by ShiftLeft Ocular as part of the process of generating the CPG . The JSP is derived from the file https://github.com/CSPF-Founder/JavaVulnerableLab/blob/master/src/main/webapp/admin/manageusers.jsp. All precompiled files are part of the `io.shiftleft.precompiledjsp` namespace. This is one way to identify and audit JSP-only methods while investigating data flows using ShiftLeft Ocular. For example, the following query lists the methods that are part of the precompiled JSP from Java Vulnerable Lab:
+In the flow associated with the vulnerability, the call starts from `io/shiftleft/precompiledjsp/admin/manageusers_jsp.java`, which is essentially a precompiled JSP created by ShiftLeft Ocular as part of the process of generating the CPG . The JSP is derived from the file https://github.com/CSPF-Founder/JavaVulnerableLab/blob/master/src/main/webapp/admin/manageusers.jsp. All precompiled files are part of the `io.shiftleft.precompiledjsp` namespace. This is one way to identify and audit JSP-only methods while investigating data flows using ShiftLeft Ocular. For example, the following query lists the methods that are part of the precompiled JSP from Java Vulnerable Lab
 
-```
+```scala
 ocular> cpg.namespace.name("io.shiftleft.precompiledjsp.vulnerability.sqli").method.fullName.l
 ```
 
