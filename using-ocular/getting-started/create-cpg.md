@@ -1,6 +1,6 @@
 # Creating and Working with the Code Property Graph (CPG)
 
-Once you've [started ShiftLeft Ocular](starting.md), you can create a CPG for a new application or for a new version of an application. When a CPG is created, it's `base` and default layers are also automatically generated, and all are saved to [your workspace](manage-workspace.md) and loaded into memory. However you must intentionally generate and load the Security Profile. 
+Once you've [started ShiftLeft Ocular](starting.md), you can create a CPG for a new application or for a new version of an application. When a CPG is created, it's `base` and default layers are also automatically generated, and all are saved to [your workspace](manage-workspace.md) and loaded into memory. However you must intentionally [generate and load the Security Profile](generate-sp.md) layer. 
 
 By default, all operations are executed on the CPG that was last loaded into memory; this is the active CPG.
 
@@ -58,7 +58,7 @@ To create a CPG and its Security Profile at the same time, use
 ocular> createCpgAndSp(<inputPath>)
 ```
   
-Both the CPG and the `securityprofile` layer are created in your workspace and automatically loaded into memory. The sp.bin.zip file contains the SP in a binary format.
+Both the CPG and the `securityprofile` layer are created in your workspace and automatically loaded into memory. The sp.bin.zip file contains the Security Profile in a binary format.
 
 ### Creating a CPG that Includes Objects Organized by Namespaces
 

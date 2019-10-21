@@ -12,6 +12,8 @@ The process for quickly starting with ShiftLeft Ocular is:
 
 4. [Create the Code Property Graph (CPG)](create-cpg.md).
 
-5. [Explore your workspace](manage-workspace.md).
+5. [Generate the Security Profile](generate-sp.md).
 
-6. [Uncover your application's attack surface](../use-cases/attack-surface.md)
+6. [Explore your workspace](manage-workspace.md).
+
+7. [Uncover your application's attack surface](../use-cases/attack-surface.md)
