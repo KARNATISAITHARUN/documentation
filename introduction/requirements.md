@@ -28,7 +28,6 @@ Application Type | **Java 7+**, **Scala 2.12+**
 Component | Requirement
 --- | ---
 System | Linux, MacOS X, Windows
-JVM | 64-bit **JRE** version **8** Update 20+ (Java 9 is not currently supported). 
 
 To verify that you are running the supported Java version, use the `java -version` command.
 
@@ -44,7 +43,7 @@ Component | Requirement
 --- | ---
 System | Linux, MacOS X, Windows
 Application Type | **Java 7** through **Java 11**. 
-Build environment | Linux or Mac with **Java 8** installed locally and with 16GB of memory available.
+Build environment | Linux or Mac with 64-bit **JRE** version **8** Update 20+ (Java 9 is not currently supported) installed locally.
 
 Analysis should be performed for each code commit or build of the application. You can automate analysis submissions using your preferred CI/CD system ([Bamboo](../using-inspect-protect/integrating-with-shiftleft/integrating-bamboo-builds.md), CircleCI, [GoCD](../using-inspect-protect/integrating-with-shiftleft/integrating-gocd-builds.md), [Jenkins](../using-inspect-protect/integrating-with-shiftleft/integrating-jenkins-builds/integrating-jenkins-builds.md), [Travis](../using-inspect-protect/integrating-with-shiftleft/integrating-travis-builds.md), [TeamCity](../using-inspect-protect/integrating-with-shiftleft/integrating-teamcity-builds.md), etc.).
 
