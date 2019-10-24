@@ -85,7 +85,7 @@ def checkMisra2012_224() {
                              .parameter
                              .argument
                              .order(2)
-                             .literal
+                             .isLiteral
                              .code("\"r\"")
                            )
                     .methodReturn
