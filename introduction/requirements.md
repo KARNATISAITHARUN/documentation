@@ -29,8 +29,6 @@ Component | Requirement
 --- | ---
 System | Linux, MacOS X, Windows
 
-To verify that you are running the supported Java version, use the `java -version` command.
-
 ## Requirements for ShiftLeft Inspect
 
 [ShiftLeft Inspect](products.md) has specific requirements for applications written in Java, Scala and .NET. 
