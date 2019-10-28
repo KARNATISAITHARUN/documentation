@@ -36,7 +36,7 @@ Then each time you start ShiftLeft Ocular, append the command `-J-Xmx<heapsize>`
 
 ## Manually Provisioning Your Servers
 
-ShiftLeft Ocular determines the amount of memory needed and presents the following (example) information when you [create a CPG](create-cpg.md) or [load a CPG](working-with-cpg.md): 
+ShiftLeft Ocular determines the amount of memory needed and presents the following (example) information when you [create and load a CPG](../getting-started/create-cpg.md): 
 
 ```
 createCpg("someBigApp.jar")

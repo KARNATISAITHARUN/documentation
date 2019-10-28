@@ -33,7 +33,7 @@ The command creates the new Policy file and imports default definitions, as decl
 
 Develop your application-specific dictionary by editing the `my-app-dictionary.policy` file with your own unique sensitive-data directives.
 
-As defined in the ShiftLeft [Policy Language](policy-language.md), sensitive-data directives have the form
+As defined in the [ShiftLeft Policy Language](policy-language.md), sensitive-data directives have the form
 
 ```
 DATA $group = VAR $term1, ..., $term_n

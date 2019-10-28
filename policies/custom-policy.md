@@ -1,10 +1,10 @@
 # Creating a Custom Policy
 
-ShiftLeft Ocular users can create custom Policies, for example to exclude parts of a default Policy that does not apply to, and to introduce additional knowledge about, your application. 
+ShiftLeft Ocular users can create custom Policies, for example to exclude parts of a default Policy that does not apply to, and to introduce additional knowledge about, your application. Custom policies are especially useful in investigating data flows
 
 A common use of custom Policies is to use ShiftLeft Ocular to examine and investigate your code, create a custom Policy tuned to your application, and then automatically analyze and report on these vulnerabilities using ShiftLeft Inspect. For example, to [identify sensitive data variables](policy-sensitive-data.md).
 
-Policies are written in the ShiftLeft [Policy Language](policy-language.md). Policies are stored under organization-bound domains.
+Policies are written in the [ShiftLeft Policy Language](policy-language.md). Policies are stored under organization-bound domains.
 
 A new custom Policy is stored in the file defined by the `path-to-policy-file` argument, or printed to standard output if the argument is omitted.
 
@@ -18,7 +18,7 @@ ShiftLeft Ocular Policies are located in the directory
 
 Custom Policies should be saved in a unique directory in `ocular/policy/static`. 
 
-Note that if you edit a Policy file, you must [reload your application's Code Property Graph](../using-ocular/getting-started/create-cpg.md) for the changes to take effect. 
+Note that if you edit a Policy file, you must [reload your application's Code Property Graph (CPG)](../using-ocular/getting-started/create-cpg.md) for the changes to take effect. 
 
 ## Custom Policies for ShiftLeft Inspect
 

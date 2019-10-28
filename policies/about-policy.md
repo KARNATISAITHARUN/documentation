@@ -2,7 +2,7 @@
 
 Policies are used by ShiftLeft Inspect and ShiftLeft Ocular to identify how your application communicates with the outside world, which transformations exist on data, and which information flows should be considered security violations. [Security Profiles](../using-ocular/getting-started/generate-sp.md), which automate code analysis by summarizing the vulnerabilities and data leaks present in code, are derived from Policies.
 
-ShiftLeft includes Policies that specify the most common types of vulnerabilities. In addition, you can [create custom Policies](custom-policy.md) to introduce desired security semantics, such as additional knowledge about, or to exclude parts of a default Policy that does not apply to, your application.
+ShiftLeft includes Policies that specify the most common types of vulnerabilities. In addition, you can [create custom Policies](custom-policy.md) to introduce desired security semantics, such as additional knowledge about, or to exclude parts of a default Policy that does not apply to, your application. Policies are especially useful in identifying data flows that emit vulnerabilities.
 
 Policies are written in the [ShiftLeft Policy Language](policy-language.md).
 

@@ -1,9 +1,9 @@
 # Running ShiftLeft Protect
 
-Before using ShiftLeft Protect, make sure you have met all [product requirements](../../introduction/requirements.md) and are [authenticated to your ShiftLeft tenant](../using-cli/authenticating.md).
+Before using ShiftLeft Protect, make sure you have met all [product requirements](../../introduction/requirements.md#requirements-for-shiftleft-protect) and are [authenticated to your ShiftLeft tenant](../using-cli/authenticating.md).
 
-You use the [ShiftLeft Command Line Interface (CLI)](../using-cli/cli-reference.md) to run ShiftLeft Protect. Running ShiftLeft Protect requires previous analysis of the target application using [ShiftLeft Inspect](../.../introduction/products). This allows ShiftLeft Protect to generate instrumentation custom tailored to the specific version of your application. Once ShiftLeft Protect is running, you should [verify connectivity](#verifying-connectivity).
-You may also want to [configure ShiftLeft Protect](protect-java/configure-microagent.md) for your environment.
+You use the [ShiftLeft Command Line Interface (CLI)](../using-cli/cli-reference.md) to run ShiftLeft Protect. Running ShiftLeft Protect requires previous analysis of the target application using [ShiftLeft Inspect](../../introduction/products.md). This allows ShiftLeft Protect to generate instrumentation custom tailored to the specific version of your application. Once ShiftLeft Protect is running, you should [verify connectivity](#verifying-connectivity).
+You may also want to [configure ShiftLeft Protect](protect-java/configuring-the-microagent.md) for your environment.
 
 Running ShiftLeft Protect for Java applications is different than for .NET Framework applications. 
 
@@ -88,4 +88,4 @@ You can then send requests to the target application using the method of your ch
 
 ShiftLeft Protect is connected when the [ShiftLeft Dashboard](../using-dashboard/vulnerability-dashboard.md) shows the number of Instances for your application. 
 
-![Instances](img/instances.jpg)
+![Instances](img/instance.jpg)

@@ -17,7 +17,7 @@
 
 ## ShiftLeft Inspect
 
-* **[Identification of a OWASP or SANS Vulnerability](../using-inspect-protect/inspect/view-results.md#identifying-and-getting-additional-information-on-top-owasp-and-sans-vulnerabilities)**. ShiftLeft Inspect's results now identify if a specific vulnerability is a top OWASP or SANS vulnerability.
+* **[Identification of a OWASP or SANS Vulnerability](../using-inspect-protect/using-dashboard/view-results.md#identifying-and-getting-additional-information-on-top-owasp-and-sans-vulnerabilities)**. ShiftLeft Inspect's results now identify if a specific vulnerability is a top OWASP or SANS vulnerability.
 
 * **[On-Demand and Scheduled Analysis](../using-inspect-protect/inspect/analyzing-applications.md)**. You can use ShiftLeft Inspect either on-demand for manual analysis, or scheduled for automatic and repeatable analysis.
 

@@ -149,7 +149,7 @@ JVM | `-Dshiftleft.sec.collect.attack.info`
 Environment Variable | `SHIFTLEFT_SEC_COLLECT_ATTACK_INFO`
 
  Values:
-  - `true`: Attack payloads are collected and sent to ShiftLeft's infrastructure for viewing in the [Vulnerability Dashboard Event Viewer](../../../using-inspect-protect/using-workflow/vulnerability-dashboard.md#event-details).
+  - `true`: Attack payloads are collected and sent to ShiftLeft's infrastructure for viewing in the [Vulnerability Dashboard Event Viewer](../../using-dashboard/vulnerability-dashboard.md#event-details).
   - `false`: (default)
 
 ## HTTPS Proxy Configuration

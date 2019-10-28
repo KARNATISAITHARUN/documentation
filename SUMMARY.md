@@ -2,7 +2,6 @@
 
 * [Using ShiftLeft](README.md)
 * Introduction
-  * [About ShiftLeft](introduction/about.md)
   * [ShiftLeft Products](introduction/products.md)
   * [Language Support](introduction/language-support.md)
   * [Compliance](introduction/compliance.md)
@@ -42,7 +41,7 @@
     * [Identifying Incorrect or Zero Memory Allocation Bugs in C](using-ocular/tutorials/c-allocation-bugs.md)
     * [Using ShiftLeft Ocular with MISRA C Applications](using-ocular/tutorials/misra-c.md)
     * [Java Vulnerable Lab](using-ocular/tutorials/java-vuln.md)
-    * [Using ShiftLeft Ocular with JSP](using-ocular/tutorials/jsp.md)
+    * [Using ShiftLeft Ocular with JSP](using-ocular/tutorials/ocular-jsp.md)
     * [Debugging ShiftLeft Ocular Scripts with JDB](using-ocular/tutorials/debug-with-jdb.md)
   * Configuring and Extending ShiftLeft Ocular
     * [Identifying Application Code and Dependencies](using-ocular/configure-extend/identify-code-dependencies.md)
@@ -101,6 +100,7 @@
   * [Use Case: Identifying Sensitive Data Variables](policies/policy-sensitive-data.md)
   * [Use Case: Excluding Vulnerabilities with a Sanitization Function](policies/policy-sanitization-function.md)
 * Monthly Updates
+  * [October 2019](release-notes/october-2019.md)
   * [September 2019](release-notes/september-2019.md)
   * [August 2019](release-notes/august-2019.md)
   * [July 2019](release-notes/july-2019.md)

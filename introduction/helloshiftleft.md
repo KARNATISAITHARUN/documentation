@@ -33,7 +33,7 @@ sl run
 
 ### Triggering HelloShiftLeft Activity
 
-Use the following script (in a separate terminal window) to trigger HelloShiftLeft activity, and view that activity in the [ShiftLeft Dashboard](../using-inspect-protect/using-workflow/vulnerability-dashboard.md).
+Use the following script (in a separate terminal window) to trigger HelloShiftLeft activity, and view that activity in the [ShiftLeft Dashboard](../using-inspect-protect/using-dashboard/vulnerability-dashboard.md).
 
 ```
 curl -s localhost:8081/customers/1 >/dev/null ;

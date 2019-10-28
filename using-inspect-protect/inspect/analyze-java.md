@@ -2,7 +2,7 @@
 
 Make sure that you have successfully built the application using a supported build tool (maven, gradle, sbt) before you submit the application to ShiftLeft Inspect for analysis. 
 
-For Java (including JSP) and Scala applications, use the following [ShiftLeft CLI](../using-cli/cli-reference.md) command
+For Java (including JSP) and Scala applications, use the following [ShiftLeft Command Line Interface (CLI)](../using-cli/cli-reference.md) command
 
 ```
 sl analyze --app <name> --java <path>

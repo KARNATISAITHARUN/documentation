@@ -12,7 +12,9 @@ ShiftLeft has specific requirements for:
 
 ## Requirements for ShiftLeft Ocular
 
-[ShiftLeft Ocular](products.md) runs on top of the Java virtual machine. Please make sure you have a Java Runtime Environment >= 1.8 installed.
+[ShiftLeft Ocular](../using-ocular/about/ocular-features.md) runs on top of the Java virtual machine. Please make sure you have a Java Runtime Environment >= 1.8 installed. There are specific requirements for applications written in Java and Scala.
+
+### Java and Scala Requirements for ShiftLeft Ocular
 
 For Java and Scala, you can examine only compiled application bytecode (not source code) using ShiftLeft Ocular. This means that for Java and Scala applications, you **must** successfully build your application using a supported build tool beforehand. 
 
@@ -23,7 +25,7 @@ Application Type | **Java 7+**, **Scala 2.12+**
 
 ## ShiftLeft CLI Requirements
 
-[The ShiftLeft CLI](products.md) requires a local installation of a supported Java version. The ShiftLeft CLI host must allow outbound connections on the specified port.
+[The ShiftLeft CLI](../using-inspect-protect/using-cli/cli-reference.md) requires a local installation of a supported Java version. The ShiftLeft CLI host must allow outbound connections on the specified port.
 
 Component | Requirement
 --- | ---
@@ -31,7 +33,7 @@ System | Linux, MacOS X, Windows
 
 ## Requirements for ShiftLeft Inspect
 
-[ShiftLeft Inspect](products.md) has specific requirements for applications written in Java, Scala and .NET. 
+[ShiftLeft Inspect](../using-inspect-protect/inspect/analyzing-applications.md) has specific requirements for applications written in Java, Scala and .NET. 
 
 ### Java Requirements for ShiftLeft Inspect
 
@@ -83,7 +85,7 @@ To verify whether a .NET Framework target can be built with MSBuild 15.0:
 
 ## Requirements for ShiftLeft Protect
 
-[ShiftLeft Protect](products.md) has requirements for applications written in Java and .NET Framework. Support for .NET Core is planned for a future date.
+[ShiftLeft Protect](../using-inspect-protect/protect/securing-applications.md) has requirements for applications written in Java and .NET Framework. Support for .NET Core is planned for a future date.
 
 ### Java Requirements for ShiftLeft Protect
 
@@ -109,7 +111,7 @@ System | Windows
 
 ## Browser Requirements
 
-ShiftLeft supports the following browsers for accessing, viewing and interacting with the [ShiftLeft Dashboard](products.md):
+ShiftLeft supports the following browsers for accessing, viewing and interacting with the [ShiftLeft Dashboard](../using-inspect-protect/using-dashboard/vulnerability-dashboard.md):
 
 * Google Chrome (tested with v61, v62)
 * Mozilla Firefox (tested with v57, v58b)

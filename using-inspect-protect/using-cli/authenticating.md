@@ -2,7 +2,7 @@
 
 To use ShiftLeft Inspect and ShiftLeft Protect, you must first authenticate with ShiftLeft. There are two methods for authenticating, by using:
 
-* [The ShiftLeft CLI](#using-the-shiftleft-cli-to-authenticate) 
+* [The ShiftLeft Command Line Interface (CLI)](#using-the-shiftleft-cli-to-authenticate) 
 * [Environment Variables](#using-environment-variables-to-authenticate)
 
 The first time you log into ShiftLeft, if you are running ShiftLeft on either Linux or MacOS X, you obtain your authentication credentials (organization ID and access token) from the **Welcome** page of the ShiftLeft Dashboard. 

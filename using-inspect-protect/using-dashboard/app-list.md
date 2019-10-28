@@ -1,6 +1,6 @@
 # The Application List
 
-The Application List is your entry point into the ShiftLeft UI, which displays security quality metrics and vulnerabilities resulting from ShiftLeft's static and/or runtime analysis of your applications. 
+The Application List is your entry point into the ShiftLeft UI, which displays security quality metrics and vulnerabilities resulting from ShiftLeft's static analysis and/or runtime monitoring of your applications. 
 
 The Application List provides:
 
@@ -10,7 +10,7 @@ The Application List provides:
 * [Deleting an application from ShiftLeft](#deleting-an-application-from-shiftleft)
 * [Adding an application to ShiftLeft](#adding-an-application-to-shiftleft)
 
-## Accessing the global Vulnerabilities Dashboard
+## Accessing the Global Vulnerabilities Dashboard
 
 Clicking **Vulnerabilities** from the Application List displays the [Vulnerabilities Dashboard](vulnerability-dashboard.md) for **all** your applications. 
 
@@ -18,17 +18,25 @@ Clicking **Vulnerabilities** from the Application List displays the [Vulnerabili
 
 ## Snapshot of Information on Your Applications
 
-The Application List provides a snapshot of information on your applications. You can immediately see the list of applications in ShiftLeft, the number and type of vulnerabilities for each application, and if applicable, the number and type of security events for an application.
+The Application List provides a snapshot of information on your applications. You can immediately see the list of applications in ShiftLeft, the number and type of vulnerabilities for each application discovered by ShiftLeft Inspect, and if applicable, the number and type of security events identified for an application by ShiftLeft Protect.
 
 ![Application List](img/apps-list.jpg)
 
-The exclamation point (!) associated with an application indicates a message. Clicking on the symbol displays information on [analysis results](view-results.md#analysis-results-notification).
+### Status
 
-The question mark (?) associated with an application, identifies an application that is currently not being monitored and secured by ShiftLeft Protect, and therefore does not include information on the number and type of security events for the application.
+The Application List also displays, in the Status column, icons that indicates the status of your application's analysis and runtime monitoring.
+
+Icon | Description
+--- | ---
+![](img/exclamation-point.jpg) | Denotes a message. Hovering on the exclamation point displays information on [analysis results](view-results.md#status-of-analysis-results).
+![](img/question-mark.jpg) | Identifies an application that is currently not being monitored and secured by ShiftLeft Protect, and therefore does not include up-to-date information on the number and type of security events for the application.
+![](img/status-icon1.jpg) | Indicates that an application is still being analyzed.
+![](img/status-icon2.jpg) | Shows that there are partial results for an application.
+![](img/status-icon3.jpg) | Indicates the analysis of an application has failed.
 
 ## Drilling Down on an Application
 
-To find a specific application in your Application List, or narrow the applications displayed, use the **search or filter** field.
+To find a specific application in your Application List, or to narrow the applications displayed, use the **search or filter** field.
 
 To see information on a specific application, click on the application of interest from the Application List. The [Vulnerabilities Dashboard](vulnerability-dashboard.md) for that application is opened. 
 
@@ -40,7 +48,7 @@ To delete an application from ShiftLeft:
 
    A x appears for each application in the list.
    
-   ![Deleting an Application from the List](img/delete-app.jpg)
+   ![Deleting an Application from the List](img/delete-apps.jpg)
    
 2. Click on the x associated with the application you want to delete.
 

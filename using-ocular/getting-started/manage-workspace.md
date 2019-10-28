@@ -1,6 +1,6 @@
 # Managing Your Workspace
 
-A workspace is a container for all data persisted by ShiftLeft Ocular (on disk and in memory). Workspaces allow you to easily work with CPGs and Security Profiles, load and simultaneously work with more than one CPG, and combine queries. 
+A workspace is a container for all data persisted by ShiftLeft Ocular (on disk and in memory). Workspaces allow you to easily work with Code Property Graphs (CPG) and Security Profiles, load and simultaneously work with more than one CPG, and combine queries. 
 
 Your workspace is created the first time you use ShiftLeft Ocular to create a CPG. 
 

@@ -13,4 +13,6 @@
 `--no-cpg`| `SHIFTLEFT_NO_CPG` | Disable CPG mode.
 `--policy ID` | | The ShiftLeft Policy ID used by ShiftLeft. If not set, the default Policy is used.
 `--shiftleft-json-file` | `SHIFTLEFT_JSON_FILE=<path>` | Path of the ShiftLeft Inspect [configuration file `shiftleft.json`](../protect/json-file.md). Defaults to `shiftleft.json` (in the current working directory).
+`--tag app.group=<name>` |  | Displays in the ShiftLeft Dashboard an [application group](../../using-dashboard/view-results.md.md#grouping-application-results), made up of the individual applications or microservices of the application. 
+`--tag branch=<name>` |  | Displays in the ShiftLeft Dashboard the [application branch](../../inspect/identify-branches.md). `<name>` is the name of the branch.
 `--wait`, `-w` | `SHIFTLEFT_WAIT=true` | Wait for ShiftLeft Inspect to finish analysis before returning control.

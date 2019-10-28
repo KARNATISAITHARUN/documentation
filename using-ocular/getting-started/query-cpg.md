@@ -1,6 +1,8 @@
 # Querying the Code Property Graph (CPG) and Security Profiles
 
-The strength of ShiftLeft Ocular is the ability to examine and investigate your code through the use of queries, especially custom queries which improve the quality of your results.  There are two types of queries: default queries and custom queries.
+The strength of ShiftLeft Ocular is the ability to examine your code through the use of queries, especially custom queries which improve the quality of your results.  There are two types of queries: default queries and custom queries.
+
+Note that if you are investigating data flows, it is recommended that you use a [Policy](https://docs.shiftleft.io/shiftleft/shiftleft-policies) rather than a custom query.
 
 Additional information is provided in the following articles:
 
@@ -8,7 +10,6 @@ Additional information is provided in the following articles:
 * [Use Cases](https://docs.shiftleft.io/shiftleft/using-shiftleft-ocular/use-cases)
 * [Tutorials](https://docs.shiftleft.io/shiftleft/using-shiftleft-ocular/tutorials)
 * [Enhancing the OQL](../configure-extend/enhance-oql.md)
-* [Policies](https://docs.shiftleft.io/shiftleft/shiftleft-policies)
 
 ## Default Queries
 
@@ -25,7 +26,7 @@ With OQL custom queries you can:
 * [Browse query results](#browsing-query-results)
 * [Write query results to a file](#writing-query-results-to-a-file)
 
-### Querying the CPG
+## Querying the CPG
 
 Using the OQL, you can run a query on either the active CPG or on all CPGs loaded into memory in your workspace. And you can combine queries from multiple CPGs.
 

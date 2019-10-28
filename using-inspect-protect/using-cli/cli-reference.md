@@ -14,13 +14,13 @@ Refer to [Global Options](options/global-options.md) for information on options 
 
 Command | Description
 --- | ---
-`analyze [<path>]` | [Analyze your application using ShiftLeft Inspect](../../using-inspect-protect/inspect/analyzing-applications.md).  `<path>` can be the path to a `.jar`, `.war`, `.ear`, `.csproj`, or `.sln` file, or it can be the path to a Java project directory.  [The `analyze` command includes options](options/analyze-options.md).
+`analyze [<path>]` | [Analyze your application using ShiftLeft Inspect](../../using-inspect-protect/inspect/analyzing-applications.md).  `<path>` can be the path to a `.jar`, `.war`, `.ear`, `.csproj`, or `.sln` file, or it can be the path to a Java project directory.  The [`analyze` command includes options](options/analyze-options.md).
 `auth` | [Authenticate the CLI with your ShiftLeft account](../using-cli/authenticating.md).
 `config-file` | [Create a configuration file](../protect/json-file.md) and write it to standard output or a supplied filename. Note that the [application name and version ID options](options/config-file-options.md) are required for this command. 
 `help`, `h` | List ShiftLeft CLI commands or help for one command.
-`install [dotnet-agent]` | Install [ShiftLeft Protect for .NET](../protect/run-protect.md). [The `install` command includes options](options/install-options.md).
-`policy <command>` | Manage [custom Policies](../../policies/custom-policy.md).
-`run -- <command>` | [Run the target command with ShiftLeft Protect's Microagent](../protect/protect-java/configuring-the-microagent.md). [The `run` command includes options](options/run-options.md).
+`install [dotnet-agent]` | Install [ShiftLeft Protect for .NET](../protect/run-protect.md). The [`install` command includes options](options/install-options.md).
+`policy <command>` | [Manage custom Policies](../../policies/custom-policy.md).
+`run -- <command>` | [Run the target command with ShiftLeft Protect's Microagent](../protect/protect-java/configuring-the-microagent.md). The [`run` command includes options](options/run-options.md).
 `update [java-agent,libplugin]` | Update components of the ShiftLeft CLI, including the ShiftLeft Protect for Java Microagent (`sl update java-agent`).
 
 ## `sl policy` Commands
