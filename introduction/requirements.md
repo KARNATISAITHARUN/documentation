@@ -12,7 +12,7 @@ ShiftLeft has specific requirements for:
 
 ## Requirements for ShiftLeft Ocular
 
-[ShiftLeft Ocular](../using-ocular/about/ocular-features.md) runs on top of the Java virtual machine. Please make sure you have a Java Runtime Environment >= 1.8 installed. There are specific requirements for applications written in Java and Scala.
+[ShiftLeft Ocular](../using-ocular/about/ocular-features.md) runs on top of the Java virtual machine. Please make sure you have a Java Runtime Environment >= 1.8 installed. There are specific requirements for applications written in Java and Scala, and recommended software for Windows users.
 
 ### Java and Scala Requirements for ShiftLeft Ocular
 
@@ -22,6 +22,10 @@ Component | Requirement
 --- | ---
 System | Linux, MacOS X, Windows
 Application Type | **Java 7+**, **Scala 2.12+**
+
+### Recommended Software Windows Users of ShiftLeft Ocular 
+
+Windows users are recommended to install [7-zip](https://www.7-zip.org/), an open-source file archiver. 7-zip is known to be much faster than the built-in PowerShell cmdlets. Once installed,  7-zip is automatically detected and used by ShiftLeft Ocular.
 
 ## ShiftLeft CLI Requirements
 
