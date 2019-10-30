@@ -1,35 +1,43 @@
 # Integrating with GoCD
 
-For CoCD you need to create a script file as part of the build project. With GoCD, all builds occur on agents: either containers or instances. 
+GoCD is an open source CD tool. To integrate GoCD with ShiftLeft Inspect, you need to create a script file as part of the build project. With GoCD, all builds occur on agents: either containers or instances. 
+
+The process of integrating GoCD with ShiftLeft Inspect is.
+
+1. [Install the ShiftLeft Command Line Interface (CLI)](#install-shiftleft-cli).
+2. [Copy the SL binary to the agent image](#copy-the-sl-binary-to-the-agent-image).
+3. [Configure the build](#configure-the-build).
+
 
 ## GoCD Integration Prerequisites
 
-To integrate GoCD builds with ShiftLeft, please adhere to the following prerequisites:
+The prerequisites for integrating GoCD application builds are:
 
-- [GoCD installation](https://docs.gocd.org/current/installation/) (server and agent).
-- Supported application and build tool (see [ShiftLeft Inspect requirements](../../introduction/requirements.md)).
-- Familiarity with [ShiftLeft Inspect and Protect](../../using-inspect-protect/inspect-protect-quick-start.md).
-- ShiftLeft account credentials: **Organization ID** and **Access Token**.
-Initially these credentials will be provided to you by ShiftLeft. Once you have established your account you can copy them from the **My Profile** page at the ShiftLeft Dashboard.
+- [GoCD installation](https://www.gocd.org/download/#osx).
+- [ShiftLeft requirements](../../introduction/requirements.md).
+- Familiarity with [ShiftLeft Inspect](../../using-inspect-protect/inspect-protect-quick-start.md).
+- ShiftLeft account credentials: **Organization ID** and **Access Token**. When you first log into ShiftLeft, these credentials are provided. Once you have established your account, you can obtain your Organization ID and Access Token from the [**Account Settings** page of the ShiftLeft Dashboard](https://www.shiftleft.io/user/profile).
 
-![Get ShiftLeft Account Credentials](img/copy-org.png)
+![ShiftLeft Account Credentials](img/credentials.jpg)
 
-## Install ShiftLeft CLI and Authenticate
 
-To integrate ShiftLeft with GoCD builds, install the ShiftLeft CLI on the host where the GoCD server is installed and authenticate with ShiftLeft: 
+## Install ShiftLeft CLI
+
+To install the ShiftLeft CLI:
 
 1. [Install the ShiftLeft CLI](../using-cli/install-cli.md) on the host where GoCD server is installed.
+2. [Authenticate with ShiftLeft](../using-cli/authenticating.md).
 2. Log in to GoCD server as an administrator. 
-3. Create the following **Environment variables**:
- * Name: `SHIFTLEFT_ORG_ID`| Value: **Organization ID**
- * Name: `SHIFTLEFT_ACCESS_TOKEN`| Value: **Access Token**
+3. Create the following **Environment variables**
+ * Name: `SHIFTLEFT_ORG_ID`| Value: <**Organization ID**>
+ * Name: `SHIFTLEFT_ACCESS_TOKEN`| Value: <**Access Token**>
 
-See the article [Authenticating with ShiftLeft](../using-cli/authenticating.md) for more information.
+## Copy the SL Binary to the Agent Image
 
-## Copy the SL binary to the agent image
+To copy the SL binary to the agent image
 
 1. Go into a particular GoCD agent image and add the `sl` binary to the agent path at `/usr/local/bin`.
-2. Use a terminal editor to add a shell script that consists of these two lines:
+2. Use a terminal editor to add a shell script that consists of these two lines
 
    ```bash
    #!/bin/sh
@@ -37,7 +45,7 @@ See the article [Authenticating with ShiftLeft](../using-cli/authenticating.md) 
    /usr/local/bin/sl analyze
    ```
 
-   Or, to use CPG-mode for analysis:
+   Or use the CPG mode for analysis
 
    ```bash
    #!/bin/sh

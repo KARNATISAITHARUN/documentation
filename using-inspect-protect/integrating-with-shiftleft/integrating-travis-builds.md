@@ -1,28 +1,30 @@
 # Integrating with Travis
 
-This section describes how to integrate Travis with ShiftLeft. 
+Travis CI is a hosted continuous integration service used to build and test software projects hosted at GitHub. You can integrate your Travis project with ShiftLeft Inspect for automated code analysis. To do so, configure each Travis project to execute the ShiftLeft Inspect shell command [`sl analyze`](../inspect/analyzing-applications.md).
 
 ## Travis Integration Prerequisites
 
-To integrate Travis builds with ShiftLeft, please adhere to the following prerequisites:
+The prerequisites for integrating Travis application builds are:
 
-- [Travis instance](https://travis-ci.org/) (hosted or on-prem). 
-- Supported application and build tool (see [ShiftLeft Inspect requirements](../../introduction/requirements.md)).
-- Familiarity with [ShiftLeft Inspect and Protect](../../using-inspect-protect/inspect-protect-quick-start.md).
-- ShiftLeft account credentials: **Organization ID** and **Access Token**.
-Initially these credentials will be provided to you by ShiftLeft. Once you have established your account you can copy them from the **My Profile** page at the ShiftLeft Dashboard.
+- [Travis installation](https://travis-ci.org/).
+- [ShiftLeft requirements](../../introduction/requirements.md).
+- Familiarity with [ShiftLeft Inspect](../../using-inspect-protect/inspect-protect-quick-start.md).
+- ShiftLeft account credentials: **Organization ID** and **Access Token**. When you first log into ShiftLeft, these credentials are provided. Once you have established your account, you can obtain your Organization ID and Access Token from the [**Account Settings** page of the ShiftLeft Dashboard](https://www.shiftleft.io/user/profile).
 
-![Get ShiftLeft Account Credentials](img/copy-org.png)
+![ShiftLeft Account Credentials](img/credentials.jpg)
 
-## Travis Integration Instructions
 
-You have a couple of options for integrating Travis builds with ShiftLeft. The first option is applicable to both editions of Travis: hosted and on-prem. The second option can only be used with Travis Enterprise (on-prem).
+## Travis Integration Options
 
-### Option 1: Configure the `travis.yml` file
+You can integrate Travis builds with ShiftLeft by either configuring the yaml file or by customizing the container.
+
+### Configuring the `travis.yml` File
+
+This method can be used with both the hosted and on-prem Travis versions.
 
 The typical approach is to configure the CLI installation and `sl analyze` using the `travis.yml` file, which means you can use either the hosted or on-prem edition of Travis.
 
-Here is an example `travis.yml` file that demonstrates how to integrate ShiftLeft with Travis:
+An example of the `travis.yml` file that demonstrates how to integrate ShiftLeft with Travis is
 
 ```yaml
 language: java
@@ -40,9 +42,11 @@ after_script:
  - <RUN CLI & EXECUTE COMMAND sl analyze> 
 ```
 
-See the article [Authenticating with ShiftLeft](../using-cli/authenticating.md) for more information on using environment variables for authentication. See also the [Travis documentation](https://docs.travis-ci.com/user/environment-variables#Default-Environment-Variables).
+See the [Travis documentation](https://docs.travis-ci.com/user/environment-variables#Default-Environment-Variables).
 
-### Option 2: Customize the container
+### Customizing the Container
+
+This method can only be used with Travis Enterprise (on-prem) version.
 
 Each Travis build uses an ephemeral Linux container (Docker). If desired you could modify the build containers to do the `install` (CLI installation) and `after_install` (`analyze`) steps. This involves editing the Dockerfile as described in the [Travis documentation](https://docs.travis-ci.com/user/enterprise/build-images/#Customizing-build-images).
 

@@ -16,6 +16,17 @@ There are two ways to integrate ShiftLeft with Docker:
 
 - **Dockerfile**: The Dockerfile used to build the target image. In order to provision ShiftLeft Inspect and ShiftLeft Protect in the target image, the Dockerfile is customized prior to using the `docker build` command.
 
+## Docker Integration Prerequisites
+
+The prerequisites for integrating Docker containers are:
+
+- [Docker installation](https://www.docker.com/).
+- [ShiftLeft requirements](../../introduction/requirements.md).
+- Familiarity with [ShiftLeft Inspect and ShiftLeft Protect](../../using-inspect-protect/inspect-protect-quick-start.md).
+- ShiftLeft account credentials: **Organization ID** and **Access Token**. When you first log into ShiftLeft, these credentials are provided. Once you have established your account, you can obtain your Organization ID and Access Token from the [**Account Settings** page of the ShiftLeft Dashboard](https://www.shiftleft.io/user/profile).
+
+![ShiftLeft Account Credentials](img/credentials.jpg)
+
 ## Container Only Integration
 
 In this integration, both ShiftLeft Inspect and ShiftLeft Protect execute from within the container during application container run. 
@@ -69,7 +80,7 @@ CMD sl run --app MyApplication --analyze app.jar -- java -jar app.jar
 
 ## Host Plus Container Integration
 
-ShiftLeft Inspect can perform code analysis on the host immediately after the target JAR is built by your CI, and before the Docker target image is built. For example, if you are using Maven as your build system and Jenkins as the CI, code analysis can be added as a post-build step using the [Exec Maven Plugin](https://www.mojohaus.org/exec-maven-plugin/). For example, an excerpt from the `pom.xml` file for the Maven project is 
+ShiftLeft Inspect can perform code analysis on the host immediately after the target JAR is built by your CI, and before the Docker target image is built. For example, if you are using Maven as your build system and Jenkins as the CI, code analysis can be added as a post-build step using the [Exec Maven Plugin](https://www.mojohaus.org/exec-maven-plugin/). An excerpt from the `pom.xml` file for the Maven project is 
 
 ```xml
 <plugin>

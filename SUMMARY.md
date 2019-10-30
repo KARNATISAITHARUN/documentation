@@ -86,6 +86,7 @@
       * [Configure Final Build Step](using-inspect-protect/integrating-with-shiftleft/integrating-jenkins-builds/configure-final-build-step.md)
       * [Configure Post Build Task](using-inspect-protect/integrating-with-shiftleft/integrating-jenkins-builds/configure-post-build-task.md)
       * [Verify Jenkins Integration](using-inspect-protect/integrating-with-shiftleft/integrating-jenkins-builds/verify-jenkins-integration.md)
+    * [Integrating with CircleCI](using-inspect-protect/integrating-with-shiftleft/integrating-circleci.md)
     * [Integrating with Bamboo](using-inspect-protect/integrating-with-shiftleft/integrating-bamboo-builds.md)
     * [Integrating with Docker](using-inspect-protect/integrating-with-shiftleft/integrating-docker.md)
     * [Integrating with GoCD](using-inspect-protect/integrating-with-shiftleft/integrating-gocd-builds.md)

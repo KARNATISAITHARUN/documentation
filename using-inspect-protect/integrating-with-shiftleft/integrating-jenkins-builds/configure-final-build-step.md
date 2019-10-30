@@ -5,7 +5,7 @@ The instructions for integrating ShiftLeft with Jenkins using a final build step
 ## Prerequisites
 
 1. Review [Jenkins requirements](integrating-jenkins-builds.md).
-2. [Install the ShiftLeft CLI](../../using-cli/install-cli.md) on the host where Jenkins is installed.
+2. [Install the ShiftLeft Command Line Interface (CLI)](../../using-cli/install-cli.md) on the host where Jenkins is installed.
 3. Create Jenkins environment variables to [authenticate](../../using-cli/authenticating.md) with ShiftLeft and associate Jenkins builds with your ShiftLeft tenant. 
 
 ## Freestyle Project Configuration

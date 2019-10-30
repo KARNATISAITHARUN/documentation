@@ -1,40 +1,43 @@
 # Integrating with Bamboo
 
-This section describes how to integrate Bamboo with ShiftLeft.
+Bamboo is a continuous integration and deployment tool that ties automated builds, tests and releases together in a single workflow. You can integrate your Bamboo project with ShiftLeft Inspect for automated code analysis. To do so, configure each Bamboo project to execute the ShiftLeft Inspect shell command [`sl analyze`](../inspect/analyzing-applications.md).
 
 ## Bamboo Integration Prerequisites
 
-To integrate Bamboo builds with ShiftLeft, please adhere to the following prerequisites:
+The prerequisites for integrating Bamboo application builds are:
 
 - [Bamboo installation](https://confluence.atlassian.com/bamboo/bamboo-installation-guide-289276785.html).
-- Supported application and build tool (see [ShiftLeft Inspect requirements](../../introduction/requirements.md)).
-- Familiarity with [ShiftLeft Inspect and Protect](../../using-inspect-protect/inspect-protect-quick-start.md).
-- ShiftLeft account credentials: **Organization ID** and **Access Token**.
-These credentials are provided to you by ShiftLeft. Once you have established your account you can copy them from the **My Profile** page of the ShiftLeft Dashboard.
+- [ShiftLeft requirements](../../introduction/requirements.md).
+- Familiarity with [ShiftLeft Inspect](../../using-inspect-protect/inspect-protect-quick-start.md).
+- ShiftLeft account credentials: **Organization ID** and **Access Token**. When you first log into ShiftLeft, these credentials are provided. Once you have established your account, you can obtain your Organization ID and Access Token from the [**Account Settings** page of the ShiftLeft Dashboard](https://www.shiftleft.io/user/profile).
 
-![Get ShiftLeft Account Credentials](img/copy-org.png)
+![ShiftLeft Account Credentials](img/credentials.jpg)
 
-## Install the ShiftLeft Command Line Interface (CLI) and Authenticate
+## Configuring the Bamboo Build
 
-To install the CLI on the Bamboo host and authenticate with ShiftLeft:
+You use the CLI to configure Bamboo:
 
-1. [Install the CLI](../../using-inspect-protect/using-cli/install-cli.md) on the Bamboo host.
-2. Log in to the Bamboo server as an administrator. 
-3. Create the following **Environment variables**:
- * Name: `SHIFTLEFT_ORG_ID`| Value: Paste your **Organization ID**
- * Name: `SHIFTLEFT_ACCESS_TOKEN`| Value: Paste your **Access Token**
+1. [Install the ShiftLeft Command Line Interface (CLI)](../../using-inspect-protect/using-cli/install-cli.md) on the Bamboo host.
+2. Log into the Bamboo server as an administrator. 
+3. Create the following **Environment variables**
 
-See the article [Authenticating with ShiftLeft](../using-cli/authenticating.md) for more information.
+  * Name: `SHIFTLEFT_ORG_ID`| Value: <**Organization ID**>
+  * Name: `SHIFTLEFT_ACCESS_TOKEN`| Value: <**Access Token**>
 
-## Configure the Build
+4. Create a shell script in Bamboo
 
-Create a shell script in Bamboo:
-
-1. Select the project.
-2. Go to the **Tasks** tab.
-3. Add a new task.
-4. Select **Script**.
-5. Make sure the task you are adding is the last task in the list of build tasks.
-6. Enter a task description, such as: **SL Analyze**.
-7. Enter the script body: `/usr/local/bin/sl analyze` or `/usr/local/bin/sl analyze - -cpg`.
-8. Enter working subdirectory: `/directory/where/built/project/packages/are/located`.
+   a. Select the project.
+   
+   b. Go to the **Tasks** tab.
+   
+   c. Add a new task.
+   
+   d. Select **Script**.
+   
+   e. Make sure the task you are adding is the last task in the list of build tasks.
+   
+   f. Enter a task description, such as **SL Analyze**.
+   
+   g. Enter the script body `/usr/local/bin/sl analyze` or `/usr/local/bin/sl analyze - -cpg`.
+   
+   h. Enter working subdirectory `/directory/where/built/project/packages/are/located`.

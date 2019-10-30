@@ -1,29 +1,34 @@
 # Integrating with TeamCity
 
-Instructions for integrating TeamCity with ShiftLeft for code analysis and profiling.
+TeamCity is a build management and continuous integration server. You can integrate your TeamCity project with ShiftLeft Inspect for automated code analysis and profiling. To do so, configure each TeamCity project to execute the ShiftLeft Inspect shell command [`sl analyze`](../inspect/analyzing-applications.md).
+The process of integrating GoCD with ShiftLeft Inspect is.
+
+1. [Install the ShiftLeft Command Line Interface (CLI)](#install-shiftleft-cli).
+2. [Configure the build](#configure-the-build).
+
 
 ## TeamCity Integration Prerequisites
 
-To integrate TeamCity builds with ShiftLeft, please adhere to the following prerequisites:
+The prerequisites for integrating TeamCity application builds are:
 
 - [TeamCity installation](https://www.jetbrains.com/teamcity/download/).
-- Supported application and build tool (see [ShiftLeft Inspect requirements](../../introduction/requirements.md)).
-- Familiarity with [ShiftLeft Inspect and Protect](../../using-inspect-protect/inspect-protect-quick-start.md).
-- ShiftLeft account credentials: **Organization ID** and **Access Token**.
-Initially these credentials will be provided to you by ShiftLeft. Once you have established your account you can copy them from the **My Profile** page at the ShiftLeft Dashboard.
+- [ShiftLeft requirements](../../introduction/requirements.md).
+- Familiarity with [ShiftLeft Inspect and ShiftLeft Protect](../../using-inspect-protect/inspect-protect-quick-start.md).
+- ShiftLeft account credentials: **Organization ID** and **Access Token**. When you first log into ShiftLeft, these credentials are provided. Once you have established your account, you can obtain your Organization ID and Access Token from the [**Account Settings** page of the ShiftLeft Dashboard](https://www.shiftleft.io/user/profile).
 
-![Get ShiftLeft Account Credentials](img/copy-org.png)
+![ShiftLeft Account Credentials](img/credentials.jpg)
 
-## Install the CLI and Authenticate
 
-To integrate ShiftLeft with TeamCity builds:
+## Install ShiftLeft CLI
 
-1. [Install the ShiftLeft CLI](../using-cli/install-cli.md) on the TeamCity host.
-2. Create the following **Environment variables** in TeamCity:
- * Name: `SHIFTLEFT_ORG_ID`| Value: Paste your **Organization ID**
- * Name: `SHIFTLEFT_ACCESS_TOKEN`| Value: Paste your **Access Token**
+To install the ShiftLeft CLI:
 
-See the article [Authenticating with ShiftLeft](../using-cli/authenticating.md) for more information. See also the [TeamCity documentation](https://confluence.jetbrains.com/display/TCD65/Configuring+Build+Parameters#ConfiguringBuildParameters-SystemPropertiesandEnvironmentVariables).
+1. [Install the ShiftLeft CLI](../using-cli/install-cli.md) on the host where GoCD server is installed.
+2. [Authenticate with ShiftLeft](../using-cli/authenticating.md).
+2. Log in to GoCD server as an administrator. 
+3. Create the following **Environment variables**
+ * Name: `SHIFTLEFT_ORG_ID`| Value: <**Organization ID**>
+ * Name: `SHIFTLEFT_ACCESS_TOKEN`| Value: <**Access Token**>
 
 ## Configure the Build
 
