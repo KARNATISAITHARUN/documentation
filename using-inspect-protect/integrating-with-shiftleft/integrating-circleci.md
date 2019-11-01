@@ -36,7 +36,7 @@ To use the ShiftLeft CircleCI Orb to install and invoke CircleCI:
 
 ```yaml
 orbs:
-  shiftleft: shiftleft/shiftleft:1.0
+  shiftleft: shiftleft/shiftleft:x.y
 ```
 
 2. Use either the commands or the job provided by the Orb to analyze your application. A complete [list of available Orb options and  parameters, and the Orb source code, are available](https://circleci.com/orbs/registry/orb/shiftleft/shiftleft).
@@ -46,7 +46,7 @@ For example, to use the Orb commands
 ```yaml
 version: 2.1
 orbs:
-  shiftleft: shiftleft/shiftleft@1.0
+  shiftleft: shiftleft/shiftleft@x.y
 jobs:
   build:
     machine: true
@@ -67,7 +67,7 @@ An example of using the Orb job is
 ```yaml
 version: 2.1
 orbs:
-  shiftleft: shiftleft/shiftleft@1.0
+  shiftleft: shiftleft/shiftleft@x.y
 workflows:
   version: 2.1
   workflow:
