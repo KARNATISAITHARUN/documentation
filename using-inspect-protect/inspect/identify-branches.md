@@ -11,6 +11,6 @@ You can include branch names in the analysis results of ShiftLeft Inspect. Doing
 sl analyze --tag branch=<branchname> --app <appname> <JAR file path>
 ```
 
-The branch name becomes available from your application's Vulnerabilities Dashboard [Versions drop-down menu](../using-dashboard/view-results.md).
+The branch name becomes available from your application's [Vulnerabilities Dashboard Versions drop-down menu](../using-dashboard/view-results.md#displaying-results-by-branch-name).
 
    ![Version Menu](img/version-menu.jpg)
