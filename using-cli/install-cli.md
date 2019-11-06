@@ -1,6 +1,6 @@
 # Installing the ShiftLeft Command Line Interface (CLI)
 
-The ShiftLeft CLI is used with [ShiftLeft Inspect to analyze your application for vulnerabilities](../inspect/analyzing-applications.md) and with [ShiftLeft Protect to monitor and protect your application at runtime](../protect/run-protect.md). The tool is named `sl`. There are two methods for downloading the ShiftLeft CLI installer: 
+The ShiftLeft CLI is named `sl`. There are two methods for downloading the ShiftLeft CLI installer: 
 
 * [From the ShiftLeft Dashboard](#from-the-shiftleft-dashboard) (only Linux or MacOS X operating systems).
 * [Using the command line](#using-the-command-line). 

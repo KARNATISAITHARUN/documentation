@@ -56,7 +56,7 @@ Once loaded, the Security Profile can be accessed through the CPG. You can deter
 
 ## Investigating Security Profiles
 
-Security Profiles can be investigated [interactively and non-interactively](../about/modes.md) with ShiftLeft Ocular. The Security Profile must be loaded into memory in order for you to investigate it.
+Security Profiles can be investigated [interactively and non-interactively](../about/modes.md) with ShiftLeft Ocular. The Security Profile must be loaded into memory in order for you to investigate it. 
  
 You use the Ocular Query Language (OQL) to investigate Security Profiles, using 
 
@@ -64,4 +64,4 @@ You use the Ocular Query Language (OQL) to investigate Security Profiles, using
 ocular> cpg.finding.p.<finding>
 ```
 
-For additional information, refer to [Querying the CPG and Security Profiles](query-cpg.md).
+Refer for additional information to [Querying the CPG and Security Profiles](query-cpg.md).

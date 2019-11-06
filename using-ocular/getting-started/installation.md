@@ -1,4 +1,4 @@
-# Installing and Updating ShiftLeft Ocular
+# Licensing, Installing and Updating ShiftLeft Ocular
 
 Before installing or updating ShiftLeft Ocular, make sure you have [met all requirements](../../introduction/requirements.md). In addition, for large applications, you may want to optimize ShiftLeft Ocular performance through the appropriate combination of [memory and disk sizes](../about/ocular-memory-size.md).
 
@@ -6,9 +6,41 @@ Before installing or updating ShiftLeft Ocular, make sure you have [met all requ
 
 Once you have installed or updated ShiftLeft Ocular, you [start ShiftLeft Ocular](starting.md).
 
-## Installing ShiftLeft Ocular
+There are currently two methods for installing, licensing and updating ShiftLeft Ocular:
 
-The process of installing ShiftLeft Ocular is:
+* [Download via subscription (Beta)](#downloading-and-installing-shiftleft-ocular).
+* [Use the distribution file](#installing-shiftleft-ocular-using-the-distribution-file).
+
+## Additional Configuration for Large Projects
+
+Code analysis can require lots of memory, and unfortunately, the JVM does not pick up the available amount of memory by itself. While tuning Java memory usage is a discipline in its own right, it is usually sufficient to specify the maximum available amount of heap memory using the JVM's `-Xmx` flag. The easiest way to achieve this globally is by setting the environment variable `_JAVA_OPTS` as follows:
+
+```
+export _JAVA_OPTS="-Xmx$NG"
+```
+where `$N` is the amount of memory in gigabytes. You can add this line to your shell startup script, e.g., `~/.bashrc` or `~/.zshrc`.
+
+Refer to the article [Memory Size Recommendations](../about/ocular-memory-size.md) for more information.
+
+## Downloading and Installing ShiftLeft Ocular
+
+To download and license ShiftLeft Ocular via subscription:
+
+1. [Install the ShiftLeft Command Line Interface (CLI)](../../using-cli/install-cli.md). 
+
+2. [Authenticate with ShiftLeft](../../using-cli/authenticating.md).
+
+3. Run the CLI `sl ocular` command and options in the directory in which you want to install ShiftLeft Ocular.
+
+### Updating ShiftLeft Ocular
+
+To update ShiftLeft Ocular, run the command `sl update ocular`. 
+
+If you are updating an existing version of ShiftLeft Ocular via subscription, ShiftLeft Ocular automatically backs up the files in [your workspace](../about/ocular-features.md), including [custom Policies](../../policies/custom-policy.md). You are provided with information on the backup process, and asked to manually review any differences between the new downloaded files and existing files in the backup directory.
+
+## Installing ShiftLeft Ocular Using the Distribution File
+
+The process of installing ShiftLeft Ocular using the distribution file is:
 
 1. Unzip the Ocular distribution ZIP file provided by ShiftLeft, by issuing the following command
 
@@ -25,18 +57,8 @@ The process of installing ShiftLeft Ocular is:
 
 4. Identify where you want to install ShiftLeft Ocular (defaults to `~/bin/ocular` on Linux and MacOS X, and to `C:\Users\$USERNAME\bin\ocular` on Windows).
 
-### Additional Configuration for Large Projects
 
-Code analysis can require lots of memory, and unfortunately, the JVM does not pick up the available amount of memory by itself. While tuning Java memory usage is a discipline in its own right, it is usually sufficient to specify the maximum available amount of heap memory using the JVM's `-Xmx` flag. The easiest way to achieve this globally is by setting the environment variable `_JAVA_OPTS` as follows:
-
-```
-export _JAVA_OPTS="-Xmx$NG"
-```
-where `$N` is the amount of memory in gigabytes. You can add this line to your shell startup script, e.g., `~/.bashrc` or `~/.zshrc`.
-
-Refer to the article [Memory Size Recommendations](../about/ocular-memory-size.md) for more information.
-
-## Updating ShiftLeft Ocular
+### Updating ShiftLeft Ocular
 
 You can determine your current version of ShiftLeft Ocular by using the `version` command. To update ShiftLeft Ocular:
 

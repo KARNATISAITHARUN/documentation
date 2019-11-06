@@ -1,6 +1,6 @@
 # Securing Your Applications Using ShiftLeft Protect
 
-ShiftLeft Protect secures applications against exploitation of vulnerabilities by leveraging code informed insights discovered by [ShiftLeft Inspect](../../introduction/products.md) to create runtime security specifications. This approach allows ShiftLeft Protect to operate with minimal footprint and overhead.
+ShiftLeft Protect secures applications against exploitation of vulnerabilities by leveraging code informed insights discovered by [ShiftLeft Inspect](../inspect/analyzing-applications.md) to create runtime security specifications. This approach allows ShiftLeft Protect to operate with minimal footprint and overhead.
 
 The ShiftLeft Protect process is:
 

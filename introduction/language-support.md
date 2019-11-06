@@ -1,7 +1,7 @@
 # ShiftLeft Language Support
 
 
-| Language  | ShiftLeft Ocular | ShiftLeft Inspect | ShiftLeft Protect |
+| Language  | [ShiftLeft Ocular](../using-ocular/about/ocular-features.md) | [ShiftLeft Inspect](../using-inspect-protect/inspect/analyzing-applications.md) | [ShiftLeft Protect](../using-inspect-protect/protect/securing-applications.md) |
 | :---         |     :---:      |   :---: |   :---: |
 | C  | X  |   |   |
 | C++  | X  |   |   |

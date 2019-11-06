@@ -1,6 +1,6 @@
 # Integrating with Jenkins
 
-Jenkins is an open source automation server used in the CI process. You can integrate your Jenkins project with ShiftLeft Inspect for automated code analysis. To do so, configure each Jenkins project to execute the ShiftLeft Inspect shell command [`sl analyze`](../inspect/analyzing-applications.md).
+Jenkins is an open source automation server used in the CI process. You can integrate your Jenkins project with ShiftLeft Inspect for automated code analysis. To do so, configure each Jenkins project to execute the ShiftLeft Inspect shell command [`sl analyze`](../../inspect/analyzing-applications.md).
 
 [A video](https://youtu.be/bI1GATsD5mc) demonstrates how to integrate ShiftLeft with an existing Jenkins freestyle project using the [final build step](configure-final-build-step.md) method.
 
@@ -18,8 +18,8 @@ Configuration Option | Description
 The prerequisites for integrating Jenkins application builds are:
 
 - [Jenkins installation](https://jenkins.io/download/).
-- [ShiftLeft requirements](../../introduction/requirements.md).
-- Familiarity with [ShiftLeft Inspect](../../using-inspect-protect/inspect-protect-quick-start.md).
+- [ShiftLeft requirements](../../../introduction/requirements.md).
+- Familiarity with [ShiftLeft Inspect](../../../using-inspect-protect/inspect-protect-quick-start.md).
 - ShiftLeft account credentials: **Organization ID** and **Access Token**. When you first log into ShiftLeft, these credentials are provided. Once you have established your account, you can obtain your Organization ID and Access Token from the [**Account Settings** page of the ShiftLeft Dashboard](https://www.shiftleft.io/user/profile).
 
 ![ShiftLeft Account Credentials](../img/credentials.jpg)
@@ -28,7 +28,7 @@ The prerequisites for integrating Jenkins application builds are:
 
 To integrate Jenkins:
 
-1. [Install the ShiftLeft Command Line Interface (CLI)](../../using-cli/install-cli.md) on the host where Jenkins is installed.
+1. [Install the ShiftLeft Command Line Interface (CLI)](../../../using-cli/install-cli.md) on the host where Jenkins is installed.
 2. Log in to Jenkins as an administrator.
 3. Select **Manage Jenkins > Configure System > Global properties**. 
 4. Select (check) **Environment variables** and create the following

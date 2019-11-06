@@ -1,6 +1,6 @@
 # Verify Jenkins Integration
 
-Once you have installed the CLI and authenticated with ShiftLeft, and configured a final build step or  post build task in Jenkins, verify build integration with ShiftLeft as follows:
+Once you have [installed the CLI](../../../using-cli/install-cli.md) and [authenticated with ShiftLeft](../../../using-cli/authenticating.md), and configured a [final build step](configure-final-build-step.md) or [post build task]((configure-post-build-task.md)) in Jenkins, verify build integration with ShiftLeft as follows:
 
 1. Select the Jenkins project where you have configured the `sl analyze` (or `sl analyze --cpg`) shell command as a [final build step](configure-final-build-step.md) or [post build task](configure-post-build-task.md).
 2. Click **Build Now**.

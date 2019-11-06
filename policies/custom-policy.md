@@ -32,7 +32,7 @@ The process for creating a custom Policy for ShiftLeft Inspect is:
 6. (Optional) [Identify a custom Policy as the default Policy](#identifying-a-custom-policy-as-the-default-policy).
 7. (Optional) [Edit a custom Policy](#editing-a-custom-policy).
 
-You use the [ShiftLeft Command Line Interface (CLI)](../using-inspect-protect/using-cli/cli-reference.md) to create a custom Policy for ShiftLeft Inspect.
+You use the [ShiftLeft Command Line Interface (CLI)](../using-cli/cli-reference.md) to create a custom Policy for ShiftLeft Inspect.
 
 For testing purposes, use one of the available open-source projects with known vulnerabilities, such as [Webgoat](https://webgoat.github.io/WebGoat/) or one of your organization’s own applications.
 

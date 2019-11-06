@@ -1,8 +1,9 @@
 # Running ShiftLeft Protect
 
-Before using ShiftLeft Protect, make sure you have met all [product requirements](../../introduction/requirements.md#requirements-for-shiftleft-protect) and are [authenticated to your ShiftLeft tenant](../using-cli/authenticating.md).
+Before using ShiftLeft Protect, make sure you have met all [product requirements](../../introduction/requirements.md#requirements-for-shiftleft-protect) and are [authenticated to your ShiftLeft tenant](../../using-cli/authenticating.md).
 
-You use the [ShiftLeft Command Line Interface (CLI)](../using-cli/cli-reference.md) to run ShiftLeft Protect. Running ShiftLeft Protect requires previous analysis of the target application using [ShiftLeft Inspect](../inspect/analyzing-applications.md). This allows ShiftLeft Protect to generate instrumentation custom tailored to the specific version of your application. Once ShiftLeft Protect is running, you should [verify connectivity](#verifying-connectivity).
+You use the [ShiftLeft Command Line Interface (CLI)](../../using-cli/cli-reference.md) to run ShiftLeft Protect. Running ShiftLeft Protect requires previous analysis of the target application using [ShiftLeft Inspect](../inspect/analyzing-applications.md). This allows ShiftLeft Protect to generate instrumentation custom tailored to the specific version of your application. Once ShiftLeft Protect is running, you should [verify connectivity](#verifying-connectivity).
+
 You may also want to [configure ShiftLeft Protect](protect-java/configuring-the-microagent.md) for your environment.
 
 Running ShiftLeft Protect for Java applications is different than for .NET Framework applications. 

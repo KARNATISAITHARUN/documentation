@@ -20,9 +20,9 @@ The process for quickly starting with ShiftLeft Inspect and ShiftLeft Protect on
 
    ![Choose OS](img/os.jpg)
 
-2. [Install the ShiftLeft Command Line Interface (CLI)](using-cli/install-cli.md).
+2. [Install the ShiftLeft Command Line Interface (CLI)](../using-cli/install-cli.md).
 
-3. [Authenticate with ShiftLeft](using-cli/authenticating.md).
+3. [Authenticate with ShiftLeft](../using-cli/authenticating.md).
 
 4. [Use ShiftLeft Inspect](inspect/analyzing-applications.md) to analyze your code.
 
@@ -35,7 +35,7 @@ The process for quickly starting with ShiftLeft Inspect and ShiftLeft Protect on
 
 1. [Install ShiftLeft for Windows](windows-installer.md). The Windows installer automatically installs the ShiftLeft Command Line Interface (CLI).
 
-2. [Authenticate with ShiftLeft](using-cli/authenticating.md).
+2. [Authenticate with ShiftLeft](../using-cli/authenticating.md).
 
 3. [Use ShiftLeft Inspect](inspect/analyzing-applications.md) to analyze your code.
 

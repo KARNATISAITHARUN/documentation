@@ -8,6 +8,15 @@
   * [Requirements](introduction/requirements.md)
   * [The HelloShiftLeft Sample Application](introduction/helloshiftleft.md)
   * [Understanding the CPG](introduction/understanding-cpg.md)
+* Using the ShiftLeft CLI
+  * [Installing the CLI](using-cli/install-cli.md)
+  * [Authenticating with ShiftLeft](using-cli/authenticating.md)
+  * [CLI Reference](using-cli/cli-reference.md)
+    * [Global Options](using-cli/options/global-options.md)
+    * [sl analyze Options](using-cli/options/analyze-options.md)
+    * [sl config-file Options](using-cli/options/config-file-options.md)
+    * [sl policy Options](using-cli/options/policy-options.md)
+    * [sl run Options](using-cli/options/run-options.md)
 * Using ShiftLeft Ocular
   * About ShiftLeft Ocular
     * [ShiftLeft Ocular Features](using-ocular/about/ocular-features.md)
@@ -51,15 +60,6 @@
 * Using ShiftLeft Inspect and ShiftLeft Protect
   * [Quick Start](using-inspect-protect/inspect-protect-quick-start.md)
   * [Installing on Windows](using-inspect-protect/windows-installer.md)
-  * Using the ShiftLeft CLI
-    * [Installing the CLI](using-inspect-protect/using-cli/install-cli.md)
-    * [Authenticating with ShiftLeft](using-inspect-protect/using-cli/authenticating.md)
-    * [CLI Reference](using-inspect-protect/using-cli/cli-reference.md)
-      * [Global Options](using-inspect-protect/using-cli/options/global-options.md)
-      * [sl analyze Options](using-inspect-protect/using-cli/options/analyze-options.md)
-      * [sl config-file Options](using-inspect-protect/using-cli/options/config-file-options.md)
-      * [sl policy Options](using-inspect-protect/using-cli/options/policy-options.md)
-      * [sl run Options](using-inspect-protect/using-cli/options/run-options.md)
   * Analyzing Your Code
     * [Analyzing Applications Using ShiftLeft Inspect](using-inspect-protect/inspect/analyzing-applications.md)
     * [Analyzing Java and Scala Applications](using-inspect-protect/inspect/analyze-java.md)

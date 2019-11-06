@@ -1,6 +1,6 @@
 # Wildfly Configuration
 
-Make sure you've installed the ShiftLeft CLI on the WildFly server, and that you have access to the shiftleft.json file for the specific application asset (jar, war, or ear file) you've deployed - this file was created when you ran sl analyze against the asset.  Also please make sure that the $HOME and $JBOSS_HOME environment variables are properly set.
+Make sure you've [installed the ShiftLeft CLI](../../../using-cli/install-cli.md) on the WildFly server, and that you have access to the [shiftleft.json file](../json-file.md) for the specific application target (JAR, WAR, or EAR file) you've deployed - this file was created when you ran ShiftLeft Inspect against the target.  Also please make sure that the $HOME and $JBOSS_HOME environment variables are properly set.
 
 The simplest way to proceed is to modify standalone.sh (or standalone.conf if present):
 
@@ -16,6 +16,5 @@ SL_OPTS=-javaagent:$HOME/.shiftleft/sl-microagent-latest.jar
 
 export JAVA_OPTS="$JAVA_OPTS -Xbootclasspath/p:$JBOSS_HOME/modules/system/layers/base/org/jboss/logmanager/main/jboss-logmanager-2.0.4.Final.jar -Djava.util.logging.manager=org.jboss.logmanager.LogManager $SL_OPTS"
 ```
-
 
 Make sure you back up standalone.conf or standalone.sh before you proceed.

@@ -2,7 +2,7 @@
 
 Make sure you have restored dependencies and project-specific tools, before you submit the application to ShiftLeft Inspect for analysis. Use `dotnet restore` for applications based on .NET Core; use `nuget restore` for .NET Framework.
 
-Use the [ShiftLeft Command Line Interface (CLI)](../using-cli/cli-reference.md) command 
+Use the [ShiftLeft Command Line Interface (CLI)](../../using-cli/cli-reference.md) command 
 
 ```
 sl analyze --app <name> --csharp [--dotnet-core|--dotnet-framework] [<path>]

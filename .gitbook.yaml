@@ -1,0 +1,10 @@
+redirects:
+  using-inspect-protect/using-cli/cli-reference.md: ./using-cli/cli-reference.md
+  using-inspect-protect/using-cli/install-cli.md: ./using-cli/install-cli.md
+  using-inspect-protect/using-cli/authenticating.md: ./using-cli/authenticating.md
+  using-inspect-protect/using-cli/options/analyze-options.md: ./using-cli/options/analyze-options.md
+  using-inspect-protect/using-cli/options/config-file-options.md: ./using-cli/options/config-file-options.md
+  using-inspect-protect/using-cli/options/global-options.md: ./using-cli/options/global-options.md
+  using-inspect-protect/using-cli/options/install-options.md: ./using-cli/options/install-options.md
+  using-inspect-protect/using-cli/options/policy-options.md: ./using-cli/options/policy-options.md
+  using-inspect-protect/using-cli/options/run-options.md: ./using-cli/options/run-options.md

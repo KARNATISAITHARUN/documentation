@@ -35,7 +35,7 @@ a class from a Java Standard Library, `java.io.ObjectInputStream`, is available 
 
 ## Policies and ShiftLeft Inspect
 
-Policies for ShiftLeft Inspect are located in the ShiftLeft repository. Using the [Command Line Interface (CLI)](../using-inspect-protect/using-cli/cli-reference.md#sl-policy-commands), you can
+Policies for ShiftLeft Inspect are located in the ShiftLeft repository. Using the [Command Line Interface (CLI)](../using-cli/cli-reference.md#sl-policy-commands), you can
 
 * View a Policy
 * Upload a Policy

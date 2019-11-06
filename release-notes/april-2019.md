@@ -29,4 +29,4 @@
 
 * **Stability Improvements to ShiftLeft Protect**. Stability improvements have been made in the ShiftLeft Protect for Java Microagent.
 
-* **Automatic Updates for the ShiftLeft Command Line Interface (CLI)**. The ShiftLeft CLI now automatically updates so that you don't have to reinstall the CLI whenever there are new features or fixes. Refer to [CLI Reference](../using-inspect-protect/using-cli/cli-reference.md) for more information.
+* **Automatic Updates for the ShiftLeft Command Line Interface (CLI)**. The ShiftLeft CLI now automatically updates so that you don't have to reinstall the CLI whenever there are new features or fixes. Refer to [CLI Reference](../using-cli/cli-reference.md) for more information.

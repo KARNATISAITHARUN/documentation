@@ -4,11 +4,19 @@ All ShiftLeft products support the Linux, MacOS X and Windows operating systems.
 
 ShiftLeft has specific requirements for:
 
-* [ShiftLeft Ocular](#requirements-for-shiftleft-ocular)
 * [ShiftLeft Command Line Interface (CLI)](#shiftleft-cli-requirements)
+* [ShiftLeft Ocular](#requirements-for-shiftleft-ocular)
 * [ShiftLeft Inspect](#requirements-for-shiftleft-inspect)
 * [ShiftLeft Protect](#requirements-for-shiftleft-protect)
 * [Browser](#browser-requirements) for the ShiftLeft Dashboard 
+
+## ShiftLeft CLI Requirements
+
+[The ShiftLeft CLI](../using-cli/cli-reference.md) requires a local installation of a supported Java version. The ShiftLeft CLI host must allow outbound connections on the specified port.
+
+Component | Requirement
+--- | ---
+System | Linux, MacOS X, Windows
 
 ## Requirements for ShiftLeft Ocular
 
@@ -26,14 +34,6 @@ Application Type | **Java 7+**, **Scala 2.12+**
 ### Recommended Software for Windows Users 
 
 Windows users are recommended to install [7-zip](https://www.7-zip.org/), an open-source file archiver. 7-zip is known to be much faster than the built-in PowerShell cmdlets. Once installed,  7-zip is automatically detected and used by ShiftLeft Ocular.
-
-## ShiftLeft CLI Requirements
-
-[The ShiftLeft CLI](../using-inspect-protect/using-cli/cli-reference.md) requires a local installation of a supported Java version. The ShiftLeft CLI host must allow outbound connections on the specified port.
-
-Component | Requirement
---- | ---
-System | Linux, MacOS X, Windows
 
 ## Requirements for ShiftLeft Inspect
 

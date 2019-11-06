@@ -14,6 +14,6 @@
 `--java` | `SHIFTLEFT_LANG_JAVA=true` | Analyze Java code (implicit).
 `--no-cpg`| `SHIFTLEFT_NO_CPG` | Disable CPG mode.
 `--policy ID` | | The ShiftLeft Policy ID used by ShiftLeft. If not set, the default Policy is used.
-`--shiftleft-json-file path` | SHIFTLEFT_JSON_FILE | Path of the [Shiftleft JSON file](../protect/json-file.md) (default `shiftleft.json`).
+`--shiftleft-json-file path` | SHIFTLEFT_JSON_FILE | Path of the [Shiftleft JSON file](../../using-inspect-protect/protect/json-file.md) (default `shiftleft.json`).
 `--version-id version` | | Version of the submitted application file. If unset, the version is automatically derived from the input file(s). 
-None | `SHIFTLEFT_CONFIG=<path> ` |  Path of ShiftLeft Protect configuration file. Defaults to the [`shiftleft.json`](../protect/json-file.md) file, located in the current working directory.
+None | `SHIFTLEFT_CONFIG=<path> ` |  Path of ShiftLeft Protect configuration file. Defaults to the [`shiftleft.json`](../../using-inspect-protect/protect/json-file.md) file, located in the current working directory.

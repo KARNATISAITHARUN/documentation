@@ -11,7 +11,7 @@ The ShiftLeft Dashboard provides information on:
 
 Application groups are useful for viewing vulnerabilities across multiple associated microservices in a single Dashboard view. Each microservice is still analyzed individually, and vulnerabilities are identified by individual microservice.
 
-In order to create a group of applications, use the CLI command [`sl analyze --tag app.group=<name>`](../using-cli/cli-reference.md). You can add a microservice to multiple application groups, by repeating the flag (`--tag app.group=<name1> --tag app.group=<name2>`).
+In order to create a group of applications, use the CLI command [`sl analyze --tag app.group=<name>`](../../using-cli/cli-reference.md). You can add a microservice to multiple application groups, by repeating the flag (`--tag app.group=<name1> --tag app.group=<name2>`).
 
 A grouped application can be searched for and selected from the **search or filter** field, and is displayed on the [Applications List](app-list.md) by the group name you specified.
 

@@ -1,17 +1,19 @@
 # Authenticating with ShiftLeft
 
-To use ShiftLeft Inspect and ShiftLeft Protect, you must first authenticate with ShiftLeft. There are two methods for authenticating, by using:
+To use ShiftLeft products, you must first authenticate with ShiftLeft. There are two methods for authenticating, by using:
 
 * [The ShiftLeft Command Line Interface (CLI)](#using-the-shiftleft-cli-to-authenticate) 
-* [Environment Variables](#using-environment-variables-to-authenticate)
+* [Environment Variables](#using-environment-variables-to-authenticate) (ShiftLeft Inspect only)
 
 The first time you log into ShiftLeft, if you are running ShiftLeft on either Linux or MacOS X, you obtain your authentication credentials (organization ID and access token) from the **Welcome** page of the ShiftLeft Dashboard. 
 
    ![Location of Code to Authenticate](img/authenticate.jpg)
 
-Subsequently, you can obtain your credentials from the **Profile** page of the ShiftLeft Dashboard.
+Subsequently, you can obtain your credentials from the **Account Settings** page of the ShiftLeft Dashboard.
 
-Once authenticated, the ShiftLeft CLI creates the local file `$HOME/.shiftleft/config.json` for Linux and MacOS X and `%HOME%/.shiftleft/config.json` for Windows. This file contains your Organization ID and Access Token, and is required by the ShiftLeft CLI to use ShiftLeft Inspect and run the `sl analyze` command. For Linux and MacOS X, if the `$HOME` environment variable is not set locally, the CLI uses the path `/etc/shiftleft/config.json`.
+   ![Credentials](img/credentials.jpg)
+
+Once authenticated, the ShiftLeft CLI creates the local file `$HOME/.shiftleft/config.json` for Linux and MacOS X and `%HOME%/.shiftleft/config.json` for Windows. This file contains your Organization ID and Access Token, and is required by the ShiftLeft CLI. For Linux and MacOS X, if the `$HOME` environment variable is not set locally, the CLI uses the path `/etc/shiftleft/config.json`.
 
 ## Using the ShiftLeft CLI to Authenticate
 
