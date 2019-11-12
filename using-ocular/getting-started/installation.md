@@ -30,7 +30,7 @@ To download and license ShiftLeft Ocular via subscription:
 
 2. [Authenticate with ShiftLeft](../../using-cli/authenticating.md).
 
-3. Run the CLI `sl ocular` command and options in the directory in which you want to install ShiftLeft Ocular.
+3. Run the [CLI `sl ocular` command and options](../../using-cli/cli-reference.md). The directoy `~/.shiftleft/ocular` is automatically created, and ShiftLeft Ocular is installed there.
 
 ### Updating ShiftLeft Ocular
 
