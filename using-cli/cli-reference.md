@@ -14,9 +14,9 @@ Refer to [Global Options](options/global-options.md) for information on options 
 
 Command | Description
 --- | ---
-`analyze [<path>]` | [Analyze your application using ShiftLeft Inspect](../using-inspect-protect/inspect/analyzing-applications.md).  `<path>` can be the path to a `.jar`, `.war`, `.ear`, `.csproj`, or `.sln` file, or it can be the path to a Java project directory.  The [`analyze` command includes options](options/analyze-options.md).
-`auth` | [Authenticate the CLI with your ShiftLeft account](authenticating.md).
-`config-file` | [Create a configuration file](../using-inspect-protect/protect/json-file.md) and write it to standard output or a supplied filename. Note that the [application name and version ID options](options/config-file-options.md) are required for this command. 
+`analyze [<path>]` | [Analyze your application using ShiftLeft Inspect](../../using-inspect-protect/inspect/analyzing-applications.md).  `<path>` is the path to a file of a supported language, or the path to a Java project directory.  [The `analyze` command includes options](options/analyze-options.md).
+`auth` | [Authenticate the CLI with your ShiftLeft account](../using-cli/authenticating.md).
+`config-file` | [Create a configuration file](../protect/json-file.md) and write it to standard output or a supplied filename. Note that the [application name and version ID options](options/config-file-options.md) are required for this command. 
 `help`, `h` | List ShiftLeft CLI commands or help for one command.
 `install [dotnet-agent]` | Install [ShiftLeft Protect for .NET](../using-inspect-protect/protect/run-protect.md). The [`install` command includes options](options/install-options.md).
 `ocular` | [Start ShiftLeft Ocular](../using-ocular/getting-started/ocular-quick-start.md).

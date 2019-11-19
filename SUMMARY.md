@@ -1,9 +1,18 @@
 # Summary
 
 * [Using ShiftLeft](README.md)
+* Languages
+  * [Supported Languages](languages/language-support.md)
+  * [C](languages/c.md)
+  * [C++](languages/c-plus-plus.md)
+  * [C#](languages/c-sharp.md)
+  * [Golang](languages/golang.md)
+  * [Java](languages/java.md)
+  * [JSP](languages/jsp.md)
+  * [LLVM](languages/llvm.md)
+  * [Scala](languages/scala.md)
 * Introduction
   * [ShiftLeft Products](introduction/products.md)
-  * [Language Support](introduction/language-support.md)
   * [Compliance](introduction/compliance.md)
   * [Requirements](introduction/requirements.md)
   * [The HelloShiftLeft Sample Application](introduction/helloshiftleft.md)
@@ -45,7 +54,7 @@
     * [Tracking Non Atomic Data Types](using-ocular/use-cases/tracking-non-atomic.md)
     * [Uncovering the Attack Surface](using-ocular/use-cases/attack-surface.md)
   * Tutorials
-    * [Scanning for Deserialization Sinks](using-ocular/tutorials/deserialization.md)
+    * [Examining a Java Application for Deserialization Sinks](using-ocular/tutorials/deserialization.md)
     * [Investigating a C Language Application](using-ocular/tutorials/c-language.md)
     * [Identifying Incorrect or Zero Memory Allocation Bugs in C](using-ocular/tutorials/c-allocation-bugs.md)
     * [Using ShiftLeft Ocular with MISRA C Applications](using-ocular/tutorials/misra-c.md)
@@ -62,15 +71,13 @@
   * [Installing on Windows](using-inspect-protect/windows-installer.md)
   * Analyzing Your Code
     * [Analyzing Applications Using ShiftLeft Inspect](using-inspect-protect/inspect/analyzing-applications.md)
-    * [Analyzing Java and Scala Applications](using-inspect-protect/inspect/analyze-java.md)
-    * [Analyzing C# Applications](using-inspect-protect/inspect/analyze-csharp.md)
     * [Identifying Branch Names](using-inspect-protect/inspect/identify-branches.md)
     * [Failing a Build Based on Analysis Results](using-inspect-protect/inspect/fail-build.md)
   * Protecting Runtime Applications
     * [Securing Your Applications Using ShiftLeft Protect](using-inspect-protect/protect/securing-applications.md)
     * [Running ShiftLeft Protect](using-inspect-protect/protect/run-protect.md)
     * [The ShiftLeft JSON File](using-inspect-protect/protect/json-file.md)
-    * [ShiftLeft Protect for Java](using-inspect-protect/protect/protect-java/jvm-based-environments.md)
+    * ShiftLeft Protect for Java
       * [Configuring the Microagent](using-inspect-protect/protect/protect-java/configuring-the-microagent.md)
       * [Tomcat Integration](using-inspect-protect/protect/protect-java/tomcat-integration.md)
       * [Websphere Configuration](using-inspect-protect/protect/protect-java/websphere-configuration.md)

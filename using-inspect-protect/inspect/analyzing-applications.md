@@ -6,8 +6,9 @@ If you are using ShiftLeft Inspect with ShiftLeft Protect, you can analyze your 
 
 The ShiftLeft Inspect analysis commands are different depending on whether your application is written in:
 
-* [Java and Scala](analyze-java.md)
-* [C#](analyze-csharp.md)
+* [Java](../../languages/java.md)
+* [Scala](../../languages/scala.md)
+* [C#](../../languages/c-sharp.md)
 
 ## Analysis Workflow
 

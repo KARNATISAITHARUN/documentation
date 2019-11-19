@@ -9,6 +9,7 @@
 `--dotnet-core` | | Use .NET Core. (Only valid for C#.)
 `--dotnet-framework` | | Use .NET Framework. (Only valid for C#.)
 `--force` | | Force new analysis (instead of using a cached result) and upload.
+`--go` | `SHIFTLEFT_LANG_GO=true` | Analyze Golang code.
 `--java` | `SHIFTLEFT_LANG_JAVA=true` | Analyze Java code (implicit).
 `--no-cpg`| `SHIFTLEFT_NO_CPG` | Disable CPG mode.
 `--policy ID` | | The ShiftLeft Policy ID used by ShiftLeft. If not set, the default Policy is used.

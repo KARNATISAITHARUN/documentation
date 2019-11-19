@@ -25,7 +25,7 @@
 
 * **Enhancements to ShiftLeft Inspect for .NET**. The current version of ShiftLeft Inspect for .NET includes significant performance improvements in both processing time and memory consumption. In addition, numerous bug fixes have been made.
 
-* **JSP Support Added for ShiftLeft Inspect**. You can now use ShiftLeft Inspect to analyze your JSP pages for vulnerabilities and data leakage. Note that this support does not include JSP Expression Language.
+* **[JSP Support Added for ShiftLeft Inspect](../languages/jsp.md)**. You can now use ShiftLeft Inspect to analyze your JSP pages for vulnerabilities and data leakage. Note that this support does not include JSP Expression Language.
 
 * **Stability Improvements to ShiftLeft Protect**. Stability improvements have been made in the ShiftLeft Protect for Java Microagent.
 
