@@ -8,8 +8,8 @@ Once you have installed or updated ShiftLeft Ocular, you [start ShiftLeft Ocular
 
 There are currently two methods for installing, licensing and updating ShiftLeft Ocular:
 
-* [Download via subscription (Beta)](#downloading-and-installing-shiftleft-ocular).
-* [Use the distribution file](#installing-shiftleft-ocular-using-the-distribution-file).
+* [Download via the ShiftLeft Command Line Interface (CLI) (Beta)](#downloading-and-installing-shiftleft-ocular).
+* [Use the ShiftLeft distribution file](#installing-shiftleft-ocular-using-the-distribution-file).
 
 ## Additional Configuration for Large Projects
 
@@ -24,13 +24,15 @@ Refer to the article [Memory Size Recommendations](../about/ocular-memory-size.m
 
 ## Downloading and Installing ShiftLeft Ocular
 
-To download and license ShiftLeft Ocular via subscription:
+To download and license ShiftLeft Ocular via the CLI:
 
-1. [Install the ShiftLeft Command Line Interface (CLI)](../../using-cli/install-cli.md). 
+1. [Install the CLI](../../using-cli/install-cli.md). 
 
 2. [Authenticate with ShiftLeft](../../using-cli/authenticating.md).
 
 3. Run the [CLI `sl ocular` command and options](../../using-cli/cli-reference.md). The directory `~/.shiftleft/ocular` is automatically created, and ShiftLeft Ocular is installed there.
+
+For additional information on the ShiftLeft CLI, [refer to the article ShiftLeft CLI Reference](../../using-cli/cli-reference.md). 
 
 ### Updating ShiftLeft Ocular
 
