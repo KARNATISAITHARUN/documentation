@@ -10,7 +10,7 @@ ShiftLeft Ocular provides the following core features:
 
 * **[Framework and Library Support through Policies](../../policies/about-policy.md).** ShiftLeft Ocular includes Policies, which are annotations for common frameworks and libraries. Policies are used to find data flows in your application code, and to [generate and work with Security Profiles](../getting-started/generate-sp.md). You can customize Policies to extend supported frameworks and libraries or to encode additional vulnerability patterns.
 
-* **Extensibility**. ShiftLeft Ocular is highly extensible through the use of [custom queries](../getting-started/query-cpg.md) and [Policies](../../policies/custom-policy.md), by [enhancing the OQL](../configure-extend/enhance-oql.md), and by creating a CPG pass and introducing new layers into the CPG.
+* **Extensibility**. ShiftLeft Ocular is highly extensible through the use of [custom queries](../getting-started/query-cpg.md) and [Policies](../../policies/custom-policy.md), and by [enhancing the OQL](../configure-extend/enhance-oql.md).
 
 * **[Interactive and Non-Interactive Modes](modes.md)** (Included in the ShiftLeft Ocular trial version). CPGs and Security Profiles can be interactively explored using a REPL, an interactive shell with support for the OQL. And user-provided REPL scripts can be executed non-interactively to perform automated custom scans for security issues.
 

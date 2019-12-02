@@ -37,17 +37,21 @@ where
 
 ## ShiftLeft Ocular for Java
 
-You can examine and investigate only compiled application bytecode (**not** source code) using ShiftLeft Ocular. This means that for Java applications, you **must** successfully build your application using a supported build tool beforehand. 
+You can examine and investigate only compiled application bytecode (not source code) using ShiftLeft Ocular. This means that for Java applications, you must successfully build your application using a supported build tool beforehand.
 
-After [installing the ShiftLeft Command Line Interface (CLI)](../using-cli/install-cli.md) and [authenticating](../using-cli/authenticating.md), use this command to run ShiftLeft Ocular
+After [installing the ShiftLeft Command Line Interface (CLI)](../using-cli/install-cli.md), [authenticating](../using-cli/authenticating.md) and [starting ShiftLeft Ocular](../using-ocular/getting-started/starting.md), in order to create CPGs that contain the application code but do not include the code of libraries, ShiftLeft Ocular performs a smart inspection of the input file(s) to determine application code vs dependencies. Before creating the CPG you should [identify your application code and dependencies](../using-ocular/configure-extend/identify-code-dependencies.md); so that you know which parts of your application will be modelled. You can then decide whether to [include specific objects in the CPG](../using-ocular/getting-started/create-cpg.md#creating-a-cpg-that-includes-objects-organized-by-namespaces).
+
+You create the Code Property Graph (CPG) for your Java application using
 
 ```scala
-sl ocular
+ocular> createCpg(<inputPaths>)
 ```
 
-### Next Steps
+where `<inputPaths>` is the path of the target application; multiple applications are separated by a comma. For Java, the path is the archive (JAR, WAR or EAR file). For example, `createCpg("subjects/hello-shiftleft-0.0.1-SNAPSHOT.jar").`
 
-[Create the Code Property Graph (CPG)](../using-ocular/getting-started/create-cpg.md)
+For more information, including additional options, refer to the article [Creating the CPG](../using-ocular/getting-started/create-cpg.md).
+
+### Next Steps
 
 [Generate the Security Profile](../using-ocular/getting-started/generate-sp.md)
 

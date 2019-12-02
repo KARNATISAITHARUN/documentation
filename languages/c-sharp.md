@@ -53,20 +53,21 @@ To verify whether a .NET Framework target can be built with MSBuild 15.0:
 
 ## ShiftLeft Ocular for C#
 
-After [installing the ShiftLeft Command Line Interface (CLI)](../using-cli/install-cli.md) and [authenticating](../using-cli/authenticating.md), use this command to run ShiftLeft Ocular
+After [installing the ShiftLeft Command Line Interface (CLI)](../using-cli/install-cli.md), [authenticating](../using-cli/authenticating.md) and [starting ShiftLeft Ocular](../using-ocular/getting-started/starting.md), [create the Code Property Graph (CPG)](../using-ocular/getting-started/create-cpg.md) for your C# application using
 
 ```scala
-sl ocular
+ocular> createCpg(<inputPaths>)
 ```
+
+where `<inputPaths>` is the path of the target application; multiple applications are separated by a comma. For C#, the path is the project file .csproj.
 
 ### Next Steps
 
-[Create the Code Property Graph (CPG)](../using-ocular/getting-started/create-cpg.md)
-
 [Generate the Security Profile](../using-ocular/getting-started/generate-sp.md)
 
-[Uncover the Attack Surface](../using-ocular/use-cases/attack-surface.md)
+[Querying the CPG and Security Profile](../using-ocular/getting-started/query-cpg.md)
 
+[Uncover the Attack Surface](../using-ocular/use-cases/attack-surface.md)
 
 ## ShiftLeft Protect for C#
 

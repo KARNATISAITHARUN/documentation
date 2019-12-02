@@ -27,17 +27,21 @@ where
 
 ## ShiftLeft Ocular for JSP
 
-After [installing the ShiftLeft Command Line Interface (CLI)](../using-cli/install-cli.md) and [authenticating](../using-cli/authenticating.md), use this command to run ShiftLeft Ocular
+After [installing the ShiftLeft Command Line Interface (CLI)](../using-cli/install-cli.md), [authenticating](../using-cli/authenticating.md) and [starting ShiftLeft Ocular](../using-ocular/getting-started/starting.md), you create the Code Property Graph (CPG) for your JSP application using
 
 ```scala
-sl ocular
+ocular> createCpg(<inputPaths>)
 ```
+
+where `<inputPaths>` is the path of the target application; multiple applications are separated by a comma. For JSP, the path is the archive (JAR or WAR file). For example, `createCpg("JavaVulnerableLab.war").`
+
+For more information, including additional options, refer to the article [Creating the CPG](../using-ocular/getting-started/create-cpg.md) 
 
 ### Next Steps
 
-[Create the Code Property Graph (CPG)](../using-ocular/getting-started/create-cpg.md)
-
 [Generate the Security Profile](../using-ocular/getting-started/generate-sp.md)
+
+[Querying the CPG and Security Profile](../using-ocular/getting-started/query-cpg.md)
 
 [Using ShiftLeft Ocular with JSP](../using-ocular/tutorials/ocular-jsp.md)
 

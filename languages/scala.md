@@ -31,17 +31,21 @@ where
 
 You can examine and investigate only compiled application bytecode (**not** source code) using ShiftLeft Ocular. This means that for Scala applications, you **must** successfully build your application using a supported build tool beforehand. 
 
-After [installing the ShiftLeft Command Line Interface (CLI)](../using-cli/install-cli.md) and [authenticating](../using-cli/authenticating.md), use this command to run ShiftLeft Ocular
+After [installing the ShiftLeft Command Line Interface (CLI)](../using-cli/install-cli.md), [authenticating](../using-cli/authenticating.md) and [starting ShiftLeft Ocular](../using-ocular/getting-started/starting.md), you create the Code Property Graph (CPG) for your Scala application using
 
 ```scala
-sl ocular
+ocular> createCpg(<inputPaths>)
 ```
+
+where `<inputPaths>` is the path of the target application; multiple applications are separated by a comma. For Scala, the path is the archive (JAR, WAR or EAR file). For example, `createCpg("subjects/hello-shiftleft-0.0.1-SNAPSHOT.jar").`
+
+For more information, including additional options, refer to the article [Creating the CPG](../using-ocular/getting-started/create-cpg.md) 
 
 ### Next Steps
 
-[Create the Code Property Graph (CPG)](../using-ocular/getting-started/create-cpg.md)
-
 [Generate the Security Profile](../using-ocular/getting-started/generate-sp.md)
+
+[Querying the CPG and Security Profile](../using-ocular/getting-started/query-cpg.md)
 
 [Uncover the Attack Surface](../using-ocular/use-cases/attack-surface.md)
 
