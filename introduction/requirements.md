@@ -20,6 +20,8 @@ ShiftLeft has specific requirements for:
 
 For Java and Scala, you can examine only compiled application bytecode (not source code) using ShiftLeft Ocular. This means that for Java and Scala applications, you **must** successfully build your application using a supported build tool beforehand. 
 
+Ocular requires standard archiving tools, `zip` and `unzip`, to be available during installation.
+
 ## Requirements for ShiftLeft Inspect
 
 [ShiftLeft Inspect](products.md) has specific requirements for applications written in Java, Scala and .NET. 
