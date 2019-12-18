@@ -17,7 +17,7 @@ git checkout v4.7
 Create the CPG for the vulnerable driver 
 
 ```scala
-ocular> ./fuzzyc2cpg.sh path/to/kernel/linux/drivers/scsi/aacraid
+$ ./fuzzyc2cpg.sh path/to/kernel/linux/drivers/scsi/aacraid
 ```
 
 ## Examine the Code
