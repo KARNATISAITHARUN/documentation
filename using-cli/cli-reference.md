@@ -23,6 +23,7 @@ Command | Description
 `policy <command>` | [Manage custom Policies](../policies/custom-policy.md).
 `run -- <command>` | [Run the target command with ShiftLeft Protect's Microagent](../using-inspect-protect/protect/protect-java/configuring-the-microagent.md). The [`run` command includes options](options/run-options.md).
 `update [java-agent,libplugin]` | Automatically update components of the ShiftLeft CLI. To automatically update ShiftLeft Protect for Java Microagent use `sl update java-agent`.
+`check-environment [options]` | Check your local ShiftLeft environment to make sure the necessary connectivity works and that the proper tools have been installed
 
 ## `sl policy` Commands
 
