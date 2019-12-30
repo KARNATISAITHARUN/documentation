@@ -22,7 +22,7 @@ The ShiftLeft Inspect analysis commands are different depending on whether your 
 
 ## CPG Mode
 
-The CPG mode can be used optionally for [analyzing Java and Scala applications](analyze-java.md), and is automatically implied for [analyzing C# applications](analyze-csharp.md). This mode builds the CPG locally (on your machine) and then uploads the CPG, rather than your application's code, to the ShiftLeft cloud for analysis. 
+The CPG mode can be used optionally for analyzing [Java](../../languages/java.md) and [Scala](../../languages/scala.md) applications, and is automatically implied for analyzing [C#](../../languages/c-sharp.md) applications. This mode builds the CPG locally (on your machine) and then uploads the CPG, rather than your application's code, to the ShiftLeft cloud for analysis.
 
 Include the option 
 
