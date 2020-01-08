@@ -5,7 +5,7 @@ how to uncover data flows in your application.
 
 Once you have identified interesting methods, such as methods that 
 * take user controlled inputs (eg. HTTP handlers)
-* transform data (serilaize, deserialize) 
+* transform data (serialize, deserialize) 
 * act on the data (loggers, spawn a process, store data in DB etc.)
 
 it is possible to identify how data flows between these methods. Assigning some methods as sources, and others as sinks, helps to find flows between them. An illustration of typical sources and sinks in the HelloShiftLeft application is
