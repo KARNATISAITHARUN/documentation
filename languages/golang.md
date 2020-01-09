@@ -2,13 +2,13 @@
 
 ShiftLeft supports analyzing Go projects using ShiftLeft Inspect, and investigating your Golang applications using ShiftLeft Ocular.
 
-You can analyze and investigate only Go source code (**not** compiled applications). And a fully working build environment for the target project is required. 
+You can analyze and investigate only Go source code (**not** compiled applications). And a fully working build environment with **Go 1.12 or newer** for the target project is required.
 
 ## ShiftLeft Inspect for Golang
 
 After [installing the ShiftLeft Command Line Interface (CLI)](../using-cli/install-cli.md) and [authenticating](../using-cli/authenticating.md), use the following command to analyze your Golang application with ShiftLeft Inspect
 
-```scala
+```bash
 sl analyze --app <name> --go [<path>]
 ```
   
