@@ -1,6 +1,9 @@
 # Summary
 
-* [Using ShiftLeft](README.md)
+* [What is ShiftLeft?](README.md)
+* Quickstarts
+  * [Quickstart for Linux and macOS Users](/quickstarts/linux-macos.md)
+  * [Quickstart for Windows Users](/quickstarts/windows.md)
 * Languages
   * [Supported Languages](languages/language-support.md)
   * [C](languages/c.md)
