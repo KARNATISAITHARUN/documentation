@@ -29,9 +29,9 @@ ocular> val sink = cpg.method.fullName(".*Runtime.*exec.*").parameter
 
 Note that the above source and sink are parameters to methods, since the goal is to taint and track the data being transformed and passed between them. Parameters can now be used to discover flows within the HelloShiftLeft application.
 
-The query prints all the flows (`f`) reachable by the method parameters `source` from the methods parameters `sink`.
+The query `sink.reachableBy(source).flows.p` prints all the flows from the above defined `source` to `sink`:
 
-![Sink](img/sink.jpg)
+![Flows](img/sink.jpg)
 
 ## Finding Flows from a Sink to Source
 
