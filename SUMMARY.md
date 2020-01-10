@@ -4,6 +4,7 @@
 * Quickstarts
   * [Quickstart for Linux and macOS Users](/quickstarts/linux-macos.md)
   * [Quickstart for Windows Users](/quickstarts/windows.md)
+* [User Management](using-shiftleft/dashboard/user-management.md)
 * Languages
   * [Supported Languages](languages/language-support.md)
   * [C](languages/c.md)
