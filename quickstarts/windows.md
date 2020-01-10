@@ -69,7 +69,7 @@ All directories are stored in the Windows Registry.
 
 Once you've obtained the installer, unzip the downloaded file.
 
-![Unzip Prompt](img/unzip-windows.png)
+![Unzip Prompt](../using-inspect-protect/img/unzip-windows.png)
 
 **Note:** For Protect, the installer bundles all of the dependencies into a single downloadable file. This enables the installer to run without needing access to the Internet.
 
@@ -79,13 +79,13 @@ In the prompt that appears, grant the permissions requested by the installer.
 
 Provide the installer with any requested permissions.
 
-![Install Account Control](img/windows-user-account-control.png)
+![Install Account Control](../using-inspect-protect/img/windows-user-account-control.png)
 
 At this point, the installer copies `sl.exe` to `C:\Program Files\ShiftLeft`. If you are installing Inspect and Protect, you can find the latter in `C:\shiftleftDotNetAgent`.
 
 During the installation process, you will see status updates in a Command Prompt window. Once the process completes, press `Enter` to finish and close out of the window.
 
-![Installation Progress](img/windows-installing.png)
+![Installation Progress](../using-inspect-protect/img/windows-installing.png)
 
 ## Using the ShiftLeft CLI to Authenticate
 
@@ -113,6 +113,6 @@ Build the app using [Maven](https://maven.apache.org/install.html) by running `m
 
 Run ShiftLeft using `"C:\Program Files\ShiftLeft\sl.exe" analyze --app HelloShiftLeft --java target/hello-shiftleft-0.0.1.jar`. You will see the following output:
 
-![](img/windows-confirm.png)
+![Inspect Output](img/windows-confirm.png)
 
 Per the instructions printed to the Terminal, open up the URL provided after 5-10 minutes have elapsed. This brings you to the Dataflows page; in the top right-hand corner, click Vulnerabilities to see the issues present in your code.
