@@ -1,9 +1,22 @@
 # Summary
 
 * [What is ShiftLeft?](README.md)
-* Quickstarts
-  * [Quickstart for Linux and macOS Users](/quickstarts/linux-macos.md)
-  * [Quickstart for Windows Users](/quickstarts/windows.md)
+
+## Quickstart
+
+  * [For Linux and macOS Users](/quickstarts/linux-macos.md)
+  * [For Windows Users](/quickstarts/windows.md)
+
+## Inspect
+
+* [Getting Started](/inspect/getting-started/README.md)
+  * [Linux/macOS](/inspect/getting-started/linux-macos.md)
+  * [Windows](/inspect/getting-started/windows.md)
+
+### Analyzing Applications
+
+* [C#](/inspect/analyzing-applications/c-sharp.md)
+
 * Languages
   * [Supported Languages](languages/language-support.md)
   * [C](languages/c.md)
