@@ -29,6 +29,26 @@ where
 
 `<path>` location of the `.csproj` or .`sln` file to be analyzed.
 
+## Combining C# Projects for Analysis
+
+You can combine multiple C# projects for analysis as follows:
+
+```bash
+sl analyze --app Xyz --csharp [--dotnet-core|--dotnet-framework] --dep ClassLibrary2\ClassLibrary2.csproj ConsoleApp1\ConsoleApp1.csproj
+```
+
+The `--dep` option allows you to filter for the subprojects on which the primary `.csproj` file depends. This allows you to adopt the middle ground between analyzing just the primary file
+
+```bash
+sl analyze csharp --app Xyz app.csproj
+```
+
+and analyzing the primary file *with* all of its subprojects
+
+```bash
+sl analyze csharp --app Xyz app.csproj --csharp2cpg-args
+```
+
 ### Required MSBuild Information
 
 To determine the version of MSBuild installed in your system:
