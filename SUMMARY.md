@@ -1,10 +1,35 @@
 # Summary
 
 * [What is ShiftLeft?](README.md)
-* Quickstarts
-  * [Quickstart for Linux and macOS Users](/quickstarts/linux-macos.md)
-  * [Quickstart for Windows Users](/quickstarts/windows.md)
-* Languages
+
+## Quickstart
+
+  * [For Linux and macOS Users](/quickstarts/linux-macos.md)
+  * [For Windows Users](/quickstarts/windows.md)
+
+## Inspect
+
+* [Getting Started](/inspect/getting-started/README.md)
+  * [Linux/macOS](/inspect/getting-started/linux-macos.md)
+  * [Windows](/inspect/getting-started/windows.md)
+* [Analyzing Applications](inspect/analyzing-applications/README.md)
+  * [C#](/inspect/analyzing-applications/c-sharp.md)
+  * [Go](/inspect/analyzing-applications/golang.md)
+  * [Java](/inspect/analyzing-applications/java.md)
+  * [JavaServer Pages (JSP)](/inspect/analyzing-applications/jsp.md)
+  * [Scala](/inspect/analyzing-applications/scala.md)
+* [Integrations](/inspect/integrations/README.md)
+  * [Bamboo](/inspect/integrations/bamboo.md)
+  * [Jenkins](/inspect/integrations/jenkins/README.md)
+    * [Set Up Your Environment Variables](/inspect/integrations/jenkins/step-1.md)
+    * [Configure the Integration](/inspect/integrations/jenkins/step-2.md)
+    * [Verify the Integration](/inspect/integrations/jenkins/step-3.md)
+* [How to Identify Inspect Results Using Branch Names](/inspect/branch-names.md)
+* [How Fail Builds Based on Inspect Results](inspect/failing-builds.md)
+
+
+## Languages
+
   * [Supported Languages](languages/language-support.md)
   * [C](languages/c.md)
   * [C++](languages/c-plus-plus.md)
@@ -14,13 +39,17 @@
   * [JSP](languages/jsp.md)
   * [LLVM](languages/llvm.md)
   * [Scala](languages/scala.md)
-* Introduction
+
+## About ShiftLeft
+
   * [ShiftLeft Products](introduction/products.md)
   * [Compliance](introduction/compliance.md)
   * [Requirements](introduction/requirements.md)
   * [The HelloShiftLeft Sample Application](introduction/helloshiftleft.md)
   * [Understanding the CPG](introduction/understanding-cpg.md)
-* Using the ShiftLeft CLI
+
+## Using the ShiftLeft CLI
+
   * [Installing the CLI](using-cli/install-cli.md)
   * [Authenticating with ShiftLeft](using-cli/authenticating.md)
   * [CLI Reference](using-cli/cli-reference.md)
@@ -29,7 +58,8 @@
     * [sl config-file Options](using-cli/options/config-file-options.md)
     * [sl policy Options](using-cli/options/policy-options.md)
     * [sl run Options](using-cli/options/run-options.md)
-* Using ShiftLeft Ocular
+
+## Using ShiftLeft Ocular
   * About ShiftLeft Ocular
     * [ShiftLeft Ocular Features](using-ocular/about/ocular-features.md)
     * [Memory Size Recommendations](using-ocular/about/ocular-memory-size.md)
@@ -104,13 +134,18 @@
     * [Integrating with Travis](using-inspect-protect/integrating-with-shiftleft/integrating-travis-builds.md)
   * Application Programming Interfaces (APIs)
     * [Identifying Code Vulnerabilities using the API](using-inspect-protect/api/vulnerabilities_api.md)
-* ShiftLeft Policies
+
+## ShiftLeft Policies
+
   * [About Policies](policies/about-policy.md)
   * [Creating a Custom Policy](policies/custom-policy.md)
   * [Policy Language](policies/policy-language.md)
   * [Use Case: Identifying Sensitive Data Variables](policies/policy-sensitive-data.md)
   * [Use Case: Excluding Vulnerabilities with a Sanitization Function](policies/policy-sanitization-function.md)
-* Monthly Updates
+
+## Monthly Updates
+
+* Release Notes
   * [December 2019](release-notes/december-2019.md)
   * [November 2019](release-notes/november-2019.md)
   * [October 2019](release-notes/october-2019.md)
