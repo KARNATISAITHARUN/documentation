@@ -12,10 +12,18 @@
 * [Getting Started](/inspect/getting-started/README.md)
   * [Linux/macOS](/inspect/getting-started/linux-macos.md)
   * [Windows](/inspect/getting-started/windows.md)
-
-### Analyzing Applications
-
-* [C#](/inspect/analyzing-applications/c-sharp.md)
+* [Analyzing Applications](inspect/analyzing-applications/README.md)
+  * [C#](/inspect/analyzing-applications/c-sharp.md)
+  * [Go](/inspect/analyzing-applications/golang.md)
+  * [Java](/inspect/analyzing-applications/java.md)
+  * [JavaServer Pages (JSP)](/inspect/analyzing-applications/jsp.md)
+  * [Scala](/inspect/analyzing-applications/scala.md)
+* [Integrations](/inspect/integrations/README.md)
+  * [Bamboo](/inspect/integrations/bamboo.md)
+  * [Jenkins](/inspect/integrations/jenkins/README.md)
+    * [Set Up Your Environment Variables](/inspect/integrations/jenkins/step-1.md)
+    * [Configure the Integration](/inspect/integrations/jenkins/step-1.md)
+    * [Verify the Integration](/inspect/integrations/jenkins/step-1.md)
 
 * Languages
   * [Supported Languages](languages/language-support.md)
