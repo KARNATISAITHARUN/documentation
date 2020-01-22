@@ -44,3 +44,23 @@ sl analyze --app <name> --csharp [--dotnet-core|--dotnet-framework] [<path>]
 | `--csharp` | The flag identifying the application's language |
 | `--dotnet-core` or `--dotnet-framework` | Whether you're using .NET Core or .NET Framework in the development of your application |
 | `<path>` | The location of the application's `.csproj` or .`sln` file to be analyzed |
+
+## Combining C# Projects for Analysis
+
+You can combine multiple C# projects for analysis as follows:
+
+```bash
+sl analyze --app Xyz --csharp [--dotnet-core|--dotnet-framework] --dep ClassLibrary2\ClassLibrary2.csproj ConsoleApp1\ConsoleApp1.csproj
+```
+
+The `--dep` option allows you to filter for the subprojects on which the primary `.csproj` file depends. This allows you to adopt the middle ground between analyzing just the primary file
+
+```bash
+sl analyze csharp --app Xyz app.csproj
+```
+
+and analyzing the primary file *with* all of its subprojects
+
+```bash
+sl analyze csharp --app Xyz app.csproj --csharp2cpg-args
+```
