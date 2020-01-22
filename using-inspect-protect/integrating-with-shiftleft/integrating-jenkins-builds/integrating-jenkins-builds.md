@@ -2,8 +2,6 @@
 
 Jenkins is an open source automation server used in the CI process. You can integrate your Jenkins project with ShiftLeft Inspect for automated code analysis. To do so, configure each Jenkins project to execute the ShiftLeft Inspect shell command [`sl analyze`](../../inspect/analyzing-applications.md).
 
-[A video](https://youtu.be/bI1GATsD5mc) demonstrates how to integrate ShiftLeft with an existing Jenkins freestyle project using the [final build step](configure-final-build-step.md) method.
-
 ## Jenkins Integration Options
 
 There are two ways to integrate with Jenkins: by configuring a final build step, or a post build task, for **each** Jenkins project you want to submit for analysis to ShiftLeft.
