@@ -39,7 +39,7 @@ You must submit your code to Inspect from a system that can build your applicati
 To analyze your C# application, run:
 
 ```bash
-sl analyze --app <name> --csharp [--dotnet-core|--dotnet-framework] [<path>]
+sl analyze --app <name> --csharp --cpg [--dotnet-core|--dotnet-framework] [<path>]
 ```
 
 | Parameter | Description |
@@ -54,25 +54,19 @@ sl analyze --app <name> --csharp [--dotnet-core|--dotnet-framework] [<path>]
 You can combine multiple C# projects for analysis as follows:
 
 ```bash
-sl analyze --app Xyz --csharp [--dotnet-core|--dotnet-framework] --dep ClassLibrary2\ClassLibrary2.csproj ConsoleApp1\ConsoleApp1.csproj
+sl analyze --app Xyz --csharp [--dotnet-core|--dotnet-framework] --cpg --dep lib.csproj --dep component.csproj app.csproj
 ```
 
-The `--dep` option allows you to filter for the subprojects on which the primary `.csproj` file depends. This allows you to adopt the middle ground between analyzing just the primary project
+Note that you can include `--dep` multiple times for libs, subprojects, components, etc. The `--dep` option allows you to filter for the subprojects/dependencies to include with the primary `.csproj` project for analysis. This allows you to adopt the middle ground between analyzing just the primary project:
 
 ```bash
-sl analyze csharp --app Xyz app.csproj --with-ProjectReference
+sl analyze --app Xyz --csharp --cpg app.csproj
 ```
 
-and analyzing the primary file *with* all of its subprojects
+and analyzing the primary file *with* all of its dependencies/subprojects:
 
 ```bash
-sl analyze csharp --app Xyz app.csproj --csharp2cpg-args
-```
-
-You can include `--dep` multiples times for libs, subprojects, components, and so on:
-
-```bash
-sl analyze --app Xyz --csharp [--dotnet-core|--dotnet-framework] --dep lib.csproj --dep component.csproj app.csproj
+sl analyze  --app Xyz --csharp --cpg --csharp2cpg-args "--with-ProjectReference"
 ```
 
 ## Enabling Log Inforatmion
@@ -80,5 +74,5 @@ sl analyze --app Xyz --csharp [--dotnet-core|--dotnet-framework] --dep lib.cspro
 You can enable logs at the `Information` level by including the `-l info` flag:
 
 ```bash
-sl analyze csharp --app Xyz app.csproj --csharp2cpg-args --with-ProjectReference -l info
+sl analyze csharp --app Xyz app.csproj --csharp2cpg-args "--with-ProjectReference" -l info
 ```
