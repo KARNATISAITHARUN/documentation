@@ -1,4 +1,4 @@
-# How to Identify Inspect Results Using Branch Names
+# How to Tag Inspect Results with the Git Branch Name
 
 Inspect allows you to provide branch names so that you can distinguish analysis results for one branch from another.
 

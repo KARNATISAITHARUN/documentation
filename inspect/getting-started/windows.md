@@ -108,5 +108,4 @@ At this point, you are ready to run Inspect. Please see the language-specific pa
 * [C#](/inspect/analyzing-applications/c-sharp.md)
 * [Go](/inspect/analyzing-applications/golang.md)
 * [Java](/inspect/analyzing-applications/java.md)
-* [JavaServer Pages (JSP)](/inspect/analyzing-applications/jsp.md)
 * [Scala](/inspect/analyzing-applications/scala.md)

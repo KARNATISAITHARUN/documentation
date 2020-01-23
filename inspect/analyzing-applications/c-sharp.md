@@ -4,7 +4,7 @@ This article shows you how to analyze your applications that are written in C#. 
 
 ## Requirements
 
-Inspect supports the analysis of applications written in C# 7.0 (or later) with the following characteristics:
+Inspect supports the analysis of applications written in C# 7.3 (or **earlier**) with the following characteristics:
 
 | **Component** | **Requirement** |
 | - | - |
@@ -21,7 +21,7 @@ You can determine the version of MSBuild installed by:
 
 ## Building Your Application
 
-Before analyzing your code with Inspect, we recommend building your application to make sure that you have restored dependencies and included project-specific tools. For applications based on the .NET Core, use `dotnet restore`; for applications based on the .NET Framework, use `nuget restore`.
+Before analyzing your code with Inspect, we recommend building your application to make sure that you have restored dependencies and that you've applied any necessary project-specific settings. For applications based on the .NET Core, use `dotnet restore`; for applications based on the .NET Framework, use `nuget restore`.
 
 For example, you can verify that a .NET Framework-based application can be built by doing the following:
 
@@ -29,6 +29,10 @@ For example, you can verify that a .NET Framework-based application can be built
 2. In the newly-launched command prompt, navigate to your project location
 3. Restore NuGet packages using `nuget.exe restore <MySolution.sln>`
 4. Start the build with `msbuild <MyProject.csproj>`. Depending on your application, you may need to apply additional options
+
+{% hint style="info" %}
+You must submit your code to Inspect from a system that can build your application.
+{% endhint %}
 
 ## Analyzing Your C# Application
 
@@ -53,14 +57,28 @@ You can combine multiple C# projects for analysis as follows:
 sl analyze --app Xyz --csharp [--dotnet-core|--dotnet-framework] --dep ClassLibrary2\ClassLibrary2.csproj ConsoleApp1\ConsoleApp1.csproj
 ```
 
-The `--dep` option allows you to filter for the subprojects on which the primary `.csproj` file depends. This allows you to adopt the middle ground between analyzing just the primary file
+The `--dep` option allows you to filter for the subprojects on which the primary `.csproj` file depends. This allows you to adopt the middle ground between analyzing just the primary project
 
 ```bash
-sl analyze csharp --app Xyz app.csproj
+sl analyze csharp --app Xyz app.csproj --with-ProjectReference
 ```
 
 and analyzing the primary file *with* all of its subprojects
 
 ```bash
 sl analyze csharp --app Xyz app.csproj --csharp2cpg-args
+```
+
+You can include `--dep` multiples times for libs, subprojects, components, and so on:
+
+```bash
+sl analyze --app Xyz --csharp [--dotnet-core|--dotnet-framework] --dep lib.csproj --dep component.csproj app.csproj
+```
+
+## Enabling Log Inforatmion
+
+You can enable logs at the `Information` level by including the `-l info` flag:
+
+```bash
+sl analyze csharp --app Xyz app.csproj --csharp2cpg-args --with-ProjectReference -l info
 ```

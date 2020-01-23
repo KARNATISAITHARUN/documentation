@@ -4,7 +4,7 @@ This tutorial shows you how to install, set up, configure, and run your first co
 
 ## Register for a ShiftLeft Account
 
-[Register](shiftleft.io/register) for a ShiftLeft account.
+[Register](https://www.shiftleft.io/register) for a ShiftLeft account.
 
 You will be prompted to create an organization. Provide a name for your organization and click **Create Organization** to proceed.
 

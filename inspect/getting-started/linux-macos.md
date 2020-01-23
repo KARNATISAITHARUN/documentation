@@ -4,7 +4,7 @@ This tutorial shows you how to install, set up, and configure Inspect.
 
 ## Register for a ShiftLeft Account
 
-If you haven't already, [register](http://shiftleft.io/register) for a ShiftLeft account.
+If you haven't already, [register](https://shiftleft.io/register) for a ShiftLeft account.
 
 You will be prompted to create an organization. Provide a name for your organization and click **Create Organization** to proceed.
 
@@ -43,5 +43,4 @@ At this point, you are ready to run Inspect. Please see the language-specific pa
 * [C#](/inspect/analyzing-applications/c-sharp.md)
 * [Go](/inspect/analyzing-applications/golang.md)
 * [Java](/inspect/analyzing-applications/java.md)
-* [JavaServer Pages (JSP)](/inspect/analyzing-applications/jsp.md)
 * [Scala](/inspect/analyzing-applications/scala.md)

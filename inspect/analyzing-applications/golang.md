@@ -18,4 +18,4 @@ sl analyze --app <name> --go [<path>]
 | - | - |
 | `--app <name>` | The name of the application to be analyzed |
 | `--go` | The flag identifying the application's language |
-| `<path>` | The location of the application's `.go` file to be analyzed |
+| `<path>` | The location of the application's `.go` file to be analyzed (this is the same `.go` file you would pass to `go build`) |

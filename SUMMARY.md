@@ -16,7 +16,6 @@
   * [C#](/inspect/analyzing-applications/c-sharp.md)
   * [Go](/inspect/analyzing-applications/golang.md)
   * [Java](/inspect/analyzing-applications/java.md)
-  * [JavaServer Pages (JSP)](/inspect/analyzing-applications/jsp.md)
   * [Scala](/inspect/analyzing-applications/scala.md)
 * [Integrations](/inspect/integrations/README.md)
   * [Bamboo](/inspect/integrations/bamboo.md)
@@ -24,8 +23,8 @@
     * [Set Up Your Environment Variables](/inspect/integrations/jenkins/step-1.md)
     * [Configure the Integration](/inspect/integrations/jenkins/step-2.md)
     * [Verify the Integration](/inspect/integrations/jenkins/step-3.md)
-* [How to Identify Inspect Results Using Branch Names](/inspect/branch-names.md)
-* [How Fail Builds Based on Inspect Results](inspect/failing-builds.md)
+* [How to Tag Inspect Results with the Git Branch Name](/inspect/branch-names.md)
+* [How to Fail Builds Based on Inspect Results](inspect/failing-builds.md)
 
 
 ## Languages
