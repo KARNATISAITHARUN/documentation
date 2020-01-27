@@ -17,7 +17,7 @@ where
 
 `--java` identity of the application's language.
 
-`<path>` location of the `.scala` file to be analyzed.
+`<path>` location of the `.jar` / `.war` file to be analyzed.
 
 ### Next Steps
 
