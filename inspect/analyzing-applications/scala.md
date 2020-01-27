@@ -17,14 +17,14 @@ Some build tools you might consider include Maven, Gradle, sbt, etc.
 To analyze your Scala application, run:
 
 ```bash
-sl analyze --app <name> --scala [<path>]
+sl analyze --app <name> --java [<path>]
 ```
 
 | Parameter | Description |
 | - | - |
 | `--app <name>` | The name of the application to be analyzed |
-| `--scala` | The flag identifying the application's language |
-| `<path>` | The location of the application's `.scala` file to be analyzed |
+| `--java` | The flag identifying the application's language |
+| `<path>` | The location of the application's `.jar` / `.war` file to be analyzed |
 
 ### CPG Mode
 
