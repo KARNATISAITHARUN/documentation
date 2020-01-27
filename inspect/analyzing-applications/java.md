@@ -31,6 +31,8 @@ sl analyze --app <name> --java [<path>]
 | `--java` | The flag identifying the application's language |
 | `<path>` | The location of the application's `.jar` or .`war` file to be analyzed |
 
+If you're using a templating framework like JavaServer Pages (JSP), the templates are included in the `.jar` / `.war` file analyzed.
+
 ### CPG Mode
 
 Optionally, you can choose to analyze your application using the Code Property Graph (CPG) mode. With CPG mode, ShiftLeft builds the CPG locally, then uploads it (rather than your application's code) to the ShiftLeft cloud for analysis.
